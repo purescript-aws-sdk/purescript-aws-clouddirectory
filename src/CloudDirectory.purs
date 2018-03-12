@@ -20,317 +20,439 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "CloudDirectory" :: String
-
 
 -- | <p>Adds a new <a>Facet</a> to an object.</p>
 addFacetToObject :: forall eff. AddFacetToObjectRequest -> Aff (exception :: EXCEPTION | eff) AddFacetToObjectResponse
-addFacetToObject = Request.request serviceName "addFacetToObject" 
+addFacetToObject = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "addFacetToObject"
 
 
 -- | <p>Copies the input published schema, at the specified version, into the <a>Directory</a> with the same name and version as that of the published schema.</p>
 applySchema :: forall eff. ApplySchemaRequest -> Aff (exception :: EXCEPTION | eff) ApplySchemaResponse
-applySchema = Request.request serviceName "applySchema" 
+applySchema = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "applySchema"
 
 
 -- | <p>Attaches an existing object to another object. An object can be accessed in two ways:</p> <ol> <li> <p>Using the path</p> </li> <li> <p>Using <code>ObjectIdentifier</code> </p> </li> </ol>
 attachObject :: forall eff. AttachObjectRequest -> Aff (exception :: EXCEPTION | eff) AttachObjectResponse
-attachObject = Request.request serviceName "attachObject" 
+attachObject = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "attachObject"
 
 
 -- | <p>Attaches a policy object to a regular object. An object can have a limited number of attached policies.</p>
 attachPolicy :: forall eff. AttachPolicyRequest -> Aff (exception :: EXCEPTION | eff) AttachPolicyResponse
-attachPolicy = Request.request serviceName "attachPolicy" 
+attachPolicy = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "attachPolicy"
 
 
 -- | <p>Attaches the specified object to the specified index.</p>
 attachToIndex :: forall eff. AttachToIndexRequest -> Aff (exception :: EXCEPTION | eff) AttachToIndexResponse
-attachToIndex = Request.request serviceName "attachToIndex" 
+attachToIndex = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "attachToIndex"
 
 
 -- | <p>Attaches a typed link to a specified source and target object. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed link</a>.</p>
 attachTypedLink :: forall eff. AttachTypedLinkRequest -> Aff (exception :: EXCEPTION | eff) AttachTypedLinkResponse
-attachTypedLink = Request.request serviceName "attachTypedLink" 
+attachTypedLink = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "attachTypedLink"
 
 
 -- | <p>Performs all the read operations in a batch. </p>
 batchRead :: forall eff. BatchReadRequest -> Aff (exception :: EXCEPTION | eff) BatchReadResponse
-batchRead = Request.request serviceName "batchRead" 
+batchRead = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "batchRead"
 
 
 -- | <p>Performs all the write operations in a batch. Either all the operations succeed or none.</p>
 batchWrite :: forall eff. BatchWriteRequest -> Aff (exception :: EXCEPTION | eff) BatchWriteResponse
-batchWrite = Request.request serviceName "batchWrite" 
+batchWrite = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "batchWrite"
 
 
 -- | <p>Creates a <a>Directory</a> by copying the published schema into the directory. A directory cannot be created without a schema.</p>
 createDirectory :: forall eff. CreateDirectoryRequest -> Aff (exception :: EXCEPTION | eff) CreateDirectoryResponse
-createDirectory = Request.request serviceName "createDirectory" 
+createDirectory = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "createDirectory"
 
 
 -- | <p>Creates a new <a>Facet</a> in a schema. Facet creation is allowed only in development or applied schemas.</p>
 createFacet :: forall eff. CreateFacetRequest -> Aff (exception :: EXCEPTION | eff) CreateFacetResponse
-createFacet = Request.request serviceName "createFacet" 
+createFacet = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "createFacet"
 
 
 -- | <p>Creates an index object. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for more information.</p>
 createIndex :: forall eff. CreateIndexRequest -> Aff (exception :: EXCEPTION | eff) CreateIndexResponse
-createIndex = Request.request serviceName "createIndex" 
+createIndex = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "createIndex"
 
 
 -- | <p>Creates an object in a <a>Directory</a>. Additionally attaches the object to a parent, if a parent reference and <code>LinkName</code> is specified. An object is simply a collection of <a>Facet</a> attributes. You can also use this API call to create a policy object, if the facet from which you create the object is a policy facet. </p>
 createObject :: forall eff. CreateObjectRequest -> Aff (exception :: EXCEPTION | eff) CreateObjectResponse
-createObject = Request.request serviceName "createObject" 
+createObject = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "createObject"
 
 
 -- | <p>Creates a new schema in a development state. A schema can exist in three phases:</p> <ul> <li> <p> <i>Development:</i> This is a mutable phase of the schema. All new schemas are in the development phase. Once the schema is finalized, it can be published.</p> </li> <li> <p> <i>Published:</i> Published schemas are immutable and have a version associated with them.</p> </li> <li> <p> <i>Applied:</i> Applied schemas are mutable in a way that allows you to add new schema facets. You can also add new, nonrequired attributes to existing schema facets. You can apply only published schemas to directories. </p> </li> </ul>
 createSchema :: forall eff. CreateSchemaRequest -> Aff (exception :: EXCEPTION | eff) CreateSchemaResponse
-createSchema = Request.request serviceName "createSchema" 
+createSchema = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "createSchema"
 
 
 -- | <p>Creates a <a>TypedLinkFacet</a>. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed link</a>.</p>
 createTypedLinkFacet :: forall eff. CreateTypedLinkFacetRequest -> Aff (exception :: EXCEPTION | eff) CreateTypedLinkFacetResponse
-createTypedLinkFacet = Request.request serviceName "createTypedLinkFacet" 
+createTypedLinkFacet = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "createTypedLinkFacet"
 
 
 -- | <p>Deletes a directory. Only disabled directories can be deleted. A deleted directory cannot be undone. Exercise extreme caution when deleting directories.</p>
 deleteDirectory :: forall eff. DeleteDirectoryRequest -> Aff (exception :: EXCEPTION | eff) DeleteDirectoryResponse
-deleteDirectory = Request.request serviceName "deleteDirectory" 
+deleteDirectory = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "deleteDirectory"
 
 
 -- | <p>Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s that are associated with the facet will be deleted. Only development schema facets are allowed deletion.</p>
 deleteFacet :: forall eff. DeleteFacetRequest -> Aff (exception :: EXCEPTION | eff) DeleteFacetResponse
-deleteFacet = Request.request serviceName "deleteFacet" 
+deleteFacet = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "deleteFacet"
 
 
 -- | <p>Deletes an object and its associated attributes. Only objects with no children and no parents can be deleted.</p>
 deleteObject :: forall eff. DeleteObjectRequest -> Aff (exception :: EXCEPTION | eff) DeleteObjectResponse
-deleteObject = Request.request serviceName "deleteObject" 
+deleteObject = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "deleteObject"
 
 
 -- | <p>Deletes a given schema. Schemas in a development and published state can only be deleted. </p>
 deleteSchema :: forall eff. DeleteSchemaRequest -> Aff (exception :: EXCEPTION | eff) DeleteSchemaResponse
-deleteSchema = Request.request serviceName "deleteSchema" 
+deleteSchema = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "deleteSchema"
 
 
 -- | <p>Deletes a <a>TypedLinkFacet</a>. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed link</a>.</p>
 deleteTypedLinkFacet :: forall eff. DeleteTypedLinkFacetRequest -> Aff (exception :: EXCEPTION | eff) DeleteTypedLinkFacetResponse
-deleteTypedLinkFacet = Request.request serviceName "deleteTypedLinkFacet" 
+deleteTypedLinkFacet = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "deleteTypedLinkFacet"
 
 
 -- | <p>Detaches the specified object from the specified index.</p>
 detachFromIndex :: forall eff. DetachFromIndexRequest -> Aff (exception :: EXCEPTION | eff) DetachFromIndexResponse
-detachFromIndex = Request.request serviceName "detachFromIndex" 
+detachFromIndex = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "detachFromIndex"
 
 
 -- | <p>Detaches a given object from the parent object. The object that is to be detached from the parent is specified by the link name.</p>
 detachObject :: forall eff. DetachObjectRequest -> Aff (exception :: EXCEPTION | eff) DetachObjectResponse
-detachObject = Request.request serviceName "detachObject" 
+detachObject = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "detachObject"
 
 
 -- | <p>Detaches a policy from an object.</p>
 detachPolicy :: forall eff. DetachPolicyRequest -> Aff (exception :: EXCEPTION | eff) DetachPolicyResponse
-detachPolicy = Request.request serviceName "detachPolicy" 
+detachPolicy = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "detachPolicy"
 
 
 -- | <p>Detaches a typed link from a specified source and target object. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed link</a>.</p>
 detachTypedLink :: forall eff. DetachTypedLinkRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-detachTypedLink = Request.request serviceName "detachTypedLink" 
+detachTypedLink = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "detachTypedLink"
 
 
 -- | <p>Disables the specified directory. Disabled directories cannot be read or written to. Only enabled directories can be disabled. Disabled directories may be reenabled.</p>
 disableDirectory :: forall eff. DisableDirectoryRequest -> Aff (exception :: EXCEPTION | eff) DisableDirectoryResponse
-disableDirectory = Request.request serviceName "disableDirectory" 
+disableDirectory = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "disableDirectory"
 
 
 -- | <p>Enables the specified directory. Only disabled directories can be enabled. Once enabled, the directory can then be read and written to.</p>
 enableDirectory :: forall eff. EnableDirectoryRequest -> Aff (exception :: EXCEPTION | eff) EnableDirectoryResponse
-enableDirectory = Request.request serviceName "enableDirectory" 
+enableDirectory = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "enableDirectory"
 
 
 -- | <p>Returns current applied schema version ARN, including the minor version in use.</p>
 getAppliedSchemaVersion :: forall eff. GetAppliedSchemaVersionRequest -> Aff (exception :: EXCEPTION | eff) GetAppliedSchemaVersionResponse
-getAppliedSchemaVersion = Request.request serviceName "getAppliedSchemaVersion" 
+getAppliedSchemaVersion = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "getAppliedSchemaVersion"
 
 
 -- | <p>Retrieves metadata about a directory.</p>
 getDirectory :: forall eff. GetDirectoryRequest -> Aff (exception :: EXCEPTION | eff) GetDirectoryResponse
-getDirectory = Request.request serviceName "getDirectory" 
+getDirectory = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "getDirectory"
 
 
 -- | <p>Gets details of the <a>Facet</a>, such as facet name, attributes, <a>Rule</a>s, or <code>ObjectType</code>. You can call this on all kinds of schema facets -- published, development, or applied.</p>
 getFacet :: forall eff. GetFacetRequest -> Aff (exception :: EXCEPTION | eff) GetFacetResponse
-getFacet = Request.request serviceName "getFacet" 
+getFacet = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "getFacet"
 
 
 -- | <p>Retrieves metadata about an object.</p>
 getObjectInformation :: forall eff. GetObjectInformationRequest -> Aff (exception :: EXCEPTION | eff) GetObjectInformationResponse
-getObjectInformation = Request.request serviceName "getObjectInformation" 
+getObjectInformation = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "getObjectInformation"
 
 
 -- | <p>Retrieves a JSON representation of the schema. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_schemas.html#jsonformat">JSON Schema Format</a> for more information.</p>
 getSchemaAsJson :: forall eff. GetSchemaAsJsonRequest -> Aff (exception :: EXCEPTION | eff) GetSchemaAsJsonResponse
-getSchemaAsJson = Request.request serviceName "getSchemaAsJson" 
+getSchemaAsJson = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "getSchemaAsJson"
 
 
 -- | <p>Returns the identity attribute order for a specific <a>TypedLinkFacet</a>. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed link</a>.</p>
 getTypedLinkFacetInformation :: forall eff. GetTypedLinkFacetInformationRequest -> Aff (exception :: EXCEPTION | eff) GetTypedLinkFacetInformationResponse
-getTypedLinkFacetInformation = Request.request serviceName "getTypedLinkFacetInformation" 
+getTypedLinkFacetInformation = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "getTypedLinkFacetInformation"
 
 
 -- | <p>Lists schema major versions applied to a directory. If <code>SchemaArn</code> is provided, lists the minor version.</p>
 listAppliedSchemaArns :: forall eff. ListAppliedSchemaArnsRequest -> Aff (exception :: EXCEPTION | eff) ListAppliedSchemaArnsResponse
-listAppliedSchemaArns = Request.request serviceName "listAppliedSchemaArns" 
+listAppliedSchemaArns = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listAppliedSchemaArns"
 
 
 -- | <p>Lists indices attached to the specified object.</p>
 listAttachedIndices :: forall eff. ListAttachedIndicesRequest -> Aff (exception :: EXCEPTION | eff) ListAttachedIndicesResponse
-listAttachedIndices = Request.request serviceName "listAttachedIndices" 
+listAttachedIndices = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listAttachedIndices"
 
 
 -- | <p>Retrieves each Amazon Resource Name (ARN) of schemas in the development state.</p>
 listDevelopmentSchemaArns :: forall eff. ListDevelopmentSchemaArnsRequest -> Aff (exception :: EXCEPTION | eff) ListDevelopmentSchemaArnsResponse
-listDevelopmentSchemaArns = Request.request serviceName "listDevelopmentSchemaArns" 
+listDevelopmentSchemaArns = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listDevelopmentSchemaArns"
 
 
 -- | <p>Lists directories created within an account.</p>
 listDirectories :: forall eff. ListDirectoriesRequest -> Aff (exception :: EXCEPTION | eff) ListDirectoriesResponse
-listDirectories = Request.request serviceName "listDirectories" 
+listDirectories = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listDirectories"
 
 
 -- | <p>Retrieves attributes attached to the facet.</p>
 listFacetAttributes :: forall eff. ListFacetAttributesRequest -> Aff (exception :: EXCEPTION | eff) ListFacetAttributesResponse
-listFacetAttributes = Request.request serviceName "listFacetAttributes" 
+listFacetAttributes = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listFacetAttributes"
 
 
 -- | <p>Retrieves the names of facets that exist in a schema.</p>
 listFacetNames :: forall eff. ListFacetNamesRequest -> Aff (exception :: EXCEPTION | eff) ListFacetNamesResponse
-listFacetNames = Request.request serviceName "listFacetNames" 
+listFacetNames = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listFacetNames"
 
 
 -- | <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed link</a>.</p>
 listIncomingTypedLinks :: forall eff. ListIncomingTypedLinksRequest -> Aff (exception :: EXCEPTION | eff) ListIncomingTypedLinksResponse
-listIncomingTypedLinks = Request.request serviceName "listIncomingTypedLinks" 
+listIncomingTypedLinks = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listIncomingTypedLinks"
 
 
 -- | <p>Lists objects and indexed values attached to the index.</p>
 listIndex :: forall eff. ListIndexRequest -> Aff (exception :: EXCEPTION | eff) ListIndexResponse
-listIndex = Request.request serviceName "listIndex" 
+listIndex = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listIndex"
 
 
 -- | <p>Lists all attributes that are associated with an object. </p>
 listObjectAttributes :: forall eff. ListObjectAttributesRequest -> Aff (exception :: EXCEPTION | eff) ListObjectAttributesResponse
-listObjectAttributes = Request.request serviceName "listObjectAttributes" 
+listObjectAttributes = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listObjectAttributes"
 
 
 -- | <p>Returns a paginated list of child objects that are associated with a given object.</p>
 listObjectChildren :: forall eff. ListObjectChildrenRequest -> Aff (exception :: EXCEPTION | eff) ListObjectChildrenResponse
-listObjectChildren = Request.request serviceName "listObjectChildren" 
+listObjectChildren = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listObjectChildren"
 
 
 -- | <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory Structure</a>.</p> <p>Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory up to the requested object. The API returns the number of paths based on user-defined <code>MaxResults</code>, in case there are multiple paths to the parent. The order of the paths and nodes returned is consistent among multiple API calls unless the objects are deleted or moved. Paths not leading to the directory root are ignored from the target object.</p>
 listObjectParentPaths :: forall eff. ListObjectParentPathsRequest -> Aff (exception :: EXCEPTION | eff) ListObjectParentPathsResponse
-listObjectParentPaths = Request.request serviceName "listObjectParentPaths" 
+listObjectParentPaths = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listObjectParentPaths"
 
 
 -- | <p>Lists parent objects that are associated with a given object in pagination fashion.</p>
 listObjectParents :: forall eff. ListObjectParentsRequest -> Aff (exception :: EXCEPTION | eff) ListObjectParentsResponse
-listObjectParents = Request.request serviceName "listObjectParents" 
+listObjectParents = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listObjectParents"
 
 
 -- | <p>Returns policies attached to an object in pagination fashion.</p>
 listObjectPolicies :: forall eff. ListObjectPoliciesRequest -> Aff (exception :: EXCEPTION | eff) ListObjectPoliciesResponse
-listObjectPolicies = Request.request serviceName "listObjectPolicies" 
+listObjectPolicies = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listObjectPolicies"
 
 
 -- | <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed link</a>.</p>
 listOutgoingTypedLinks :: forall eff. ListOutgoingTypedLinksRequest -> Aff (exception :: EXCEPTION | eff) ListOutgoingTypedLinksResponse
-listOutgoingTypedLinks = Request.request serviceName "listOutgoingTypedLinks" 
+listOutgoingTypedLinks = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listOutgoingTypedLinks"
 
 
 -- | <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
 listPolicyAttachments :: forall eff. ListPolicyAttachmentsRequest -> Aff (exception :: EXCEPTION | eff) ListPolicyAttachmentsResponse
-listPolicyAttachments = Request.request serviceName "listPolicyAttachments" 
+listPolicyAttachments = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listPolicyAttachments"
 
 
 -- | <p>Lists schema major versions for a published schema. If <code>SchemaArn</code> is provided, lists the minor version.</p>
 listPublishedSchemaArns :: forall eff. ListPublishedSchemaArnsRequest -> Aff (exception :: EXCEPTION | eff) ListPublishedSchemaArnsResponse
-listPublishedSchemaArns = Request.request serviceName "listPublishedSchemaArns" 
+listPublishedSchemaArns = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listPublishedSchemaArns"
 
 
 -- | <p>Returns tags for a resource. Tagging is currently supported only for directories with a limit of 50 tags per directory. All 50 tags are returned for a given directory with this API call.</p>
 listTagsForResource :: forall eff. ListTagsForResourceRequest -> Aff (exception :: EXCEPTION | eff) ListTagsForResourceResponse
-listTagsForResource = Request.request serviceName "listTagsForResource" 
+listTagsForResource = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listTagsForResource"
 
 
 -- | <p>Returns a paginated list of all attribute definitions for a particular <a>TypedLinkFacet</a>. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed link</a>.</p>
 listTypedLinkFacetAttributes :: forall eff. ListTypedLinkFacetAttributesRequest -> Aff (exception :: EXCEPTION | eff) ListTypedLinkFacetAttributesResponse
-listTypedLinkFacetAttributes = Request.request serviceName "listTypedLinkFacetAttributes" 
+listTypedLinkFacetAttributes = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listTypedLinkFacetAttributes"
 
 
 -- | <p>Returns a paginated list of <code>TypedLink</code> facet names for a particular schema. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed link</a>.</p>
 listTypedLinkFacetNames :: forall eff. ListTypedLinkFacetNamesRequest -> Aff (exception :: EXCEPTION | eff) ListTypedLinkFacetNamesResponse
-listTypedLinkFacetNames = Request.request serviceName "listTypedLinkFacetNames" 
+listTypedLinkFacetNames = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "listTypedLinkFacetNames"
 
 
 -- | <p>Lists all policies from the root of the <a>Directory</a> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p>
 lookupPolicy :: forall eff. LookupPolicyRequest -> Aff (exception :: EXCEPTION | eff) LookupPolicyResponse
-lookupPolicy = Request.request serviceName "lookupPolicy" 
+lookupPolicy = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "lookupPolicy"
 
 
 -- | <p>Publishes a development schema with a major version and a recommended minor version.</p>
 publishSchema :: forall eff. PublishSchemaRequest -> Aff (exception :: EXCEPTION | eff) PublishSchemaResponse
-publishSchema = Request.request serviceName "publishSchema" 
+publishSchema = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "publishSchema"
 
 
 -- | <p>Allows a schema to be updated using JSON upload. Only available for development schemas. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_schemas.html#jsonformat">JSON Schema Format</a> for more information.</p>
 putSchemaFromJson :: forall eff. PutSchemaFromJsonRequest -> Aff (exception :: EXCEPTION | eff) PutSchemaFromJsonResponse
-putSchemaFromJson = Request.request serviceName "putSchemaFromJson" 
+putSchemaFromJson = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "putSchemaFromJson"
 
 
 -- | <p>Removes the specified facet from the specified object.</p>
 removeFacetFromObject :: forall eff. RemoveFacetFromObjectRequest -> Aff (exception :: EXCEPTION | eff) RemoveFacetFromObjectResponse
-removeFacetFromObject = Request.request serviceName "removeFacetFromObject" 
+removeFacetFromObject = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "removeFacetFromObject"
 
 
 -- | <p>An API operation for adding tags to a resource.</p>
 tagResource :: forall eff. TagResourceRequest -> Aff (exception :: EXCEPTION | eff) TagResourceResponse
-tagResource = Request.request serviceName "tagResource" 
+tagResource = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "tagResource"
 
 
 -- | <p>An API operation for removing tags from a resource.</p>
 untagResource :: forall eff. UntagResourceRequest -> Aff (exception :: EXCEPTION | eff) UntagResourceResponse
-untagResource = Request.request serviceName "untagResource" 
+untagResource = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "untagResource"
 
 
 -- | <p>Does the following:</p> <ol> <li> <p>Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li> <li> <p>Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li> <li> <p>Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li> </ol>
 updateFacet :: forall eff. UpdateFacetRequest -> Aff (exception :: EXCEPTION | eff) UpdateFacetResponse
-updateFacet = Request.request serviceName "updateFacet" 
+updateFacet = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "updateFacet"
 
 
 -- | <p>Updates a given object's attributes.</p>
 updateObjectAttributes :: forall eff. UpdateObjectAttributesRequest -> Aff (exception :: EXCEPTION | eff) UpdateObjectAttributesResponse
-updateObjectAttributes = Request.request serviceName "updateObjectAttributes" 
+updateObjectAttributes = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "updateObjectAttributes"
 
 
 -- | <p>Updates the schema name with a new name. Only development schema names can be updated.</p>
 updateSchema :: forall eff. UpdateSchemaRequest -> Aff (exception :: EXCEPTION | eff) UpdateSchemaResponse
-updateSchema = Request.request serviceName "updateSchema" 
+updateSchema = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "updateSchema"
 
 
 -- | <p>Updates a <a>TypedLinkFacet</a>. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed link</a>.</p>
 updateTypedLinkFacet :: forall eff. UpdateTypedLinkFacetRequest -> Aff (exception :: EXCEPTION | eff) UpdateTypedLinkFacetResponse
-updateTypedLinkFacet = Request.request serviceName "updateTypedLinkFacet" 
+updateTypedLinkFacet = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "updateTypedLinkFacet"
 
 
 -- | <p>Upgrades a single directory in-place using the <code>PublishedSchemaArn</code> with schema updates found in <code>MinorVersion</code>. Backwards-compatible minor version upgrades are instantaneously available for readers on all objects in the directory. Note: This is a synchronous API call and upgrades only one schema on a given directory per call. To upgrade multiple directories from one schema, you would need to call this API on each directory.</p>
 upgradeAppliedSchema :: forall eff. UpgradeAppliedSchemaRequest -> Aff (exception :: EXCEPTION | eff) UpgradeAppliedSchemaResponse
-upgradeAppliedSchema = Request.request serviceName "upgradeAppliedSchema" 
+upgradeAppliedSchema = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "upgradeAppliedSchema"
 
 
 -- | <p>Upgrades a published schema under a new minor version revision using the current contents of <code>DevelopmentSchemaArn</code>.</p>
 upgradePublishedSchema :: forall eff. UpgradePublishedSchemaRequest -> Aff (exception :: EXCEPTION | eff) UpgradePublishedSchemaResponse
-upgradePublishedSchema = Request.request serviceName "upgradePublishedSchema" 
+upgradePublishedSchema = Request.request service method  where
+    service = Request.ServiceName "CloudDirectory"
+    method = Request.MethodName "upgradePublishedSchema"
 
 
 -- | <p>Access denied. Check your permissions.</p>
