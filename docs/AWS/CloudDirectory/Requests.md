@@ -179,7 +179,7 @@ detachPolicy :: forall eff. Service -> DetachPolicyRequest -> Aff (exception :: 
 #### `detachTypedLink`
 
 ``` purescript
-detachTypedLink :: forall eff. Service -> DetachTypedLinkRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+detachTypedLink :: forall eff. Service -> DetachTypedLinkRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Detaches a typed link from a specified source and target object. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed link</a>.</p>

@@ -10,7 +10,7 @@ options :: Options
 
 ``` purescript
 newtype AccessDeniedException
-  = AccessDeniedException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = AccessDeniedException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Access denied. Check your permissions.</p>
@@ -35,7 +35,7 @@ Constructs AccessDeniedException from required parameters
 #### `newAccessDeniedException'`
 
 ``` purescript
-newAccessDeniedException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> AccessDeniedException
+newAccessDeniedException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> AccessDeniedException
 ```
 
 Constructs AccessDeniedException's fields from required parameters
@@ -44,7 +44,7 @@ Constructs AccessDeniedException's fields from required parameters
 
 ``` purescript
 newtype AddFacetToObjectRequest
-  = AddFacetToObjectRequest { "DirectoryArn" :: Arn, "SchemaFacet" :: SchemaFacet, "ObjectAttributeList" :: NullOrUndefined (AttributeKeyAndValueList), "ObjectReference" :: ObjectReference }
+  = AddFacetToObjectRequest { "DirectoryArn" :: Arn, "SchemaFacet" :: SchemaFacet, "ObjectAttributeList" :: Maybe (AttributeKeyAndValueList), "ObjectReference" :: ObjectReference }
 ```
 
 ##### Instances
@@ -67,7 +67,7 @@ Constructs AddFacetToObjectRequest from required parameters
 #### `newAddFacetToObjectRequest'`
 
 ``` purescript
-newAddFacetToObjectRequest' :: Arn -> ObjectReference -> SchemaFacet -> ({ "DirectoryArn" :: Arn, "SchemaFacet" :: SchemaFacet, "ObjectAttributeList" :: NullOrUndefined (AttributeKeyAndValueList), "ObjectReference" :: ObjectReference } -> { "DirectoryArn" :: Arn, "SchemaFacet" :: SchemaFacet, "ObjectAttributeList" :: NullOrUndefined (AttributeKeyAndValueList), "ObjectReference" :: ObjectReference }) -> AddFacetToObjectRequest
+newAddFacetToObjectRequest' :: Arn -> ObjectReference -> SchemaFacet -> ({ "DirectoryArn" :: Arn, "SchemaFacet" :: SchemaFacet, "ObjectAttributeList" :: Maybe (AttributeKeyAndValueList), "ObjectReference" :: ObjectReference } -> { "DirectoryArn" :: Arn, "SchemaFacet" :: SchemaFacet, "ObjectAttributeList" :: Maybe (AttributeKeyAndValueList), "ObjectReference" :: ObjectReference }) -> AddFacetToObjectRequest
 ```
 
 Constructs AddFacetToObjectRequest's fields from required parameters
@@ -124,7 +124,7 @@ Constructs ApplySchemaRequest's fields from required parameters
 
 ``` purescript
 newtype ApplySchemaResponse
-  = ApplySchemaResponse { "AppliedSchemaArn" :: NullOrUndefined (Arn), "DirectoryArn" :: NullOrUndefined (Arn) }
+  = ApplySchemaResponse { "AppliedSchemaArn" :: Maybe (Arn), "DirectoryArn" :: Maybe (Arn) }
 ```
 
 ##### Instances
@@ -147,7 +147,7 @@ Constructs ApplySchemaResponse from required parameters
 #### `newApplySchemaResponse'`
 
 ``` purescript
-newApplySchemaResponse' :: ({ "AppliedSchemaArn" :: NullOrUndefined (Arn), "DirectoryArn" :: NullOrUndefined (Arn) } -> { "AppliedSchemaArn" :: NullOrUndefined (Arn), "DirectoryArn" :: NullOrUndefined (Arn) }) -> ApplySchemaResponse
+newApplySchemaResponse' :: ({ "AppliedSchemaArn" :: Maybe (Arn), "DirectoryArn" :: Maybe (Arn) } -> { "AppliedSchemaArn" :: Maybe (Arn), "DirectoryArn" :: Maybe (Arn) }) -> ApplySchemaResponse
 ```
 
 Constructs ApplySchemaResponse's fields from required parameters
@@ -220,7 +220,7 @@ Constructs AttachObjectRequest's fields from required parameters
 
 ``` purescript
 newtype AttachObjectResponse
-  = AttachObjectResponse { "AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }
+  = AttachObjectResponse { "AttachedObjectIdentifier" :: Maybe (ObjectIdentifier) }
 ```
 
 ##### Instances
@@ -243,7 +243,7 @@ Constructs AttachObjectResponse from required parameters
 #### `newAttachObjectResponse'`
 
 ``` purescript
-newAttachObjectResponse' :: ({ "AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> { "AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }) -> AttachObjectResponse
+newAttachObjectResponse' :: ({ "AttachedObjectIdentifier" :: Maybe (ObjectIdentifier) } -> { "AttachedObjectIdentifier" :: Maybe (ObjectIdentifier) }) -> AttachObjectResponse
 ```
 
 Constructs AttachObjectResponse's fields from required parameters
@@ -252,7 +252,7 @@ Constructs AttachObjectResponse's fields from required parameters
 
 ``` purescript
 newtype AttachPolicyRequest
-  = AttachPolicyRequest { "DirectoryArn" :: NullOrUndefined (Arn), "PolicyReference" :: ObjectReference, "ObjectReference" :: ObjectReference }
+  = AttachPolicyRequest { "DirectoryArn" :: Maybe (Arn), "PolicyReference" :: ObjectReference, "ObjectReference" :: ObjectReference }
 ```
 
 ##### Instances
@@ -275,7 +275,7 @@ Constructs AttachPolicyRequest from required parameters
 #### `newAttachPolicyRequest'`
 
 ``` purescript
-newAttachPolicyRequest' :: ObjectReference -> ObjectReference -> ({ "DirectoryArn" :: NullOrUndefined (Arn), "PolicyReference" :: ObjectReference, "ObjectReference" :: ObjectReference } -> { "DirectoryArn" :: NullOrUndefined (Arn), "PolicyReference" :: ObjectReference, "ObjectReference" :: ObjectReference }) -> AttachPolicyRequest
+newAttachPolicyRequest' :: ObjectReference -> ObjectReference -> ({ "DirectoryArn" :: Maybe (Arn), "PolicyReference" :: ObjectReference, "ObjectReference" :: ObjectReference } -> { "DirectoryArn" :: Maybe (Arn), "PolicyReference" :: ObjectReference, "ObjectReference" :: ObjectReference }) -> AttachPolicyRequest
 ```
 
 Constructs AttachPolicyRequest's fields from required parameters
@@ -332,7 +332,7 @@ Constructs AttachToIndexRequest's fields from required parameters
 
 ``` purescript
 newtype AttachToIndexResponse
-  = AttachToIndexResponse { "AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }
+  = AttachToIndexResponse { "AttachedObjectIdentifier" :: Maybe (ObjectIdentifier) }
 ```
 
 ##### Instances
@@ -355,7 +355,7 @@ Constructs AttachToIndexResponse from required parameters
 #### `newAttachToIndexResponse'`
 
 ``` purescript
-newAttachToIndexResponse' :: ({ "AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> { "AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }) -> AttachToIndexResponse
+newAttachToIndexResponse' :: ({ "AttachedObjectIdentifier" :: Maybe (ObjectIdentifier) } -> { "AttachedObjectIdentifier" :: Maybe (ObjectIdentifier) }) -> AttachToIndexResponse
 ```
 
 Constructs AttachToIndexResponse's fields from required parameters
@@ -396,7 +396,7 @@ Constructs AttachTypedLinkRequest's fields from required parameters
 
 ``` purescript
 newtype AttachTypedLinkResponse
-  = AttachTypedLinkResponse { "TypedLinkSpecifier" :: NullOrUndefined (TypedLinkSpecifier) }
+  = AttachTypedLinkResponse { "TypedLinkSpecifier" :: Maybe (TypedLinkSpecifier) }
 ```
 
 ##### Instances
@@ -419,7 +419,7 @@ Constructs AttachTypedLinkResponse from required parameters
 #### `newAttachTypedLinkResponse'`
 
 ``` purescript
-newAttachTypedLinkResponse' :: ({ "TypedLinkSpecifier" :: NullOrUndefined (TypedLinkSpecifier) } -> { "TypedLinkSpecifier" :: NullOrUndefined (TypedLinkSpecifier) }) -> AttachTypedLinkResponse
+newAttachTypedLinkResponse' :: ({ "TypedLinkSpecifier" :: Maybe (TypedLinkSpecifier) } -> { "TypedLinkSpecifier" :: Maybe (TypedLinkSpecifier) }) -> AttachTypedLinkResponse
 ```
 
 Constructs AttachTypedLinkResponse's fields from required parameters
@@ -696,7 +696,7 @@ Constructs BatchAttachObject's fields from required parameters
 
 ``` purescript
 newtype BatchAttachObjectResponse
-  = BatchAttachObjectResponse { attachedObjectIdentifier :: NullOrUndefined (ObjectIdentifier) }
+  = BatchAttachObjectResponse { attachedObjectIdentifier :: Maybe (ObjectIdentifier) }
 ```
 
 <p>Represents the output batch <a>AttachObject</a> response operation.</p>
@@ -721,7 +721,7 @@ Constructs BatchAttachObjectResponse from required parameters
 #### `newBatchAttachObjectResponse'`
 
 ``` purescript
-newBatchAttachObjectResponse' :: ({ attachedObjectIdentifier :: NullOrUndefined (ObjectIdentifier) } -> { attachedObjectIdentifier :: NullOrUndefined (ObjectIdentifier) }) -> BatchAttachObjectResponse
+newBatchAttachObjectResponse' :: ({ attachedObjectIdentifier :: Maybe (ObjectIdentifier) } -> { attachedObjectIdentifier :: Maybe (ObjectIdentifier) }) -> BatchAttachObjectResponse
 ```
 
 Constructs BatchAttachObjectResponse's fields from required parameters
@@ -816,7 +816,7 @@ Constructs BatchAttachToIndex's fields from required parameters
 
 ``` purescript
 newtype BatchAttachToIndexResponse
-  = BatchAttachToIndexResponse { "AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }
+  = BatchAttachToIndexResponse { "AttachedObjectIdentifier" :: Maybe (ObjectIdentifier) }
 ```
 
 <p>Represents the output of a <a>AttachToIndex</a> response operation.</p>
@@ -841,7 +841,7 @@ Constructs BatchAttachToIndexResponse from required parameters
 #### `newBatchAttachToIndexResponse'`
 
 ``` purescript
-newBatchAttachToIndexResponse' :: ({ "AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> { "AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }) -> BatchAttachToIndexResponse
+newBatchAttachToIndexResponse' :: ({ "AttachedObjectIdentifier" :: Maybe (ObjectIdentifier) } -> { "AttachedObjectIdentifier" :: Maybe (ObjectIdentifier) }) -> BatchAttachToIndexResponse
 ```
 
 Constructs BatchAttachToIndexResponse's fields from required parameters
@@ -884,7 +884,7 @@ Constructs BatchAttachTypedLink's fields from required parameters
 
 ``` purescript
 newtype BatchAttachTypedLinkResponse
-  = BatchAttachTypedLinkResponse { "TypedLinkSpecifier" :: NullOrUndefined (TypedLinkSpecifier) }
+  = BatchAttachTypedLinkResponse { "TypedLinkSpecifier" :: Maybe (TypedLinkSpecifier) }
 ```
 
 <p>Represents the output of a <a>AttachTypedLink</a> response operation.</p>
@@ -909,7 +909,7 @@ Constructs BatchAttachTypedLinkResponse from required parameters
 #### `newBatchAttachTypedLinkResponse'`
 
 ``` purescript
-newBatchAttachTypedLinkResponse' :: ({ "TypedLinkSpecifier" :: NullOrUndefined (TypedLinkSpecifier) } -> { "TypedLinkSpecifier" :: NullOrUndefined (TypedLinkSpecifier) }) -> BatchAttachTypedLinkResponse
+newBatchAttachTypedLinkResponse' :: ({ "TypedLinkSpecifier" :: Maybe (TypedLinkSpecifier) } -> { "TypedLinkSpecifier" :: Maybe (TypedLinkSpecifier) }) -> BatchAttachTypedLinkResponse
 ```
 
 Constructs BatchAttachTypedLinkResponse's fields from required parameters
@@ -918,7 +918,7 @@ Constructs BatchAttachTypedLinkResponse's fields from required parameters
 
 ``` purescript
 newtype BatchCreateIndex
-  = BatchCreateIndex { "OrderedIndexedAttributeList" :: AttributeKeyList, "IsUnique" :: Bool, "ParentReference" :: NullOrUndefined (ObjectReference), "LinkName" :: NullOrUndefined (LinkName), "BatchReferenceName" :: NullOrUndefined (BatchReferenceName) }
+  = BatchCreateIndex { "OrderedIndexedAttributeList" :: AttributeKeyList, "IsUnique" :: Bool, "ParentReference" :: Maybe (ObjectReference), "LinkName" :: Maybe (LinkName), "BatchReferenceName" :: Maybe (BatchReferenceName) }
 ```
 
 <p>Creates an index object inside of a <a>BatchRead</a> operation. For more information, see <a>CreateIndex</a> and <a>BatchReadRequest$Operations</a>.</p>
@@ -943,7 +943,7 @@ Constructs BatchCreateIndex from required parameters
 #### `newBatchCreateIndex'`
 
 ``` purescript
-newBatchCreateIndex' :: Bool -> AttributeKeyList -> ({ "OrderedIndexedAttributeList" :: AttributeKeyList, "IsUnique" :: Bool, "ParentReference" :: NullOrUndefined (ObjectReference), "LinkName" :: NullOrUndefined (LinkName), "BatchReferenceName" :: NullOrUndefined (BatchReferenceName) } -> { "OrderedIndexedAttributeList" :: AttributeKeyList, "IsUnique" :: Bool, "ParentReference" :: NullOrUndefined (ObjectReference), "LinkName" :: NullOrUndefined (LinkName), "BatchReferenceName" :: NullOrUndefined (BatchReferenceName) }) -> BatchCreateIndex
+newBatchCreateIndex' :: Bool -> AttributeKeyList -> ({ "OrderedIndexedAttributeList" :: AttributeKeyList, "IsUnique" :: Bool, "ParentReference" :: Maybe (ObjectReference), "LinkName" :: Maybe (LinkName), "BatchReferenceName" :: Maybe (BatchReferenceName) } -> { "OrderedIndexedAttributeList" :: AttributeKeyList, "IsUnique" :: Bool, "ParentReference" :: Maybe (ObjectReference), "LinkName" :: Maybe (LinkName), "BatchReferenceName" :: Maybe (BatchReferenceName) }) -> BatchCreateIndex
 ```
 
 Constructs BatchCreateIndex's fields from required parameters
@@ -952,7 +952,7 @@ Constructs BatchCreateIndex's fields from required parameters
 
 ``` purescript
 newtype BatchCreateIndexResponse
-  = BatchCreateIndexResponse { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }
+  = BatchCreateIndexResponse { "ObjectIdentifier" :: Maybe (ObjectIdentifier) }
 ```
 
 <p>Represents the output of a <a>CreateIndex</a> response operation.</p>
@@ -977,7 +977,7 @@ Constructs BatchCreateIndexResponse from required parameters
 #### `newBatchCreateIndexResponse'`
 
 ``` purescript
-newBatchCreateIndexResponse' :: ({ "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }) -> BatchCreateIndexResponse
+newBatchCreateIndexResponse' :: ({ "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> { "ObjectIdentifier" :: Maybe (ObjectIdentifier) }) -> BatchCreateIndexResponse
 ```
 
 Constructs BatchCreateIndexResponse's fields from required parameters
@@ -1020,7 +1020,7 @@ Constructs BatchCreateObject's fields from required parameters
 
 ``` purescript
 newtype BatchCreateObjectResponse
-  = BatchCreateObjectResponse { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }
+  = BatchCreateObjectResponse { "ObjectIdentifier" :: Maybe (ObjectIdentifier) }
 ```
 
 <p>Represents the output of a <a>CreateObject</a> response operation.</p>
@@ -1045,7 +1045,7 @@ Constructs BatchCreateObjectResponse from required parameters
 #### `newBatchCreateObjectResponse'`
 
 ``` purescript
-newBatchCreateObjectResponse' :: ({ "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }) -> BatchCreateObjectResponse
+newBatchCreateObjectResponse' :: ({ "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> { "ObjectIdentifier" :: Maybe (ObjectIdentifier) }) -> BatchCreateObjectResponse
 ```
 
 Constructs BatchCreateObjectResponse's fields from required parameters
@@ -1140,7 +1140,7 @@ Constructs BatchDetachFromIndex's fields from required parameters
 
 ``` purescript
 newtype BatchDetachFromIndexResponse
-  = BatchDetachFromIndexResponse { "DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }
+  = BatchDetachFromIndexResponse { "DetachedObjectIdentifier" :: Maybe (ObjectIdentifier) }
 ```
 
 <p>Represents the output of a <a>DetachFromIndex</a> response operation.</p>
@@ -1165,7 +1165,7 @@ Constructs BatchDetachFromIndexResponse from required parameters
 #### `newBatchDetachFromIndexResponse'`
 
 ``` purescript
-newBatchDetachFromIndexResponse' :: ({ "DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> { "DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }) -> BatchDetachFromIndexResponse
+newBatchDetachFromIndexResponse' :: ({ "DetachedObjectIdentifier" :: Maybe (ObjectIdentifier) } -> { "DetachedObjectIdentifier" :: Maybe (ObjectIdentifier) }) -> BatchDetachFromIndexResponse
 ```
 
 Constructs BatchDetachFromIndexResponse's fields from required parameters
@@ -1208,7 +1208,7 @@ Constructs BatchDetachObject's fields from required parameters
 
 ``` purescript
 newtype BatchDetachObjectResponse
-  = BatchDetachObjectResponse { detachedObjectIdentifier :: NullOrUndefined (ObjectIdentifier) }
+  = BatchDetachObjectResponse { detachedObjectIdentifier :: Maybe (ObjectIdentifier) }
 ```
 
 <p>Represents the output of a <a>DetachObject</a> response operation.</p>
@@ -1233,7 +1233,7 @@ Constructs BatchDetachObjectResponse from required parameters
 #### `newBatchDetachObjectResponse'`
 
 ``` purescript
-newBatchDetachObjectResponse' :: ({ detachedObjectIdentifier :: NullOrUndefined (ObjectIdentifier) } -> { detachedObjectIdentifier :: NullOrUndefined (ObjectIdentifier) }) -> BatchDetachObjectResponse
+newBatchDetachObjectResponse' :: ({ detachedObjectIdentifier :: Maybe (ObjectIdentifier) } -> { detachedObjectIdentifier :: Maybe (ObjectIdentifier) }) -> BatchDetachObjectResponse
 ```
 
 Constructs BatchDetachObjectResponse's fields from required parameters
@@ -1380,7 +1380,7 @@ Constructs BatchGetObjectInformation's fields from required parameters
 
 ``` purescript
 newtype BatchGetObjectInformationResponse
-  = BatchGetObjectInformationResponse { "SchemaFacets" :: NullOrUndefined (SchemaFacetList), "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }
+  = BatchGetObjectInformationResponse { "SchemaFacets" :: Maybe (SchemaFacetList), "ObjectIdentifier" :: Maybe (ObjectIdentifier) }
 ```
 
 <p>Represents the output of a <a>GetObjectInformation</a> response operation.</p>
@@ -1405,7 +1405,7 @@ Constructs BatchGetObjectInformationResponse from required parameters
 #### `newBatchGetObjectInformationResponse'`
 
 ``` purescript
-newBatchGetObjectInformationResponse' :: ({ "SchemaFacets" :: NullOrUndefined (SchemaFacetList), "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> { "SchemaFacets" :: NullOrUndefined (SchemaFacetList), "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }) -> BatchGetObjectInformationResponse
+newBatchGetObjectInformationResponse' :: ({ "SchemaFacets" :: Maybe (SchemaFacetList), "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> { "SchemaFacets" :: Maybe (SchemaFacetList), "ObjectIdentifier" :: Maybe (ObjectIdentifier) }) -> BatchGetObjectInformationResponse
 ```
 
 Constructs BatchGetObjectInformationResponse's fields from required parameters
@@ -1414,7 +1414,7 @@ Constructs BatchGetObjectInformationResponse's fields from required parameters
 
 ``` purescript
 newtype BatchListAttachedIndices
-  = BatchListAttachedIndices { "TargetReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }
+  = BatchListAttachedIndices { "TargetReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }
 ```
 
 <p>Lists indices attached to an object inside a <a>BatchRead</a> operation. For more information, see <a>ListAttachedIndices</a> and <a>BatchReadRequest$Operations</a>.</p>
@@ -1439,7 +1439,7 @@ Constructs BatchListAttachedIndices from required parameters
 #### `newBatchListAttachedIndices'`
 
 ``` purescript
-newBatchListAttachedIndices' :: ObjectReference -> ({ "TargetReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) } -> { "TargetReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }) -> BatchListAttachedIndices
+newBatchListAttachedIndices' :: ObjectReference -> ({ "TargetReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) } -> { "TargetReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }) -> BatchListAttachedIndices
 ```
 
 Constructs BatchListAttachedIndices's fields from required parameters
@@ -1448,7 +1448,7 @@ Constructs BatchListAttachedIndices's fields from required parameters
 
 ``` purescript
 newtype BatchListAttachedIndicesResponse
-  = BatchListAttachedIndicesResponse { "IndexAttachments" :: NullOrUndefined (IndexAttachmentList), "NextToken" :: NullOrUndefined (NextToken) }
+  = BatchListAttachedIndicesResponse { "IndexAttachments" :: Maybe (IndexAttachmentList), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a <a>ListAttachedIndices</a> response operation.</p>
@@ -1473,7 +1473,7 @@ Constructs BatchListAttachedIndicesResponse from required parameters
 #### `newBatchListAttachedIndicesResponse'`
 
 ``` purescript
-newBatchListAttachedIndicesResponse' :: ({ "IndexAttachments" :: NullOrUndefined (IndexAttachmentList), "NextToken" :: NullOrUndefined (NextToken) } -> { "IndexAttachments" :: NullOrUndefined (IndexAttachmentList), "NextToken" :: NullOrUndefined (NextToken) }) -> BatchListAttachedIndicesResponse
+newBatchListAttachedIndicesResponse' :: ({ "IndexAttachments" :: Maybe (IndexAttachmentList), "NextToken" :: Maybe (NextToken) } -> { "IndexAttachments" :: Maybe (IndexAttachmentList), "NextToken" :: Maybe (NextToken) }) -> BatchListAttachedIndicesResponse
 ```
 
 Constructs BatchListAttachedIndicesResponse's fields from required parameters
@@ -1482,7 +1482,7 @@ Constructs BatchListAttachedIndicesResponse's fields from required parameters
 
 ``` purescript
 newtype BatchListIncomingTypedLinks
-  = BatchListIncomingTypedLinks { "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList), "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }
+  = BatchListIncomingTypedLinks { "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList), "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }
 ```
 
 <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListIncomingTypedLinks</a> and <a>BatchReadRequest$Operations</a>.</p>
@@ -1507,7 +1507,7 @@ Constructs BatchListIncomingTypedLinks from required parameters
 #### `newBatchListIncomingTypedLinks'`
 
 ``` purescript
-newBatchListIncomingTypedLinks' :: ObjectReference -> ({ "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList), "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) } -> { "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList), "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }) -> BatchListIncomingTypedLinks
+newBatchListIncomingTypedLinks' :: ObjectReference -> ({ "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList), "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) } -> { "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList), "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }) -> BatchListIncomingTypedLinks
 ```
 
 Constructs BatchListIncomingTypedLinks's fields from required parameters
@@ -1516,7 +1516,7 @@ Constructs BatchListIncomingTypedLinks's fields from required parameters
 
 ``` purescript
 newtype BatchListIncomingTypedLinksResponse
-  = BatchListIncomingTypedLinksResponse { "LinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList), "NextToken" :: NullOrUndefined (NextToken) }
+  = BatchListIncomingTypedLinksResponse { "LinkSpecifiers" :: Maybe (TypedLinkSpecifierList), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a <a>ListIncomingTypedLinks</a> response operation.</p>
@@ -1541,7 +1541,7 @@ Constructs BatchListIncomingTypedLinksResponse from required parameters
 #### `newBatchListIncomingTypedLinksResponse'`
 
 ``` purescript
-newBatchListIncomingTypedLinksResponse' :: ({ "LinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList), "NextToken" :: NullOrUndefined (NextToken) } -> { "LinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList), "NextToken" :: NullOrUndefined (NextToken) }) -> BatchListIncomingTypedLinksResponse
+newBatchListIncomingTypedLinksResponse' :: ({ "LinkSpecifiers" :: Maybe (TypedLinkSpecifierList), "NextToken" :: Maybe (NextToken) } -> { "LinkSpecifiers" :: Maybe (TypedLinkSpecifierList), "NextToken" :: Maybe (NextToken) }) -> BatchListIncomingTypedLinksResponse
 ```
 
 Constructs BatchListIncomingTypedLinksResponse's fields from required parameters
@@ -1550,7 +1550,7 @@ Constructs BatchListIncomingTypedLinksResponse's fields from required parameters
 
 ``` purescript
 newtype BatchListIndex
-  = BatchListIndex { "RangesOnIndexedValues" :: NullOrUndefined (ObjectAttributeRangeList), "IndexReference" :: ObjectReference, "MaxResults" :: NullOrUndefined (NumberResults), "NextToken" :: NullOrUndefined (NextToken) }
+  = BatchListIndex { "RangesOnIndexedValues" :: Maybe (ObjectAttributeRangeList), "IndexReference" :: ObjectReference, "MaxResults" :: Maybe (NumberResults), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p>Lists objects attached to the specified index inside a <a>BatchRead</a> operation. For more information, see <a>ListIndex</a> and <a>BatchReadRequest$Operations</a>.</p>
@@ -1575,7 +1575,7 @@ Constructs BatchListIndex from required parameters
 #### `newBatchListIndex'`
 
 ``` purescript
-newBatchListIndex' :: ObjectReference -> ({ "RangesOnIndexedValues" :: NullOrUndefined (ObjectAttributeRangeList), "IndexReference" :: ObjectReference, "MaxResults" :: NullOrUndefined (NumberResults), "NextToken" :: NullOrUndefined (NextToken) } -> { "RangesOnIndexedValues" :: NullOrUndefined (ObjectAttributeRangeList), "IndexReference" :: ObjectReference, "MaxResults" :: NullOrUndefined (NumberResults), "NextToken" :: NullOrUndefined (NextToken) }) -> BatchListIndex
+newBatchListIndex' :: ObjectReference -> ({ "RangesOnIndexedValues" :: Maybe (ObjectAttributeRangeList), "IndexReference" :: ObjectReference, "MaxResults" :: Maybe (NumberResults), "NextToken" :: Maybe (NextToken) } -> { "RangesOnIndexedValues" :: Maybe (ObjectAttributeRangeList), "IndexReference" :: ObjectReference, "MaxResults" :: Maybe (NumberResults), "NextToken" :: Maybe (NextToken) }) -> BatchListIndex
 ```
 
 Constructs BatchListIndex's fields from required parameters
@@ -1584,7 +1584,7 @@ Constructs BatchListIndex's fields from required parameters
 
 ``` purescript
 newtype BatchListIndexResponse
-  = BatchListIndexResponse { "IndexAttachments" :: NullOrUndefined (IndexAttachmentList), "NextToken" :: NullOrUndefined (NextToken) }
+  = BatchListIndexResponse { "IndexAttachments" :: Maybe (IndexAttachmentList), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a <a>ListIndex</a> response operation.</p>
@@ -1609,7 +1609,7 @@ Constructs BatchListIndexResponse from required parameters
 #### `newBatchListIndexResponse'`
 
 ``` purescript
-newBatchListIndexResponse' :: ({ "IndexAttachments" :: NullOrUndefined (IndexAttachmentList), "NextToken" :: NullOrUndefined (NextToken) } -> { "IndexAttachments" :: NullOrUndefined (IndexAttachmentList), "NextToken" :: NullOrUndefined (NextToken) }) -> BatchListIndexResponse
+newBatchListIndexResponse' :: ({ "IndexAttachments" :: Maybe (IndexAttachmentList), "NextToken" :: Maybe (NextToken) } -> { "IndexAttachments" :: Maybe (IndexAttachmentList), "NextToken" :: Maybe (NextToken) }) -> BatchListIndexResponse
 ```
 
 Constructs BatchListIndexResponse's fields from required parameters
@@ -1618,7 +1618,7 @@ Constructs BatchListIndexResponse's fields from required parameters
 
 ``` purescript
 newtype BatchListObjectAttributes
-  = BatchListObjectAttributes { "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "FacetFilter" :: NullOrUndefined (SchemaFacet) }
+  = BatchListObjectAttributes { "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "FacetFilter" :: Maybe (SchemaFacet) }
 ```
 
 <p>Represents the output of a <a>ListObjectAttributes</a> operation.</p>
@@ -1643,7 +1643,7 @@ Constructs BatchListObjectAttributes from required parameters
 #### `newBatchListObjectAttributes'`
 
 ``` purescript
-newBatchListObjectAttributes' :: ObjectReference -> ({ "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "FacetFilter" :: NullOrUndefined (SchemaFacet) } -> { "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "FacetFilter" :: NullOrUndefined (SchemaFacet) }) -> BatchListObjectAttributes
+newBatchListObjectAttributes' :: ObjectReference -> ({ "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "FacetFilter" :: Maybe (SchemaFacet) } -> { "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "FacetFilter" :: Maybe (SchemaFacet) }) -> BatchListObjectAttributes
 ```
 
 Constructs BatchListObjectAttributes's fields from required parameters
@@ -1652,7 +1652,7 @@ Constructs BatchListObjectAttributes's fields from required parameters
 
 ``` purescript
 newtype BatchListObjectAttributesResponse
-  = BatchListObjectAttributesResponse { "Attributes" :: NullOrUndefined (AttributeKeyAndValueList), "NextToken" :: NullOrUndefined (NextToken) }
+  = BatchListObjectAttributesResponse { "Attributes" :: Maybe (AttributeKeyAndValueList), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a <a>ListObjectAttributes</a> response operation.</p>
@@ -1677,7 +1677,7 @@ Constructs BatchListObjectAttributesResponse from required parameters
 #### `newBatchListObjectAttributesResponse'`
 
 ``` purescript
-newBatchListObjectAttributesResponse' :: ({ "Attributes" :: NullOrUndefined (AttributeKeyAndValueList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Attributes" :: NullOrUndefined (AttributeKeyAndValueList), "NextToken" :: NullOrUndefined (NextToken) }) -> BatchListObjectAttributesResponse
+newBatchListObjectAttributesResponse' :: ({ "Attributes" :: Maybe (AttributeKeyAndValueList), "NextToken" :: Maybe (NextToken) } -> { "Attributes" :: Maybe (AttributeKeyAndValueList), "NextToken" :: Maybe (NextToken) }) -> BatchListObjectAttributesResponse
 ```
 
 Constructs BatchListObjectAttributesResponse's fields from required parameters
@@ -1686,7 +1686,7 @@ Constructs BatchListObjectAttributesResponse's fields from required parameters
 
 ``` purescript
 newtype BatchListObjectChildren
-  = BatchListObjectChildren { "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }
+  = BatchListObjectChildren { "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }
 ```
 
 <p>Represents the output of a <a>ListObjectChildren</a> operation.</p>
@@ -1711,7 +1711,7 @@ Constructs BatchListObjectChildren from required parameters
 #### `newBatchListObjectChildren'`
 
 ``` purescript
-newBatchListObjectChildren' :: ObjectReference -> ({ "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) } -> { "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }) -> BatchListObjectChildren
+newBatchListObjectChildren' :: ObjectReference -> ({ "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) } -> { "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }) -> BatchListObjectChildren
 ```
 
 Constructs BatchListObjectChildren's fields from required parameters
@@ -1720,7 +1720,7 @@ Constructs BatchListObjectChildren's fields from required parameters
 
 ``` purescript
 newtype BatchListObjectChildrenResponse
-  = BatchListObjectChildrenResponse { "Children" :: NullOrUndefined (LinkNameToObjectIdentifierMap), "NextToken" :: NullOrUndefined (NextToken) }
+  = BatchListObjectChildrenResponse { "Children" :: Maybe (LinkNameToObjectIdentifierMap), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a <a>ListObjectChildren</a> response operation.</p>
@@ -1745,7 +1745,7 @@ Constructs BatchListObjectChildrenResponse from required parameters
 #### `newBatchListObjectChildrenResponse'`
 
 ``` purescript
-newBatchListObjectChildrenResponse' :: ({ "Children" :: NullOrUndefined (LinkNameToObjectIdentifierMap), "NextToken" :: NullOrUndefined (NextToken) } -> { "Children" :: NullOrUndefined (LinkNameToObjectIdentifierMap), "NextToken" :: NullOrUndefined (NextToken) }) -> BatchListObjectChildrenResponse
+newBatchListObjectChildrenResponse' :: ({ "Children" :: Maybe (LinkNameToObjectIdentifierMap), "NextToken" :: Maybe (NextToken) } -> { "Children" :: Maybe (LinkNameToObjectIdentifierMap), "NextToken" :: Maybe (NextToken) }) -> BatchListObjectChildrenResponse
 ```
 
 Constructs BatchListObjectChildrenResponse's fields from required parameters
@@ -1754,7 +1754,7 @@ Constructs BatchListObjectChildrenResponse's fields from required parameters
 
 ``` purescript
 newtype BatchListObjectParentPaths
-  = BatchListObjectParentPaths { "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }
+  = BatchListObjectParentPaths { "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }
 ```
 
 <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectParentPaths</a> and <a>BatchReadRequest$Operations</a>.</p>
@@ -1779,7 +1779,7 @@ Constructs BatchListObjectParentPaths from required parameters
 #### `newBatchListObjectParentPaths'`
 
 ``` purescript
-newBatchListObjectParentPaths' :: ObjectReference -> ({ "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) } -> { "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }) -> BatchListObjectParentPaths
+newBatchListObjectParentPaths' :: ObjectReference -> ({ "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) } -> { "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }) -> BatchListObjectParentPaths
 ```
 
 Constructs BatchListObjectParentPaths's fields from required parameters
@@ -1788,7 +1788,7 @@ Constructs BatchListObjectParentPaths's fields from required parameters
 
 ``` purescript
 newtype BatchListObjectParentPathsResponse
-  = BatchListObjectParentPathsResponse { "PathToObjectIdentifiersList" :: NullOrUndefined (PathToObjectIdentifiersList), "NextToken" :: NullOrUndefined (NextToken) }
+  = BatchListObjectParentPathsResponse { "PathToObjectIdentifiersList" :: Maybe (PathToObjectIdentifiersList), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a <a>ListObjectParentPaths</a> response operation.</p>
@@ -1813,7 +1813,7 @@ Constructs BatchListObjectParentPathsResponse from required parameters
 #### `newBatchListObjectParentPathsResponse'`
 
 ``` purescript
-newBatchListObjectParentPathsResponse' :: ({ "PathToObjectIdentifiersList" :: NullOrUndefined (PathToObjectIdentifiersList), "NextToken" :: NullOrUndefined (NextToken) } -> { "PathToObjectIdentifiersList" :: NullOrUndefined (PathToObjectIdentifiersList), "NextToken" :: NullOrUndefined (NextToken) }) -> BatchListObjectParentPathsResponse
+newBatchListObjectParentPathsResponse' :: ({ "PathToObjectIdentifiersList" :: Maybe (PathToObjectIdentifiersList), "NextToken" :: Maybe (NextToken) } -> { "PathToObjectIdentifiersList" :: Maybe (PathToObjectIdentifiersList), "NextToken" :: Maybe (NextToken) }) -> BatchListObjectParentPathsResponse
 ```
 
 Constructs BatchListObjectParentPathsResponse's fields from required parameters
@@ -1822,7 +1822,7 @@ Constructs BatchListObjectParentPathsResponse's fields from required parameters
 
 ``` purescript
 newtype BatchListObjectPolicies
-  = BatchListObjectPolicies { "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }
+  = BatchListObjectPolicies { "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }
 ```
 
 <p>Returns policies attached to an object in pagination fashion inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectPolicies</a> and <a>BatchReadRequest$Operations</a>.</p>
@@ -1847,7 +1847,7 @@ Constructs BatchListObjectPolicies from required parameters
 #### `newBatchListObjectPolicies'`
 
 ``` purescript
-newBatchListObjectPolicies' :: ObjectReference -> ({ "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) } -> { "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }) -> BatchListObjectPolicies
+newBatchListObjectPolicies' :: ObjectReference -> ({ "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) } -> { "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }) -> BatchListObjectPolicies
 ```
 
 Constructs BatchListObjectPolicies's fields from required parameters
@@ -1856,7 +1856,7 @@ Constructs BatchListObjectPolicies's fields from required parameters
 
 ``` purescript
 newtype BatchListObjectPoliciesResponse
-  = BatchListObjectPoliciesResponse { "AttachedPolicyIds" :: NullOrUndefined (ObjectIdentifierList), "NextToken" :: NullOrUndefined (NextToken) }
+  = BatchListObjectPoliciesResponse { "AttachedPolicyIds" :: Maybe (ObjectIdentifierList), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a <a>ListObjectPolicies</a> response operation.</p>
@@ -1881,7 +1881,7 @@ Constructs BatchListObjectPoliciesResponse from required parameters
 #### `newBatchListObjectPoliciesResponse'`
 
 ``` purescript
-newBatchListObjectPoliciesResponse' :: ({ "AttachedPolicyIds" :: NullOrUndefined (ObjectIdentifierList), "NextToken" :: NullOrUndefined (NextToken) } -> { "AttachedPolicyIds" :: NullOrUndefined (ObjectIdentifierList), "NextToken" :: NullOrUndefined (NextToken) }) -> BatchListObjectPoliciesResponse
+newBatchListObjectPoliciesResponse' :: ({ "AttachedPolicyIds" :: Maybe (ObjectIdentifierList), "NextToken" :: Maybe (NextToken) } -> { "AttachedPolicyIds" :: Maybe (ObjectIdentifierList), "NextToken" :: Maybe (NextToken) }) -> BatchListObjectPoliciesResponse
 ```
 
 Constructs BatchListObjectPoliciesResponse's fields from required parameters
@@ -1890,7 +1890,7 @@ Constructs BatchListObjectPoliciesResponse's fields from required parameters
 
 ``` purescript
 newtype BatchListOutgoingTypedLinks
-  = BatchListOutgoingTypedLinks { "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList), "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }
+  = BatchListOutgoingTypedLinks { "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList), "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }
 ```
 
 <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListOutgoingTypedLinks</a> and <a>BatchReadRequest$Operations</a>.</p>
@@ -1915,7 +1915,7 @@ Constructs BatchListOutgoingTypedLinks from required parameters
 #### `newBatchListOutgoingTypedLinks'`
 
 ``` purescript
-newBatchListOutgoingTypedLinks' :: ObjectReference -> ({ "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList), "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) } -> { "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList), "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }) -> BatchListOutgoingTypedLinks
+newBatchListOutgoingTypedLinks' :: ObjectReference -> ({ "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList), "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) } -> { "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList), "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }) -> BatchListOutgoingTypedLinks
 ```
 
 Constructs BatchListOutgoingTypedLinks's fields from required parameters
@@ -1924,7 +1924,7 @@ Constructs BatchListOutgoingTypedLinks's fields from required parameters
 
 ``` purescript
 newtype BatchListOutgoingTypedLinksResponse
-  = BatchListOutgoingTypedLinksResponse { "TypedLinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList), "NextToken" :: NullOrUndefined (NextToken) }
+  = BatchListOutgoingTypedLinksResponse { "TypedLinkSpecifiers" :: Maybe (TypedLinkSpecifierList), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a <a>ListOutgoingTypedLinks</a> response operation.</p>
@@ -1949,7 +1949,7 @@ Constructs BatchListOutgoingTypedLinksResponse from required parameters
 #### `newBatchListOutgoingTypedLinksResponse'`
 
 ``` purescript
-newBatchListOutgoingTypedLinksResponse' :: ({ "TypedLinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList), "NextToken" :: NullOrUndefined (NextToken) } -> { "TypedLinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList), "NextToken" :: NullOrUndefined (NextToken) }) -> BatchListOutgoingTypedLinksResponse
+newBatchListOutgoingTypedLinksResponse' :: ({ "TypedLinkSpecifiers" :: Maybe (TypedLinkSpecifierList), "NextToken" :: Maybe (NextToken) } -> { "TypedLinkSpecifiers" :: Maybe (TypedLinkSpecifierList), "NextToken" :: Maybe (NextToken) }) -> BatchListOutgoingTypedLinksResponse
 ```
 
 Constructs BatchListOutgoingTypedLinksResponse's fields from required parameters
@@ -1958,7 +1958,7 @@ Constructs BatchListOutgoingTypedLinksResponse's fields from required parameters
 
 ``` purescript
 newtype BatchListPolicyAttachments
-  = BatchListPolicyAttachments { "PolicyReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }
+  = BatchListPolicyAttachments { "PolicyReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }
 ```
 
 <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached inside a <a>BatchRead</a> operation. For more information, see <a>ListPolicyAttachments</a> and <a>BatchReadRequest$Operations</a>.</p>
@@ -1983,7 +1983,7 @@ Constructs BatchListPolicyAttachments from required parameters
 #### `newBatchListPolicyAttachments'`
 
 ``` purescript
-newBatchListPolicyAttachments' :: ObjectReference -> ({ "PolicyReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) } -> { "PolicyReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }) -> BatchListPolicyAttachments
+newBatchListPolicyAttachments' :: ObjectReference -> ({ "PolicyReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) } -> { "PolicyReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }) -> BatchListPolicyAttachments
 ```
 
 Constructs BatchListPolicyAttachments's fields from required parameters
@@ -1992,7 +1992,7 @@ Constructs BatchListPolicyAttachments's fields from required parameters
 
 ``` purescript
 newtype BatchListPolicyAttachmentsResponse
-  = BatchListPolicyAttachmentsResponse { "ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList), "NextToken" :: NullOrUndefined (NextToken) }
+  = BatchListPolicyAttachmentsResponse { "ObjectIdentifiers" :: Maybe (ObjectIdentifierList), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a <a>ListPolicyAttachments</a> response operation.</p>
@@ -2017,7 +2017,7 @@ Constructs BatchListPolicyAttachmentsResponse from required parameters
 #### `newBatchListPolicyAttachmentsResponse'`
 
 ``` purescript
-newBatchListPolicyAttachmentsResponse' :: ({ "ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList), "NextToken" :: NullOrUndefined (NextToken) } -> { "ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList), "NextToken" :: NullOrUndefined (NextToken) }) -> BatchListPolicyAttachmentsResponse
+newBatchListPolicyAttachmentsResponse' :: ({ "ObjectIdentifiers" :: Maybe (ObjectIdentifierList), "NextToken" :: Maybe (NextToken) } -> { "ObjectIdentifiers" :: Maybe (ObjectIdentifierList), "NextToken" :: Maybe (NextToken) }) -> BatchListPolicyAttachmentsResponse
 ```
 
 Constructs BatchListPolicyAttachmentsResponse's fields from required parameters
@@ -2026,7 +2026,7 @@ Constructs BatchListPolicyAttachmentsResponse's fields from required parameters
 
 ``` purescript
 newtype BatchLookupPolicy
-  = BatchLookupPolicy { "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }
+  = BatchLookupPolicy { "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }
 ```
 
 <p>Lists all policies from the root of the Directory to the object specified inside a <a>BatchRead</a> operation. For more information, see <a>LookupPolicy</a> and <a>BatchReadRequest$Operations</a>.</p>
@@ -2051,7 +2051,7 @@ Constructs BatchLookupPolicy from required parameters
 #### `newBatchLookupPolicy'`
 
 ``` purescript
-newBatchLookupPolicy' :: ObjectReference -> ({ "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) } -> { "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }) -> BatchLookupPolicy
+newBatchLookupPolicy' :: ObjectReference -> ({ "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) } -> { "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }) -> BatchLookupPolicy
 ```
 
 Constructs BatchLookupPolicy's fields from required parameters
@@ -2060,7 +2060,7 @@ Constructs BatchLookupPolicy's fields from required parameters
 
 ``` purescript
 newtype BatchLookupPolicyResponse
-  = BatchLookupPolicyResponse { "PolicyToPathList" :: NullOrUndefined (PolicyToPathList), "NextToken" :: NullOrUndefined (NextToken) }
+  = BatchLookupPolicyResponse { "PolicyToPathList" :: Maybe (PolicyToPathList), "NextToken" :: Maybe (NextToken) }
 ```
 
 <p>Represents the output of a <a>LookupPolicy</a> response operation.</p>
@@ -2085,7 +2085,7 @@ Constructs BatchLookupPolicyResponse from required parameters
 #### `newBatchLookupPolicyResponse'`
 
 ``` purescript
-newBatchLookupPolicyResponse' :: ({ "PolicyToPathList" :: NullOrUndefined (PolicyToPathList), "NextToken" :: NullOrUndefined (NextToken) } -> { "PolicyToPathList" :: NullOrUndefined (PolicyToPathList), "NextToken" :: NullOrUndefined (NextToken) }) -> BatchLookupPolicyResponse
+newBatchLookupPolicyResponse' :: ({ "PolicyToPathList" :: Maybe (PolicyToPathList), "NextToken" :: Maybe (NextToken) } -> { "PolicyToPathList" :: Maybe (PolicyToPathList), "NextToken" :: Maybe (NextToken) }) -> BatchLookupPolicyResponse
 ```
 
 Constructs BatchLookupPolicyResponse's fields from required parameters
@@ -2110,7 +2110,7 @@ Encode BatchOperationIndex
 
 ``` purescript
 newtype BatchReadException
-  = BatchReadException { "Type" :: NullOrUndefined (BatchReadExceptionType), "Message" :: NullOrUndefined (ExceptionMessage) }
+  = BatchReadException { "Type" :: Maybe (BatchReadExceptionType), "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>The batch read exception structure, which contains the exception type and message.</p>
@@ -2135,7 +2135,7 @@ Constructs BatchReadException from required parameters
 #### `newBatchReadException'`
 
 ``` purescript
-newBatchReadException' :: ({ "Type" :: NullOrUndefined (BatchReadExceptionType), "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Type" :: NullOrUndefined (BatchReadExceptionType), "Message" :: NullOrUndefined (ExceptionMessage) }) -> BatchReadException
+newBatchReadException' :: ({ "Type" :: Maybe (BatchReadExceptionType), "Message" :: Maybe (ExceptionMessage) } -> { "Type" :: Maybe (BatchReadExceptionType), "Message" :: Maybe (ExceptionMessage) }) -> BatchReadException
 ```
 
 Constructs BatchReadException's fields from required parameters
@@ -2160,7 +2160,7 @@ Encode BatchReadExceptionType
 
 ``` purescript
 newtype BatchReadOperation
-  = BatchReadOperation { "ListObjectAttributes" :: NullOrUndefined (BatchListObjectAttributes), "ListObjectChildren" :: NullOrUndefined (BatchListObjectChildren), "ListAttachedIndices" :: NullOrUndefined (BatchListAttachedIndices), "ListObjectParentPaths" :: NullOrUndefined (BatchListObjectParentPaths), "GetObjectInformation" :: NullOrUndefined (BatchGetObjectInformation), "ListObjectPolicies" :: NullOrUndefined (BatchListObjectPolicies), "ListPolicyAttachments" :: NullOrUndefined (BatchListPolicyAttachments), "LookupPolicy" :: NullOrUndefined (BatchLookupPolicy), "ListIndex" :: NullOrUndefined (BatchListIndex), "ListOutgoingTypedLinks" :: NullOrUndefined (BatchListOutgoingTypedLinks), "ListIncomingTypedLinks" :: NullOrUndefined (BatchListIncomingTypedLinks) }
+  = BatchReadOperation { "ListObjectAttributes" :: Maybe (BatchListObjectAttributes), "ListObjectChildren" :: Maybe (BatchListObjectChildren), "ListAttachedIndices" :: Maybe (BatchListAttachedIndices), "ListObjectParentPaths" :: Maybe (BatchListObjectParentPaths), "GetObjectInformation" :: Maybe (BatchGetObjectInformation), "ListObjectPolicies" :: Maybe (BatchListObjectPolicies), "ListPolicyAttachments" :: Maybe (BatchListPolicyAttachments), "LookupPolicy" :: Maybe (BatchLookupPolicy), "ListIndex" :: Maybe (BatchListIndex), "ListOutgoingTypedLinks" :: Maybe (BatchListOutgoingTypedLinks), "ListIncomingTypedLinks" :: Maybe (BatchListIncomingTypedLinks) }
 ```
 
 <p>Represents the output of a <code>BatchRead</code> operation.</p>
@@ -2185,7 +2185,7 @@ Constructs BatchReadOperation from required parameters
 #### `newBatchReadOperation'`
 
 ``` purescript
-newBatchReadOperation' :: ({ "ListObjectAttributes" :: NullOrUndefined (BatchListObjectAttributes), "ListObjectChildren" :: NullOrUndefined (BatchListObjectChildren), "ListAttachedIndices" :: NullOrUndefined (BatchListAttachedIndices), "ListObjectParentPaths" :: NullOrUndefined (BatchListObjectParentPaths), "GetObjectInformation" :: NullOrUndefined (BatchGetObjectInformation), "ListObjectPolicies" :: NullOrUndefined (BatchListObjectPolicies), "ListPolicyAttachments" :: NullOrUndefined (BatchListPolicyAttachments), "LookupPolicy" :: NullOrUndefined (BatchLookupPolicy), "ListIndex" :: NullOrUndefined (BatchListIndex), "ListOutgoingTypedLinks" :: NullOrUndefined (BatchListOutgoingTypedLinks), "ListIncomingTypedLinks" :: NullOrUndefined (BatchListIncomingTypedLinks) } -> { "ListObjectAttributes" :: NullOrUndefined (BatchListObjectAttributes), "ListObjectChildren" :: NullOrUndefined (BatchListObjectChildren), "ListAttachedIndices" :: NullOrUndefined (BatchListAttachedIndices), "ListObjectParentPaths" :: NullOrUndefined (BatchListObjectParentPaths), "GetObjectInformation" :: NullOrUndefined (BatchGetObjectInformation), "ListObjectPolicies" :: NullOrUndefined (BatchListObjectPolicies), "ListPolicyAttachments" :: NullOrUndefined (BatchListPolicyAttachments), "LookupPolicy" :: NullOrUndefined (BatchLookupPolicy), "ListIndex" :: NullOrUndefined (BatchListIndex), "ListOutgoingTypedLinks" :: NullOrUndefined (BatchListOutgoingTypedLinks), "ListIncomingTypedLinks" :: NullOrUndefined (BatchListIncomingTypedLinks) }) -> BatchReadOperation
+newBatchReadOperation' :: ({ "ListObjectAttributes" :: Maybe (BatchListObjectAttributes), "ListObjectChildren" :: Maybe (BatchListObjectChildren), "ListAttachedIndices" :: Maybe (BatchListAttachedIndices), "ListObjectParentPaths" :: Maybe (BatchListObjectParentPaths), "GetObjectInformation" :: Maybe (BatchGetObjectInformation), "ListObjectPolicies" :: Maybe (BatchListObjectPolicies), "ListPolicyAttachments" :: Maybe (BatchListPolicyAttachments), "LookupPolicy" :: Maybe (BatchLookupPolicy), "ListIndex" :: Maybe (BatchListIndex), "ListOutgoingTypedLinks" :: Maybe (BatchListOutgoingTypedLinks), "ListIncomingTypedLinks" :: Maybe (BatchListIncomingTypedLinks) } -> { "ListObjectAttributes" :: Maybe (BatchListObjectAttributes), "ListObjectChildren" :: Maybe (BatchListObjectChildren), "ListAttachedIndices" :: Maybe (BatchListAttachedIndices), "ListObjectParentPaths" :: Maybe (BatchListObjectParentPaths), "GetObjectInformation" :: Maybe (BatchGetObjectInformation), "ListObjectPolicies" :: Maybe (BatchListObjectPolicies), "ListPolicyAttachments" :: Maybe (BatchListPolicyAttachments), "LookupPolicy" :: Maybe (BatchLookupPolicy), "ListIndex" :: Maybe (BatchListIndex), "ListOutgoingTypedLinks" :: Maybe (BatchListOutgoingTypedLinks), "ListIncomingTypedLinks" :: Maybe (BatchListIncomingTypedLinks) }) -> BatchReadOperation
 ```
 
 Constructs BatchReadOperation's fields from required parameters
@@ -2210,7 +2210,7 @@ Encode BatchReadOperationList
 
 ``` purescript
 newtype BatchReadOperationResponse
-  = BatchReadOperationResponse { "SuccessfulResponse" :: NullOrUndefined (BatchReadSuccessfulResponse), "ExceptionResponse" :: NullOrUndefined (BatchReadException) }
+  = BatchReadOperationResponse { "SuccessfulResponse" :: Maybe (BatchReadSuccessfulResponse), "ExceptionResponse" :: Maybe (BatchReadException) }
 ```
 
 <p>Represents the output of a <code>BatchRead</code> response operation.</p>
@@ -2235,7 +2235,7 @@ Constructs BatchReadOperationResponse from required parameters
 #### `newBatchReadOperationResponse'`
 
 ``` purescript
-newBatchReadOperationResponse' :: ({ "SuccessfulResponse" :: NullOrUndefined (BatchReadSuccessfulResponse), "ExceptionResponse" :: NullOrUndefined (BatchReadException) } -> { "SuccessfulResponse" :: NullOrUndefined (BatchReadSuccessfulResponse), "ExceptionResponse" :: NullOrUndefined (BatchReadException) }) -> BatchReadOperationResponse
+newBatchReadOperationResponse' :: ({ "SuccessfulResponse" :: Maybe (BatchReadSuccessfulResponse), "ExceptionResponse" :: Maybe (BatchReadException) } -> { "SuccessfulResponse" :: Maybe (BatchReadSuccessfulResponse), "ExceptionResponse" :: Maybe (BatchReadException) }) -> BatchReadOperationResponse
 ```
 
 Constructs BatchReadOperationResponse's fields from required parameters
@@ -2260,7 +2260,7 @@ Encode BatchReadOperationResponseList
 
 ``` purescript
 newtype BatchReadRequest
-  = BatchReadRequest { "DirectoryArn" :: Arn, "Operations" :: BatchReadOperationList, "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }
+  = BatchReadRequest { "DirectoryArn" :: Arn, "Operations" :: BatchReadOperationList, "ConsistencyLevel" :: Maybe (ConsistencyLevel) }
 ```
 
 ##### Instances
@@ -2283,7 +2283,7 @@ Constructs BatchReadRequest from required parameters
 #### `newBatchReadRequest'`
 
 ``` purescript
-newBatchReadRequest' :: Arn -> BatchReadOperationList -> ({ "DirectoryArn" :: Arn, "Operations" :: BatchReadOperationList, "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "Operations" :: BatchReadOperationList, "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }) -> BatchReadRequest
+newBatchReadRequest' :: Arn -> BatchReadOperationList -> ({ "DirectoryArn" :: Arn, "Operations" :: BatchReadOperationList, "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "Operations" :: BatchReadOperationList, "ConsistencyLevel" :: Maybe (ConsistencyLevel) }) -> BatchReadRequest
 ```
 
 Constructs BatchReadRequest's fields from required parameters
@@ -2292,7 +2292,7 @@ Constructs BatchReadRequest's fields from required parameters
 
 ``` purescript
 newtype BatchReadResponse
-  = BatchReadResponse { "Responses" :: NullOrUndefined (BatchReadOperationResponseList) }
+  = BatchReadResponse { "Responses" :: Maybe (BatchReadOperationResponseList) }
 ```
 
 ##### Instances
@@ -2315,7 +2315,7 @@ Constructs BatchReadResponse from required parameters
 #### `newBatchReadResponse'`
 
 ``` purescript
-newBatchReadResponse' :: ({ "Responses" :: NullOrUndefined (BatchReadOperationResponseList) } -> { "Responses" :: NullOrUndefined (BatchReadOperationResponseList) }) -> BatchReadResponse
+newBatchReadResponse' :: ({ "Responses" :: Maybe (BatchReadOperationResponseList) } -> { "Responses" :: Maybe (BatchReadOperationResponseList) }) -> BatchReadResponse
 ```
 
 Constructs BatchReadResponse's fields from required parameters
@@ -2324,7 +2324,7 @@ Constructs BatchReadResponse's fields from required parameters
 
 ``` purescript
 newtype BatchReadSuccessfulResponse
-  = BatchReadSuccessfulResponse { "ListObjectAttributes" :: NullOrUndefined (BatchListObjectAttributesResponse), "ListObjectChildren" :: NullOrUndefined (BatchListObjectChildrenResponse), "GetObjectInformation" :: NullOrUndefined (BatchGetObjectInformationResponse), "ListAttachedIndices" :: NullOrUndefined (BatchListAttachedIndicesResponse), "ListObjectParentPaths" :: NullOrUndefined (BatchListObjectParentPathsResponse), "ListObjectPolicies" :: NullOrUndefined (BatchListObjectPoliciesResponse), "ListPolicyAttachments" :: NullOrUndefined (BatchListPolicyAttachmentsResponse), "LookupPolicy" :: NullOrUndefined (BatchLookupPolicyResponse), "ListIndex" :: NullOrUndefined (BatchListIndexResponse), "ListOutgoingTypedLinks" :: NullOrUndefined (BatchListOutgoingTypedLinksResponse), "ListIncomingTypedLinks" :: NullOrUndefined (BatchListIncomingTypedLinksResponse) }
+  = BatchReadSuccessfulResponse { "ListObjectAttributes" :: Maybe (BatchListObjectAttributesResponse), "ListObjectChildren" :: Maybe (BatchListObjectChildrenResponse), "GetObjectInformation" :: Maybe (BatchGetObjectInformationResponse), "ListAttachedIndices" :: Maybe (BatchListAttachedIndicesResponse), "ListObjectParentPaths" :: Maybe (BatchListObjectParentPathsResponse), "ListObjectPolicies" :: Maybe (BatchListObjectPoliciesResponse), "ListPolicyAttachments" :: Maybe (BatchListPolicyAttachmentsResponse), "LookupPolicy" :: Maybe (BatchLookupPolicyResponse), "ListIndex" :: Maybe (BatchListIndexResponse), "ListOutgoingTypedLinks" :: Maybe (BatchListOutgoingTypedLinksResponse), "ListIncomingTypedLinks" :: Maybe (BatchListIncomingTypedLinksResponse) }
 ```
 
 <p>Represents the output of a <code>BatchRead</code> success response operation.</p>
@@ -2349,7 +2349,7 @@ Constructs BatchReadSuccessfulResponse from required parameters
 #### `newBatchReadSuccessfulResponse'`
 
 ``` purescript
-newBatchReadSuccessfulResponse' :: ({ "ListObjectAttributes" :: NullOrUndefined (BatchListObjectAttributesResponse), "ListObjectChildren" :: NullOrUndefined (BatchListObjectChildrenResponse), "GetObjectInformation" :: NullOrUndefined (BatchGetObjectInformationResponse), "ListAttachedIndices" :: NullOrUndefined (BatchListAttachedIndicesResponse), "ListObjectParentPaths" :: NullOrUndefined (BatchListObjectParentPathsResponse), "ListObjectPolicies" :: NullOrUndefined (BatchListObjectPoliciesResponse), "ListPolicyAttachments" :: NullOrUndefined (BatchListPolicyAttachmentsResponse), "LookupPolicy" :: NullOrUndefined (BatchLookupPolicyResponse), "ListIndex" :: NullOrUndefined (BatchListIndexResponse), "ListOutgoingTypedLinks" :: NullOrUndefined (BatchListOutgoingTypedLinksResponse), "ListIncomingTypedLinks" :: NullOrUndefined (BatchListIncomingTypedLinksResponse) } -> { "ListObjectAttributes" :: NullOrUndefined (BatchListObjectAttributesResponse), "ListObjectChildren" :: NullOrUndefined (BatchListObjectChildrenResponse), "GetObjectInformation" :: NullOrUndefined (BatchGetObjectInformationResponse), "ListAttachedIndices" :: NullOrUndefined (BatchListAttachedIndicesResponse), "ListObjectParentPaths" :: NullOrUndefined (BatchListObjectParentPathsResponse), "ListObjectPolicies" :: NullOrUndefined (BatchListObjectPoliciesResponse), "ListPolicyAttachments" :: NullOrUndefined (BatchListPolicyAttachmentsResponse), "LookupPolicy" :: NullOrUndefined (BatchLookupPolicyResponse), "ListIndex" :: NullOrUndefined (BatchListIndexResponse), "ListOutgoingTypedLinks" :: NullOrUndefined (BatchListOutgoingTypedLinksResponse), "ListIncomingTypedLinks" :: NullOrUndefined (BatchListIncomingTypedLinksResponse) }) -> BatchReadSuccessfulResponse
+newBatchReadSuccessfulResponse' :: ({ "ListObjectAttributes" :: Maybe (BatchListObjectAttributesResponse), "ListObjectChildren" :: Maybe (BatchListObjectChildrenResponse), "GetObjectInformation" :: Maybe (BatchGetObjectInformationResponse), "ListAttachedIndices" :: Maybe (BatchListAttachedIndicesResponse), "ListObjectParentPaths" :: Maybe (BatchListObjectParentPathsResponse), "ListObjectPolicies" :: Maybe (BatchListObjectPoliciesResponse), "ListPolicyAttachments" :: Maybe (BatchListPolicyAttachmentsResponse), "LookupPolicy" :: Maybe (BatchLookupPolicyResponse), "ListIndex" :: Maybe (BatchListIndexResponse), "ListOutgoingTypedLinks" :: Maybe (BatchListOutgoingTypedLinksResponse), "ListIncomingTypedLinks" :: Maybe (BatchListIncomingTypedLinksResponse) } -> { "ListObjectAttributes" :: Maybe (BatchListObjectAttributesResponse), "ListObjectChildren" :: Maybe (BatchListObjectChildrenResponse), "GetObjectInformation" :: Maybe (BatchGetObjectInformationResponse), "ListAttachedIndices" :: Maybe (BatchListAttachedIndicesResponse), "ListObjectParentPaths" :: Maybe (BatchListObjectParentPathsResponse), "ListObjectPolicies" :: Maybe (BatchListObjectPoliciesResponse), "ListPolicyAttachments" :: Maybe (BatchListPolicyAttachmentsResponse), "LookupPolicy" :: Maybe (BatchLookupPolicyResponse), "ListIndex" :: Maybe (BatchListIndexResponse), "ListOutgoingTypedLinks" :: Maybe (BatchListOutgoingTypedLinksResponse), "ListIncomingTypedLinks" :: Maybe (BatchListIncomingTypedLinksResponse) }) -> BatchReadSuccessfulResponse
 ```
 
 Constructs BatchReadSuccessfulResponse's fields from required parameters
@@ -2460,7 +2460,7 @@ Constructs BatchUpdateObjectAttributes's fields from required parameters
 
 ``` purescript
 newtype BatchUpdateObjectAttributesResponse
-  = BatchUpdateObjectAttributesResponse { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }
+  = BatchUpdateObjectAttributesResponse { "ObjectIdentifier" :: Maybe (ObjectIdentifier) }
 ```
 
 <p>Represents the output of a <code>BatchUpdate</code> response operation.</p>
@@ -2485,7 +2485,7 @@ Constructs BatchUpdateObjectAttributesResponse from required parameters
 #### `newBatchUpdateObjectAttributesResponse'`
 
 ``` purescript
-newBatchUpdateObjectAttributesResponse' :: ({ "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }) -> BatchUpdateObjectAttributesResponse
+newBatchUpdateObjectAttributesResponse' :: ({ "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> { "ObjectIdentifier" :: Maybe (ObjectIdentifier) }) -> BatchUpdateObjectAttributesResponse
 ```
 
 Constructs BatchUpdateObjectAttributesResponse's fields from required parameters
@@ -2494,7 +2494,7 @@ Constructs BatchUpdateObjectAttributesResponse's fields from required parameters
 
 ``` purescript
 newtype BatchWriteException
-  = BatchWriteException { "Index" :: NullOrUndefined (BatchOperationIndex), "Type" :: NullOrUndefined (BatchWriteExceptionType), "Message" :: NullOrUndefined (ExceptionMessage) }
+  = BatchWriteException { "Index" :: Maybe (BatchOperationIndex), "Type" :: Maybe (BatchWriteExceptionType), "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>A <code>BatchWrite</code> exception has occurred.</p>
@@ -2519,7 +2519,7 @@ Constructs BatchWriteException from required parameters
 #### `newBatchWriteException'`
 
 ``` purescript
-newBatchWriteException' :: ({ "Index" :: NullOrUndefined (BatchOperationIndex), "Type" :: NullOrUndefined (BatchWriteExceptionType), "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Index" :: NullOrUndefined (BatchOperationIndex), "Type" :: NullOrUndefined (BatchWriteExceptionType), "Message" :: NullOrUndefined (ExceptionMessage) }) -> BatchWriteException
+newBatchWriteException' :: ({ "Index" :: Maybe (BatchOperationIndex), "Type" :: Maybe (BatchWriteExceptionType), "Message" :: Maybe (ExceptionMessage) } -> { "Index" :: Maybe (BatchOperationIndex), "Type" :: Maybe (BatchWriteExceptionType), "Message" :: Maybe (ExceptionMessage) }) -> BatchWriteException
 ```
 
 Constructs BatchWriteException's fields from required parameters
@@ -2544,7 +2544,7 @@ Encode BatchWriteExceptionType
 
 ``` purescript
 newtype BatchWriteOperation
-  = BatchWriteOperation { "CreateObject" :: NullOrUndefined (BatchCreateObject), "AttachObject" :: NullOrUndefined (BatchAttachObject), "DetachObject" :: NullOrUndefined (BatchDetachObject), "UpdateObjectAttributes" :: NullOrUndefined (BatchUpdateObjectAttributes), "DeleteObject" :: NullOrUndefined (BatchDeleteObject), "AddFacetToObject" :: NullOrUndefined (BatchAddFacetToObject), "RemoveFacetFromObject" :: NullOrUndefined (BatchRemoveFacetFromObject), "AttachPolicy" :: NullOrUndefined (BatchAttachPolicy), "DetachPolicy" :: NullOrUndefined (BatchDetachPolicy), "CreateIndex" :: NullOrUndefined (BatchCreateIndex), "AttachToIndex" :: NullOrUndefined (BatchAttachToIndex), "DetachFromIndex" :: NullOrUndefined (BatchDetachFromIndex), "AttachTypedLink" :: NullOrUndefined (BatchAttachTypedLink), "DetachTypedLink" :: NullOrUndefined (BatchDetachTypedLink) }
+  = BatchWriteOperation { "CreateObject" :: Maybe (BatchCreateObject), "AttachObject" :: Maybe (BatchAttachObject), "DetachObject" :: Maybe (BatchDetachObject), "UpdateObjectAttributes" :: Maybe (BatchUpdateObjectAttributes), "DeleteObject" :: Maybe (BatchDeleteObject), "AddFacetToObject" :: Maybe (BatchAddFacetToObject), "RemoveFacetFromObject" :: Maybe (BatchRemoveFacetFromObject), "AttachPolicy" :: Maybe (BatchAttachPolicy), "DetachPolicy" :: Maybe (BatchDetachPolicy), "CreateIndex" :: Maybe (BatchCreateIndex), "AttachToIndex" :: Maybe (BatchAttachToIndex), "DetachFromIndex" :: Maybe (BatchDetachFromIndex), "AttachTypedLink" :: Maybe (BatchAttachTypedLink), "DetachTypedLink" :: Maybe (BatchDetachTypedLink) }
 ```
 
 <p>Represents the output of a <code>BatchWrite</code> operation. </p>
@@ -2569,7 +2569,7 @@ Constructs BatchWriteOperation from required parameters
 #### `newBatchWriteOperation'`
 
 ``` purescript
-newBatchWriteOperation' :: ({ "CreateObject" :: NullOrUndefined (BatchCreateObject), "AttachObject" :: NullOrUndefined (BatchAttachObject), "DetachObject" :: NullOrUndefined (BatchDetachObject), "UpdateObjectAttributes" :: NullOrUndefined (BatchUpdateObjectAttributes), "DeleteObject" :: NullOrUndefined (BatchDeleteObject), "AddFacetToObject" :: NullOrUndefined (BatchAddFacetToObject), "RemoveFacetFromObject" :: NullOrUndefined (BatchRemoveFacetFromObject), "AttachPolicy" :: NullOrUndefined (BatchAttachPolicy), "DetachPolicy" :: NullOrUndefined (BatchDetachPolicy), "CreateIndex" :: NullOrUndefined (BatchCreateIndex), "AttachToIndex" :: NullOrUndefined (BatchAttachToIndex), "DetachFromIndex" :: NullOrUndefined (BatchDetachFromIndex), "AttachTypedLink" :: NullOrUndefined (BatchAttachTypedLink), "DetachTypedLink" :: NullOrUndefined (BatchDetachTypedLink) } -> { "CreateObject" :: NullOrUndefined (BatchCreateObject), "AttachObject" :: NullOrUndefined (BatchAttachObject), "DetachObject" :: NullOrUndefined (BatchDetachObject), "UpdateObjectAttributes" :: NullOrUndefined (BatchUpdateObjectAttributes), "DeleteObject" :: NullOrUndefined (BatchDeleteObject), "AddFacetToObject" :: NullOrUndefined (BatchAddFacetToObject), "RemoveFacetFromObject" :: NullOrUndefined (BatchRemoveFacetFromObject), "AttachPolicy" :: NullOrUndefined (BatchAttachPolicy), "DetachPolicy" :: NullOrUndefined (BatchDetachPolicy), "CreateIndex" :: NullOrUndefined (BatchCreateIndex), "AttachToIndex" :: NullOrUndefined (BatchAttachToIndex), "DetachFromIndex" :: NullOrUndefined (BatchDetachFromIndex), "AttachTypedLink" :: NullOrUndefined (BatchAttachTypedLink), "DetachTypedLink" :: NullOrUndefined (BatchDetachTypedLink) }) -> BatchWriteOperation
+newBatchWriteOperation' :: ({ "CreateObject" :: Maybe (BatchCreateObject), "AttachObject" :: Maybe (BatchAttachObject), "DetachObject" :: Maybe (BatchDetachObject), "UpdateObjectAttributes" :: Maybe (BatchUpdateObjectAttributes), "DeleteObject" :: Maybe (BatchDeleteObject), "AddFacetToObject" :: Maybe (BatchAddFacetToObject), "RemoveFacetFromObject" :: Maybe (BatchRemoveFacetFromObject), "AttachPolicy" :: Maybe (BatchAttachPolicy), "DetachPolicy" :: Maybe (BatchDetachPolicy), "CreateIndex" :: Maybe (BatchCreateIndex), "AttachToIndex" :: Maybe (BatchAttachToIndex), "DetachFromIndex" :: Maybe (BatchDetachFromIndex), "AttachTypedLink" :: Maybe (BatchAttachTypedLink), "DetachTypedLink" :: Maybe (BatchDetachTypedLink) } -> { "CreateObject" :: Maybe (BatchCreateObject), "AttachObject" :: Maybe (BatchAttachObject), "DetachObject" :: Maybe (BatchDetachObject), "UpdateObjectAttributes" :: Maybe (BatchUpdateObjectAttributes), "DeleteObject" :: Maybe (BatchDeleteObject), "AddFacetToObject" :: Maybe (BatchAddFacetToObject), "RemoveFacetFromObject" :: Maybe (BatchRemoveFacetFromObject), "AttachPolicy" :: Maybe (BatchAttachPolicy), "DetachPolicy" :: Maybe (BatchDetachPolicy), "CreateIndex" :: Maybe (BatchCreateIndex), "AttachToIndex" :: Maybe (BatchAttachToIndex), "DetachFromIndex" :: Maybe (BatchDetachFromIndex), "AttachTypedLink" :: Maybe (BatchAttachTypedLink), "DetachTypedLink" :: Maybe (BatchDetachTypedLink) }) -> BatchWriteOperation
 ```
 
 Constructs BatchWriteOperation's fields from required parameters
@@ -2594,7 +2594,7 @@ Encode BatchWriteOperationList
 
 ``` purescript
 newtype BatchWriteOperationResponse
-  = BatchWriteOperationResponse { "CreateObject" :: NullOrUndefined (BatchCreateObjectResponse), "AttachObject" :: NullOrUndefined (BatchAttachObjectResponse), "DetachObject" :: NullOrUndefined (BatchDetachObjectResponse), "UpdateObjectAttributes" :: NullOrUndefined (BatchUpdateObjectAttributesResponse), "DeleteObject" :: NullOrUndefined (BatchDeleteObjectResponse), "AddFacetToObject" :: NullOrUndefined (BatchAddFacetToObjectResponse), "RemoveFacetFromObject" :: NullOrUndefined (BatchRemoveFacetFromObjectResponse), "AttachPolicy" :: NullOrUndefined (BatchAttachPolicyResponse), "DetachPolicy" :: NullOrUndefined (BatchDetachPolicyResponse), "CreateIndex" :: NullOrUndefined (BatchCreateIndexResponse), "AttachToIndex" :: NullOrUndefined (BatchAttachToIndexResponse), "DetachFromIndex" :: NullOrUndefined (BatchDetachFromIndexResponse), "AttachTypedLink" :: NullOrUndefined (BatchAttachTypedLinkResponse), "DetachTypedLink" :: NullOrUndefined (BatchDetachTypedLinkResponse) }
+  = BatchWriteOperationResponse { "CreateObject" :: Maybe (BatchCreateObjectResponse), "AttachObject" :: Maybe (BatchAttachObjectResponse), "DetachObject" :: Maybe (BatchDetachObjectResponse), "UpdateObjectAttributes" :: Maybe (BatchUpdateObjectAttributesResponse), "DeleteObject" :: Maybe (BatchDeleteObjectResponse), "AddFacetToObject" :: Maybe (BatchAddFacetToObjectResponse), "RemoveFacetFromObject" :: Maybe (BatchRemoveFacetFromObjectResponse), "AttachPolicy" :: Maybe (BatchAttachPolicyResponse), "DetachPolicy" :: Maybe (BatchDetachPolicyResponse), "CreateIndex" :: Maybe (BatchCreateIndexResponse), "AttachToIndex" :: Maybe (BatchAttachToIndexResponse), "DetachFromIndex" :: Maybe (BatchDetachFromIndexResponse), "AttachTypedLink" :: Maybe (BatchAttachTypedLinkResponse), "DetachTypedLink" :: Maybe (BatchDetachTypedLinkResponse) }
 ```
 
 <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
@@ -2619,7 +2619,7 @@ Constructs BatchWriteOperationResponse from required parameters
 #### `newBatchWriteOperationResponse'`
 
 ``` purescript
-newBatchWriteOperationResponse' :: ({ "CreateObject" :: NullOrUndefined (BatchCreateObjectResponse), "AttachObject" :: NullOrUndefined (BatchAttachObjectResponse), "DetachObject" :: NullOrUndefined (BatchDetachObjectResponse), "UpdateObjectAttributes" :: NullOrUndefined (BatchUpdateObjectAttributesResponse), "DeleteObject" :: NullOrUndefined (BatchDeleteObjectResponse), "AddFacetToObject" :: NullOrUndefined (BatchAddFacetToObjectResponse), "RemoveFacetFromObject" :: NullOrUndefined (BatchRemoveFacetFromObjectResponse), "AttachPolicy" :: NullOrUndefined (BatchAttachPolicyResponse), "DetachPolicy" :: NullOrUndefined (BatchDetachPolicyResponse), "CreateIndex" :: NullOrUndefined (BatchCreateIndexResponse), "AttachToIndex" :: NullOrUndefined (BatchAttachToIndexResponse), "DetachFromIndex" :: NullOrUndefined (BatchDetachFromIndexResponse), "AttachTypedLink" :: NullOrUndefined (BatchAttachTypedLinkResponse), "DetachTypedLink" :: NullOrUndefined (BatchDetachTypedLinkResponse) } -> { "CreateObject" :: NullOrUndefined (BatchCreateObjectResponse), "AttachObject" :: NullOrUndefined (BatchAttachObjectResponse), "DetachObject" :: NullOrUndefined (BatchDetachObjectResponse), "UpdateObjectAttributes" :: NullOrUndefined (BatchUpdateObjectAttributesResponse), "DeleteObject" :: NullOrUndefined (BatchDeleteObjectResponse), "AddFacetToObject" :: NullOrUndefined (BatchAddFacetToObjectResponse), "RemoveFacetFromObject" :: NullOrUndefined (BatchRemoveFacetFromObjectResponse), "AttachPolicy" :: NullOrUndefined (BatchAttachPolicyResponse), "DetachPolicy" :: NullOrUndefined (BatchDetachPolicyResponse), "CreateIndex" :: NullOrUndefined (BatchCreateIndexResponse), "AttachToIndex" :: NullOrUndefined (BatchAttachToIndexResponse), "DetachFromIndex" :: NullOrUndefined (BatchDetachFromIndexResponse), "AttachTypedLink" :: NullOrUndefined (BatchAttachTypedLinkResponse), "DetachTypedLink" :: NullOrUndefined (BatchDetachTypedLinkResponse) }) -> BatchWriteOperationResponse
+newBatchWriteOperationResponse' :: ({ "CreateObject" :: Maybe (BatchCreateObjectResponse), "AttachObject" :: Maybe (BatchAttachObjectResponse), "DetachObject" :: Maybe (BatchDetachObjectResponse), "UpdateObjectAttributes" :: Maybe (BatchUpdateObjectAttributesResponse), "DeleteObject" :: Maybe (BatchDeleteObjectResponse), "AddFacetToObject" :: Maybe (BatchAddFacetToObjectResponse), "RemoveFacetFromObject" :: Maybe (BatchRemoveFacetFromObjectResponse), "AttachPolicy" :: Maybe (BatchAttachPolicyResponse), "DetachPolicy" :: Maybe (BatchDetachPolicyResponse), "CreateIndex" :: Maybe (BatchCreateIndexResponse), "AttachToIndex" :: Maybe (BatchAttachToIndexResponse), "DetachFromIndex" :: Maybe (BatchDetachFromIndexResponse), "AttachTypedLink" :: Maybe (BatchAttachTypedLinkResponse), "DetachTypedLink" :: Maybe (BatchDetachTypedLinkResponse) } -> { "CreateObject" :: Maybe (BatchCreateObjectResponse), "AttachObject" :: Maybe (BatchAttachObjectResponse), "DetachObject" :: Maybe (BatchDetachObjectResponse), "UpdateObjectAttributes" :: Maybe (BatchUpdateObjectAttributesResponse), "DeleteObject" :: Maybe (BatchDeleteObjectResponse), "AddFacetToObject" :: Maybe (BatchAddFacetToObjectResponse), "RemoveFacetFromObject" :: Maybe (BatchRemoveFacetFromObjectResponse), "AttachPolicy" :: Maybe (BatchAttachPolicyResponse), "DetachPolicy" :: Maybe (BatchDetachPolicyResponse), "CreateIndex" :: Maybe (BatchCreateIndexResponse), "AttachToIndex" :: Maybe (BatchAttachToIndexResponse), "DetachFromIndex" :: Maybe (BatchDetachFromIndexResponse), "AttachTypedLink" :: Maybe (BatchAttachTypedLinkResponse), "DetachTypedLink" :: Maybe (BatchDetachTypedLinkResponse) }) -> BatchWriteOperationResponse
 ```
 
 Constructs BatchWriteOperationResponse's fields from required parameters
@@ -2676,7 +2676,7 @@ Constructs BatchWriteRequest's fields from required parameters
 
 ``` purescript
 newtype BatchWriteResponse
-  = BatchWriteResponse { "Responses" :: NullOrUndefined (BatchWriteOperationResponseList) }
+  = BatchWriteResponse { "Responses" :: Maybe (BatchWriteOperationResponseList) }
 ```
 
 ##### Instances
@@ -2699,7 +2699,7 @@ Constructs BatchWriteResponse from required parameters
 #### `newBatchWriteResponse'`
 
 ``` purescript
-newBatchWriteResponse' :: ({ "Responses" :: NullOrUndefined (BatchWriteOperationResponseList) } -> { "Responses" :: NullOrUndefined (BatchWriteOperationResponseList) }) -> BatchWriteResponse
+newBatchWriteResponse' :: ({ "Responses" :: Maybe (BatchWriteOperationResponseList) } -> { "Responses" :: Maybe (BatchWriteOperationResponseList) }) -> BatchWriteResponse
 ```
 
 Constructs BatchWriteResponse's fields from required parameters
@@ -2756,7 +2756,7 @@ Encode BooleanAttributeValue
 
 ``` purescript
 newtype CannotListParentOfRootException
-  = CannotListParentOfRootException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = CannotListParentOfRootException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Cannot list the parents of a <a>Directory</a> root.</p>
@@ -2781,7 +2781,7 @@ Constructs CannotListParentOfRootException from required parameters
 #### `newCannotListParentOfRootException'`
 
 ``` purescript
-newCannotListParentOfRootException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> CannotListParentOfRootException
+newCannotListParentOfRootException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> CannotListParentOfRootException
 ```
 
 Constructs CannotListParentOfRootException's fields from required parameters
@@ -2870,7 +2870,7 @@ Constructs CreateDirectoryResponse's fields from required parameters
 
 ``` purescript
 newtype CreateFacetRequest
-  = CreateFacetRequest { "SchemaArn" :: Arn, "Name" :: FacetName, "Attributes" :: NullOrUndefined (FacetAttributeList), "ObjectType" :: ObjectType }
+  = CreateFacetRequest { "SchemaArn" :: Arn, "Name" :: FacetName, "Attributes" :: Maybe (FacetAttributeList), "ObjectType" :: ObjectType }
 ```
 
 ##### Instances
@@ -2893,7 +2893,7 @@ Constructs CreateFacetRequest from required parameters
 #### `newCreateFacetRequest'`
 
 ``` purescript
-newCreateFacetRequest' :: FacetName -> ObjectType -> Arn -> ({ "SchemaArn" :: Arn, "Name" :: FacetName, "Attributes" :: NullOrUndefined (FacetAttributeList), "ObjectType" :: ObjectType } -> { "SchemaArn" :: Arn, "Name" :: FacetName, "Attributes" :: NullOrUndefined (FacetAttributeList), "ObjectType" :: ObjectType }) -> CreateFacetRequest
+newCreateFacetRequest' :: FacetName -> ObjectType -> Arn -> ({ "SchemaArn" :: Arn, "Name" :: FacetName, "Attributes" :: Maybe (FacetAttributeList), "ObjectType" :: ObjectType } -> { "SchemaArn" :: Arn, "Name" :: FacetName, "Attributes" :: Maybe (FacetAttributeList), "ObjectType" :: ObjectType }) -> CreateFacetRequest
 ```
 
 Constructs CreateFacetRequest's fields from required parameters
@@ -2918,7 +2918,7 @@ Encode CreateFacetResponse
 
 ``` purescript
 newtype CreateIndexRequest
-  = CreateIndexRequest { "DirectoryArn" :: Arn, "OrderedIndexedAttributeList" :: AttributeKeyList, "IsUnique" :: Bool, "ParentReference" :: NullOrUndefined (ObjectReference), "LinkName" :: NullOrUndefined (LinkName) }
+  = CreateIndexRequest { "DirectoryArn" :: Arn, "OrderedIndexedAttributeList" :: AttributeKeyList, "IsUnique" :: Bool, "ParentReference" :: Maybe (ObjectReference), "LinkName" :: Maybe (LinkName) }
 ```
 
 ##### Instances
@@ -2941,7 +2941,7 @@ Constructs CreateIndexRequest from required parameters
 #### `newCreateIndexRequest'`
 
 ``` purescript
-newCreateIndexRequest' :: Arn -> Bool -> AttributeKeyList -> ({ "DirectoryArn" :: Arn, "OrderedIndexedAttributeList" :: AttributeKeyList, "IsUnique" :: Bool, "ParentReference" :: NullOrUndefined (ObjectReference), "LinkName" :: NullOrUndefined (LinkName) } -> { "DirectoryArn" :: Arn, "OrderedIndexedAttributeList" :: AttributeKeyList, "IsUnique" :: Bool, "ParentReference" :: NullOrUndefined (ObjectReference), "LinkName" :: NullOrUndefined (LinkName) }) -> CreateIndexRequest
+newCreateIndexRequest' :: Arn -> Bool -> AttributeKeyList -> ({ "DirectoryArn" :: Arn, "OrderedIndexedAttributeList" :: AttributeKeyList, "IsUnique" :: Bool, "ParentReference" :: Maybe (ObjectReference), "LinkName" :: Maybe (LinkName) } -> { "DirectoryArn" :: Arn, "OrderedIndexedAttributeList" :: AttributeKeyList, "IsUnique" :: Bool, "ParentReference" :: Maybe (ObjectReference), "LinkName" :: Maybe (LinkName) }) -> CreateIndexRequest
 ```
 
 Constructs CreateIndexRequest's fields from required parameters
@@ -2950,7 +2950,7 @@ Constructs CreateIndexRequest's fields from required parameters
 
 ``` purescript
 newtype CreateIndexResponse
-  = CreateIndexResponse { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }
+  = CreateIndexResponse { "ObjectIdentifier" :: Maybe (ObjectIdentifier) }
 ```
 
 ##### Instances
@@ -2973,7 +2973,7 @@ Constructs CreateIndexResponse from required parameters
 #### `newCreateIndexResponse'`
 
 ``` purescript
-newCreateIndexResponse' :: ({ "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }) -> CreateIndexResponse
+newCreateIndexResponse' :: ({ "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> { "ObjectIdentifier" :: Maybe (ObjectIdentifier) }) -> CreateIndexResponse
 ```
 
 Constructs CreateIndexResponse's fields from required parameters
@@ -2982,7 +2982,7 @@ Constructs CreateIndexResponse's fields from required parameters
 
 ``` purescript
 newtype CreateObjectRequest
-  = CreateObjectRequest { "DirectoryArn" :: Arn, "SchemaFacets" :: SchemaFacetList, "ObjectAttributeList" :: NullOrUndefined (AttributeKeyAndValueList), "ParentReference" :: NullOrUndefined (ObjectReference), "LinkName" :: NullOrUndefined (LinkName) }
+  = CreateObjectRequest { "DirectoryArn" :: Arn, "SchemaFacets" :: SchemaFacetList, "ObjectAttributeList" :: Maybe (AttributeKeyAndValueList), "ParentReference" :: Maybe (ObjectReference), "LinkName" :: Maybe (LinkName) }
 ```
 
 ##### Instances
@@ -3005,7 +3005,7 @@ Constructs CreateObjectRequest from required parameters
 #### `newCreateObjectRequest'`
 
 ``` purescript
-newCreateObjectRequest' :: Arn -> SchemaFacetList -> ({ "DirectoryArn" :: Arn, "SchemaFacets" :: SchemaFacetList, "ObjectAttributeList" :: NullOrUndefined (AttributeKeyAndValueList), "ParentReference" :: NullOrUndefined (ObjectReference), "LinkName" :: NullOrUndefined (LinkName) } -> { "DirectoryArn" :: Arn, "SchemaFacets" :: SchemaFacetList, "ObjectAttributeList" :: NullOrUndefined (AttributeKeyAndValueList), "ParentReference" :: NullOrUndefined (ObjectReference), "LinkName" :: NullOrUndefined (LinkName) }) -> CreateObjectRequest
+newCreateObjectRequest' :: Arn -> SchemaFacetList -> ({ "DirectoryArn" :: Arn, "SchemaFacets" :: SchemaFacetList, "ObjectAttributeList" :: Maybe (AttributeKeyAndValueList), "ParentReference" :: Maybe (ObjectReference), "LinkName" :: Maybe (LinkName) } -> { "DirectoryArn" :: Arn, "SchemaFacets" :: SchemaFacetList, "ObjectAttributeList" :: Maybe (AttributeKeyAndValueList), "ParentReference" :: Maybe (ObjectReference), "LinkName" :: Maybe (LinkName) }) -> CreateObjectRequest
 ```
 
 Constructs CreateObjectRequest's fields from required parameters
@@ -3014,7 +3014,7 @@ Constructs CreateObjectRequest's fields from required parameters
 
 ``` purescript
 newtype CreateObjectResponse
-  = CreateObjectResponse { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }
+  = CreateObjectResponse { "ObjectIdentifier" :: Maybe (ObjectIdentifier) }
 ```
 
 ##### Instances
@@ -3037,7 +3037,7 @@ Constructs CreateObjectResponse from required parameters
 #### `newCreateObjectResponse'`
 
 ``` purescript
-newCreateObjectResponse' :: ({ "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }) -> CreateObjectResponse
+newCreateObjectResponse' :: ({ "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> { "ObjectIdentifier" :: Maybe (ObjectIdentifier) }) -> CreateObjectResponse
 ```
 
 Constructs CreateObjectResponse's fields from required parameters
@@ -3078,7 +3078,7 @@ Constructs CreateSchemaRequest's fields from required parameters
 
 ``` purescript
 newtype CreateSchemaResponse
-  = CreateSchemaResponse { "SchemaArn" :: NullOrUndefined (Arn) }
+  = CreateSchemaResponse { "SchemaArn" :: Maybe (Arn) }
 ```
 
 ##### Instances
@@ -3101,7 +3101,7 @@ Constructs CreateSchemaResponse from required parameters
 #### `newCreateSchemaResponse'`
 
 ``` purescript
-newCreateSchemaResponse' :: ({ "SchemaArn" :: NullOrUndefined (Arn) } -> { "SchemaArn" :: NullOrUndefined (Arn) }) -> CreateSchemaResponse
+newCreateSchemaResponse' :: ({ "SchemaArn" :: Maybe (Arn) } -> { "SchemaArn" :: Maybe (Arn) }) -> CreateSchemaResponse
 ```
 
 Constructs CreateSchemaResponse's fields from required parameters
@@ -3382,7 +3382,7 @@ Constructs DeleteSchemaRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteSchemaResponse
-  = DeleteSchemaResponse { "SchemaArn" :: NullOrUndefined (Arn) }
+  = DeleteSchemaResponse { "SchemaArn" :: Maybe (Arn) }
 ```
 
 ##### Instances
@@ -3405,7 +3405,7 @@ Constructs DeleteSchemaResponse from required parameters
 #### `newDeleteSchemaResponse'`
 
 ``` purescript
-newDeleteSchemaResponse' :: ({ "SchemaArn" :: NullOrUndefined (Arn) } -> { "SchemaArn" :: NullOrUndefined (Arn) }) -> DeleteSchemaResponse
+newDeleteSchemaResponse' :: ({ "SchemaArn" :: Maybe (Arn) } -> { "SchemaArn" :: Maybe (Arn) }) -> DeleteSchemaResponse
 ```
 
 Constructs DeleteSchemaResponse's fields from required parameters
@@ -3494,7 +3494,7 @@ Constructs DetachFromIndexRequest's fields from required parameters
 
 ``` purescript
 newtype DetachFromIndexResponse
-  = DetachFromIndexResponse { "DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }
+  = DetachFromIndexResponse { "DetachedObjectIdentifier" :: Maybe (ObjectIdentifier) }
 ```
 
 ##### Instances
@@ -3517,7 +3517,7 @@ Constructs DetachFromIndexResponse from required parameters
 #### `newDetachFromIndexResponse'`
 
 ``` purescript
-newDetachFromIndexResponse' :: ({ "DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> { "DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }) -> DetachFromIndexResponse
+newDetachFromIndexResponse' :: ({ "DetachedObjectIdentifier" :: Maybe (ObjectIdentifier) } -> { "DetachedObjectIdentifier" :: Maybe (ObjectIdentifier) }) -> DetachFromIndexResponse
 ```
 
 Constructs DetachFromIndexResponse's fields from required parameters
@@ -3558,7 +3558,7 @@ Constructs DetachObjectRequest's fields from required parameters
 
 ``` purescript
 newtype DetachObjectResponse
-  = DetachObjectResponse { "DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }
+  = DetachObjectResponse { "DetachedObjectIdentifier" :: Maybe (ObjectIdentifier) }
 ```
 
 ##### Instances
@@ -3581,7 +3581,7 @@ Constructs DetachObjectResponse from required parameters
 #### `newDetachObjectResponse'`
 
 ``` purescript
-newDetachObjectResponse' :: ({ "DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> { "DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }) -> DetachObjectResponse
+newDetachObjectResponse' :: ({ "DetachedObjectIdentifier" :: Maybe (ObjectIdentifier) } -> { "DetachedObjectIdentifier" :: Maybe (ObjectIdentifier) }) -> DetachObjectResponse
 ```
 
 Constructs DetachObjectResponse's fields from required parameters
@@ -3670,7 +3670,7 @@ Constructs DetachTypedLinkRequest's fields from required parameters
 
 ``` purescript
 newtype Directory
-  = Directory { "Name" :: NullOrUndefined (DirectoryName), "DirectoryArn" :: NullOrUndefined (DirectoryArn), "State" :: NullOrUndefined (DirectoryState), "CreationDateTime" :: NullOrUndefined (Date) }
+  = Directory { "Name" :: Maybe (DirectoryName), "DirectoryArn" :: Maybe (DirectoryArn), "State" :: Maybe (DirectoryState), "CreationDateTime" :: Maybe (Date) }
 ```
 
 <p>Directory structure that includes the directory name and directory ARN.</p>
@@ -3695,7 +3695,7 @@ Constructs Directory from required parameters
 #### `newDirectory'`
 
 ``` purescript
-newDirectory' :: ({ "Name" :: NullOrUndefined (DirectoryName), "DirectoryArn" :: NullOrUndefined (DirectoryArn), "State" :: NullOrUndefined (DirectoryState), "CreationDateTime" :: NullOrUndefined (Date) } -> { "Name" :: NullOrUndefined (DirectoryName), "DirectoryArn" :: NullOrUndefined (DirectoryArn), "State" :: NullOrUndefined (DirectoryState), "CreationDateTime" :: NullOrUndefined (Date) }) -> Directory
+newDirectory' :: ({ "Name" :: Maybe (DirectoryName), "DirectoryArn" :: Maybe (DirectoryArn), "State" :: Maybe (DirectoryState), "CreationDateTime" :: Maybe (Date) } -> { "Name" :: Maybe (DirectoryName), "DirectoryArn" :: Maybe (DirectoryArn), "State" :: Maybe (DirectoryState), "CreationDateTime" :: Maybe (Date) }) -> Directory
 ```
 
 Constructs Directory's fields from required parameters
@@ -3704,7 +3704,7 @@ Constructs Directory's fields from required parameters
 
 ``` purescript
 newtype DirectoryAlreadyExistsException
-  = DirectoryAlreadyExistsException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = DirectoryAlreadyExistsException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Indicates that a <a>Directory</a> could not be created due to a naming conflict. Choose a different name and try again.</p>
@@ -3729,7 +3729,7 @@ Constructs DirectoryAlreadyExistsException from required parameters
 #### `newDirectoryAlreadyExistsException'`
 
 ``` purescript
-newDirectoryAlreadyExistsException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> DirectoryAlreadyExistsException
+newDirectoryAlreadyExistsException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> DirectoryAlreadyExistsException
 ```
 
 Constructs DirectoryAlreadyExistsException's fields from required parameters
@@ -3754,7 +3754,7 @@ Encode DirectoryArn
 
 ``` purescript
 newtype DirectoryDeletedException
-  = DirectoryDeletedException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = DirectoryDeletedException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>A directory that has been deleted and to which access has been attempted. Note: The requested resource will eventually cease to exist.</p>
@@ -3779,7 +3779,7 @@ Constructs DirectoryDeletedException from required parameters
 #### `newDirectoryDeletedException'`
 
 ``` purescript
-newDirectoryDeletedException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> DirectoryDeletedException
+newDirectoryDeletedException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> DirectoryDeletedException
 ```
 
 Constructs DirectoryDeletedException's fields from required parameters
@@ -3820,7 +3820,7 @@ Encode DirectoryName
 
 ``` purescript
 newtype DirectoryNotDisabledException
-  = DirectoryNotDisabledException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = DirectoryNotDisabledException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>An operation can only operate on a disabled directory.</p>
@@ -3845,7 +3845,7 @@ Constructs DirectoryNotDisabledException from required parameters
 #### `newDirectoryNotDisabledException'`
 
 ``` purescript
-newDirectoryNotDisabledException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> DirectoryNotDisabledException
+newDirectoryNotDisabledException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> DirectoryNotDisabledException
 ```
 
 Constructs DirectoryNotDisabledException's fields from required parameters
@@ -3854,7 +3854,7 @@ Constructs DirectoryNotDisabledException's fields from required parameters
 
 ``` purescript
 newtype DirectoryNotEnabledException
-  = DirectoryNotEnabledException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = DirectoryNotEnabledException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>An operation can only operate on a directory that is not enabled.</p>
@@ -3879,7 +3879,7 @@ Constructs DirectoryNotEnabledException from required parameters
 #### `newDirectoryNotEnabledException'`
 
 ``` purescript
-newDirectoryNotEnabledException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> DirectoryNotEnabledException
+newDirectoryNotEnabledException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> DirectoryNotEnabledException
 ```
 
 Constructs DirectoryNotEnabledException's fields from required parameters
@@ -4048,7 +4048,7 @@ Encode ExceptionMessage
 
 ``` purescript
 newtype Facet
-  = Facet { "Name" :: NullOrUndefined (FacetName), "ObjectType" :: NullOrUndefined (ObjectType) }
+  = Facet { "Name" :: Maybe (FacetName), "ObjectType" :: Maybe (ObjectType) }
 ```
 
 <p>A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <a>Rule</a>s, and <code>ObjectTypes</code>.</p>
@@ -4073,7 +4073,7 @@ Constructs Facet from required parameters
 #### `newFacet'`
 
 ``` purescript
-newFacet' :: ({ "Name" :: NullOrUndefined (FacetName), "ObjectType" :: NullOrUndefined (ObjectType) } -> { "Name" :: NullOrUndefined (FacetName), "ObjectType" :: NullOrUndefined (ObjectType) }) -> Facet
+newFacet' :: ({ "Name" :: Maybe (FacetName), "ObjectType" :: Maybe (ObjectType) } -> { "Name" :: Maybe (FacetName), "ObjectType" :: Maybe (ObjectType) }) -> Facet
 ```
 
 Constructs Facet's fields from required parameters
@@ -4082,7 +4082,7 @@ Constructs Facet's fields from required parameters
 
 ``` purescript
 newtype FacetAlreadyExistsException
-  = FacetAlreadyExistsException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = FacetAlreadyExistsException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>A facet with the same name already exists.</p>
@@ -4107,7 +4107,7 @@ Constructs FacetAlreadyExistsException from required parameters
 #### `newFacetAlreadyExistsException'`
 
 ``` purescript
-newFacetAlreadyExistsException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> FacetAlreadyExistsException
+newFacetAlreadyExistsException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> FacetAlreadyExistsException
 ```
 
 Constructs FacetAlreadyExistsException's fields from required parameters
@@ -4116,7 +4116,7 @@ Constructs FacetAlreadyExistsException's fields from required parameters
 
 ``` purescript
 newtype FacetAttribute
-  = FacetAttribute { "Name" :: AttributeName, "AttributeDefinition" :: NullOrUndefined (FacetAttributeDefinition), "AttributeReference" :: NullOrUndefined (FacetAttributeReference), "RequiredBehavior" :: NullOrUndefined (RequiredAttributeBehavior) }
+  = FacetAttribute { "Name" :: AttributeName, "AttributeDefinition" :: Maybe (FacetAttributeDefinition), "AttributeReference" :: Maybe (FacetAttributeReference), "RequiredBehavior" :: Maybe (RequiredAttributeBehavior) }
 ```
 
 <p>An attribute that is associated with the <a>Facet</a>.</p>
@@ -4141,7 +4141,7 @@ Constructs FacetAttribute from required parameters
 #### `newFacetAttribute'`
 
 ``` purescript
-newFacetAttribute' :: AttributeName -> ({ "Name" :: AttributeName, "AttributeDefinition" :: NullOrUndefined (FacetAttributeDefinition), "AttributeReference" :: NullOrUndefined (FacetAttributeReference), "RequiredBehavior" :: NullOrUndefined (RequiredAttributeBehavior) } -> { "Name" :: AttributeName, "AttributeDefinition" :: NullOrUndefined (FacetAttributeDefinition), "AttributeReference" :: NullOrUndefined (FacetAttributeReference), "RequiredBehavior" :: NullOrUndefined (RequiredAttributeBehavior) }) -> FacetAttribute
+newFacetAttribute' :: AttributeName -> ({ "Name" :: AttributeName, "AttributeDefinition" :: Maybe (FacetAttributeDefinition), "AttributeReference" :: Maybe (FacetAttributeReference), "RequiredBehavior" :: Maybe (RequiredAttributeBehavior) } -> { "Name" :: AttributeName, "AttributeDefinition" :: Maybe (FacetAttributeDefinition), "AttributeReference" :: Maybe (FacetAttributeReference), "RequiredBehavior" :: Maybe (RequiredAttributeBehavior) }) -> FacetAttribute
 ```
 
 Constructs FacetAttribute's fields from required parameters
@@ -4150,7 +4150,7 @@ Constructs FacetAttribute's fields from required parameters
 
 ``` purescript
 newtype FacetAttributeDefinition
-  = FacetAttributeDefinition { "Type" :: FacetAttributeType, "DefaultValue" :: NullOrUndefined (TypedAttributeValue), "IsImmutable" :: NullOrUndefined (Bool), "Rules" :: NullOrUndefined (RuleMap) }
+  = FacetAttributeDefinition { "Type" :: FacetAttributeType, "DefaultValue" :: Maybe (TypedAttributeValue), "IsImmutable" :: Maybe (Bool), "Rules" :: Maybe (RuleMap) }
 ```
 
 <p>A facet attribute definition. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute References</a> for more information.</p>
@@ -4175,7 +4175,7 @@ Constructs FacetAttributeDefinition from required parameters
 #### `newFacetAttributeDefinition'`
 
 ``` purescript
-newFacetAttributeDefinition' :: FacetAttributeType -> ({ "Type" :: FacetAttributeType, "DefaultValue" :: NullOrUndefined (TypedAttributeValue), "IsImmutable" :: NullOrUndefined (Bool), "Rules" :: NullOrUndefined (RuleMap) } -> { "Type" :: FacetAttributeType, "DefaultValue" :: NullOrUndefined (TypedAttributeValue), "IsImmutable" :: NullOrUndefined (Bool), "Rules" :: NullOrUndefined (RuleMap) }) -> FacetAttributeDefinition
+newFacetAttributeDefinition' :: FacetAttributeType -> ({ "Type" :: FacetAttributeType, "DefaultValue" :: Maybe (TypedAttributeValue), "IsImmutable" :: Maybe (Bool), "Rules" :: Maybe (RuleMap) } -> { "Type" :: FacetAttributeType, "DefaultValue" :: Maybe (TypedAttributeValue), "IsImmutable" :: Maybe (Bool), "Rules" :: Maybe (RuleMap) }) -> FacetAttributeDefinition
 ```
 
 Constructs FacetAttributeDefinition's fields from required parameters
@@ -4250,7 +4250,7 @@ Encode FacetAttributeType
 
 ``` purescript
 newtype FacetAttributeUpdate
-  = FacetAttributeUpdate { "Attribute" :: NullOrUndefined (FacetAttribute), "Action" :: NullOrUndefined (UpdateActionType) }
+  = FacetAttributeUpdate { "Attribute" :: Maybe (FacetAttribute), "Action" :: Maybe (UpdateActionType) }
 ```
 
 <p>A structure that contains information used to update an attribute.</p>
@@ -4275,7 +4275,7 @@ Constructs FacetAttributeUpdate from required parameters
 #### `newFacetAttributeUpdate'`
 
 ``` purescript
-newFacetAttributeUpdate' :: ({ "Attribute" :: NullOrUndefined (FacetAttribute), "Action" :: NullOrUndefined (UpdateActionType) } -> { "Attribute" :: NullOrUndefined (FacetAttribute), "Action" :: NullOrUndefined (UpdateActionType) }) -> FacetAttributeUpdate
+newFacetAttributeUpdate' :: ({ "Attribute" :: Maybe (FacetAttribute), "Action" :: Maybe (UpdateActionType) } -> { "Attribute" :: Maybe (FacetAttribute), "Action" :: Maybe (UpdateActionType) }) -> FacetAttributeUpdate
 ```
 
 Constructs FacetAttributeUpdate's fields from required parameters
@@ -4300,7 +4300,7 @@ Encode FacetAttributeUpdateList
 
 ``` purescript
 newtype FacetInUseException
-  = FacetInUseException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = FacetInUseException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Occurs when deleting a facet that contains an attribute that is a target to an attribute reference in a different facet.</p>
@@ -4325,7 +4325,7 @@ Constructs FacetInUseException from required parameters
 #### `newFacetInUseException'`
 
 ``` purescript
-newFacetInUseException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> FacetInUseException
+newFacetInUseException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> FacetInUseException
 ```
 
 Constructs FacetInUseException's fields from required parameters
@@ -4366,7 +4366,7 @@ Encode FacetNameList
 
 ``` purescript
 newtype FacetNotFoundException
-  = FacetNotFoundException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = FacetNotFoundException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>The specified <a>Facet</a> could not be found.</p>
@@ -4391,7 +4391,7 @@ Constructs FacetNotFoundException from required parameters
 #### `newFacetNotFoundException'`
 
 ``` purescript
-newFacetNotFoundException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> FacetNotFoundException
+newFacetNotFoundException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> FacetNotFoundException
 ```
 
 Constructs FacetNotFoundException's fields from required parameters
@@ -4400,7 +4400,7 @@ Constructs FacetNotFoundException's fields from required parameters
 
 ``` purescript
 newtype FacetValidationException
-  = FacetValidationException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = FacetValidationException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.</p>
@@ -4425,7 +4425,7 @@ Constructs FacetValidationException from required parameters
 #### `newFacetValidationException'`
 
 ``` purescript
-newFacetValidationException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> FacetValidationException
+newFacetValidationException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> FacetValidationException
 ```
 
 Constructs FacetValidationException's fields from required parameters
@@ -4466,7 +4466,7 @@ Constructs GetAppliedSchemaVersionRequest's fields from required parameters
 
 ``` purescript
 newtype GetAppliedSchemaVersionResponse
-  = GetAppliedSchemaVersionResponse { "AppliedSchemaArn" :: NullOrUndefined (Arn) }
+  = GetAppliedSchemaVersionResponse { "AppliedSchemaArn" :: Maybe (Arn) }
 ```
 
 ##### Instances
@@ -4489,7 +4489,7 @@ Constructs GetAppliedSchemaVersionResponse from required parameters
 #### `newGetAppliedSchemaVersionResponse'`
 
 ``` purescript
-newGetAppliedSchemaVersionResponse' :: ({ "AppliedSchemaArn" :: NullOrUndefined (Arn) } -> { "AppliedSchemaArn" :: NullOrUndefined (Arn) }) -> GetAppliedSchemaVersionResponse
+newGetAppliedSchemaVersionResponse' :: ({ "AppliedSchemaArn" :: Maybe (Arn) } -> { "AppliedSchemaArn" :: Maybe (Arn) }) -> GetAppliedSchemaVersionResponse
 ```
 
 Constructs GetAppliedSchemaVersionResponse's fields from required parameters
@@ -4594,7 +4594,7 @@ Constructs GetFacetRequest's fields from required parameters
 
 ``` purescript
 newtype GetFacetResponse
-  = GetFacetResponse { "Facet" :: NullOrUndefined (Facet) }
+  = GetFacetResponse { "Facet" :: Maybe (Facet) }
 ```
 
 ##### Instances
@@ -4617,7 +4617,7 @@ Constructs GetFacetResponse from required parameters
 #### `newGetFacetResponse'`
 
 ``` purescript
-newGetFacetResponse' :: ({ "Facet" :: NullOrUndefined (Facet) } -> { "Facet" :: NullOrUndefined (Facet) }) -> GetFacetResponse
+newGetFacetResponse' :: ({ "Facet" :: Maybe (Facet) } -> { "Facet" :: Maybe (Facet) }) -> GetFacetResponse
 ```
 
 Constructs GetFacetResponse's fields from required parameters
@@ -4626,7 +4626,7 @@ Constructs GetFacetResponse's fields from required parameters
 
 ``` purescript
 newtype GetObjectInformationRequest
-  = GetObjectInformationRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }
+  = GetObjectInformationRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "ConsistencyLevel" :: Maybe (ConsistencyLevel) }
 ```
 
 ##### Instances
@@ -4649,7 +4649,7 @@ Constructs GetObjectInformationRequest from required parameters
 #### `newGetObjectInformationRequest'`
 
 ``` purescript
-newGetObjectInformationRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }) -> GetObjectInformationRequest
+newGetObjectInformationRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "ConsistencyLevel" :: Maybe (ConsistencyLevel) }) -> GetObjectInformationRequest
 ```
 
 Constructs GetObjectInformationRequest's fields from required parameters
@@ -4658,7 +4658,7 @@ Constructs GetObjectInformationRequest's fields from required parameters
 
 ``` purescript
 newtype GetObjectInformationResponse
-  = GetObjectInformationResponse { "SchemaFacets" :: NullOrUndefined (SchemaFacetList), "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }
+  = GetObjectInformationResponse { "SchemaFacets" :: Maybe (SchemaFacetList), "ObjectIdentifier" :: Maybe (ObjectIdentifier) }
 ```
 
 ##### Instances
@@ -4681,7 +4681,7 @@ Constructs GetObjectInformationResponse from required parameters
 #### `newGetObjectInformationResponse'`
 
 ``` purescript
-newGetObjectInformationResponse' :: ({ "SchemaFacets" :: NullOrUndefined (SchemaFacetList), "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> { "SchemaFacets" :: NullOrUndefined (SchemaFacetList), "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }) -> GetObjectInformationResponse
+newGetObjectInformationResponse' :: ({ "SchemaFacets" :: Maybe (SchemaFacetList), "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> { "SchemaFacets" :: Maybe (SchemaFacetList), "ObjectIdentifier" :: Maybe (ObjectIdentifier) }) -> GetObjectInformationResponse
 ```
 
 Constructs GetObjectInformationResponse's fields from required parameters
@@ -4722,7 +4722,7 @@ Constructs GetSchemaAsJsonRequest's fields from required parameters
 
 ``` purescript
 newtype GetSchemaAsJsonResponse
-  = GetSchemaAsJsonResponse { "Name" :: NullOrUndefined (SchemaName), "Document" :: NullOrUndefined (SchemaJsonDocument) }
+  = GetSchemaAsJsonResponse { "Name" :: Maybe (SchemaName), "Document" :: Maybe (SchemaJsonDocument) }
 ```
 
 ##### Instances
@@ -4745,7 +4745,7 @@ Constructs GetSchemaAsJsonResponse from required parameters
 #### `newGetSchemaAsJsonResponse'`
 
 ``` purescript
-newGetSchemaAsJsonResponse' :: ({ "Name" :: NullOrUndefined (SchemaName), "Document" :: NullOrUndefined (SchemaJsonDocument) } -> { "Name" :: NullOrUndefined (SchemaName), "Document" :: NullOrUndefined (SchemaJsonDocument) }) -> GetSchemaAsJsonResponse
+newGetSchemaAsJsonResponse' :: ({ "Name" :: Maybe (SchemaName), "Document" :: Maybe (SchemaJsonDocument) } -> { "Name" :: Maybe (SchemaName), "Document" :: Maybe (SchemaJsonDocument) }) -> GetSchemaAsJsonResponse
 ```
 
 Constructs GetSchemaAsJsonResponse's fields from required parameters
@@ -4786,7 +4786,7 @@ Constructs GetTypedLinkFacetInformationRequest's fields from required parameters
 
 ``` purescript
 newtype GetTypedLinkFacetInformationResponse
-  = GetTypedLinkFacetInformationResponse { "IdentityAttributeOrder" :: NullOrUndefined (AttributeNameList) }
+  = GetTypedLinkFacetInformationResponse { "IdentityAttributeOrder" :: Maybe (AttributeNameList) }
 ```
 
 ##### Instances
@@ -4809,7 +4809,7 @@ Constructs GetTypedLinkFacetInformationResponse from required parameters
 #### `newGetTypedLinkFacetInformationResponse'`
 
 ``` purescript
-newGetTypedLinkFacetInformationResponse' :: ({ "IdentityAttributeOrder" :: NullOrUndefined (AttributeNameList) } -> { "IdentityAttributeOrder" :: NullOrUndefined (AttributeNameList) }) -> GetTypedLinkFacetInformationResponse
+newGetTypedLinkFacetInformationResponse' :: ({ "IdentityAttributeOrder" :: Maybe (AttributeNameList) } -> { "IdentityAttributeOrder" :: Maybe (AttributeNameList) }) -> GetTypedLinkFacetInformationResponse
 ```
 
 Constructs GetTypedLinkFacetInformationResponse's fields from required parameters
@@ -4818,7 +4818,7 @@ Constructs GetTypedLinkFacetInformationResponse's fields from required parameter
 
 ``` purescript
 newtype IncompatibleSchemaException
-  = IncompatibleSchemaException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = IncompatibleSchemaException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Indicates a failure occurred while performing a check for backward compatibility between the specified schema and the schema that is currently applied to the directory.</p>
@@ -4843,7 +4843,7 @@ Constructs IncompatibleSchemaException from required parameters
 #### `newIncompatibleSchemaException'`
 
 ``` purescript
-newIncompatibleSchemaException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> IncompatibleSchemaException
+newIncompatibleSchemaException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> IncompatibleSchemaException
 ```
 
 Constructs IncompatibleSchemaException's fields from required parameters
@@ -4852,7 +4852,7 @@ Constructs IncompatibleSchemaException's fields from required parameters
 
 ``` purescript
 newtype IndexAttachment
-  = IndexAttachment { "IndexedAttributes" :: NullOrUndefined (AttributeKeyAndValueList), "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }
+  = IndexAttachment { "IndexedAttributes" :: Maybe (AttributeKeyAndValueList), "ObjectIdentifier" :: Maybe (ObjectIdentifier) }
 ```
 
 <p>Represents an index and an attached object.</p>
@@ -4877,7 +4877,7 @@ Constructs IndexAttachment from required parameters
 #### `newIndexAttachment'`
 
 ``` purescript
-newIndexAttachment' :: ({ "IndexedAttributes" :: NullOrUndefined (AttributeKeyAndValueList), "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> { "IndexedAttributes" :: NullOrUndefined (AttributeKeyAndValueList), "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }) -> IndexAttachment
+newIndexAttachment' :: ({ "IndexedAttributes" :: Maybe (AttributeKeyAndValueList), "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> { "IndexedAttributes" :: Maybe (AttributeKeyAndValueList), "ObjectIdentifier" :: Maybe (ObjectIdentifier) }) -> IndexAttachment
 ```
 
 Constructs IndexAttachment's fields from required parameters
@@ -4902,7 +4902,7 @@ Encode IndexAttachmentList
 
 ``` purescript
 newtype IndexedAttributeMissingException
-  = IndexedAttributeMissingException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = IndexedAttributeMissingException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>An object has been attempted to be attached to an object that does not have the appropriate attribute value.</p>
@@ -4927,7 +4927,7 @@ Constructs IndexedAttributeMissingException from required parameters
 #### `newIndexedAttributeMissingException'`
 
 ``` purescript
-newIndexedAttributeMissingException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> IndexedAttributeMissingException
+newIndexedAttributeMissingException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> IndexedAttributeMissingException
 ```
 
 Constructs IndexedAttributeMissingException's fields from required parameters
@@ -4936,7 +4936,7 @@ Constructs IndexedAttributeMissingException's fields from required parameters
 
 ``` purescript
 newtype InternalServiceException
-  = InternalServiceException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = InternalServiceException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
@@ -4961,7 +4961,7 @@ Constructs InternalServiceException from required parameters
 #### `newInternalServiceException'`
 
 ``` purescript
-newInternalServiceException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> InternalServiceException
+newInternalServiceException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> InternalServiceException
 ```
 
 Constructs InternalServiceException's fields from required parameters
@@ -4970,7 +4970,7 @@ Constructs InternalServiceException's fields from required parameters
 
 ``` purescript
 newtype InvalidArnException
-  = InvalidArnException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = InvalidArnException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Indicates that the provided ARN value is not valid.</p>
@@ -4995,7 +4995,7 @@ Constructs InvalidArnException from required parameters
 #### `newInvalidArnException'`
 
 ``` purescript
-newInvalidArnException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> InvalidArnException
+newInvalidArnException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> InvalidArnException
 ```
 
 Constructs InvalidArnException's fields from required parameters
@@ -5004,7 +5004,7 @@ Constructs InvalidArnException's fields from required parameters
 
 ``` purescript
 newtype InvalidAttachmentException
-  = InvalidAttachmentException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = InvalidAttachmentException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Indicates that an attempt to attach an object with the same link name or to apply a schema with the same name has occurred. Rename the link or the schema and then try again.</p>
@@ -5029,7 +5029,7 @@ Constructs InvalidAttachmentException from required parameters
 #### `newInvalidAttachmentException'`
 
 ``` purescript
-newInvalidAttachmentException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> InvalidAttachmentException
+newInvalidAttachmentException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> InvalidAttachmentException
 ```
 
 Constructs InvalidAttachmentException's fields from required parameters
@@ -5038,7 +5038,7 @@ Constructs InvalidAttachmentException's fields from required parameters
 
 ``` purescript
 newtype InvalidFacetUpdateException
-  = InvalidFacetUpdateException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = InvalidFacetUpdateException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>An attempt to modify a <a>Facet</a> resulted in an invalid schema exception.</p>
@@ -5063,7 +5063,7 @@ Constructs InvalidFacetUpdateException from required parameters
 #### `newInvalidFacetUpdateException'`
 
 ``` purescript
-newInvalidFacetUpdateException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> InvalidFacetUpdateException
+newInvalidFacetUpdateException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> InvalidFacetUpdateException
 ```
 
 Constructs InvalidFacetUpdateException's fields from required parameters
@@ -5072,7 +5072,7 @@ Constructs InvalidFacetUpdateException's fields from required parameters
 
 ``` purescript
 newtype InvalidNextTokenException
-  = InvalidNextTokenException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = InvalidNextTokenException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Indicates that the <code>NextToken</code> value is not valid.</p>
@@ -5097,7 +5097,7 @@ Constructs InvalidNextTokenException from required parameters
 #### `newInvalidNextTokenException'`
 
 ``` purescript
-newInvalidNextTokenException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> InvalidNextTokenException
+newInvalidNextTokenException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> InvalidNextTokenException
 ```
 
 Constructs InvalidNextTokenException's fields from required parameters
@@ -5106,7 +5106,7 @@ Constructs InvalidNextTokenException's fields from required parameters
 
 ``` purescript
 newtype InvalidRuleException
-  = InvalidRuleException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = InvalidRuleException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Occurs when any of the rule parameter keys or values are invalid.</p>
@@ -5131,7 +5131,7 @@ Constructs InvalidRuleException from required parameters
 #### `newInvalidRuleException'`
 
 ``` purescript
-newInvalidRuleException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> InvalidRuleException
+newInvalidRuleException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> InvalidRuleException
 ```
 
 Constructs InvalidRuleException's fields from required parameters
@@ -5140,7 +5140,7 @@ Constructs InvalidRuleException's fields from required parameters
 
 ``` purescript
 newtype InvalidSchemaDocException
-  = InvalidSchemaDocException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = InvalidSchemaDocException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Indicates that the provided <code>SchemaDoc</code> value is not valid.</p>
@@ -5165,7 +5165,7 @@ Constructs InvalidSchemaDocException from required parameters
 #### `newInvalidSchemaDocException'`
 
 ``` purescript
-newInvalidSchemaDocException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> InvalidSchemaDocException
+newInvalidSchemaDocException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> InvalidSchemaDocException
 ```
 
 Constructs InvalidSchemaDocException's fields from required parameters
@@ -5174,7 +5174,7 @@ Constructs InvalidSchemaDocException's fields from required parameters
 
 ``` purescript
 newtype InvalidTaggingRequestException
-  = InvalidTaggingRequestException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = InvalidTaggingRequestException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Can occur for multiple reasons such as when you tag a resource that doesn’t exist or if you specify a higher number of tags for a resource than the allowed limit. Allowed limit is 50 tags per resource.</p>
@@ -5199,7 +5199,7 @@ Constructs InvalidTaggingRequestException from required parameters
 #### `newInvalidTaggingRequestException'`
 
 ``` purescript
-newInvalidTaggingRequestException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> InvalidTaggingRequestException
+newInvalidTaggingRequestException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> InvalidTaggingRequestException
 ```
 
 Constructs InvalidTaggingRequestException's fields from required parameters
@@ -5208,7 +5208,7 @@ Constructs InvalidTaggingRequestException's fields from required parameters
 
 ``` purescript
 newtype LimitExceededException
-  = LimitExceededException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = LimitExceededException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more information.</p>
@@ -5233,7 +5233,7 @@ Constructs LimitExceededException from required parameters
 #### `newLimitExceededException'`
 
 ``` purescript
-newLimitExceededException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> LimitExceededException
+newLimitExceededException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> LimitExceededException
 ```
 
 Constructs LimitExceededException's fields from required parameters
@@ -5258,7 +5258,7 @@ Encode LinkName
 
 ``` purescript
 newtype LinkNameAlreadyInUseException
-  = LinkNameAlreadyInUseException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = LinkNameAlreadyInUseException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Indicates that a link could not be created due to a naming conflict. Choose a different name and then try again.</p>
@@ -5283,7 +5283,7 @@ Constructs LinkNameAlreadyInUseException from required parameters
 #### `newLinkNameAlreadyInUseException'`
 
 ``` purescript
-newLinkNameAlreadyInUseException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> LinkNameAlreadyInUseException
+newLinkNameAlreadyInUseException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> LinkNameAlreadyInUseException
 ```
 
 Constructs LinkNameAlreadyInUseException's fields from required parameters
@@ -5308,7 +5308,7 @@ Encode LinkNameToObjectIdentifierMap
 
 ``` purescript
 newtype ListAppliedSchemaArnsRequest
-  = ListAppliedSchemaArnsRequest { "DirectoryArn" :: Arn, "SchemaArn" :: NullOrUndefined (Arn), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }
+  = ListAppliedSchemaArnsRequest { "DirectoryArn" :: Arn, "SchemaArn" :: Maybe (Arn), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }
 ```
 
 ##### Instances
@@ -5331,7 +5331,7 @@ Constructs ListAppliedSchemaArnsRequest from required parameters
 #### `newListAppliedSchemaArnsRequest'`
 
 ``` purescript
-newListAppliedSchemaArnsRequest' :: Arn -> ({ "DirectoryArn" :: Arn, "SchemaArn" :: NullOrUndefined (Arn), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) } -> { "DirectoryArn" :: Arn, "SchemaArn" :: NullOrUndefined (Arn), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }) -> ListAppliedSchemaArnsRequest
+newListAppliedSchemaArnsRequest' :: Arn -> ({ "DirectoryArn" :: Arn, "SchemaArn" :: Maybe (Arn), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) } -> { "DirectoryArn" :: Arn, "SchemaArn" :: Maybe (Arn), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }) -> ListAppliedSchemaArnsRequest
 ```
 
 Constructs ListAppliedSchemaArnsRequest's fields from required parameters
@@ -5340,7 +5340,7 @@ Constructs ListAppliedSchemaArnsRequest's fields from required parameters
 
 ``` purescript
 newtype ListAppliedSchemaArnsResponse
-  = ListAppliedSchemaArnsResponse { "SchemaArns" :: NullOrUndefined (Arns), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListAppliedSchemaArnsResponse { "SchemaArns" :: Maybe (Arns), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -5363,7 +5363,7 @@ Constructs ListAppliedSchemaArnsResponse from required parameters
 #### `newListAppliedSchemaArnsResponse'`
 
 ``` purescript
-newListAppliedSchemaArnsResponse' :: ({ "SchemaArns" :: NullOrUndefined (Arns), "NextToken" :: NullOrUndefined (NextToken) } -> { "SchemaArns" :: NullOrUndefined (Arns), "NextToken" :: NullOrUndefined (NextToken) }) -> ListAppliedSchemaArnsResponse
+newListAppliedSchemaArnsResponse' :: ({ "SchemaArns" :: Maybe (Arns), "NextToken" :: Maybe (NextToken) } -> { "SchemaArns" :: Maybe (Arns), "NextToken" :: Maybe (NextToken) }) -> ListAppliedSchemaArnsResponse
 ```
 
 Constructs ListAppliedSchemaArnsResponse's fields from required parameters
@@ -5372,7 +5372,7 @@ Constructs ListAppliedSchemaArnsResponse's fields from required parameters
 
 ``` purescript
 newtype ListAttachedIndicesRequest
-  = ListAttachedIndicesRequest { "DirectoryArn" :: Arn, "TargetReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }
+  = ListAttachedIndicesRequest { "DirectoryArn" :: Arn, "TargetReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) }
 ```
 
 ##### Instances
@@ -5395,7 +5395,7 @@ Constructs ListAttachedIndicesRequest from required parameters
 #### `newListAttachedIndicesRequest'`
 
 ``` purescript
-newListAttachedIndicesRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "TargetReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "TargetReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }) -> ListAttachedIndicesRequest
+newListAttachedIndicesRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "TargetReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "TargetReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) }) -> ListAttachedIndicesRequest
 ```
 
 Constructs ListAttachedIndicesRequest's fields from required parameters
@@ -5404,7 +5404,7 @@ Constructs ListAttachedIndicesRequest's fields from required parameters
 
 ``` purescript
 newtype ListAttachedIndicesResponse
-  = ListAttachedIndicesResponse { "IndexAttachments" :: NullOrUndefined (IndexAttachmentList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListAttachedIndicesResponse { "IndexAttachments" :: Maybe (IndexAttachmentList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -5427,7 +5427,7 @@ Constructs ListAttachedIndicesResponse from required parameters
 #### `newListAttachedIndicesResponse'`
 
 ``` purescript
-newListAttachedIndicesResponse' :: ({ "IndexAttachments" :: NullOrUndefined (IndexAttachmentList), "NextToken" :: NullOrUndefined (NextToken) } -> { "IndexAttachments" :: NullOrUndefined (IndexAttachmentList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListAttachedIndicesResponse
+newListAttachedIndicesResponse' :: ({ "IndexAttachments" :: Maybe (IndexAttachmentList), "NextToken" :: Maybe (NextToken) } -> { "IndexAttachments" :: Maybe (IndexAttachmentList), "NextToken" :: Maybe (NextToken) }) -> ListAttachedIndicesResponse
 ```
 
 Constructs ListAttachedIndicesResponse's fields from required parameters
@@ -5436,7 +5436,7 @@ Constructs ListAttachedIndicesResponse's fields from required parameters
 
 ``` purescript
 newtype ListDevelopmentSchemaArnsRequest
-  = ListDevelopmentSchemaArnsRequest { "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }
+  = ListDevelopmentSchemaArnsRequest { "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }
 ```
 
 ##### Instances
@@ -5459,7 +5459,7 @@ Constructs ListDevelopmentSchemaArnsRequest from required parameters
 #### `newListDevelopmentSchemaArnsRequest'`
 
 ``` purescript
-newListDevelopmentSchemaArnsRequest' :: ({ "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) } -> { "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }) -> ListDevelopmentSchemaArnsRequest
+newListDevelopmentSchemaArnsRequest' :: ({ "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) } -> { "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }) -> ListDevelopmentSchemaArnsRequest
 ```
 
 Constructs ListDevelopmentSchemaArnsRequest's fields from required parameters
@@ -5468,7 +5468,7 @@ Constructs ListDevelopmentSchemaArnsRequest's fields from required parameters
 
 ``` purescript
 newtype ListDevelopmentSchemaArnsResponse
-  = ListDevelopmentSchemaArnsResponse { "SchemaArns" :: NullOrUndefined (Arns), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListDevelopmentSchemaArnsResponse { "SchemaArns" :: Maybe (Arns), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -5491,7 +5491,7 @@ Constructs ListDevelopmentSchemaArnsResponse from required parameters
 #### `newListDevelopmentSchemaArnsResponse'`
 
 ``` purescript
-newListDevelopmentSchemaArnsResponse' :: ({ "SchemaArns" :: NullOrUndefined (Arns), "NextToken" :: NullOrUndefined (NextToken) } -> { "SchemaArns" :: NullOrUndefined (Arns), "NextToken" :: NullOrUndefined (NextToken) }) -> ListDevelopmentSchemaArnsResponse
+newListDevelopmentSchemaArnsResponse' :: ({ "SchemaArns" :: Maybe (Arns), "NextToken" :: Maybe (NextToken) } -> { "SchemaArns" :: Maybe (Arns), "NextToken" :: Maybe (NextToken) }) -> ListDevelopmentSchemaArnsResponse
 ```
 
 Constructs ListDevelopmentSchemaArnsResponse's fields from required parameters
@@ -5500,7 +5500,7 @@ Constructs ListDevelopmentSchemaArnsResponse's fields from required parameters
 
 ``` purescript
 newtype ListDirectoriesRequest
-  = ListDirectoriesRequest { "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), state :: NullOrUndefined (DirectoryState) }
+  = ListDirectoriesRequest { "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), state :: Maybe (DirectoryState) }
 ```
 
 ##### Instances
@@ -5523,7 +5523,7 @@ Constructs ListDirectoriesRequest from required parameters
 #### `newListDirectoriesRequest'`
 
 ``` purescript
-newListDirectoriesRequest' :: ({ "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), state :: NullOrUndefined (DirectoryState) } -> { "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), state :: NullOrUndefined (DirectoryState) }) -> ListDirectoriesRequest
+newListDirectoriesRequest' :: ({ "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), state :: Maybe (DirectoryState) } -> { "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), state :: Maybe (DirectoryState) }) -> ListDirectoriesRequest
 ```
 
 Constructs ListDirectoriesRequest's fields from required parameters
@@ -5532,7 +5532,7 @@ Constructs ListDirectoriesRequest's fields from required parameters
 
 ``` purescript
 newtype ListDirectoriesResponse
-  = ListDirectoriesResponse { "Directories" :: DirectoryList, "NextToken" :: NullOrUndefined (NextToken) }
+  = ListDirectoriesResponse { "Directories" :: DirectoryList, "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -5555,7 +5555,7 @@ Constructs ListDirectoriesResponse from required parameters
 #### `newListDirectoriesResponse'`
 
 ``` purescript
-newListDirectoriesResponse' :: DirectoryList -> ({ "Directories" :: DirectoryList, "NextToken" :: NullOrUndefined (NextToken) } -> { "Directories" :: DirectoryList, "NextToken" :: NullOrUndefined (NextToken) }) -> ListDirectoriesResponse
+newListDirectoriesResponse' :: DirectoryList -> ({ "Directories" :: DirectoryList, "NextToken" :: Maybe (NextToken) } -> { "Directories" :: DirectoryList, "NextToken" :: Maybe (NextToken) }) -> ListDirectoriesResponse
 ```
 
 Constructs ListDirectoriesResponse's fields from required parameters
@@ -5564,7 +5564,7 @@ Constructs ListDirectoriesResponse's fields from required parameters
 
 ``` purescript
 newtype ListFacetAttributesRequest
-  = ListFacetAttributesRequest { "SchemaArn" :: Arn, "Name" :: FacetName, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }
+  = ListFacetAttributesRequest { "SchemaArn" :: Arn, "Name" :: FacetName, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }
 ```
 
 ##### Instances
@@ -5587,7 +5587,7 @@ Constructs ListFacetAttributesRequest from required parameters
 #### `newListFacetAttributesRequest'`
 
 ``` purescript
-newListFacetAttributesRequest' :: FacetName -> Arn -> ({ "SchemaArn" :: Arn, "Name" :: FacetName, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) } -> { "SchemaArn" :: Arn, "Name" :: FacetName, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }) -> ListFacetAttributesRequest
+newListFacetAttributesRequest' :: FacetName -> Arn -> ({ "SchemaArn" :: Arn, "Name" :: FacetName, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) } -> { "SchemaArn" :: Arn, "Name" :: FacetName, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }) -> ListFacetAttributesRequest
 ```
 
 Constructs ListFacetAttributesRequest's fields from required parameters
@@ -5596,7 +5596,7 @@ Constructs ListFacetAttributesRequest's fields from required parameters
 
 ``` purescript
 newtype ListFacetAttributesResponse
-  = ListFacetAttributesResponse { "Attributes" :: NullOrUndefined (FacetAttributeList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListFacetAttributesResponse { "Attributes" :: Maybe (FacetAttributeList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -5619,7 +5619,7 @@ Constructs ListFacetAttributesResponse from required parameters
 #### `newListFacetAttributesResponse'`
 
 ``` purescript
-newListFacetAttributesResponse' :: ({ "Attributes" :: NullOrUndefined (FacetAttributeList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Attributes" :: NullOrUndefined (FacetAttributeList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListFacetAttributesResponse
+newListFacetAttributesResponse' :: ({ "Attributes" :: Maybe (FacetAttributeList), "NextToken" :: Maybe (NextToken) } -> { "Attributes" :: Maybe (FacetAttributeList), "NextToken" :: Maybe (NextToken) }) -> ListFacetAttributesResponse
 ```
 
 Constructs ListFacetAttributesResponse's fields from required parameters
@@ -5628,7 +5628,7 @@ Constructs ListFacetAttributesResponse's fields from required parameters
 
 ``` purescript
 newtype ListFacetNamesRequest
-  = ListFacetNamesRequest { "SchemaArn" :: Arn, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }
+  = ListFacetNamesRequest { "SchemaArn" :: Arn, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }
 ```
 
 ##### Instances
@@ -5651,7 +5651,7 @@ Constructs ListFacetNamesRequest from required parameters
 #### `newListFacetNamesRequest'`
 
 ``` purescript
-newListFacetNamesRequest' :: Arn -> ({ "SchemaArn" :: Arn, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) } -> { "SchemaArn" :: Arn, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }) -> ListFacetNamesRequest
+newListFacetNamesRequest' :: Arn -> ({ "SchemaArn" :: Arn, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) } -> { "SchemaArn" :: Arn, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }) -> ListFacetNamesRequest
 ```
 
 Constructs ListFacetNamesRequest's fields from required parameters
@@ -5660,7 +5660,7 @@ Constructs ListFacetNamesRequest's fields from required parameters
 
 ``` purescript
 newtype ListFacetNamesResponse
-  = ListFacetNamesResponse { "FacetNames" :: NullOrUndefined (FacetNameList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListFacetNamesResponse { "FacetNames" :: Maybe (FacetNameList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -5683,7 +5683,7 @@ Constructs ListFacetNamesResponse from required parameters
 #### `newListFacetNamesResponse'`
 
 ``` purescript
-newListFacetNamesResponse' :: ({ "FacetNames" :: NullOrUndefined (FacetNameList), "NextToken" :: NullOrUndefined (NextToken) } -> { "FacetNames" :: NullOrUndefined (FacetNameList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListFacetNamesResponse
+newListFacetNamesResponse' :: ({ "FacetNames" :: Maybe (FacetNameList), "NextToken" :: Maybe (NextToken) } -> { "FacetNames" :: Maybe (FacetNameList), "NextToken" :: Maybe (NextToken) }) -> ListFacetNamesResponse
 ```
 
 Constructs ListFacetNamesResponse's fields from required parameters
@@ -5692,7 +5692,7 @@ Constructs ListFacetNamesResponse's fields from required parameters
 
 ``` purescript
 newtype ListIncomingTypedLinksRequest
-  = ListIncomingTypedLinksRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList), "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }
+  = ListIncomingTypedLinksRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList), "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) }
 ```
 
 ##### Instances
@@ -5715,7 +5715,7 @@ Constructs ListIncomingTypedLinksRequest from required parameters
 #### `newListIncomingTypedLinksRequest'`
 
 ``` purescript
-newListIncomingTypedLinksRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList), "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList), "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }) -> ListIncomingTypedLinksRequest
+newListIncomingTypedLinksRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList), "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList), "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) }) -> ListIncomingTypedLinksRequest
 ```
 
 Constructs ListIncomingTypedLinksRequest's fields from required parameters
@@ -5724,7 +5724,7 @@ Constructs ListIncomingTypedLinksRequest's fields from required parameters
 
 ``` purescript
 newtype ListIncomingTypedLinksResponse
-  = ListIncomingTypedLinksResponse { "LinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListIncomingTypedLinksResponse { "LinkSpecifiers" :: Maybe (TypedLinkSpecifierList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -5747,7 +5747,7 @@ Constructs ListIncomingTypedLinksResponse from required parameters
 #### `newListIncomingTypedLinksResponse'`
 
 ``` purescript
-newListIncomingTypedLinksResponse' :: ({ "LinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList), "NextToken" :: NullOrUndefined (NextToken) } -> { "LinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListIncomingTypedLinksResponse
+newListIncomingTypedLinksResponse' :: ({ "LinkSpecifiers" :: Maybe (TypedLinkSpecifierList), "NextToken" :: Maybe (NextToken) } -> { "LinkSpecifiers" :: Maybe (TypedLinkSpecifierList), "NextToken" :: Maybe (NextToken) }) -> ListIncomingTypedLinksResponse
 ```
 
 Constructs ListIncomingTypedLinksResponse's fields from required parameters
@@ -5756,7 +5756,7 @@ Constructs ListIncomingTypedLinksResponse's fields from required parameters
 
 ``` purescript
 newtype ListIndexRequest
-  = ListIndexRequest { "DirectoryArn" :: Arn, "RangesOnIndexedValues" :: NullOrUndefined (ObjectAttributeRangeList), "IndexReference" :: ObjectReference, "MaxResults" :: NullOrUndefined (NumberResults), "NextToken" :: NullOrUndefined (NextToken), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }
+  = ListIndexRequest { "DirectoryArn" :: Arn, "RangesOnIndexedValues" :: Maybe (ObjectAttributeRangeList), "IndexReference" :: ObjectReference, "MaxResults" :: Maybe (NumberResults), "NextToken" :: Maybe (NextToken), "ConsistencyLevel" :: Maybe (ConsistencyLevel) }
 ```
 
 ##### Instances
@@ -5779,7 +5779,7 @@ Constructs ListIndexRequest from required parameters
 #### `newListIndexRequest'`
 
 ``` purescript
-newListIndexRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "RangesOnIndexedValues" :: NullOrUndefined (ObjectAttributeRangeList), "IndexReference" :: ObjectReference, "MaxResults" :: NullOrUndefined (NumberResults), "NextToken" :: NullOrUndefined (NextToken), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "RangesOnIndexedValues" :: NullOrUndefined (ObjectAttributeRangeList), "IndexReference" :: ObjectReference, "MaxResults" :: NullOrUndefined (NumberResults), "NextToken" :: NullOrUndefined (NextToken), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }) -> ListIndexRequest
+newListIndexRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "RangesOnIndexedValues" :: Maybe (ObjectAttributeRangeList), "IndexReference" :: ObjectReference, "MaxResults" :: Maybe (NumberResults), "NextToken" :: Maybe (NextToken), "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "RangesOnIndexedValues" :: Maybe (ObjectAttributeRangeList), "IndexReference" :: ObjectReference, "MaxResults" :: Maybe (NumberResults), "NextToken" :: Maybe (NextToken), "ConsistencyLevel" :: Maybe (ConsistencyLevel) }) -> ListIndexRequest
 ```
 
 Constructs ListIndexRequest's fields from required parameters
@@ -5788,7 +5788,7 @@ Constructs ListIndexRequest's fields from required parameters
 
 ``` purescript
 newtype ListIndexResponse
-  = ListIndexResponse { "IndexAttachments" :: NullOrUndefined (IndexAttachmentList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListIndexResponse { "IndexAttachments" :: Maybe (IndexAttachmentList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -5811,7 +5811,7 @@ Constructs ListIndexResponse from required parameters
 #### `newListIndexResponse'`
 
 ``` purescript
-newListIndexResponse' :: ({ "IndexAttachments" :: NullOrUndefined (IndexAttachmentList), "NextToken" :: NullOrUndefined (NextToken) } -> { "IndexAttachments" :: NullOrUndefined (IndexAttachmentList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListIndexResponse
+newListIndexResponse' :: ({ "IndexAttachments" :: Maybe (IndexAttachmentList), "NextToken" :: Maybe (NextToken) } -> { "IndexAttachments" :: Maybe (IndexAttachmentList), "NextToken" :: Maybe (NextToken) }) -> ListIndexResponse
 ```
 
 Constructs ListIndexResponse's fields from required parameters
@@ -5820,7 +5820,7 @@ Constructs ListIndexResponse's fields from required parameters
 
 ``` purescript
 newtype ListObjectAttributesRequest
-  = ListObjectAttributesRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel), "FacetFilter" :: NullOrUndefined (SchemaFacet) }
+  = ListObjectAttributesRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel), "FacetFilter" :: Maybe (SchemaFacet) }
 ```
 
 ##### Instances
@@ -5843,7 +5843,7 @@ Constructs ListObjectAttributesRequest from required parameters
 #### `newListObjectAttributesRequest'`
 
 ``` purescript
-newListObjectAttributesRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel), "FacetFilter" :: NullOrUndefined (SchemaFacet) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel), "FacetFilter" :: NullOrUndefined (SchemaFacet) }) -> ListObjectAttributesRequest
+newListObjectAttributesRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel), "FacetFilter" :: Maybe (SchemaFacet) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel), "FacetFilter" :: Maybe (SchemaFacet) }) -> ListObjectAttributesRequest
 ```
 
 Constructs ListObjectAttributesRequest's fields from required parameters
@@ -5852,7 +5852,7 @@ Constructs ListObjectAttributesRequest's fields from required parameters
 
 ``` purescript
 newtype ListObjectAttributesResponse
-  = ListObjectAttributesResponse { "Attributes" :: NullOrUndefined (AttributeKeyAndValueList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListObjectAttributesResponse { "Attributes" :: Maybe (AttributeKeyAndValueList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -5875,7 +5875,7 @@ Constructs ListObjectAttributesResponse from required parameters
 #### `newListObjectAttributesResponse'`
 
 ``` purescript
-newListObjectAttributesResponse' :: ({ "Attributes" :: NullOrUndefined (AttributeKeyAndValueList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Attributes" :: NullOrUndefined (AttributeKeyAndValueList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListObjectAttributesResponse
+newListObjectAttributesResponse' :: ({ "Attributes" :: Maybe (AttributeKeyAndValueList), "NextToken" :: Maybe (NextToken) } -> { "Attributes" :: Maybe (AttributeKeyAndValueList), "NextToken" :: Maybe (NextToken) }) -> ListObjectAttributesResponse
 ```
 
 Constructs ListObjectAttributesResponse's fields from required parameters
@@ -5884,7 +5884,7 @@ Constructs ListObjectAttributesResponse's fields from required parameters
 
 ``` purescript
 newtype ListObjectChildrenRequest
-  = ListObjectChildrenRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }
+  = ListObjectChildrenRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) }
 ```
 
 ##### Instances
@@ -5907,7 +5907,7 @@ Constructs ListObjectChildrenRequest from required parameters
 #### `newListObjectChildrenRequest'`
 
 ``` purescript
-newListObjectChildrenRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }) -> ListObjectChildrenRequest
+newListObjectChildrenRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) }) -> ListObjectChildrenRequest
 ```
 
 Constructs ListObjectChildrenRequest's fields from required parameters
@@ -5916,7 +5916,7 @@ Constructs ListObjectChildrenRequest's fields from required parameters
 
 ``` purescript
 newtype ListObjectChildrenResponse
-  = ListObjectChildrenResponse { "Children" :: NullOrUndefined (LinkNameToObjectIdentifierMap), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListObjectChildrenResponse { "Children" :: Maybe (LinkNameToObjectIdentifierMap), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -5939,7 +5939,7 @@ Constructs ListObjectChildrenResponse from required parameters
 #### `newListObjectChildrenResponse'`
 
 ``` purescript
-newListObjectChildrenResponse' :: ({ "Children" :: NullOrUndefined (LinkNameToObjectIdentifierMap), "NextToken" :: NullOrUndefined (NextToken) } -> { "Children" :: NullOrUndefined (LinkNameToObjectIdentifierMap), "NextToken" :: NullOrUndefined (NextToken) }) -> ListObjectChildrenResponse
+newListObjectChildrenResponse' :: ({ "Children" :: Maybe (LinkNameToObjectIdentifierMap), "NextToken" :: Maybe (NextToken) } -> { "Children" :: Maybe (LinkNameToObjectIdentifierMap), "NextToken" :: Maybe (NextToken) }) -> ListObjectChildrenResponse
 ```
 
 Constructs ListObjectChildrenResponse's fields from required parameters
@@ -5948,7 +5948,7 @@ Constructs ListObjectChildrenResponse's fields from required parameters
 
 ``` purescript
 newtype ListObjectParentPathsRequest
-  = ListObjectParentPathsRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }
+  = ListObjectParentPathsRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }
 ```
 
 ##### Instances
@@ -5971,7 +5971,7 @@ Constructs ListObjectParentPathsRequest from required parameters
 #### `newListObjectParentPathsRequest'`
 
 ``` purescript
-newListObjectParentPathsRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }) -> ListObjectParentPathsRequest
+newListObjectParentPathsRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }) -> ListObjectParentPathsRequest
 ```
 
 Constructs ListObjectParentPathsRequest's fields from required parameters
@@ -5980,7 +5980,7 @@ Constructs ListObjectParentPathsRequest's fields from required parameters
 
 ``` purescript
 newtype ListObjectParentPathsResponse
-  = ListObjectParentPathsResponse { "PathToObjectIdentifiersList" :: NullOrUndefined (PathToObjectIdentifiersList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListObjectParentPathsResponse { "PathToObjectIdentifiersList" :: Maybe (PathToObjectIdentifiersList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -6003,7 +6003,7 @@ Constructs ListObjectParentPathsResponse from required parameters
 #### `newListObjectParentPathsResponse'`
 
 ``` purescript
-newListObjectParentPathsResponse' :: ({ "PathToObjectIdentifiersList" :: NullOrUndefined (PathToObjectIdentifiersList), "NextToken" :: NullOrUndefined (NextToken) } -> { "PathToObjectIdentifiersList" :: NullOrUndefined (PathToObjectIdentifiersList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListObjectParentPathsResponse
+newListObjectParentPathsResponse' :: ({ "PathToObjectIdentifiersList" :: Maybe (PathToObjectIdentifiersList), "NextToken" :: Maybe (NextToken) } -> { "PathToObjectIdentifiersList" :: Maybe (PathToObjectIdentifiersList), "NextToken" :: Maybe (NextToken) }) -> ListObjectParentPathsResponse
 ```
 
 Constructs ListObjectParentPathsResponse's fields from required parameters
@@ -6012,7 +6012,7 @@ Constructs ListObjectParentPathsResponse's fields from required parameters
 
 ``` purescript
 newtype ListObjectParentsRequest
-  = ListObjectParentsRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }
+  = ListObjectParentsRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) }
 ```
 
 ##### Instances
@@ -6035,7 +6035,7 @@ Constructs ListObjectParentsRequest from required parameters
 #### `newListObjectParentsRequest'`
 
 ``` purescript
-newListObjectParentsRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }) -> ListObjectParentsRequest
+newListObjectParentsRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) }) -> ListObjectParentsRequest
 ```
 
 Constructs ListObjectParentsRequest's fields from required parameters
@@ -6044,7 +6044,7 @@ Constructs ListObjectParentsRequest's fields from required parameters
 
 ``` purescript
 newtype ListObjectParentsResponse
-  = ListObjectParentsResponse { "Parents" :: NullOrUndefined (ObjectIdentifierToLinkNameMap), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListObjectParentsResponse { "Parents" :: Maybe (ObjectIdentifierToLinkNameMap), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -6067,7 +6067,7 @@ Constructs ListObjectParentsResponse from required parameters
 #### `newListObjectParentsResponse'`
 
 ``` purescript
-newListObjectParentsResponse' :: ({ "Parents" :: NullOrUndefined (ObjectIdentifierToLinkNameMap), "NextToken" :: NullOrUndefined (NextToken) } -> { "Parents" :: NullOrUndefined (ObjectIdentifierToLinkNameMap), "NextToken" :: NullOrUndefined (NextToken) }) -> ListObjectParentsResponse
+newListObjectParentsResponse' :: ({ "Parents" :: Maybe (ObjectIdentifierToLinkNameMap), "NextToken" :: Maybe (NextToken) } -> { "Parents" :: Maybe (ObjectIdentifierToLinkNameMap), "NextToken" :: Maybe (NextToken) }) -> ListObjectParentsResponse
 ```
 
 Constructs ListObjectParentsResponse's fields from required parameters
@@ -6076,7 +6076,7 @@ Constructs ListObjectParentsResponse's fields from required parameters
 
 ``` purescript
 newtype ListObjectPoliciesRequest
-  = ListObjectPoliciesRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }
+  = ListObjectPoliciesRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) }
 ```
 
 ##### Instances
@@ -6099,7 +6099,7 @@ Constructs ListObjectPoliciesRequest from required parameters
 #### `newListObjectPoliciesRequest'`
 
 ``` purescript
-newListObjectPoliciesRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }) -> ListObjectPoliciesRequest
+newListObjectPoliciesRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) }) -> ListObjectPoliciesRequest
 ```
 
 Constructs ListObjectPoliciesRequest's fields from required parameters
@@ -6108,7 +6108,7 @@ Constructs ListObjectPoliciesRequest's fields from required parameters
 
 ``` purescript
 newtype ListObjectPoliciesResponse
-  = ListObjectPoliciesResponse { "AttachedPolicyIds" :: NullOrUndefined (ObjectIdentifierList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListObjectPoliciesResponse { "AttachedPolicyIds" :: Maybe (ObjectIdentifierList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -6131,7 +6131,7 @@ Constructs ListObjectPoliciesResponse from required parameters
 #### `newListObjectPoliciesResponse'`
 
 ``` purescript
-newListObjectPoliciesResponse' :: ({ "AttachedPolicyIds" :: NullOrUndefined (ObjectIdentifierList), "NextToken" :: NullOrUndefined (NextToken) } -> { "AttachedPolicyIds" :: NullOrUndefined (ObjectIdentifierList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListObjectPoliciesResponse
+newListObjectPoliciesResponse' :: ({ "AttachedPolicyIds" :: Maybe (ObjectIdentifierList), "NextToken" :: Maybe (NextToken) } -> { "AttachedPolicyIds" :: Maybe (ObjectIdentifierList), "NextToken" :: Maybe (NextToken) }) -> ListObjectPoliciesResponse
 ```
 
 Constructs ListObjectPoliciesResponse's fields from required parameters
@@ -6140,7 +6140,7 @@ Constructs ListObjectPoliciesResponse's fields from required parameters
 
 ``` purescript
 newtype ListOutgoingTypedLinksRequest
-  = ListOutgoingTypedLinksRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList), "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }
+  = ListOutgoingTypedLinksRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList), "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) }
 ```
 
 ##### Instances
@@ -6163,7 +6163,7 @@ Constructs ListOutgoingTypedLinksRequest from required parameters
 #### `newListOutgoingTypedLinksRequest'`
 
 ``` purescript
-newListOutgoingTypedLinksRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList), "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList), "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }) -> ListOutgoingTypedLinksRequest
+newListOutgoingTypedLinksRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList), "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList), "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) }) -> ListOutgoingTypedLinksRequest
 ```
 
 Constructs ListOutgoingTypedLinksRequest's fields from required parameters
@@ -6172,7 +6172,7 @@ Constructs ListOutgoingTypedLinksRequest's fields from required parameters
 
 ``` purescript
 newtype ListOutgoingTypedLinksResponse
-  = ListOutgoingTypedLinksResponse { "TypedLinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListOutgoingTypedLinksResponse { "TypedLinkSpecifiers" :: Maybe (TypedLinkSpecifierList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -6195,7 +6195,7 @@ Constructs ListOutgoingTypedLinksResponse from required parameters
 #### `newListOutgoingTypedLinksResponse'`
 
 ``` purescript
-newListOutgoingTypedLinksResponse' :: ({ "TypedLinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList), "NextToken" :: NullOrUndefined (NextToken) } -> { "TypedLinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListOutgoingTypedLinksResponse
+newListOutgoingTypedLinksResponse' :: ({ "TypedLinkSpecifiers" :: Maybe (TypedLinkSpecifierList), "NextToken" :: Maybe (NextToken) } -> { "TypedLinkSpecifiers" :: Maybe (TypedLinkSpecifierList), "NextToken" :: Maybe (NextToken) }) -> ListOutgoingTypedLinksResponse
 ```
 
 Constructs ListOutgoingTypedLinksResponse's fields from required parameters
@@ -6204,7 +6204,7 @@ Constructs ListOutgoingTypedLinksResponse's fields from required parameters
 
 ``` purescript
 newtype ListPolicyAttachmentsRequest
-  = ListPolicyAttachmentsRequest { "DirectoryArn" :: Arn, "PolicyReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }
+  = ListPolicyAttachmentsRequest { "DirectoryArn" :: Arn, "PolicyReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) }
 ```
 
 ##### Instances
@@ -6227,7 +6227,7 @@ Constructs ListPolicyAttachmentsRequest from required parameters
 #### `newListPolicyAttachmentsRequest'`
 
 ``` purescript
-newListPolicyAttachmentsRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "PolicyReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "PolicyReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults), "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) }) -> ListPolicyAttachmentsRequest
+newListPolicyAttachmentsRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "PolicyReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> { "DirectoryArn" :: Arn, "PolicyReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults), "ConsistencyLevel" :: Maybe (ConsistencyLevel) }) -> ListPolicyAttachmentsRequest
 ```
 
 Constructs ListPolicyAttachmentsRequest's fields from required parameters
@@ -6236,7 +6236,7 @@ Constructs ListPolicyAttachmentsRequest's fields from required parameters
 
 ``` purescript
 newtype ListPolicyAttachmentsResponse
-  = ListPolicyAttachmentsResponse { "ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListPolicyAttachmentsResponse { "ObjectIdentifiers" :: Maybe (ObjectIdentifierList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -6259,7 +6259,7 @@ Constructs ListPolicyAttachmentsResponse from required parameters
 #### `newListPolicyAttachmentsResponse'`
 
 ``` purescript
-newListPolicyAttachmentsResponse' :: ({ "ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList), "NextToken" :: NullOrUndefined (NextToken) } -> { "ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListPolicyAttachmentsResponse
+newListPolicyAttachmentsResponse' :: ({ "ObjectIdentifiers" :: Maybe (ObjectIdentifierList), "NextToken" :: Maybe (NextToken) } -> { "ObjectIdentifiers" :: Maybe (ObjectIdentifierList), "NextToken" :: Maybe (NextToken) }) -> ListPolicyAttachmentsResponse
 ```
 
 Constructs ListPolicyAttachmentsResponse's fields from required parameters
@@ -6268,7 +6268,7 @@ Constructs ListPolicyAttachmentsResponse's fields from required parameters
 
 ``` purescript
 newtype ListPublishedSchemaArnsRequest
-  = ListPublishedSchemaArnsRequest { "SchemaArn" :: NullOrUndefined (Arn), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }
+  = ListPublishedSchemaArnsRequest { "SchemaArn" :: Maybe (Arn), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }
 ```
 
 ##### Instances
@@ -6291,7 +6291,7 @@ Constructs ListPublishedSchemaArnsRequest from required parameters
 #### `newListPublishedSchemaArnsRequest'`
 
 ``` purescript
-newListPublishedSchemaArnsRequest' :: ({ "SchemaArn" :: NullOrUndefined (Arn), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) } -> { "SchemaArn" :: NullOrUndefined (Arn), "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }) -> ListPublishedSchemaArnsRequest
+newListPublishedSchemaArnsRequest' :: ({ "SchemaArn" :: Maybe (Arn), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) } -> { "SchemaArn" :: Maybe (Arn), "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }) -> ListPublishedSchemaArnsRequest
 ```
 
 Constructs ListPublishedSchemaArnsRequest's fields from required parameters
@@ -6300,7 +6300,7 @@ Constructs ListPublishedSchemaArnsRequest's fields from required parameters
 
 ``` purescript
 newtype ListPublishedSchemaArnsResponse
-  = ListPublishedSchemaArnsResponse { "SchemaArns" :: NullOrUndefined (Arns), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListPublishedSchemaArnsResponse { "SchemaArns" :: Maybe (Arns), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -6323,7 +6323,7 @@ Constructs ListPublishedSchemaArnsResponse from required parameters
 #### `newListPublishedSchemaArnsResponse'`
 
 ``` purescript
-newListPublishedSchemaArnsResponse' :: ({ "SchemaArns" :: NullOrUndefined (Arns), "NextToken" :: NullOrUndefined (NextToken) } -> { "SchemaArns" :: NullOrUndefined (Arns), "NextToken" :: NullOrUndefined (NextToken) }) -> ListPublishedSchemaArnsResponse
+newListPublishedSchemaArnsResponse' :: ({ "SchemaArns" :: Maybe (Arns), "NextToken" :: Maybe (NextToken) } -> { "SchemaArns" :: Maybe (Arns), "NextToken" :: Maybe (NextToken) }) -> ListPublishedSchemaArnsResponse
 ```
 
 Constructs ListPublishedSchemaArnsResponse's fields from required parameters
@@ -6332,7 +6332,7 @@ Constructs ListPublishedSchemaArnsResponse's fields from required parameters
 
 ``` purescript
 newtype ListTagsForResourceRequest
-  = ListTagsForResourceRequest { "ResourceArn" :: Arn, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (TagsNumberResults) }
+  = ListTagsForResourceRequest { "ResourceArn" :: Arn, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (TagsNumberResults) }
 ```
 
 ##### Instances
@@ -6355,7 +6355,7 @@ Constructs ListTagsForResourceRequest from required parameters
 #### `newListTagsForResourceRequest'`
 
 ``` purescript
-newListTagsForResourceRequest' :: Arn -> ({ "ResourceArn" :: Arn, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (TagsNumberResults) } -> { "ResourceArn" :: Arn, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (TagsNumberResults) }) -> ListTagsForResourceRequest
+newListTagsForResourceRequest' :: Arn -> ({ "ResourceArn" :: Arn, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (TagsNumberResults) } -> { "ResourceArn" :: Arn, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (TagsNumberResults) }) -> ListTagsForResourceRequest
 ```
 
 Constructs ListTagsForResourceRequest's fields from required parameters
@@ -6364,7 +6364,7 @@ Constructs ListTagsForResourceRequest's fields from required parameters
 
 ``` purescript
 newtype ListTagsForResourceResponse
-  = ListTagsForResourceResponse { "Tags" :: NullOrUndefined (TagList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListTagsForResourceResponse { "Tags" :: Maybe (TagList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -6387,7 +6387,7 @@ Constructs ListTagsForResourceResponse from required parameters
 #### `newListTagsForResourceResponse'`
 
 ``` purescript
-newListTagsForResourceResponse' :: ({ "Tags" :: NullOrUndefined (TagList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Tags" :: NullOrUndefined (TagList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListTagsForResourceResponse
+newListTagsForResourceResponse' :: ({ "Tags" :: Maybe (TagList), "NextToken" :: Maybe (NextToken) } -> { "Tags" :: Maybe (TagList), "NextToken" :: Maybe (NextToken) }) -> ListTagsForResourceResponse
 ```
 
 Constructs ListTagsForResourceResponse's fields from required parameters
@@ -6396,7 +6396,7 @@ Constructs ListTagsForResourceResponse's fields from required parameters
 
 ``` purescript
 newtype ListTypedLinkFacetAttributesRequest
-  = ListTypedLinkFacetAttributesRequest { "SchemaArn" :: Arn, "Name" :: TypedLinkName, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }
+  = ListTypedLinkFacetAttributesRequest { "SchemaArn" :: Arn, "Name" :: TypedLinkName, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }
 ```
 
 ##### Instances
@@ -6419,7 +6419,7 @@ Constructs ListTypedLinkFacetAttributesRequest from required parameters
 #### `newListTypedLinkFacetAttributesRequest'`
 
 ``` purescript
-newListTypedLinkFacetAttributesRequest' :: TypedLinkName -> Arn -> ({ "SchemaArn" :: Arn, "Name" :: TypedLinkName, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) } -> { "SchemaArn" :: Arn, "Name" :: TypedLinkName, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }) -> ListTypedLinkFacetAttributesRequest
+newListTypedLinkFacetAttributesRequest' :: TypedLinkName -> Arn -> ({ "SchemaArn" :: Arn, "Name" :: TypedLinkName, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) } -> { "SchemaArn" :: Arn, "Name" :: TypedLinkName, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }) -> ListTypedLinkFacetAttributesRequest
 ```
 
 Constructs ListTypedLinkFacetAttributesRequest's fields from required parameters
@@ -6428,7 +6428,7 @@ Constructs ListTypedLinkFacetAttributesRequest's fields from required parameters
 
 ``` purescript
 newtype ListTypedLinkFacetAttributesResponse
-  = ListTypedLinkFacetAttributesResponse { "Attributes" :: NullOrUndefined (TypedLinkAttributeDefinitionList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListTypedLinkFacetAttributesResponse { "Attributes" :: Maybe (TypedLinkAttributeDefinitionList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -6451,7 +6451,7 @@ Constructs ListTypedLinkFacetAttributesResponse from required parameters
 #### `newListTypedLinkFacetAttributesResponse'`
 
 ``` purescript
-newListTypedLinkFacetAttributesResponse' :: ({ "Attributes" :: NullOrUndefined (TypedLinkAttributeDefinitionList), "NextToken" :: NullOrUndefined (NextToken) } -> { "Attributes" :: NullOrUndefined (TypedLinkAttributeDefinitionList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListTypedLinkFacetAttributesResponse
+newListTypedLinkFacetAttributesResponse' :: ({ "Attributes" :: Maybe (TypedLinkAttributeDefinitionList), "NextToken" :: Maybe (NextToken) } -> { "Attributes" :: Maybe (TypedLinkAttributeDefinitionList), "NextToken" :: Maybe (NextToken) }) -> ListTypedLinkFacetAttributesResponse
 ```
 
 Constructs ListTypedLinkFacetAttributesResponse's fields from required parameters
@@ -6460,7 +6460,7 @@ Constructs ListTypedLinkFacetAttributesResponse's fields from required parameter
 
 ``` purescript
 newtype ListTypedLinkFacetNamesRequest
-  = ListTypedLinkFacetNamesRequest { "SchemaArn" :: Arn, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }
+  = ListTypedLinkFacetNamesRequest { "SchemaArn" :: Arn, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }
 ```
 
 ##### Instances
@@ -6483,7 +6483,7 @@ Constructs ListTypedLinkFacetNamesRequest from required parameters
 #### `newListTypedLinkFacetNamesRequest'`
 
 ``` purescript
-newListTypedLinkFacetNamesRequest' :: Arn -> ({ "SchemaArn" :: Arn, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) } -> { "SchemaArn" :: Arn, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }) -> ListTypedLinkFacetNamesRequest
+newListTypedLinkFacetNamesRequest' :: Arn -> ({ "SchemaArn" :: Arn, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) } -> { "SchemaArn" :: Arn, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }) -> ListTypedLinkFacetNamesRequest
 ```
 
 Constructs ListTypedLinkFacetNamesRequest's fields from required parameters
@@ -6492,7 +6492,7 @@ Constructs ListTypedLinkFacetNamesRequest's fields from required parameters
 
 ``` purescript
 newtype ListTypedLinkFacetNamesResponse
-  = ListTypedLinkFacetNamesResponse { "FacetNames" :: NullOrUndefined (TypedLinkNameList), "NextToken" :: NullOrUndefined (NextToken) }
+  = ListTypedLinkFacetNamesResponse { "FacetNames" :: Maybe (TypedLinkNameList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -6515,7 +6515,7 @@ Constructs ListTypedLinkFacetNamesResponse from required parameters
 #### `newListTypedLinkFacetNamesResponse'`
 
 ``` purescript
-newListTypedLinkFacetNamesResponse' :: ({ "FacetNames" :: NullOrUndefined (TypedLinkNameList), "NextToken" :: NullOrUndefined (NextToken) } -> { "FacetNames" :: NullOrUndefined (TypedLinkNameList), "NextToken" :: NullOrUndefined (NextToken) }) -> ListTypedLinkFacetNamesResponse
+newListTypedLinkFacetNamesResponse' :: ({ "FacetNames" :: Maybe (TypedLinkNameList), "NextToken" :: Maybe (NextToken) } -> { "FacetNames" :: Maybe (TypedLinkNameList), "NextToken" :: Maybe (NextToken) }) -> ListTypedLinkFacetNamesResponse
 ```
 
 Constructs ListTypedLinkFacetNamesResponse's fields from required parameters
@@ -6524,7 +6524,7 @@ Constructs ListTypedLinkFacetNamesResponse's fields from required parameters
 
 ``` purescript
 newtype LookupPolicyRequest
-  = LookupPolicyRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }
+  = LookupPolicyRequest { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }
 ```
 
 ##### Instances
@@ -6547,7 +6547,7 @@ Constructs LookupPolicyRequest from required parameters
 #### `newLookupPolicyRequest'`
 
 ``` purescript
-newLookupPolicyRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: NullOrUndefined (NextToken), "MaxResults" :: NullOrUndefined (NumberResults) }) -> LookupPolicyRequest
+newLookupPolicyRequest' :: Arn -> ObjectReference -> ({ "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) } -> { "DirectoryArn" :: Arn, "ObjectReference" :: ObjectReference, "NextToken" :: Maybe (NextToken), "MaxResults" :: Maybe (NumberResults) }) -> LookupPolicyRequest
 ```
 
 Constructs LookupPolicyRequest's fields from required parameters
@@ -6556,7 +6556,7 @@ Constructs LookupPolicyRequest's fields from required parameters
 
 ``` purescript
 newtype LookupPolicyResponse
-  = LookupPolicyResponse { "PolicyToPathList" :: NullOrUndefined (PolicyToPathList), "NextToken" :: NullOrUndefined (NextToken) }
+  = LookupPolicyResponse { "PolicyToPathList" :: Maybe (PolicyToPathList), "NextToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -6579,7 +6579,7 @@ Constructs LookupPolicyResponse from required parameters
 #### `newLookupPolicyResponse'`
 
 ``` purescript
-newLookupPolicyResponse' :: ({ "PolicyToPathList" :: NullOrUndefined (PolicyToPathList), "NextToken" :: NullOrUndefined (NextToken) } -> { "PolicyToPathList" :: NullOrUndefined (PolicyToPathList), "NextToken" :: NullOrUndefined (NextToken) }) -> LookupPolicyResponse
+newLookupPolicyResponse' :: ({ "PolicyToPathList" :: Maybe (PolicyToPathList), "NextToken" :: Maybe (NextToken) } -> { "PolicyToPathList" :: Maybe (PolicyToPathList), "NextToken" :: Maybe (NextToken) }) -> LookupPolicyResponse
 ```
 
 Constructs LookupPolicyResponse's fields from required parameters
@@ -6604,7 +6604,7 @@ Encode NextToken
 
 ``` purescript
 newtype NotIndexException
-  = NotIndexException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = NotIndexException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Indicates that the requested operation can only operate on index objects.</p>
@@ -6629,7 +6629,7 @@ Constructs NotIndexException from required parameters
 #### `newNotIndexException'`
 
 ``` purescript
-newNotIndexException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> NotIndexException
+newNotIndexException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> NotIndexException
 ```
 
 Constructs NotIndexException's fields from required parameters
@@ -6638,7 +6638,7 @@ Constructs NotIndexException's fields from required parameters
 
 ``` purescript
 newtype NotNodeException
-  = NotNodeException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = NotNodeException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Occurs when any invalid operations are performed on an object that is not a node, such as calling <code>ListObjectChildren</code> for a leaf node object.</p>
@@ -6663,7 +6663,7 @@ Constructs NotNodeException from required parameters
 #### `newNotNodeException'`
 
 ``` purescript
-newNotNodeException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> NotNodeException
+newNotNodeException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> NotNodeException
 ```
 
 Constructs NotNodeException's fields from required parameters
@@ -6672,7 +6672,7 @@ Constructs NotNodeException's fields from required parameters
 
 ``` purescript
 newtype NotPolicyException
-  = NotPolicyException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = NotPolicyException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Indicates that the requested operation can only operate on policy objects.</p>
@@ -6697,7 +6697,7 @@ Constructs NotPolicyException from required parameters
 #### `newNotPolicyException'`
 
 ``` purescript
-newNotPolicyException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> NotPolicyException
+newNotPolicyException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> NotPolicyException
 ```
 
 Constructs NotPolicyException's fields from required parameters
@@ -6738,7 +6738,7 @@ Encode NumberResults
 
 ``` purescript
 newtype ObjectAlreadyDetachedException
-  = ObjectAlreadyDetachedException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = ObjectAlreadyDetachedException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Indicates that the object is not attached to the index.</p>
@@ -6763,7 +6763,7 @@ Constructs ObjectAlreadyDetachedException from required parameters
 #### `newObjectAlreadyDetachedException'`
 
 ``` purescript
-newObjectAlreadyDetachedException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> ObjectAlreadyDetachedException
+newObjectAlreadyDetachedException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> ObjectAlreadyDetachedException
 ```
 
 Constructs ObjectAlreadyDetachedException's fields from required parameters
@@ -6772,7 +6772,7 @@ Constructs ObjectAlreadyDetachedException's fields from required parameters
 
 ``` purescript
 newtype ObjectAttributeAction
-  = ObjectAttributeAction { "ObjectAttributeActionType" :: NullOrUndefined (UpdateActionType), "ObjectAttributeUpdateValue" :: NullOrUndefined (TypedAttributeValue) }
+  = ObjectAttributeAction { "ObjectAttributeActionType" :: Maybe (UpdateActionType), "ObjectAttributeUpdateValue" :: Maybe (TypedAttributeValue) }
 ```
 
 <p>The action to take on the object attribute.</p>
@@ -6797,7 +6797,7 @@ Constructs ObjectAttributeAction from required parameters
 #### `newObjectAttributeAction'`
 
 ``` purescript
-newObjectAttributeAction' :: ({ "ObjectAttributeActionType" :: NullOrUndefined (UpdateActionType), "ObjectAttributeUpdateValue" :: NullOrUndefined (TypedAttributeValue) } -> { "ObjectAttributeActionType" :: NullOrUndefined (UpdateActionType), "ObjectAttributeUpdateValue" :: NullOrUndefined (TypedAttributeValue) }) -> ObjectAttributeAction
+newObjectAttributeAction' :: ({ "ObjectAttributeActionType" :: Maybe (UpdateActionType), "ObjectAttributeUpdateValue" :: Maybe (TypedAttributeValue) } -> { "ObjectAttributeActionType" :: Maybe (UpdateActionType), "ObjectAttributeUpdateValue" :: Maybe (TypedAttributeValue) }) -> ObjectAttributeAction
 ```
 
 Constructs ObjectAttributeAction's fields from required parameters
@@ -6806,7 +6806,7 @@ Constructs ObjectAttributeAction's fields from required parameters
 
 ``` purescript
 newtype ObjectAttributeRange
-  = ObjectAttributeRange { "AttributeKey" :: NullOrUndefined (AttributeKey), "Range" :: NullOrUndefined (TypedAttributeValueRange) }
+  = ObjectAttributeRange { "AttributeKey" :: Maybe (AttributeKey), "Range" :: Maybe (TypedAttributeValueRange) }
 ```
 
 <p>A range of attributes.</p>
@@ -6831,7 +6831,7 @@ Constructs ObjectAttributeRange from required parameters
 #### `newObjectAttributeRange'`
 
 ``` purescript
-newObjectAttributeRange' :: ({ "AttributeKey" :: NullOrUndefined (AttributeKey), "Range" :: NullOrUndefined (TypedAttributeValueRange) } -> { "AttributeKey" :: NullOrUndefined (AttributeKey), "Range" :: NullOrUndefined (TypedAttributeValueRange) }) -> ObjectAttributeRange
+newObjectAttributeRange' :: ({ "AttributeKey" :: Maybe (AttributeKey), "Range" :: Maybe (TypedAttributeValueRange) } -> { "AttributeKey" :: Maybe (AttributeKey), "Range" :: Maybe (TypedAttributeValueRange) }) -> ObjectAttributeRange
 ```
 
 Constructs ObjectAttributeRange's fields from required parameters
@@ -6856,7 +6856,7 @@ Encode ObjectAttributeRangeList
 
 ``` purescript
 newtype ObjectAttributeUpdate
-  = ObjectAttributeUpdate { "ObjectAttributeKey" :: NullOrUndefined (AttributeKey), "ObjectAttributeAction" :: NullOrUndefined (ObjectAttributeAction) }
+  = ObjectAttributeUpdate { "ObjectAttributeKey" :: Maybe (AttributeKey), "ObjectAttributeAction" :: Maybe (ObjectAttributeAction) }
 ```
 
 <p>Structure that contains attribute update information.</p>
@@ -6881,7 +6881,7 @@ Constructs ObjectAttributeUpdate from required parameters
 #### `newObjectAttributeUpdate'`
 
 ``` purescript
-newObjectAttributeUpdate' :: ({ "ObjectAttributeKey" :: NullOrUndefined (AttributeKey), "ObjectAttributeAction" :: NullOrUndefined (ObjectAttributeAction) } -> { "ObjectAttributeKey" :: NullOrUndefined (AttributeKey), "ObjectAttributeAction" :: NullOrUndefined (ObjectAttributeAction) }) -> ObjectAttributeUpdate
+newObjectAttributeUpdate' :: ({ "ObjectAttributeKey" :: Maybe (AttributeKey), "ObjectAttributeAction" :: Maybe (ObjectAttributeAction) } -> { "ObjectAttributeKey" :: Maybe (AttributeKey), "ObjectAttributeAction" :: Maybe (ObjectAttributeAction) }) -> ObjectAttributeUpdate
 ```
 
 Constructs ObjectAttributeUpdate's fields from required parameters
@@ -6954,7 +6954,7 @@ Encode ObjectIdentifierToLinkNameMap
 
 ``` purescript
 newtype ObjectNotDetachedException
-  = ObjectNotDetachedException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = ObjectNotDetachedException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Indicates that the requested operation cannot be completed because the object has not been detached from the tree.</p>
@@ -6979,7 +6979,7 @@ Constructs ObjectNotDetachedException from required parameters
 #### `newObjectNotDetachedException'`
 
 ``` purescript
-newObjectNotDetachedException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> ObjectNotDetachedException
+newObjectNotDetachedException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> ObjectNotDetachedException
 ```
 
 Constructs ObjectNotDetachedException's fields from required parameters
@@ -6988,7 +6988,7 @@ Constructs ObjectNotDetachedException's fields from required parameters
 
 ``` purescript
 newtype ObjectReference
-  = ObjectReference { "Selector" :: NullOrUndefined (SelectorObjectReference) }
+  = ObjectReference { "Selector" :: Maybe (SelectorObjectReference) }
 ```
 
 <p>The reference that identifies an object.</p>
@@ -7013,7 +7013,7 @@ Constructs ObjectReference from required parameters
 #### `newObjectReference'`
 
 ``` purescript
-newObjectReference' :: ({ "Selector" :: NullOrUndefined (SelectorObjectReference) } -> { "Selector" :: NullOrUndefined (SelectorObjectReference) }) -> ObjectReference
+newObjectReference' :: ({ "Selector" :: Maybe (SelectorObjectReference) } -> { "Selector" :: Maybe (SelectorObjectReference) }) -> ObjectReference
 ```
 
 Constructs ObjectReference's fields from required parameters
@@ -7054,7 +7054,7 @@ Encode PathString
 
 ``` purescript
 newtype PathToObjectIdentifiers
-  = PathToObjectIdentifiers { "Path" :: NullOrUndefined (PathString), "ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList) }
+  = PathToObjectIdentifiers { "Path" :: Maybe (PathString), "ObjectIdentifiers" :: Maybe (ObjectIdentifierList) }
 ```
 
 <p>Returns the path to the <code>ObjectIdentifiers</code> that is associated with the directory.</p>
@@ -7079,7 +7079,7 @@ Constructs PathToObjectIdentifiers from required parameters
 #### `newPathToObjectIdentifiers'`
 
 ``` purescript
-newPathToObjectIdentifiers' :: ({ "Path" :: NullOrUndefined (PathString), "ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList) } -> { "Path" :: NullOrUndefined (PathString), "ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList) }) -> PathToObjectIdentifiers
+newPathToObjectIdentifiers' :: ({ "Path" :: Maybe (PathString), "ObjectIdentifiers" :: Maybe (ObjectIdentifierList) } -> { "Path" :: Maybe (PathString), "ObjectIdentifiers" :: Maybe (ObjectIdentifierList) }) -> PathToObjectIdentifiers
 ```
 
 Constructs PathToObjectIdentifiers's fields from required parameters
@@ -7104,7 +7104,7 @@ Encode PathToObjectIdentifiersList
 
 ``` purescript
 newtype PolicyAttachment
-  = PolicyAttachment { "PolicyId" :: NullOrUndefined (ObjectIdentifier), "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier), "PolicyType" :: NullOrUndefined (PolicyType) }
+  = PolicyAttachment { "PolicyId" :: Maybe (ObjectIdentifier), "ObjectIdentifier" :: Maybe (ObjectIdentifier), "PolicyType" :: Maybe (PolicyType) }
 ```
 
 <p>Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is attached. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p>
@@ -7129,7 +7129,7 @@ Constructs PolicyAttachment from required parameters
 #### `newPolicyAttachment'`
 
 ``` purescript
-newPolicyAttachment' :: ({ "PolicyId" :: NullOrUndefined (ObjectIdentifier), "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier), "PolicyType" :: NullOrUndefined (PolicyType) } -> { "PolicyId" :: NullOrUndefined (ObjectIdentifier), "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier), "PolicyType" :: NullOrUndefined (PolicyType) }) -> PolicyAttachment
+newPolicyAttachment' :: ({ "PolicyId" :: Maybe (ObjectIdentifier), "ObjectIdentifier" :: Maybe (ObjectIdentifier), "PolicyType" :: Maybe (PolicyType) } -> { "PolicyId" :: Maybe (ObjectIdentifier), "ObjectIdentifier" :: Maybe (ObjectIdentifier), "PolicyType" :: Maybe (PolicyType) }) -> PolicyAttachment
 ```
 
 Constructs PolicyAttachment's fields from required parameters
@@ -7154,7 +7154,7 @@ Encode PolicyAttachmentList
 
 ``` purescript
 newtype PolicyToPath
-  = PolicyToPath { "Path" :: NullOrUndefined (PathString), "Policies" :: NullOrUndefined (PolicyAttachmentList) }
+  = PolicyToPath { "Path" :: Maybe (PathString), "Policies" :: Maybe (PolicyAttachmentList) }
 ```
 
 <p>Used when a regular object exists in a <a>Directory</a> and you want to find all of the policies that are associated with that object and the parent to that object.</p>
@@ -7179,7 +7179,7 @@ Constructs PolicyToPath from required parameters
 #### `newPolicyToPath'`
 
 ``` purescript
-newPolicyToPath' :: ({ "Path" :: NullOrUndefined (PathString), "Policies" :: NullOrUndefined (PolicyAttachmentList) } -> { "Path" :: NullOrUndefined (PathString), "Policies" :: NullOrUndefined (PolicyAttachmentList) }) -> PolicyToPath
+newPolicyToPath' :: ({ "Path" :: Maybe (PathString), "Policies" :: Maybe (PolicyAttachmentList) } -> { "Path" :: Maybe (PathString), "Policies" :: Maybe (PolicyAttachmentList) }) -> PolicyToPath
 ```
 
 Constructs PolicyToPath's fields from required parameters
@@ -7220,7 +7220,7 @@ Encode PolicyType
 
 ``` purescript
 newtype PublishSchemaRequest
-  = PublishSchemaRequest { "DevelopmentSchemaArn" :: Arn, "Version" :: Version, "MinorVersion" :: NullOrUndefined (Version), "Name" :: NullOrUndefined (SchemaName) }
+  = PublishSchemaRequest { "DevelopmentSchemaArn" :: Arn, "Version" :: Version, "MinorVersion" :: Maybe (Version), "Name" :: Maybe (SchemaName) }
 ```
 
 ##### Instances
@@ -7243,7 +7243,7 @@ Constructs PublishSchemaRequest from required parameters
 #### `newPublishSchemaRequest'`
 
 ``` purescript
-newPublishSchemaRequest' :: Arn -> Version -> ({ "DevelopmentSchemaArn" :: Arn, "Version" :: Version, "MinorVersion" :: NullOrUndefined (Version), "Name" :: NullOrUndefined (SchemaName) } -> { "DevelopmentSchemaArn" :: Arn, "Version" :: Version, "MinorVersion" :: NullOrUndefined (Version), "Name" :: NullOrUndefined (SchemaName) }) -> PublishSchemaRequest
+newPublishSchemaRequest' :: Arn -> Version -> ({ "DevelopmentSchemaArn" :: Arn, "Version" :: Version, "MinorVersion" :: Maybe (Version), "Name" :: Maybe (SchemaName) } -> { "DevelopmentSchemaArn" :: Arn, "Version" :: Version, "MinorVersion" :: Maybe (Version), "Name" :: Maybe (SchemaName) }) -> PublishSchemaRequest
 ```
 
 Constructs PublishSchemaRequest's fields from required parameters
@@ -7252,7 +7252,7 @@ Constructs PublishSchemaRequest's fields from required parameters
 
 ``` purescript
 newtype PublishSchemaResponse
-  = PublishSchemaResponse { "PublishedSchemaArn" :: NullOrUndefined (Arn) }
+  = PublishSchemaResponse { "PublishedSchemaArn" :: Maybe (Arn) }
 ```
 
 ##### Instances
@@ -7275,7 +7275,7 @@ Constructs PublishSchemaResponse from required parameters
 #### `newPublishSchemaResponse'`
 
 ``` purescript
-newPublishSchemaResponse' :: ({ "PublishedSchemaArn" :: NullOrUndefined (Arn) } -> { "PublishedSchemaArn" :: NullOrUndefined (Arn) }) -> PublishSchemaResponse
+newPublishSchemaResponse' :: ({ "PublishedSchemaArn" :: Maybe (Arn) } -> { "PublishedSchemaArn" :: Maybe (Arn) }) -> PublishSchemaResponse
 ```
 
 Constructs PublishSchemaResponse's fields from required parameters
@@ -7316,7 +7316,7 @@ Constructs PutSchemaFromJsonRequest's fields from required parameters
 
 ``` purescript
 newtype PutSchemaFromJsonResponse
-  = PutSchemaFromJsonResponse { "Arn" :: NullOrUndefined (Arn) }
+  = PutSchemaFromJsonResponse { "Arn" :: Maybe (Arn) }
 ```
 
 ##### Instances
@@ -7339,7 +7339,7 @@ Constructs PutSchemaFromJsonResponse from required parameters
 #### `newPutSchemaFromJsonResponse'`
 
 ``` purescript
-newPutSchemaFromJsonResponse' :: ({ "Arn" :: NullOrUndefined (Arn) } -> { "Arn" :: NullOrUndefined (Arn) }) -> PutSchemaFromJsonResponse
+newPutSchemaFromJsonResponse' :: ({ "Arn" :: Maybe (Arn) } -> { "Arn" :: Maybe (Arn) }) -> PutSchemaFromJsonResponse
 ```
 
 Constructs PutSchemaFromJsonResponse's fields from required parameters
@@ -7428,7 +7428,7 @@ Encode RequiredAttributeBehavior
 
 ``` purescript
 newtype ResourceNotFoundException
-  = ResourceNotFoundException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = ResourceNotFoundException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>The specified resource could not be found.</p>
@@ -7453,7 +7453,7 @@ Constructs ResourceNotFoundException from required parameters
 #### `newResourceNotFoundException'`
 
 ``` purescript
-newResourceNotFoundException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> ResourceNotFoundException
+newResourceNotFoundException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> ResourceNotFoundException
 ```
 
 Constructs ResourceNotFoundException's fields from required parameters
@@ -7462,7 +7462,7 @@ Constructs ResourceNotFoundException's fields from required parameters
 
 ``` purescript
 newtype RetryableConflictException
-  = RetryableConflictException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = RetryableConflictException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
@@ -7487,7 +7487,7 @@ Constructs RetryableConflictException from required parameters
 #### `newRetryableConflictException'`
 
 ``` purescript
-newRetryableConflictException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> RetryableConflictException
+newRetryableConflictException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> RetryableConflictException
 ```
 
 Constructs RetryableConflictException's fields from required parameters
@@ -7496,7 +7496,7 @@ Constructs RetryableConflictException's fields from required parameters
 
 ``` purescript
 newtype Rule
-  = Rule { "Type" :: NullOrUndefined (RuleType), "Parameters" :: NullOrUndefined (RuleParameterMap) }
+  = Rule { "Type" :: Maybe (RuleType), "Parameters" :: Maybe (RuleParameterMap) }
 ```
 
 <p>Contains an Amazon Resource Name (ARN) and parameters that are associated with the rule.</p>
@@ -7521,7 +7521,7 @@ Constructs Rule from required parameters
 #### `newRule'`
 
 ``` purescript
-newRule' :: ({ "Type" :: NullOrUndefined (RuleType), "Parameters" :: NullOrUndefined (RuleParameterMap) } -> { "Type" :: NullOrUndefined (RuleType), "Parameters" :: NullOrUndefined (RuleParameterMap) }) -> Rule
+newRule' :: ({ "Type" :: Maybe (RuleType), "Parameters" :: Maybe (RuleParameterMap) } -> { "Type" :: Maybe (RuleType), "Parameters" :: Maybe (RuleParameterMap) }) -> Rule
 ```
 
 Constructs Rule's fields from required parameters
@@ -7626,7 +7626,7 @@ Encode RuleType
 
 ``` purescript
 newtype SchemaAlreadyExistsException
-  = SchemaAlreadyExistsException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = SchemaAlreadyExistsException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Indicates that a schema could not be created due to a naming conflict. Please select a different name and then try again.</p>
@@ -7651,7 +7651,7 @@ Constructs SchemaAlreadyExistsException from required parameters
 #### `newSchemaAlreadyExistsException'`
 
 ``` purescript
-newSchemaAlreadyExistsException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> SchemaAlreadyExistsException
+newSchemaAlreadyExistsException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> SchemaAlreadyExistsException
 ```
 
 Constructs SchemaAlreadyExistsException's fields from required parameters
@@ -7660,7 +7660,7 @@ Constructs SchemaAlreadyExistsException's fields from required parameters
 
 ``` purescript
 newtype SchemaAlreadyPublishedException
-  = SchemaAlreadyPublishedException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = SchemaAlreadyPublishedException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Indicates that a schema is already published.</p>
@@ -7685,7 +7685,7 @@ Constructs SchemaAlreadyPublishedException from required parameters
 #### `newSchemaAlreadyPublishedException'`
 
 ``` purescript
-newSchemaAlreadyPublishedException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> SchemaAlreadyPublishedException
+newSchemaAlreadyPublishedException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> SchemaAlreadyPublishedException
 ```
 
 Constructs SchemaAlreadyPublishedException's fields from required parameters
@@ -7694,7 +7694,7 @@ Constructs SchemaAlreadyPublishedException's fields from required parameters
 
 ``` purescript
 newtype SchemaFacet
-  = SchemaFacet { "SchemaArn" :: NullOrUndefined (Arn), "FacetName" :: NullOrUndefined (FacetName) }
+  = SchemaFacet { "SchemaArn" :: Maybe (Arn), "FacetName" :: Maybe (FacetName) }
 ```
 
 <p>A facet.</p>
@@ -7719,7 +7719,7 @@ Constructs SchemaFacet from required parameters
 #### `newSchemaFacet'`
 
 ``` purescript
-newSchemaFacet' :: ({ "SchemaArn" :: NullOrUndefined (Arn), "FacetName" :: NullOrUndefined (FacetName) } -> { "SchemaArn" :: NullOrUndefined (Arn), "FacetName" :: NullOrUndefined (FacetName) }) -> SchemaFacet
+newSchemaFacet' :: ({ "SchemaArn" :: Maybe (Arn), "FacetName" :: Maybe (FacetName) } -> { "SchemaArn" :: Maybe (Arn), "FacetName" :: Maybe (FacetName) }) -> SchemaFacet
 ```
 
 Constructs SchemaFacet's fields from required parameters
@@ -7792,7 +7792,7 @@ Encode SelectorObjectReference
 
 ``` purescript
 newtype StillContainsLinksException
-  = StillContainsLinksException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = StillContainsLinksException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>The object could not be deleted because links still exist. Remove the links and then try the operation again.</p>
@@ -7817,7 +7817,7 @@ Constructs StillContainsLinksException from required parameters
 #### `newStillContainsLinksException'`
 
 ``` purescript
-newStillContainsLinksException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> StillContainsLinksException
+newStillContainsLinksException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> StillContainsLinksException
 ```
 
 Constructs StillContainsLinksException's fields from required parameters
@@ -7842,7 +7842,7 @@ Encode StringAttributeValue
 
 ``` purescript
 newtype Tag
-  = Tag { "Key" :: NullOrUndefined (TagKey), "Value" :: NullOrUndefined (TagValue) }
+  = Tag { "Key" :: Maybe (TagKey), "Value" :: Maybe (TagValue) }
 ```
 
 <p>The tag structure that contains a tag key and value.</p>
@@ -7867,7 +7867,7 @@ Constructs Tag from required parameters
 #### `newTag'`
 
 ``` purescript
-newTag' :: ({ "Key" :: NullOrUndefined (TagKey), "Value" :: NullOrUndefined (TagValue) } -> { "Key" :: NullOrUndefined (TagKey), "Value" :: NullOrUndefined (TagValue) }) -> Tag
+newTag' :: ({ "Key" :: Maybe (TagKey), "Value" :: Maybe (TagValue) } -> { "Key" :: Maybe (TagKey), "Value" :: Maybe (TagValue) }) -> Tag
 ```
 
 Constructs Tag's fields from required parameters
@@ -8004,7 +8004,7 @@ Encode TagsNumberResults
 
 ``` purescript
 newtype TypedAttributeValue
-  = TypedAttributeValue { "StringValue" :: NullOrUndefined (StringAttributeValue), "BinaryValue" :: NullOrUndefined (BinaryAttributeValue), "BooleanValue" :: NullOrUndefined (BooleanAttributeValue), "NumberValue" :: NullOrUndefined (NumberAttributeValue), "DatetimeValue" :: NullOrUndefined (DatetimeAttributeValue) }
+  = TypedAttributeValue { "StringValue" :: Maybe (StringAttributeValue), "BinaryValue" :: Maybe (BinaryAttributeValue), "BooleanValue" :: Maybe (BooleanAttributeValue), "NumberValue" :: Maybe (NumberAttributeValue), "DatetimeValue" :: Maybe (DatetimeAttributeValue) }
 ```
 
 <p>Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value.</p>
@@ -8029,7 +8029,7 @@ Constructs TypedAttributeValue from required parameters
 #### `newTypedAttributeValue'`
 
 ``` purescript
-newTypedAttributeValue' :: ({ "StringValue" :: NullOrUndefined (StringAttributeValue), "BinaryValue" :: NullOrUndefined (BinaryAttributeValue), "BooleanValue" :: NullOrUndefined (BooleanAttributeValue), "NumberValue" :: NullOrUndefined (NumberAttributeValue), "DatetimeValue" :: NullOrUndefined (DatetimeAttributeValue) } -> { "StringValue" :: NullOrUndefined (StringAttributeValue), "BinaryValue" :: NullOrUndefined (BinaryAttributeValue), "BooleanValue" :: NullOrUndefined (BooleanAttributeValue), "NumberValue" :: NullOrUndefined (NumberAttributeValue), "DatetimeValue" :: NullOrUndefined (DatetimeAttributeValue) }) -> TypedAttributeValue
+newTypedAttributeValue' :: ({ "StringValue" :: Maybe (StringAttributeValue), "BinaryValue" :: Maybe (BinaryAttributeValue), "BooleanValue" :: Maybe (BooleanAttributeValue), "NumberValue" :: Maybe (NumberAttributeValue), "DatetimeValue" :: Maybe (DatetimeAttributeValue) } -> { "StringValue" :: Maybe (StringAttributeValue), "BinaryValue" :: Maybe (BinaryAttributeValue), "BooleanValue" :: Maybe (BooleanAttributeValue), "NumberValue" :: Maybe (NumberAttributeValue), "DatetimeValue" :: Maybe (DatetimeAttributeValue) }) -> TypedAttributeValue
 ```
 
 Constructs TypedAttributeValue's fields from required parameters
@@ -8038,7 +8038,7 @@ Constructs TypedAttributeValue's fields from required parameters
 
 ``` purescript
 newtype TypedAttributeValueRange
-  = TypedAttributeValueRange { "StartMode" :: RangeMode, "StartValue" :: NullOrUndefined (TypedAttributeValue), "EndMode" :: RangeMode, "EndValue" :: NullOrUndefined (TypedAttributeValue) }
+  = TypedAttributeValueRange { "StartMode" :: RangeMode, "StartValue" :: Maybe (TypedAttributeValue), "EndMode" :: RangeMode, "EndValue" :: Maybe (TypedAttributeValue) }
 ```
 
 <p>A range of attribute values.</p>
@@ -8063,7 +8063,7 @@ Constructs TypedAttributeValueRange from required parameters
 #### `newTypedAttributeValueRange'`
 
 ``` purescript
-newTypedAttributeValueRange' :: RangeMode -> RangeMode -> ({ "StartMode" :: RangeMode, "StartValue" :: NullOrUndefined (TypedAttributeValue), "EndMode" :: RangeMode, "EndValue" :: NullOrUndefined (TypedAttributeValue) } -> { "StartMode" :: RangeMode, "StartValue" :: NullOrUndefined (TypedAttributeValue), "EndMode" :: RangeMode, "EndValue" :: NullOrUndefined (TypedAttributeValue) }) -> TypedAttributeValueRange
+newTypedAttributeValueRange' :: RangeMode -> RangeMode -> ({ "StartMode" :: RangeMode, "StartValue" :: Maybe (TypedAttributeValue), "EndMode" :: RangeMode, "EndValue" :: Maybe (TypedAttributeValue) } -> { "StartMode" :: RangeMode, "StartValue" :: Maybe (TypedAttributeValue), "EndMode" :: RangeMode, "EndValue" :: Maybe (TypedAttributeValue) }) -> TypedAttributeValueRange
 ```
 
 Constructs TypedAttributeValueRange's fields from required parameters
@@ -8072,7 +8072,7 @@ Constructs TypedAttributeValueRange's fields from required parameters
 
 ``` purescript
 newtype TypedLinkAttributeDefinition
-  = TypedLinkAttributeDefinition { "Name" :: AttributeName, "Type" :: FacetAttributeType, "DefaultValue" :: NullOrUndefined (TypedAttributeValue), "IsImmutable" :: NullOrUndefined (Bool), "Rules" :: NullOrUndefined (RuleMap), "RequiredBehavior" :: RequiredAttributeBehavior }
+  = TypedLinkAttributeDefinition { "Name" :: AttributeName, "Type" :: FacetAttributeType, "DefaultValue" :: Maybe (TypedAttributeValue), "IsImmutable" :: Maybe (Bool), "Rules" :: Maybe (RuleMap), "RequiredBehavior" :: RequiredAttributeBehavior }
 ```
 
 <p>A typed link attribute definition.</p>
@@ -8097,7 +8097,7 @@ Constructs TypedLinkAttributeDefinition from required parameters
 #### `newTypedLinkAttributeDefinition'`
 
 ``` purescript
-newTypedLinkAttributeDefinition' :: AttributeName -> RequiredAttributeBehavior -> FacetAttributeType -> ({ "Name" :: AttributeName, "Type" :: FacetAttributeType, "DefaultValue" :: NullOrUndefined (TypedAttributeValue), "IsImmutable" :: NullOrUndefined (Bool), "Rules" :: NullOrUndefined (RuleMap), "RequiredBehavior" :: RequiredAttributeBehavior } -> { "Name" :: AttributeName, "Type" :: FacetAttributeType, "DefaultValue" :: NullOrUndefined (TypedAttributeValue), "IsImmutable" :: NullOrUndefined (Bool), "Rules" :: NullOrUndefined (RuleMap), "RequiredBehavior" :: RequiredAttributeBehavior }) -> TypedLinkAttributeDefinition
+newTypedLinkAttributeDefinition' :: AttributeName -> RequiredAttributeBehavior -> FacetAttributeType -> ({ "Name" :: AttributeName, "Type" :: FacetAttributeType, "DefaultValue" :: Maybe (TypedAttributeValue), "IsImmutable" :: Maybe (Bool), "Rules" :: Maybe (RuleMap), "RequiredBehavior" :: RequiredAttributeBehavior } -> { "Name" :: AttributeName, "Type" :: FacetAttributeType, "DefaultValue" :: Maybe (TypedAttributeValue), "IsImmutable" :: Maybe (Bool), "Rules" :: Maybe (RuleMap), "RequiredBehavior" :: RequiredAttributeBehavior }) -> TypedLinkAttributeDefinition
 ```
 
 Constructs TypedLinkAttributeDefinition's fields from required parameters
@@ -8122,7 +8122,7 @@ Encode TypedLinkAttributeDefinitionList
 
 ``` purescript
 newtype TypedLinkAttributeRange
-  = TypedLinkAttributeRange { "AttributeName" :: NullOrUndefined (AttributeName), "Range" :: TypedAttributeValueRange }
+  = TypedLinkAttributeRange { "AttributeName" :: Maybe (AttributeName), "Range" :: TypedAttributeValueRange }
 ```
 
 <p>Identifies the range of attributes that are used by a specified filter.</p>
@@ -8147,7 +8147,7 @@ Constructs TypedLinkAttributeRange from required parameters
 #### `newTypedLinkAttributeRange'`
 
 ``` purescript
-newTypedLinkAttributeRange' :: TypedAttributeValueRange -> ({ "AttributeName" :: NullOrUndefined (AttributeName), "Range" :: TypedAttributeValueRange } -> { "AttributeName" :: NullOrUndefined (AttributeName), "Range" :: TypedAttributeValueRange }) -> TypedLinkAttributeRange
+newTypedLinkAttributeRange' :: TypedAttributeValueRange -> ({ "AttributeName" :: Maybe (AttributeName), "Range" :: TypedAttributeValueRange } -> { "AttributeName" :: Maybe (AttributeName), "Range" :: TypedAttributeValueRange }) -> TypedLinkAttributeRange
 ```
 
 Constructs TypedLinkAttributeRange's fields from required parameters
@@ -8372,7 +8372,7 @@ Encode TypedLinkSpecifierList
 
 ``` purescript
 newtype UnsupportedIndexTypeException
-  = UnsupportedIndexTypeException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = UnsupportedIndexTypeException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Indicates that the requested index type is not supported.</p>
@@ -8397,7 +8397,7 @@ Constructs UnsupportedIndexTypeException from required parameters
 #### `newUnsupportedIndexTypeException'`
 
 ``` purescript
-newUnsupportedIndexTypeException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> UnsupportedIndexTypeException
+newUnsupportedIndexTypeException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> UnsupportedIndexTypeException
 ```
 
 Constructs UnsupportedIndexTypeException's fields from required parameters
@@ -8470,7 +8470,7 @@ Encode UpdateActionType
 
 ``` purescript
 newtype UpdateFacetRequest
-  = UpdateFacetRequest { "SchemaArn" :: Arn, "Name" :: FacetName, "AttributeUpdates" :: NullOrUndefined (FacetAttributeUpdateList), "ObjectType" :: NullOrUndefined (ObjectType) }
+  = UpdateFacetRequest { "SchemaArn" :: Arn, "Name" :: FacetName, "AttributeUpdates" :: Maybe (FacetAttributeUpdateList), "ObjectType" :: Maybe (ObjectType) }
 ```
 
 ##### Instances
@@ -8493,7 +8493,7 @@ Constructs UpdateFacetRequest from required parameters
 #### `newUpdateFacetRequest'`
 
 ``` purescript
-newUpdateFacetRequest' :: FacetName -> Arn -> ({ "SchemaArn" :: Arn, "Name" :: FacetName, "AttributeUpdates" :: NullOrUndefined (FacetAttributeUpdateList), "ObjectType" :: NullOrUndefined (ObjectType) } -> { "SchemaArn" :: Arn, "Name" :: FacetName, "AttributeUpdates" :: NullOrUndefined (FacetAttributeUpdateList), "ObjectType" :: NullOrUndefined (ObjectType) }) -> UpdateFacetRequest
+newUpdateFacetRequest' :: FacetName -> Arn -> ({ "SchemaArn" :: Arn, "Name" :: FacetName, "AttributeUpdates" :: Maybe (FacetAttributeUpdateList), "ObjectType" :: Maybe (ObjectType) } -> { "SchemaArn" :: Arn, "Name" :: FacetName, "AttributeUpdates" :: Maybe (FacetAttributeUpdateList), "ObjectType" :: Maybe (ObjectType) }) -> UpdateFacetRequest
 ```
 
 Constructs UpdateFacetRequest's fields from required parameters
@@ -8550,7 +8550,7 @@ Constructs UpdateObjectAttributesRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateObjectAttributesResponse
-  = UpdateObjectAttributesResponse { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }
+  = UpdateObjectAttributesResponse { "ObjectIdentifier" :: Maybe (ObjectIdentifier) }
 ```
 
 ##### Instances
@@ -8573,7 +8573,7 @@ Constructs UpdateObjectAttributesResponse from required parameters
 #### `newUpdateObjectAttributesResponse'`
 
 ``` purescript
-newUpdateObjectAttributesResponse' :: ({ "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) }) -> UpdateObjectAttributesResponse
+newUpdateObjectAttributesResponse' :: ({ "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> { "ObjectIdentifier" :: Maybe (ObjectIdentifier) }) -> UpdateObjectAttributesResponse
 ```
 
 Constructs UpdateObjectAttributesResponse's fields from required parameters
@@ -8614,7 +8614,7 @@ Constructs UpdateSchemaRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateSchemaResponse
-  = UpdateSchemaResponse { "SchemaArn" :: NullOrUndefined (Arn) }
+  = UpdateSchemaResponse { "SchemaArn" :: Maybe (Arn) }
 ```
 
 ##### Instances
@@ -8637,7 +8637,7 @@ Constructs UpdateSchemaResponse from required parameters
 #### `newUpdateSchemaResponse'`
 
 ``` purescript
-newUpdateSchemaResponse' :: ({ "SchemaArn" :: NullOrUndefined (Arn) } -> { "SchemaArn" :: NullOrUndefined (Arn) }) -> UpdateSchemaResponse
+newUpdateSchemaResponse' :: ({ "SchemaArn" :: Maybe (Arn) } -> { "SchemaArn" :: Maybe (Arn) }) -> UpdateSchemaResponse
 ```
 
 Constructs UpdateSchemaResponse's fields from required parameters
@@ -8694,7 +8694,7 @@ Encode UpdateTypedLinkFacetResponse
 
 ``` purescript
 newtype UpgradeAppliedSchemaRequest
-  = UpgradeAppliedSchemaRequest { "PublishedSchemaArn" :: Arn, "DirectoryArn" :: Arn, "DryRun" :: NullOrUndefined (Bool) }
+  = UpgradeAppliedSchemaRequest { "PublishedSchemaArn" :: Arn, "DirectoryArn" :: Arn, "DryRun" :: Maybe (Bool) }
 ```
 
 ##### Instances
@@ -8717,7 +8717,7 @@ Constructs UpgradeAppliedSchemaRequest from required parameters
 #### `newUpgradeAppliedSchemaRequest'`
 
 ``` purescript
-newUpgradeAppliedSchemaRequest' :: Arn -> Arn -> ({ "PublishedSchemaArn" :: Arn, "DirectoryArn" :: Arn, "DryRun" :: NullOrUndefined (Bool) } -> { "PublishedSchemaArn" :: Arn, "DirectoryArn" :: Arn, "DryRun" :: NullOrUndefined (Bool) }) -> UpgradeAppliedSchemaRequest
+newUpgradeAppliedSchemaRequest' :: Arn -> Arn -> ({ "PublishedSchemaArn" :: Arn, "DirectoryArn" :: Arn, "DryRun" :: Maybe (Bool) } -> { "PublishedSchemaArn" :: Arn, "DirectoryArn" :: Arn, "DryRun" :: Maybe (Bool) }) -> UpgradeAppliedSchemaRequest
 ```
 
 Constructs UpgradeAppliedSchemaRequest's fields from required parameters
@@ -8726,7 +8726,7 @@ Constructs UpgradeAppliedSchemaRequest's fields from required parameters
 
 ``` purescript
 newtype UpgradeAppliedSchemaResponse
-  = UpgradeAppliedSchemaResponse { "UpgradedSchemaArn" :: NullOrUndefined (Arn), "DirectoryArn" :: NullOrUndefined (Arn) }
+  = UpgradeAppliedSchemaResponse { "UpgradedSchemaArn" :: Maybe (Arn), "DirectoryArn" :: Maybe (Arn) }
 ```
 
 ##### Instances
@@ -8749,7 +8749,7 @@ Constructs UpgradeAppliedSchemaResponse from required parameters
 #### `newUpgradeAppliedSchemaResponse'`
 
 ``` purescript
-newUpgradeAppliedSchemaResponse' :: ({ "UpgradedSchemaArn" :: NullOrUndefined (Arn), "DirectoryArn" :: NullOrUndefined (Arn) } -> { "UpgradedSchemaArn" :: NullOrUndefined (Arn), "DirectoryArn" :: NullOrUndefined (Arn) }) -> UpgradeAppliedSchemaResponse
+newUpgradeAppliedSchemaResponse' :: ({ "UpgradedSchemaArn" :: Maybe (Arn), "DirectoryArn" :: Maybe (Arn) } -> { "UpgradedSchemaArn" :: Maybe (Arn), "DirectoryArn" :: Maybe (Arn) }) -> UpgradeAppliedSchemaResponse
 ```
 
 Constructs UpgradeAppliedSchemaResponse's fields from required parameters
@@ -8758,7 +8758,7 @@ Constructs UpgradeAppliedSchemaResponse's fields from required parameters
 
 ``` purescript
 newtype UpgradePublishedSchemaRequest
-  = UpgradePublishedSchemaRequest { "DevelopmentSchemaArn" :: Arn, "PublishedSchemaArn" :: Arn, "MinorVersion" :: Version, "DryRun" :: NullOrUndefined (Bool) }
+  = UpgradePublishedSchemaRequest { "DevelopmentSchemaArn" :: Arn, "PublishedSchemaArn" :: Arn, "MinorVersion" :: Version, "DryRun" :: Maybe (Bool) }
 ```
 
 ##### Instances
@@ -8781,7 +8781,7 @@ Constructs UpgradePublishedSchemaRequest from required parameters
 #### `newUpgradePublishedSchemaRequest'`
 
 ``` purescript
-newUpgradePublishedSchemaRequest' :: Arn -> Version -> Arn -> ({ "DevelopmentSchemaArn" :: Arn, "PublishedSchemaArn" :: Arn, "MinorVersion" :: Version, "DryRun" :: NullOrUndefined (Bool) } -> { "DevelopmentSchemaArn" :: Arn, "PublishedSchemaArn" :: Arn, "MinorVersion" :: Version, "DryRun" :: NullOrUndefined (Bool) }) -> UpgradePublishedSchemaRequest
+newUpgradePublishedSchemaRequest' :: Arn -> Version -> Arn -> ({ "DevelopmentSchemaArn" :: Arn, "PublishedSchemaArn" :: Arn, "MinorVersion" :: Version, "DryRun" :: Maybe (Bool) } -> { "DevelopmentSchemaArn" :: Arn, "PublishedSchemaArn" :: Arn, "MinorVersion" :: Version, "DryRun" :: Maybe (Bool) }) -> UpgradePublishedSchemaRequest
 ```
 
 Constructs UpgradePublishedSchemaRequest's fields from required parameters
@@ -8790,7 +8790,7 @@ Constructs UpgradePublishedSchemaRequest's fields from required parameters
 
 ``` purescript
 newtype UpgradePublishedSchemaResponse
-  = UpgradePublishedSchemaResponse { "UpgradedSchemaArn" :: NullOrUndefined (Arn) }
+  = UpgradePublishedSchemaResponse { "UpgradedSchemaArn" :: Maybe (Arn) }
 ```
 
 ##### Instances
@@ -8813,7 +8813,7 @@ Constructs UpgradePublishedSchemaResponse from required parameters
 #### `newUpgradePublishedSchemaResponse'`
 
 ``` purescript
-newUpgradePublishedSchemaResponse' :: ({ "UpgradedSchemaArn" :: NullOrUndefined (Arn) } -> { "UpgradedSchemaArn" :: NullOrUndefined (Arn) }) -> UpgradePublishedSchemaResponse
+newUpgradePublishedSchemaResponse' :: ({ "UpgradedSchemaArn" :: Maybe (Arn) } -> { "UpgradedSchemaArn" :: Maybe (Arn) }) -> UpgradePublishedSchemaResponse
 ```
 
 Constructs UpgradePublishedSchemaResponse's fields from required parameters
@@ -8822,7 +8822,7 @@ Constructs UpgradePublishedSchemaResponse's fields from required parameters
 
 ``` purescript
 newtype ValidationException
-  = ValidationException { "Message" :: NullOrUndefined (ExceptionMessage) }
+  = ValidationException { "Message" :: Maybe (ExceptionMessage) }
 ```
 
 <p>Indicates that your request is malformed in some manner. See the exception message.</p>
@@ -8847,7 +8847,7 @@ Constructs ValidationException from required parameters
 #### `newValidationException'`
 
 ``` purescript
-newValidationException' :: ({ "Message" :: NullOrUndefined (ExceptionMessage) } -> { "Message" :: NullOrUndefined (ExceptionMessage) }) -> ValidationException
+newValidationException' :: ({ "Message" :: Maybe (ExceptionMessage) } -> { "Message" :: Maybe (ExceptionMessage) }) -> ValidationException
 ```
 
 Constructs ValidationException's fields from required parameters

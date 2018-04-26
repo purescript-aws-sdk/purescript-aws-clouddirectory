@@ -145,7 +145,7 @@ detachPolicy (CloudDirectory.Service serviceImpl) = AWS.request serviceImpl meth
 
 
 -- | <p>Detaches a typed link from a specified source and target object. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed link</a>.</p>
-detachTypedLink :: forall eff. CloudDirectory.Service -> CloudDirectoryTypes.DetachTypedLinkRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+detachTypedLink :: forall eff. CloudDirectory.Service -> CloudDirectoryTypes.DetachTypedLinkRequest -> Aff (exception :: EXCEPTION | eff) Unit
 detachTypedLink (CloudDirectory.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "detachTypedLink"
 

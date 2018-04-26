@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -20,7 +19,7 @@ options = defaultOptions { unwrapSingleConstructors = true }
 
 -- | <p>Access denied. Check your permissions.</p>
 newtype AccessDeniedException = AccessDeniedException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeAccessDeniedException :: Newtype AccessDeniedException _
 derive instance repGenericAccessDeniedException :: Generic AccessDeniedException _
@@ -30,19 +29,19 @@ instance encodeAccessDeniedException :: Encode AccessDeniedException where encod
 
 -- | Constructs AccessDeniedException from required parameters
 newAccessDeniedException :: AccessDeniedException
-newAccessDeniedException  = AccessDeniedException { "Message": (NullOrUndefined Nothing) }
+newAccessDeniedException  = AccessDeniedException { "Message": Nothing }
 
 -- | Constructs AccessDeniedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAccessDeniedException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> AccessDeniedException
-newAccessDeniedException'  customize = (AccessDeniedException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newAccessDeniedException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> AccessDeniedException
+newAccessDeniedException'  customize = (AccessDeniedException <<< customize) { "Message": Nothing }
 
 
 
 newtype AddFacetToObjectRequest = AddFacetToObjectRequest 
   { "DirectoryArn" :: (Arn)
   , "SchemaFacet" :: (SchemaFacet)
-  , "ObjectAttributeList" :: NullOrUndefined (AttributeKeyAndValueList)
+  , "ObjectAttributeList" :: Maybe (AttributeKeyAndValueList)
   , "ObjectReference" :: (ObjectReference)
   }
 derive instance newtypeAddFacetToObjectRequest :: Newtype AddFacetToObjectRequest _
@@ -53,12 +52,12 @@ instance encodeAddFacetToObjectRequest :: Encode AddFacetToObjectRequest where e
 
 -- | Constructs AddFacetToObjectRequest from required parameters
 newAddFacetToObjectRequest :: Arn -> ObjectReference -> SchemaFacet -> AddFacetToObjectRequest
-newAddFacetToObjectRequest _DirectoryArn _ObjectReference _SchemaFacet = AddFacetToObjectRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "SchemaFacet": _SchemaFacet, "ObjectAttributeList": (NullOrUndefined Nothing) }
+newAddFacetToObjectRequest _DirectoryArn _ObjectReference _SchemaFacet = AddFacetToObjectRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "SchemaFacet": _SchemaFacet, "ObjectAttributeList": Nothing }
 
 -- | Constructs AddFacetToObjectRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAddFacetToObjectRequest' :: Arn -> ObjectReference -> SchemaFacet -> ( { "DirectoryArn" :: (Arn) , "SchemaFacet" :: (SchemaFacet) , "ObjectAttributeList" :: NullOrUndefined (AttributeKeyAndValueList) , "ObjectReference" :: (ObjectReference) } -> {"DirectoryArn" :: (Arn) , "SchemaFacet" :: (SchemaFacet) , "ObjectAttributeList" :: NullOrUndefined (AttributeKeyAndValueList) , "ObjectReference" :: (ObjectReference) } ) -> AddFacetToObjectRequest
-newAddFacetToObjectRequest' _DirectoryArn _ObjectReference _SchemaFacet customize = (AddFacetToObjectRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "SchemaFacet": _SchemaFacet, "ObjectAttributeList": (NullOrUndefined Nothing) }
+newAddFacetToObjectRequest' :: Arn -> ObjectReference -> SchemaFacet -> ( { "DirectoryArn" :: (Arn) , "SchemaFacet" :: (SchemaFacet) , "ObjectAttributeList" :: Maybe (AttributeKeyAndValueList) , "ObjectReference" :: (ObjectReference) } -> {"DirectoryArn" :: (Arn) , "SchemaFacet" :: (SchemaFacet) , "ObjectAttributeList" :: Maybe (AttributeKeyAndValueList) , "ObjectReference" :: (ObjectReference) } ) -> AddFacetToObjectRequest
+newAddFacetToObjectRequest' _DirectoryArn _ObjectReference _SchemaFacet customize = (AddFacetToObjectRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "SchemaFacet": _SchemaFacet, "ObjectAttributeList": Nothing }
 
 
 
@@ -93,8 +92,8 @@ newApplySchemaRequest' _DirectoryArn _PublishedSchemaArn customize = (ApplySchem
 
 
 newtype ApplySchemaResponse = ApplySchemaResponse 
-  { "AppliedSchemaArn" :: NullOrUndefined (Arn)
-  , "DirectoryArn" :: NullOrUndefined (Arn)
+  { "AppliedSchemaArn" :: Maybe (Arn)
+  , "DirectoryArn" :: Maybe (Arn)
   }
 derive instance newtypeApplySchemaResponse :: Newtype ApplySchemaResponse _
 derive instance repGenericApplySchemaResponse :: Generic ApplySchemaResponse _
@@ -104,12 +103,12 @@ instance encodeApplySchemaResponse :: Encode ApplySchemaResponse where encode = 
 
 -- | Constructs ApplySchemaResponse from required parameters
 newApplySchemaResponse :: ApplySchemaResponse
-newApplySchemaResponse  = ApplySchemaResponse { "AppliedSchemaArn": (NullOrUndefined Nothing), "DirectoryArn": (NullOrUndefined Nothing) }
+newApplySchemaResponse  = ApplySchemaResponse { "AppliedSchemaArn": Nothing, "DirectoryArn": Nothing }
 
 -- | Constructs ApplySchemaResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newApplySchemaResponse' :: ( { "AppliedSchemaArn" :: NullOrUndefined (Arn) , "DirectoryArn" :: NullOrUndefined (Arn) } -> {"AppliedSchemaArn" :: NullOrUndefined (Arn) , "DirectoryArn" :: NullOrUndefined (Arn) } ) -> ApplySchemaResponse
-newApplySchemaResponse'  customize = (ApplySchemaResponse <<< customize) { "AppliedSchemaArn": (NullOrUndefined Nothing), "DirectoryArn": (NullOrUndefined Nothing) }
+newApplySchemaResponse' :: ( { "AppliedSchemaArn" :: Maybe (Arn) , "DirectoryArn" :: Maybe (Arn) } -> {"AppliedSchemaArn" :: Maybe (Arn) , "DirectoryArn" :: Maybe (Arn) } ) -> ApplySchemaResponse
+newApplySchemaResponse'  customize = (ApplySchemaResponse <<< customize) { "AppliedSchemaArn": Nothing, "DirectoryArn": Nothing }
 
 
 
@@ -155,7 +154,7 @@ newAttachObjectRequest' _ChildReference _DirectoryArn _LinkName _ParentReference
 
 
 newtype AttachObjectResponse = AttachObjectResponse 
-  { "AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
+  { "AttachedObjectIdentifier" :: Maybe (ObjectIdentifier)
   }
 derive instance newtypeAttachObjectResponse :: Newtype AttachObjectResponse _
 derive instance repGenericAttachObjectResponse :: Generic AttachObjectResponse _
@@ -165,17 +164,17 @@ instance encodeAttachObjectResponse :: Encode AttachObjectResponse where encode 
 
 -- | Constructs AttachObjectResponse from required parameters
 newAttachObjectResponse :: AttachObjectResponse
-newAttachObjectResponse  = AttachObjectResponse { "AttachedObjectIdentifier": (NullOrUndefined Nothing) }
+newAttachObjectResponse  = AttachObjectResponse { "AttachedObjectIdentifier": Nothing }
 
 -- | Constructs AttachObjectResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttachObjectResponse' :: ( { "AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> {"AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } ) -> AttachObjectResponse
-newAttachObjectResponse'  customize = (AttachObjectResponse <<< customize) { "AttachedObjectIdentifier": (NullOrUndefined Nothing) }
+newAttachObjectResponse' :: ( { "AttachedObjectIdentifier" :: Maybe (ObjectIdentifier) } -> {"AttachedObjectIdentifier" :: Maybe (ObjectIdentifier) } ) -> AttachObjectResponse
+newAttachObjectResponse'  customize = (AttachObjectResponse <<< customize) { "AttachedObjectIdentifier": Nothing }
 
 
 
 newtype AttachPolicyRequest = AttachPolicyRequest 
-  { "DirectoryArn" :: NullOrUndefined (Arn)
+  { "DirectoryArn" :: Maybe (Arn)
   , "PolicyReference" :: (ObjectReference)
   , "ObjectReference" :: (ObjectReference)
   }
@@ -187,12 +186,12 @@ instance encodeAttachPolicyRequest :: Encode AttachPolicyRequest where encode = 
 
 -- | Constructs AttachPolicyRequest from required parameters
 newAttachPolicyRequest :: ObjectReference -> ObjectReference -> AttachPolicyRequest
-newAttachPolicyRequest _ObjectReference _PolicyReference = AttachPolicyRequest { "ObjectReference": _ObjectReference, "PolicyReference": _PolicyReference, "DirectoryArn": (NullOrUndefined Nothing) }
+newAttachPolicyRequest _ObjectReference _PolicyReference = AttachPolicyRequest { "ObjectReference": _ObjectReference, "PolicyReference": _PolicyReference, "DirectoryArn": Nothing }
 
 -- | Constructs AttachPolicyRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttachPolicyRequest' :: ObjectReference -> ObjectReference -> ( { "DirectoryArn" :: NullOrUndefined (Arn) , "PolicyReference" :: (ObjectReference) , "ObjectReference" :: (ObjectReference) } -> {"DirectoryArn" :: NullOrUndefined (Arn) , "PolicyReference" :: (ObjectReference) , "ObjectReference" :: (ObjectReference) } ) -> AttachPolicyRequest
-newAttachPolicyRequest' _ObjectReference _PolicyReference customize = (AttachPolicyRequest <<< customize) { "ObjectReference": _ObjectReference, "PolicyReference": _PolicyReference, "DirectoryArn": (NullOrUndefined Nothing) }
+newAttachPolicyRequest' :: ObjectReference -> ObjectReference -> ( { "DirectoryArn" :: Maybe (Arn) , "PolicyReference" :: (ObjectReference) , "ObjectReference" :: (ObjectReference) } -> {"DirectoryArn" :: Maybe (Arn) , "PolicyReference" :: (ObjectReference) , "ObjectReference" :: (ObjectReference) } ) -> AttachPolicyRequest
+newAttachPolicyRequest' _ObjectReference _PolicyReference customize = (AttachPolicyRequest <<< customize) { "ObjectReference": _ObjectReference, "PolicyReference": _PolicyReference, "DirectoryArn": Nothing }
 
 
 
@@ -228,7 +227,7 @@ newAttachToIndexRequest' _DirectoryArn _IndexReference _TargetReference customiz
 
 
 newtype AttachToIndexResponse = AttachToIndexResponse 
-  { "AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
+  { "AttachedObjectIdentifier" :: Maybe (ObjectIdentifier)
   }
 derive instance newtypeAttachToIndexResponse :: Newtype AttachToIndexResponse _
 derive instance repGenericAttachToIndexResponse :: Generic AttachToIndexResponse _
@@ -238,12 +237,12 @@ instance encodeAttachToIndexResponse :: Encode AttachToIndexResponse where encod
 
 -- | Constructs AttachToIndexResponse from required parameters
 newAttachToIndexResponse :: AttachToIndexResponse
-newAttachToIndexResponse  = AttachToIndexResponse { "AttachedObjectIdentifier": (NullOrUndefined Nothing) }
+newAttachToIndexResponse  = AttachToIndexResponse { "AttachedObjectIdentifier": Nothing }
 
 -- | Constructs AttachToIndexResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttachToIndexResponse' :: ( { "AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> {"AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } ) -> AttachToIndexResponse
-newAttachToIndexResponse'  customize = (AttachToIndexResponse <<< customize) { "AttachedObjectIdentifier": (NullOrUndefined Nothing) }
+newAttachToIndexResponse' :: ( { "AttachedObjectIdentifier" :: Maybe (ObjectIdentifier) } -> {"AttachedObjectIdentifier" :: Maybe (ObjectIdentifier) } ) -> AttachToIndexResponse
+newAttachToIndexResponse'  customize = (AttachToIndexResponse <<< customize) { "AttachedObjectIdentifier": Nothing }
 
 
 
@@ -272,7 +271,7 @@ newAttachTypedLinkRequest' _Attributes _DirectoryArn _SourceObjectReference _Tar
 
 
 newtype AttachTypedLinkResponse = AttachTypedLinkResponse 
-  { "TypedLinkSpecifier" :: NullOrUndefined (TypedLinkSpecifier)
+  { "TypedLinkSpecifier" :: Maybe (TypedLinkSpecifier)
   }
 derive instance newtypeAttachTypedLinkResponse :: Newtype AttachTypedLinkResponse _
 derive instance repGenericAttachTypedLinkResponse :: Generic AttachTypedLinkResponse _
@@ -282,12 +281,12 @@ instance encodeAttachTypedLinkResponse :: Encode AttachTypedLinkResponse where e
 
 -- | Constructs AttachTypedLinkResponse from required parameters
 newAttachTypedLinkResponse :: AttachTypedLinkResponse
-newAttachTypedLinkResponse  = AttachTypedLinkResponse { "TypedLinkSpecifier": (NullOrUndefined Nothing) }
+newAttachTypedLinkResponse  = AttachTypedLinkResponse { "TypedLinkSpecifier": Nothing }
 
 -- | Constructs AttachTypedLinkResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAttachTypedLinkResponse' :: ( { "TypedLinkSpecifier" :: NullOrUndefined (TypedLinkSpecifier) } -> {"TypedLinkSpecifier" :: NullOrUndefined (TypedLinkSpecifier) } ) -> AttachTypedLinkResponse
-newAttachTypedLinkResponse'  customize = (AttachTypedLinkResponse <<< customize) { "TypedLinkSpecifier": (NullOrUndefined Nothing) }
+newAttachTypedLinkResponse' :: ( { "TypedLinkSpecifier" :: Maybe (TypedLinkSpecifier) } -> {"TypedLinkSpecifier" :: Maybe (TypedLinkSpecifier) } ) -> AttachTypedLinkResponse
+newAttachTypedLinkResponse'  customize = (AttachTypedLinkResponse <<< customize) { "TypedLinkSpecifier": Nothing }
 
 
 
@@ -461,7 +460,7 @@ newBatchAttachObject' _ChildReference _LinkName _ParentReference customize = (Ba
 
 -- | <p>Represents the output batch <a>AttachObject</a> response operation.</p>
 newtype BatchAttachObjectResponse = BatchAttachObjectResponse 
-  { "attachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
+  { "attachedObjectIdentifier" :: Maybe (ObjectIdentifier)
   }
 derive instance newtypeBatchAttachObjectResponse :: Newtype BatchAttachObjectResponse _
 derive instance repGenericBatchAttachObjectResponse :: Generic BatchAttachObjectResponse _
@@ -471,12 +470,12 @@ instance encodeBatchAttachObjectResponse :: Encode BatchAttachObjectResponse whe
 
 -- | Constructs BatchAttachObjectResponse from required parameters
 newBatchAttachObjectResponse :: BatchAttachObjectResponse
-newBatchAttachObjectResponse  = BatchAttachObjectResponse { "attachedObjectIdentifier": (NullOrUndefined Nothing) }
+newBatchAttachObjectResponse  = BatchAttachObjectResponse { "attachedObjectIdentifier": Nothing }
 
 -- | Constructs BatchAttachObjectResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchAttachObjectResponse' :: ( { "attachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> {"attachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } ) -> BatchAttachObjectResponse
-newBatchAttachObjectResponse'  customize = (BatchAttachObjectResponse <<< customize) { "attachedObjectIdentifier": (NullOrUndefined Nothing) }
+newBatchAttachObjectResponse' :: ( { "attachedObjectIdentifier" :: Maybe (ObjectIdentifier) } -> {"attachedObjectIdentifier" :: Maybe (ObjectIdentifier) } ) -> BatchAttachObjectResponse
+newBatchAttachObjectResponse'  customize = (BatchAttachObjectResponse <<< customize) { "attachedObjectIdentifier": Nothing }
 
 
 
@@ -536,7 +535,7 @@ newBatchAttachToIndex' _IndexReference _TargetReference customize = (BatchAttach
 
 -- | <p>Represents the output of a <a>AttachToIndex</a> response operation.</p>
 newtype BatchAttachToIndexResponse = BatchAttachToIndexResponse 
-  { "AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
+  { "AttachedObjectIdentifier" :: Maybe (ObjectIdentifier)
   }
 derive instance newtypeBatchAttachToIndexResponse :: Newtype BatchAttachToIndexResponse _
 derive instance repGenericBatchAttachToIndexResponse :: Generic BatchAttachToIndexResponse _
@@ -546,12 +545,12 @@ instance encodeBatchAttachToIndexResponse :: Encode BatchAttachToIndexResponse w
 
 -- | Constructs BatchAttachToIndexResponse from required parameters
 newBatchAttachToIndexResponse :: BatchAttachToIndexResponse
-newBatchAttachToIndexResponse  = BatchAttachToIndexResponse { "AttachedObjectIdentifier": (NullOrUndefined Nothing) }
+newBatchAttachToIndexResponse  = BatchAttachToIndexResponse { "AttachedObjectIdentifier": Nothing }
 
 -- | Constructs BatchAttachToIndexResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchAttachToIndexResponse' :: ( { "AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> {"AttachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } ) -> BatchAttachToIndexResponse
-newBatchAttachToIndexResponse'  customize = (BatchAttachToIndexResponse <<< customize) { "AttachedObjectIdentifier": (NullOrUndefined Nothing) }
+newBatchAttachToIndexResponse' :: ( { "AttachedObjectIdentifier" :: Maybe (ObjectIdentifier) } -> {"AttachedObjectIdentifier" :: Maybe (ObjectIdentifier) } ) -> BatchAttachToIndexResponse
+newBatchAttachToIndexResponse'  customize = (BatchAttachToIndexResponse <<< customize) { "AttachedObjectIdentifier": Nothing }
 
 
 
@@ -581,7 +580,7 @@ newBatchAttachTypedLink' _Attributes _SourceObjectReference _TargetObjectReferen
 
 -- | <p>Represents the output of a <a>AttachTypedLink</a> response operation.</p>
 newtype BatchAttachTypedLinkResponse = BatchAttachTypedLinkResponse 
-  { "TypedLinkSpecifier" :: NullOrUndefined (TypedLinkSpecifier)
+  { "TypedLinkSpecifier" :: Maybe (TypedLinkSpecifier)
   }
 derive instance newtypeBatchAttachTypedLinkResponse :: Newtype BatchAttachTypedLinkResponse _
 derive instance repGenericBatchAttachTypedLinkResponse :: Generic BatchAttachTypedLinkResponse _
@@ -591,12 +590,12 @@ instance encodeBatchAttachTypedLinkResponse :: Encode BatchAttachTypedLinkRespon
 
 -- | Constructs BatchAttachTypedLinkResponse from required parameters
 newBatchAttachTypedLinkResponse :: BatchAttachTypedLinkResponse
-newBatchAttachTypedLinkResponse  = BatchAttachTypedLinkResponse { "TypedLinkSpecifier": (NullOrUndefined Nothing) }
+newBatchAttachTypedLinkResponse  = BatchAttachTypedLinkResponse { "TypedLinkSpecifier": Nothing }
 
 -- | Constructs BatchAttachTypedLinkResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchAttachTypedLinkResponse' :: ( { "TypedLinkSpecifier" :: NullOrUndefined (TypedLinkSpecifier) } -> {"TypedLinkSpecifier" :: NullOrUndefined (TypedLinkSpecifier) } ) -> BatchAttachTypedLinkResponse
-newBatchAttachTypedLinkResponse'  customize = (BatchAttachTypedLinkResponse <<< customize) { "TypedLinkSpecifier": (NullOrUndefined Nothing) }
+newBatchAttachTypedLinkResponse' :: ( { "TypedLinkSpecifier" :: Maybe (TypedLinkSpecifier) } -> {"TypedLinkSpecifier" :: Maybe (TypedLinkSpecifier) } ) -> BatchAttachTypedLinkResponse
+newBatchAttachTypedLinkResponse'  customize = (BatchAttachTypedLinkResponse <<< customize) { "TypedLinkSpecifier": Nothing }
 
 
 
@@ -604,9 +603,9 @@ newBatchAttachTypedLinkResponse'  customize = (BatchAttachTypedLinkResponse <<< 
 newtype BatchCreateIndex = BatchCreateIndex 
   { "OrderedIndexedAttributeList" :: (AttributeKeyList)
   , "IsUnique" :: (Bool)
-  , "ParentReference" :: NullOrUndefined (ObjectReference)
-  , "LinkName" :: NullOrUndefined (LinkName)
-  , "BatchReferenceName" :: NullOrUndefined (BatchReferenceName)
+  , "ParentReference" :: Maybe (ObjectReference)
+  , "LinkName" :: Maybe (LinkName)
+  , "BatchReferenceName" :: Maybe (BatchReferenceName)
   }
 derive instance newtypeBatchCreateIndex :: Newtype BatchCreateIndex _
 derive instance repGenericBatchCreateIndex :: Generic BatchCreateIndex _
@@ -616,18 +615,18 @@ instance encodeBatchCreateIndex :: Encode BatchCreateIndex where encode = generi
 
 -- | Constructs BatchCreateIndex from required parameters
 newBatchCreateIndex :: Bool -> AttributeKeyList -> BatchCreateIndex
-newBatchCreateIndex _IsUnique _OrderedIndexedAttributeList = BatchCreateIndex { "IsUnique": _IsUnique, "OrderedIndexedAttributeList": _OrderedIndexedAttributeList, "BatchReferenceName": (NullOrUndefined Nothing), "LinkName": (NullOrUndefined Nothing), "ParentReference": (NullOrUndefined Nothing) }
+newBatchCreateIndex _IsUnique _OrderedIndexedAttributeList = BatchCreateIndex { "IsUnique": _IsUnique, "OrderedIndexedAttributeList": _OrderedIndexedAttributeList, "BatchReferenceName": Nothing, "LinkName": Nothing, "ParentReference": Nothing }
 
 -- | Constructs BatchCreateIndex's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchCreateIndex' :: Bool -> AttributeKeyList -> ( { "OrderedIndexedAttributeList" :: (AttributeKeyList) , "IsUnique" :: (Bool) , "ParentReference" :: NullOrUndefined (ObjectReference) , "LinkName" :: NullOrUndefined (LinkName) , "BatchReferenceName" :: NullOrUndefined (BatchReferenceName) } -> {"OrderedIndexedAttributeList" :: (AttributeKeyList) , "IsUnique" :: (Bool) , "ParentReference" :: NullOrUndefined (ObjectReference) , "LinkName" :: NullOrUndefined (LinkName) , "BatchReferenceName" :: NullOrUndefined (BatchReferenceName) } ) -> BatchCreateIndex
-newBatchCreateIndex' _IsUnique _OrderedIndexedAttributeList customize = (BatchCreateIndex <<< customize) { "IsUnique": _IsUnique, "OrderedIndexedAttributeList": _OrderedIndexedAttributeList, "BatchReferenceName": (NullOrUndefined Nothing), "LinkName": (NullOrUndefined Nothing), "ParentReference": (NullOrUndefined Nothing) }
+newBatchCreateIndex' :: Bool -> AttributeKeyList -> ( { "OrderedIndexedAttributeList" :: (AttributeKeyList) , "IsUnique" :: (Bool) , "ParentReference" :: Maybe (ObjectReference) , "LinkName" :: Maybe (LinkName) , "BatchReferenceName" :: Maybe (BatchReferenceName) } -> {"OrderedIndexedAttributeList" :: (AttributeKeyList) , "IsUnique" :: (Bool) , "ParentReference" :: Maybe (ObjectReference) , "LinkName" :: Maybe (LinkName) , "BatchReferenceName" :: Maybe (BatchReferenceName) } ) -> BatchCreateIndex
+newBatchCreateIndex' _IsUnique _OrderedIndexedAttributeList customize = (BatchCreateIndex <<< customize) { "IsUnique": _IsUnique, "OrderedIndexedAttributeList": _OrderedIndexedAttributeList, "BatchReferenceName": Nothing, "LinkName": Nothing, "ParentReference": Nothing }
 
 
 
 -- | <p>Represents the output of a <a>CreateIndex</a> response operation.</p>
 newtype BatchCreateIndexResponse = BatchCreateIndexResponse 
-  { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
+  { "ObjectIdentifier" :: Maybe (ObjectIdentifier)
   }
 derive instance newtypeBatchCreateIndexResponse :: Newtype BatchCreateIndexResponse _
 derive instance repGenericBatchCreateIndexResponse :: Generic BatchCreateIndexResponse _
@@ -637,12 +636,12 @@ instance encodeBatchCreateIndexResponse :: Encode BatchCreateIndexResponse where
 
 -- | Constructs BatchCreateIndexResponse from required parameters
 newBatchCreateIndexResponse :: BatchCreateIndexResponse
-newBatchCreateIndexResponse  = BatchCreateIndexResponse { "ObjectIdentifier": (NullOrUndefined Nothing) }
+newBatchCreateIndexResponse  = BatchCreateIndexResponse { "ObjectIdentifier": Nothing }
 
 -- | Constructs BatchCreateIndexResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchCreateIndexResponse' :: ( { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> {"ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } ) -> BatchCreateIndexResponse
-newBatchCreateIndexResponse'  customize = (BatchCreateIndexResponse <<< customize) { "ObjectIdentifier": (NullOrUndefined Nothing) }
+newBatchCreateIndexResponse' :: ( { "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> {"ObjectIdentifier" :: Maybe (ObjectIdentifier) } ) -> BatchCreateIndexResponse
+newBatchCreateIndexResponse'  customize = (BatchCreateIndexResponse <<< customize) { "ObjectIdentifier": Nothing }
 
 
 
@@ -673,7 +672,7 @@ newBatchCreateObject' _BatchReferenceName _LinkName _ObjectAttributeList _Parent
 
 -- | <p>Represents the output of a <a>CreateObject</a> response operation.</p>
 newtype BatchCreateObjectResponse = BatchCreateObjectResponse 
-  { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
+  { "ObjectIdentifier" :: Maybe (ObjectIdentifier)
   }
 derive instance newtypeBatchCreateObjectResponse :: Newtype BatchCreateObjectResponse _
 derive instance repGenericBatchCreateObjectResponse :: Generic BatchCreateObjectResponse _
@@ -683,12 +682,12 @@ instance encodeBatchCreateObjectResponse :: Encode BatchCreateObjectResponse whe
 
 -- | Constructs BatchCreateObjectResponse from required parameters
 newBatchCreateObjectResponse :: BatchCreateObjectResponse
-newBatchCreateObjectResponse  = BatchCreateObjectResponse { "ObjectIdentifier": (NullOrUndefined Nothing) }
+newBatchCreateObjectResponse  = BatchCreateObjectResponse { "ObjectIdentifier": Nothing }
 
 -- | Constructs BatchCreateObjectResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchCreateObjectResponse' :: ( { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> {"ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } ) -> BatchCreateObjectResponse
-newBatchCreateObjectResponse'  customize = (BatchCreateObjectResponse <<< customize) { "ObjectIdentifier": (NullOrUndefined Nothing) }
+newBatchCreateObjectResponse' :: ( { "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> {"ObjectIdentifier" :: Maybe (ObjectIdentifier) } ) -> BatchCreateObjectResponse
+newBatchCreateObjectResponse'  customize = (BatchCreateObjectResponse <<< customize) { "ObjectIdentifier": Nothing }
 
 
 
@@ -747,7 +746,7 @@ newBatchDetachFromIndex' _IndexReference _TargetReference customize = (BatchDeta
 
 -- | <p>Represents the output of a <a>DetachFromIndex</a> response operation.</p>
 newtype BatchDetachFromIndexResponse = BatchDetachFromIndexResponse 
-  { "DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
+  { "DetachedObjectIdentifier" :: Maybe (ObjectIdentifier)
   }
 derive instance newtypeBatchDetachFromIndexResponse :: Newtype BatchDetachFromIndexResponse _
 derive instance repGenericBatchDetachFromIndexResponse :: Generic BatchDetachFromIndexResponse _
@@ -757,12 +756,12 @@ instance encodeBatchDetachFromIndexResponse :: Encode BatchDetachFromIndexRespon
 
 -- | Constructs BatchDetachFromIndexResponse from required parameters
 newBatchDetachFromIndexResponse :: BatchDetachFromIndexResponse
-newBatchDetachFromIndexResponse  = BatchDetachFromIndexResponse { "DetachedObjectIdentifier": (NullOrUndefined Nothing) }
+newBatchDetachFromIndexResponse  = BatchDetachFromIndexResponse { "DetachedObjectIdentifier": Nothing }
 
 -- | Constructs BatchDetachFromIndexResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchDetachFromIndexResponse' :: ( { "DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> {"DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } ) -> BatchDetachFromIndexResponse
-newBatchDetachFromIndexResponse'  customize = (BatchDetachFromIndexResponse <<< customize) { "DetachedObjectIdentifier": (NullOrUndefined Nothing) }
+newBatchDetachFromIndexResponse' :: ( { "DetachedObjectIdentifier" :: Maybe (ObjectIdentifier) } -> {"DetachedObjectIdentifier" :: Maybe (ObjectIdentifier) } ) -> BatchDetachFromIndexResponse
+newBatchDetachFromIndexResponse'  customize = (BatchDetachFromIndexResponse <<< customize) { "DetachedObjectIdentifier": Nothing }
 
 
 
@@ -791,7 +790,7 @@ newBatchDetachObject' _BatchReferenceName _LinkName _ParentReference customize =
 
 -- | <p>Represents the output of a <a>DetachObject</a> response operation.</p>
 newtype BatchDetachObjectResponse = BatchDetachObjectResponse 
-  { "detachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
+  { "detachedObjectIdentifier" :: Maybe (ObjectIdentifier)
   }
 derive instance newtypeBatchDetachObjectResponse :: Newtype BatchDetachObjectResponse _
 derive instance repGenericBatchDetachObjectResponse :: Generic BatchDetachObjectResponse _
@@ -801,12 +800,12 @@ instance encodeBatchDetachObjectResponse :: Encode BatchDetachObjectResponse whe
 
 -- | Constructs BatchDetachObjectResponse from required parameters
 newBatchDetachObjectResponse :: BatchDetachObjectResponse
-newBatchDetachObjectResponse  = BatchDetachObjectResponse { "detachedObjectIdentifier": (NullOrUndefined Nothing) }
+newBatchDetachObjectResponse  = BatchDetachObjectResponse { "detachedObjectIdentifier": Nothing }
 
 -- | Constructs BatchDetachObjectResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchDetachObjectResponse' :: ( { "detachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> {"detachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } ) -> BatchDetachObjectResponse
-newBatchDetachObjectResponse'  customize = (BatchDetachObjectResponse <<< customize) { "detachedObjectIdentifier": (NullOrUndefined Nothing) }
+newBatchDetachObjectResponse' :: ( { "detachedObjectIdentifier" :: Maybe (ObjectIdentifier) } -> {"detachedObjectIdentifier" :: Maybe (ObjectIdentifier) } ) -> BatchDetachObjectResponse
+newBatchDetachObjectResponse'  customize = (BatchDetachObjectResponse <<< customize) { "detachedObjectIdentifier": Nothing }
 
 
 
@@ -896,8 +895,8 @@ newBatchGetObjectInformation' _ObjectReference customize = (BatchGetObjectInform
 
 -- | <p>Represents the output of a <a>GetObjectInformation</a> response operation.</p>
 newtype BatchGetObjectInformationResponse = BatchGetObjectInformationResponse 
-  { "SchemaFacets" :: NullOrUndefined (SchemaFacetList)
-  , "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
+  { "SchemaFacets" :: Maybe (SchemaFacetList)
+  , "ObjectIdentifier" :: Maybe (ObjectIdentifier)
   }
 derive instance newtypeBatchGetObjectInformationResponse :: Newtype BatchGetObjectInformationResponse _
 derive instance repGenericBatchGetObjectInformationResponse :: Generic BatchGetObjectInformationResponse _
@@ -907,20 +906,20 @@ instance encodeBatchGetObjectInformationResponse :: Encode BatchGetObjectInforma
 
 -- | Constructs BatchGetObjectInformationResponse from required parameters
 newBatchGetObjectInformationResponse :: BatchGetObjectInformationResponse
-newBatchGetObjectInformationResponse  = BatchGetObjectInformationResponse { "ObjectIdentifier": (NullOrUndefined Nothing), "SchemaFacets": (NullOrUndefined Nothing) }
+newBatchGetObjectInformationResponse  = BatchGetObjectInformationResponse { "ObjectIdentifier": Nothing, "SchemaFacets": Nothing }
 
 -- | Constructs BatchGetObjectInformationResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchGetObjectInformationResponse' :: ( { "SchemaFacets" :: NullOrUndefined (SchemaFacetList) , "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> {"SchemaFacets" :: NullOrUndefined (SchemaFacetList) , "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } ) -> BatchGetObjectInformationResponse
-newBatchGetObjectInformationResponse'  customize = (BatchGetObjectInformationResponse <<< customize) { "ObjectIdentifier": (NullOrUndefined Nothing), "SchemaFacets": (NullOrUndefined Nothing) }
+newBatchGetObjectInformationResponse' :: ( { "SchemaFacets" :: Maybe (SchemaFacetList) , "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> {"SchemaFacets" :: Maybe (SchemaFacetList) , "ObjectIdentifier" :: Maybe (ObjectIdentifier) } ) -> BatchGetObjectInformationResponse
+newBatchGetObjectInformationResponse'  customize = (BatchGetObjectInformationResponse <<< customize) { "ObjectIdentifier": Nothing, "SchemaFacets": Nothing }
 
 
 
 -- | <p>Lists indices attached to an object inside a <a>BatchRead</a> operation. For more information, see <a>ListAttachedIndices</a> and <a>BatchReadRequest$Operations</a>.</p>
 newtype BatchListAttachedIndices = BatchListAttachedIndices 
   { "TargetReference" :: (ObjectReference)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
   }
 derive instance newtypeBatchListAttachedIndices :: Newtype BatchListAttachedIndices _
 derive instance repGenericBatchListAttachedIndices :: Generic BatchListAttachedIndices _
@@ -930,19 +929,19 @@ instance encodeBatchListAttachedIndices :: Encode BatchListAttachedIndices where
 
 -- | Constructs BatchListAttachedIndices from required parameters
 newBatchListAttachedIndices :: ObjectReference -> BatchListAttachedIndices
-newBatchListAttachedIndices _TargetReference = BatchListAttachedIndices { "TargetReference": _TargetReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListAttachedIndices _TargetReference = BatchListAttachedIndices { "TargetReference": _TargetReference, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs BatchListAttachedIndices's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListAttachedIndices' :: ObjectReference -> ( { "TargetReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } -> {"TargetReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } ) -> BatchListAttachedIndices
-newBatchListAttachedIndices' _TargetReference customize = (BatchListAttachedIndices <<< customize) { "TargetReference": _TargetReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListAttachedIndices' :: ObjectReference -> ( { "TargetReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } -> {"TargetReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } ) -> BatchListAttachedIndices
+newBatchListAttachedIndices' _TargetReference customize = (BatchListAttachedIndices <<< customize) { "TargetReference": _TargetReference, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a <a>ListAttachedIndices</a> response operation.</p>
 newtype BatchListAttachedIndicesResponse = BatchListAttachedIndicesResponse 
-  { "IndexAttachments" :: NullOrUndefined (IndexAttachmentList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "IndexAttachments" :: Maybe (IndexAttachmentList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeBatchListAttachedIndicesResponse :: Newtype BatchListAttachedIndicesResponse _
 derive instance repGenericBatchListAttachedIndicesResponse :: Generic BatchListAttachedIndicesResponse _
@@ -952,22 +951,22 @@ instance encodeBatchListAttachedIndicesResponse :: Encode BatchListAttachedIndic
 
 -- | Constructs BatchListAttachedIndicesResponse from required parameters
 newBatchListAttachedIndicesResponse :: BatchListAttachedIndicesResponse
-newBatchListAttachedIndicesResponse  = BatchListAttachedIndicesResponse { "IndexAttachments": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListAttachedIndicesResponse  = BatchListAttachedIndicesResponse { "IndexAttachments": Nothing, "NextToken": Nothing }
 
 -- | Constructs BatchListAttachedIndicesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListAttachedIndicesResponse' :: ( { "IndexAttachments" :: NullOrUndefined (IndexAttachmentList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"IndexAttachments" :: NullOrUndefined (IndexAttachmentList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> BatchListAttachedIndicesResponse
-newBatchListAttachedIndicesResponse'  customize = (BatchListAttachedIndicesResponse <<< customize) { "IndexAttachments": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListAttachedIndicesResponse' :: ( { "IndexAttachments" :: Maybe (IndexAttachmentList) , "NextToken" :: Maybe (NextToken) } -> {"IndexAttachments" :: Maybe (IndexAttachmentList) , "NextToken" :: Maybe (NextToken) } ) -> BatchListAttachedIndicesResponse
+newBatchListAttachedIndicesResponse'  customize = (BatchListAttachedIndicesResponse <<< customize) { "IndexAttachments": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListIncomingTypedLinks</a> and <a>BatchReadRequest$Operations</a>.</p>
 newtype BatchListIncomingTypedLinks = BatchListIncomingTypedLinks 
   { "ObjectReference" :: (ObjectReference)
-  , "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList)
-  , "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
+  , "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList)
+  , "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
   }
 derive instance newtypeBatchListIncomingTypedLinks :: Newtype BatchListIncomingTypedLinks _
 derive instance repGenericBatchListIncomingTypedLinks :: Generic BatchListIncomingTypedLinks _
@@ -977,19 +976,19 @@ instance encodeBatchListIncomingTypedLinks :: Encode BatchListIncomingTypedLinks
 
 -- | Constructs BatchListIncomingTypedLinks from required parameters
 newBatchListIncomingTypedLinks :: ObjectReference -> BatchListIncomingTypedLinks
-newBatchListIncomingTypedLinks _ObjectReference = BatchListIncomingTypedLinks { "ObjectReference": _ObjectReference, "FilterAttributeRanges": (NullOrUndefined Nothing), "FilterTypedLink": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListIncomingTypedLinks _ObjectReference = BatchListIncomingTypedLinks { "ObjectReference": _ObjectReference, "FilterAttributeRanges": Nothing, "FilterTypedLink": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs BatchListIncomingTypedLinks's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListIncomingTypedLinks' :: ObjectReference -> ( { "ObjectReference" :: (ObjectReference) , "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList) , "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } -> {"ObjectReference" :: (ObjectReference) , "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList) , "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } ) -> BatchListIncomingTypedLinks
-newBatchListIncomingTypedLinks' _ObjectReference customize = (BatchListIncomingTypedLinks <<< customize) { "ObjectReference": _ObjectReference, "FilterAttributeRanges": (NullOrUndefined Nothing), "FilterTypedLink": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListIncomingTypedLinks' :: ObjectReference -> ( { "ObjectReference" :: (ObjectReference) , "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList) , "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } -> {"ObjectReference" :: (ObjectReference) , "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList) , "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } ) -> BatchListIncomingTypedLinks
+newBatchListIncomingTypedLinks' _ObjectReference customize = (BatchListIncomingTypedLinks <<< customize) { "ObjectReference": _ObjectReference, "FilterAttributeRanges": Nothing, "FilterTypedLink": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a <a>ListIncomingTypedLinks</a> response operation.</p>
 newtype BatchListIncomingTypedLinksResponse = BatchListIncomingTypedLinksResponse 
-  { "LinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "LinkSpecifiers" :: Maybe (TypedLinkSpecifierList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeBatchListIncomingTypedLinksResponse :: Newtype BatchListIncomingTypedLinksResponse _
 derive instance repGenericBatchListIncomingTypedLinksResponse :: Generic BatchListIncomingTypedLinksResponse _
@@ -999,21 +998,21 @@ instance encodeBatchListIncomingTypedLinksResponse :: Encode BatchListIncomingTy
 
 -- | Constructs BatchListIncomingTypedLinksResponse from required parameters
 newBatchListIncomingTypedLinksResponse :: BatchListIncomingTypedLinksResponse
-newBatchListIncomingTypedLinksResponse  = BatchListIncomingTypedLinksResponse { "LinkSpecifiers": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListIncomingTypedLinksResponse  = BatchListIncomingTypedLinksResponse { "LinkSpecifiers": Nothing, "NextToken": Nothing }
 
 -- | Constructs BatchListIncomingTypedLinksResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListIncomingTypedLinksResponse' :: ( { "LinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"LinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> BatchListIncomingTypedLinksResponse
-newBatchListIncomingTypedLinksResponse'  customize = (BatchListIncomingTypedLinksResponse <<< customize) { "LinkSpecifiers": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListIncomingTypedLinksResponse' :: ( { "LinkSpecifiers" :: Maybe (TypedLinkSpecifierList) , "NextToken" :: Maybe (NextToken) } -> {"LinkSpecifiers" :: Maybe (TypedLinkSpecifierList) , "NextToken" :: Maybe (NextToken) } ) -> BatchListIncomingTypedLinksResponse
+newBatchListIncomingTypedLinksResponse'  customize = (BatchListIncomingTypedLinksResponse <<< customize) { "LinkSpecifiers": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Lists objects attached to the specified index inside a <a>BatchRead</a> operation. For more information, see <a>ListIndex</a> and <a>BatchReadRequest$Operations</a>.</p>
 newtype BatchListIndex = BatchListIndex 
-  { "RangesOnIndexedValues" :: NullOrUndefined (ObjectAttributeRangeList)
+  { "RangesOnIndexedValues" :: Maybe (ObjectAttributeRangeList)
   , "IndexReference" :: (ObjectReference)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeBatchListIndex :: Newtype BatchListIndex _
 derive instance repGenericBatchListIndex :: Generic BatchListIndex _
@@ -1023,19 +1022,19 @@ instance encodeBatchListIndex :: Encode BatchListIndex where encode = genericEnc
 
 -- | Constructs BatchListIndex from required parameters
 newBatchListIndex :: ObjectReference -> BatchListIndex
-newBatchListIndex _IndexReference = BatchListIndex { "IndexReference": _IndexReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "RangesOnIndexedValues": (NullOrUndefined Nothing) }
+newBatchListIndex _IndexReference = BatchListIndex { "IndexReference": _IndexReference, "MaxResults": Nothing, "NextToken": Nothing, "RangesOnIndexedValues": Nothing }
 
 -- | Constructs BatchListIndex's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListIndex' :: ObjectReference -> ( { "RangesOnIndexedValues" :: NullOrUndefined (ObjectAttributeRangeList) , "IndexReference" :: (ObjectReference) , "MaxResults" :: NullOrUndefined (NumberResults) , "NextToken" :: NullOrUndefined (NextToken) } -> {"RangesOnIndexedValues" :: NullOrUndefined (ObjectAttributeRangeList) , "IndexReference" :: (ObjectReference) , "MaxResults" :: NullOrUndefined (NumberResults) , "NextToken" :: NullOrUndefined (NextToken) } ) -> BatchListIndex
-newBatchListIndex' _IndexReference customize = (BatchListIndex <<< customize) { "IndexReference": _IndexReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "RangesOnIndexedValues": (NullOrUndefined Nothing) }
+newBatchListIndex' :: ObjectReference -> ( { "RangesOnIndexedValues" :: Maybe (ObjectAttributeRangeList) , "IndexReference" :: (ObjectReference) , "MaxResults" :: Maybe (NumberResults) , "NextToken" :: Maybe (NextToken) } -> {"RangesOnIndexedValues" :: Maybe (ObjectAttributeRangeList) , "IndexReference" :: (ObjectReference) , "MaxResults" :: Maybe (NumberResults) , "NextToken" :: Maybe (NextToken) } ) -> BatchListIndex
+newBatchListIndex' _IndexReference customize = (BatchListIndex <<< customize) { "IndexReference": _IndexReference, "MaxResults": Nothing, "NextToken": Nothing, "RangesOnIndexedValues": Nothing }
 
 
 
 -- | <p>Represents the output of a <a>ListIndex</a> response operation.</p>
 newtype BatchListIndexResponse = BatchListIndexResponse 
-  { "IndexAttachments" :: NullOrUndefined (IndexAttachmentList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "IndexAttachments" :: Maybe (IndexAttachmentList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeBatchListIndexResponse :: Newtype BatchListIndexResponse _
 derive instance repGenericBatchListIndexResponse :: Generic BatchListIndexResponse _
@@ -1045,21 +1044,21 @@ instance encodeBatchListIndexResponse :: Encode BatchListIndexResponse where enc
 
 -- | Constructs BatchListIndexResponse from required parameters
 newBatchListIndexResponse :: BatchListIndexResponse
-newBatchListIndexResponse  = BatchListIndexResponse { "IndexAttachments": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListIndexResponse  = BatchListIndexResponse { "IndexAttachments": Nothing, "NextToken": Nothing }
 
 -- | Constructs BatchListIndexResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListIndexResponse' :: ( { "IndexAttachments" :: NullOrUndefined (IndexAttachmentList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"IndexAttachments" :: NullOrUndefined (IndexAttachmentList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> BatchListIndexResponse
-newBatchListIndexResponse'  customize = (BatchListIndexResponse <<< customize) { "IndexAttachments": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListIndexResponse' :: ( { "IndexAttachments" :: Maybe (IndexAttachmentList) , "NextToken" :: Maybe (NextToken) } -> {"IndexAttachments" :: Maybe (IndexAttachmentList) , "NextToken" :: Maybe (NextToken) } ) -> BatchListIndexResponse
+newBatchListIndexResponse'  customize = (BatchListIndexResponse <<< customize) { "IndexAttachments": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a <a>ListObjectAttributes</a> operation.</p>
 newtype BatchListObjectAttributes = BatchListObjectAttributes 
   { "ObjectReference" :: (ObjectReference)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
-  , "FacetFilter" :: NullOrUndefined (SchemaFacet)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
+  , "FacetFilter" :: Maybe (SchemaFacet)
   }
 derive instance newtypeBatchListObjectAttributes :: Newtype BatchListObjectAttributes _
 derive instance repGenericBatchListObjectAttributes :: Generic BatchListObjectAttributes _
@@ -1069,19 +1068,19 @@ instance encodeBatchListObjectAttributes :: Encode BatchListObjectAttributes whe
 
 -- | Constructs BatchListObjectAttributes from required parameters
 newBatchListObjectAttributes :: ObjectReference -> BatchListObjectAttributes
-newBatchListObjectAttributes _ObjectReference = BatchListObjectAttributes { "ObjectReference": _ObjectReference, "FacetFilter": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListObjectAttributes _ObjectReference = BatchListObjectAttributes { "ObjectReference": _ObjectReference, "FacetFilter": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs BatchListObjectAttributes's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListObjectAttributes' :: ObjectReference -> ( { "ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "FacetFilter" :: NullOrUndefined (SchemaFacet) } -> {"ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "FacetFilter" :: NullOrUndefined (SchemaFacet) } ) -> BatchListObjectAttributes
-newBatchListObjectAttributes' _ObjectReference customize = (BatchListObjectAttributes <<< customize) { "ObjectReference": _ObjectReference, "FacetFilter": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListObjectAttributes' :: ObjectReference -> ( { "ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "FacetFilter" :: Maybe (SchemaFacet) } -> {"ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "FacetFilter" :: Maybe (SchemaFacet) } ) -> BatchListObjectAttributes
+newBatchListObjectAttributes' _ObjectReference customize = (BatchListObjectAttributes <<< customize) { "ObjectReference": _ObjectReference, "FacetFilter": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a <a>ListObjectAttributes</a> response operation.</p>
 newtype BatchListObjectAttributesResponse = BatchListObjectAttributesResponse 
-  { "Attributes" :: NullOrUndefined (AttributeKeyAndValueList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Attributes" :: Maybe (AttributeKeyAndValueList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeBatchListObjectAttributesResponse :: Newtype BatchListObjectAttributesResponse _
 derive instance repGenericBatchListObjectAttributesResponse :: Generic BatchListObjectAttributesResponse _
@@ -1091,20 +1090,20 @@ instance encodeBatchListObjectAttributesResponse :: Encode BatchListObjectAttrib
 
 -- | Constructs BatchListObjectAttributesResponse from required parameters
 newBatchListObjectAttributesResponse :: BatchListObjectAttributesResponse
-newBatchListObjectAttributesResponse  = BatchListObjectAttributesResponse { "Attributes": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListObjectAttributesResponse  = BatchListObjectAttributesResponse { "Attributes": Nothing, "NextToken": Nothing }
 
 -- | Constructs BatchListObjectAttributesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListObjectAttributesResponse' :: ( { "Attributes" :: NullOrUndefined (AttributeKeyAndValueList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Attributes" :: NullOrUndefined (AttributeKeyAndValueList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> BatchListObjectAttributesResponse
-newBatchListObjectAttributesResponse'  customize = (BatchListObjectAttributesResponse <<< customize) { "Attributes": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListObjectAttributesResponse' :: ( { "Attributes" :: Maybe (AttributeKeyAndValueList) , "NextToken" :: Maybe (NextToken) } -> {"Attributes" :: Maybe (AttributeKeyAndValueList) , "NextToken" :: Maybe (NextToken) } ) -> BatchListObjectAttributesResponse
+newBatchListObjectAttributesResponse'  customize = (BatchListObjectAttributesResponse <<< customize) { "Attributes": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a <a>ListObjectChildren</a> operation.</p>
 newtype BatchListObjectChildren = BatchListObjectChildren 
   { "ObjectReference" :: (ObjectReference)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
   }
 derive instance newtypeBatchListObjectChildren :: Newtype BatchListObjectChildren _
 derive instance repGenericBatchListObjectChildren :: Generic BatchListObjectChildren _
@@ -1114,19 +1113,19 @@ instance encodeBatchListObjectChildren :: Encode BatchListObjectChildren where e
 
 -- | Constructs BatchListObjectChildren from required parameters
 newBatchListObjectChildren :: ObjectReference -> BatchListObjectChildren
-newBatchListObjectChildren _ObjectReference = BatchListObjectChildren { "ObjectReference": _ObjectReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListObjectChildren _ObjectReference = BatchListObjectChildren { "ObjectReference": _ObjectReference, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs BatchListObjectChildren's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListObjectChildren' :: ObjectReference -> ( { "ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } -> {"ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } ) -> BatchListObjectChildren
-newBatchListObjectChildren' _ObjectReference customize = (BatchListObjectChildren <<< customize) { "ObjectReference": _ObjectReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListObjectChildren' :: ObjectReference -> ( { "ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } -> {"ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } ) -> BatchListObjectChildren
+newBatchListObjectChildren' _ObjectReference customize = (BatchListObjectChildren <<< customize) { "ObjectReference": _ObjectReference, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a <a>ListObjectChildren</a> response operation.</p>
 newtype BatchListObjectChildrenResponse = BatchListObjectChildrenResponse 
-  { "Children" :: NullOrUndefined (LinkNameToObjectIdentifierMap)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Children" :: Maybe (LinkNameToObjectIdentifierMap)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeBatchListObjectChildrenResponse :: Newtype BatchListObjectChildrenResponse _
 derive instance repGenericBatchListObjectChildrenResponse :: Generic BatchListObjectChildrenResponse _
@@ -1136,20 +1135,20 @@ instance encodeBatchListObjectChildrenResponse :: Encode BatchListObjectChildren
 
 -- | Constructs BatchListObjectChildrenResponse from required parameters
 newBatchListObjectChildrenResponse :: BatchListObjectChildrenResponse
-newBatchListObjectChildrenResponse  = BatchListObjectChildrenResponse { "Children": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListObjectChildrenResponse  = BatchListObjectChildrenResponse { "Children": Nothing, "NextToken": Nothing }
 
 -- | Constructs BatchListObjectChildrenResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListObjectChildrenResponse' :: ( { "Children" :: NullOrUndefined (LinkNameToObjectIdentifierMap) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Children" :: NullOrUndefined (LinkNameToObjectIdentifierMap) , "NextToken" :: NullOrUndefined (NextToken) } ) -> BatchListObjectChildrenResponse
-newBatchListObjectChildrenResponse'  customize = (BatchListObjectChildrenResponse <<< customize) { "Children": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListObjectChildrenResponse' :: ( { "Children" :: Maybe (LinkNameToObjectIdentifierMap) , "NextToken" :: Maybe (NextToken) } -> {"Children" :: Maybe (LinkNameToObjectIdentifierMap) , "NextToken" :: Maybe (NextToken) } ) -> BatchListObjectChildrenResponse
+newBatchListObjectChildrenResponse'  customize = (BatchListObjectChildrenResponse <<< customize) { "Children": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectParentPaths</a> and <a>BatchReadRequest$Operations</a>.</p>
 newtype BatchListObjectParentPaths = BatchListObjectParentPaths 
   { "ObjectReference" :: (ObjectReference)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
   }
 derive instance newtypeBatchListObjectParentPaths :: Newtype BatchListObjectParentPaths _
 derive instance repGenericBatchListObjectParentPaths :: Generic BatchListObjectParentPaths _
@@ -1159,19 +1158,19 @@ instance encodeBatchListObjectParentPaths :: Encode BatchListObjectParentPaths w
 
 -- | Constructs BatchListObjectParentPaths from required parameters
 newBatchListObjectParentPaths :: ObjectReference -> BatchListObjectParentPaths
-newBatchListObjectParentPaths _ObjectReference = BatchListObjectParentPaths { "ObjectReference": _ObjectReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListObjectParentPaths _ObjectReference = BatchListObjectParentPaths { "ObjectReference": _ObjectReference, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs BatchListObjectParentPaths's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListObjectParentPaths' :: ObjectReference -> ( { "ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } -> {"ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } ) -> BatchListObjectParentPaths
-newBatchListObjectParentPaths' _ObjectReference customize = (BatchListObjectParentPaths <<< customize) { "ObjectReference": _ObjectReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListObjectParentPaths' :: ObjectReference -> ( { "ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } -> {"ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } ) -> BatchListObjectParentPaths
+newBatchListObjectParentPaths' _ObjectReference customize = (BatchListObjectParentPaths <<< customize) { "ObjectReference": _ObjectReference, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a <a>ListObjectParentPaths</a> response operation.</p>
 newtype BatchListObjectParentPathsResponse = BatchListObjectParentPathsResponse 
-  { "PathToObjectIdentifiersList" :: NullOrUndefined (PathToObjectIdentifiersList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "PathToObjectIdentifiersList" :: Maybe (PathToObjectIdentifiersList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeBatchListObjectParentPathsResponse :: Newtype BatchListObjectParentPathsResponse _
 derive instance repGenericBatchListObjectParentPathsResponse :: Generic BatchListObjectParentPathsResponse _
@@ -1181,20 +1180,20 @@ instance encodeBatchListObjectParentPathsResponse :: Encode BatchListObjectParen
 
 -- | Constructs BatchListObjectParentPathsResponse from required parameters
 newBatchListObjectParentPathsResponse :: BatchListObjectParentPathsResponse
-newBatchListObjectParentPathsResponse  = BatchListObjectParentPathsResponse { "NextToken": (NullOrUndefined Nothing), "PathToObjectIdentifiersList": (NullOrUndefined Nothing) }
+newBatchListObjectParentPathsResponse  = BatchListObjectParentPathsResponse { "NextToken": Nothing, "PathToObjectIdentifiersList": Nothing }
 
 -- | Constructs BatchListObjectParentPathsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListObjectParentPathsResponse' :: ( { "PathToObjectIdentifiersList" :: NullOrUndefined (PathToObjectIdentifiersList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"PathToObjectIdentifiersList" :: NullOrUndefined (PathToObjectIdentifiersList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> BatchListObjectParentPathsResponse
-newBatchListObjectParentPathsResponse'  customize = (BatchListObjectParentPathsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "PathToObjectIdentifiersList": (NullOrUndefined Nothing) }
+newBatchListObjectParentPathsResponse' :: ( { "PathToObjectIdentifiersList" :: Maybe (PathToObjectIdentifiersList) , "NextToken" :: Maybe (NextToken) } -> {"PathToObjectIdentifiersList" :: Maybe (PathToObjectIdentifiersList) , "NextToken" :: Maybe (NextToken) } ) -> BatchListObjectParentPathsResponse
+newBatchListObjectParentPathsResponse'  customize = (BatchListObjectParentPathsResponse <<< customize) { "NextToken": Nothing, "PathToObjectIdentifiersList": Nothing }
 
 
 
 -- | <p>Returns policies attached to an object in pagination fashion inside a <a>BatchRead</a> operation. For more information, see <a>ListObjectPolicies</a> and <a>BatchReadRequest$Operations</a>.</p>
 newtype BatchListObjectPolicies = BatchListObjectPolicies 
   { "ObjectReference" :: (ObjectReference)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
   }
 derive instance newtypeBatchListObjectPolicies :: Newtype BatchListObjectPolicies _
 derive instance repGenericBatchListObjectPolicies :: Generic BatchListObjectPolicies _
@@ -1204,19 +1203,19 @@ instance encodeBatchListObjectPolicies :: Encode BatchListObjectPolicies where e
 
 -- | Constructs BatchListObjectPolicies from required parameters
 newBatchListObjectPolicies :: ObjectReference -> BatchListObjectPolicies
-newBatchListObjectPolicies _ObjectReference = BatchListObjectPolicies { "ObjectReference": _ObjectReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListObjectPolicies _ObjectReference = BatchListObjectPolicies { "ObjectReference": _ObjectReference, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs BatchListObjectPolicies's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListObjectPolicies' :: ObjectReference -> ( { "ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } -> {"ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } ) -> BatchListObjectPolicies
-newBatchListObjectPolicies' _ObjectReference customize = (BatchListObjectPolicies <<< customize) { "ObjectReference": _ObjectReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListObjectPolicies' :: ObjectReference -> ( { "ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } -> {"ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } ) -> BatchListObjectPolicies
+newBatchListObjectPolicies' _ObjectReference customize = (BatchListObjectPolicies <<< customize) { "ObjectReference": _ObjectReference, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a <a>ListObjectPolicies</a> response operation.</p>
 newtype BatchListObjectPoliciesResponse = BatchListObjectPoliciesResponse 
-  { "AttachedPolicyIds" :: NullOrUndefined (ObjectIdentifierList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "AttachedPolicyIds" :: Maybe (ObjectIdentifierList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeBatchListObjectPoliciesResponse :: Newtype BatchListObjectPoliciesResponse _
 derive instance repGenericBatchListObjectPoliciesResponse :: Generic BatchListObjectPoliciesResponse _
@@ -1226,22 +1225,22 @@ instance encodeBatchListObjectPoliciesResponse :: Encode BatchListObjectPolicies
 
 -- | Constructs BatchListObjectPoliciesResponse from required parameters
 newBatchListObjectPoliciesResponse :: BatchListObjectPoliciesResponse
-newBatchListObjectPoliciesResponse  = BatchListObjectPoliciesResponse { "AttachedPolicyIds": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListObjectPoliciesResponse  = BatchListObjectPoliciesResponse { "AttachedPolicyIds": Nothing, "NextToken": Nothing }
 
 -- | Constructs BatchListObjectPoliciesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListObjectPoliciesResponse' :: ( { "AttachedPolicyIds" :: NullOrUndefined (ObjectIdentifierList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"AttachedPolicyIds" :: NullOrUndefined (ObjectIdentifierList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> BatchListObjectPoliciesResponse
-newBatchListObjectPoliciesResponse'  customize = (BatchListObjectPoliciesResponse <<< customize) { "AttachedPolicyIds": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListObjectPoliciesResponse' :: ( { "AttachedPolicyIds" :: Maybe (ObjectIdentifierList) , "NextToken" :: Maybe (NextToken) } -> {"AttachedPolicyIds" :: Maybe (ObjectIdentifierList) , "NextToken" :: Maybe (NextToken) } ) -> BatchListObjectPoliciesResponse
+newBatchListObjectPoliciesResponse'  customize = (BatchListObjectPoliciesResponse <<< customize) { "AttachedPolicyIds": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object inside a <a>BatchRead</a> operation. For more information, see <a>ListOutgoingTypedLinks</a> and <a>BatchReadRequest$Operations</a>.</p>
 newtype BatchListOutgoingTypedLinks = BatchListOutgoingTypedLinks 
   { "ObjectReference" :: (ObjectReference)
-  , "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList)
-  , "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
+  , "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList)
+  , "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
   }
 derive instance newtypeBatchListOutgoingTypedLinks :: Newtype BatchListOutgoingTypedLinks _
 derive instance repGenericBatchListOutgoingTypedLinks :: Generic BatchListOutgoingTypedLinks _
@@ -1251,19 +1250,19 @@ instance encodeBatchListOutgoingTypedLinks :: Encode BatchListOutgoingTypedLinks
 
 -- | Constructs BatchListOutgoingTypedLinks from required parameters
 newBatchListOutgoingTypedLinks :: ObjectReference -> BatchListOutgoingTypedLinks
-newBatchListOutgoingTypedLinks _ObjectReference = BatchListOutgoingTypedLinks { "ObjectReference": _ObjectReference, "FilterAttributeRanges": (NullOrUndefined Nothing), "FilterTypedLink": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListOutgoingTypedLinks _ObjectReference = BatchListOutgoingTypedLinks { "ObjectReference": _ObjectReference, "FilterAttributeRanges": Nothing, "FilterTypedLink": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs BatchListOutgoingTypedLinks's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListOutgoingTypedLinks' :: ObjectReference -> ( { "ObjectReference" :: (ObjectReference) , "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList) , "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } -> {"ObjectReference" :: (ObjectReference) , "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList) , "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } ) -> BatchListOutgoingTypedLinks
-newBatchListOutgoingTypedLinks' _ObjectReference customize = (BatchListOutgoingTypedLinks <<< customize) { "ObjectReference": _ObjectReference, "FilterAttributeRanges": (NullOrUndefined Nothing), "FilterTypedLink": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListOutgoingTypedLinks' :: ObjectReference -> ( { "ObjectReference" :: (ObjectReference) , "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList) , "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } -> {"ObjectReference" :: (ObjectReference) , "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList) , "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } ) -> BatchListOutgoingTypedLinks
+newBatchListOutgoingTypedLinks' _ObjectReference customize = (BatchListOutgoingTypedLinks <<< customize) { "ObjectReference": _ObjectReference, "FilterAttributeRanges": Nothing, "FilterTypedLink": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a <a>ListOutgoingTypedLinks</a> response operation.</p>
 newtype BatchListOutgoingTypedLinksResponse = BatchListOutgoingTypedLinksResponse 
-  { "TypedLinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "TypedLinkSpecifiers" :: Maybe (TypedLinkSpecifierList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeBatchListOutgoingTypedLinksResponse :: Newtype BatchListOutgoingTypedLinksResponse _
 derive instance repGenericBatchListOutgoingTypedLinksResponse :: Generic BatchListOutgoingTypedLinksResponse _
@@ -1273,20 +1272,20 @@ instance encodeBatchListOutgoingTypedLinksResponse :: Encode BatchListOutgoingTy
 
 -- | Constructs BatchListOutgoingTypedLinksResponse from required parameters
 newBatchListOutgoingTypedLinksResponse :: BatchListOutgoingTypedLinksResponse
-newBatchListOutgoingTypedLinksResponse  = BatchListOutgoingTypedLinksResponse { "NextToken": (NullOrUndefined Nothing), "TypedLinkSpecifiers": (NullOrUndefined Nothing) }
+newBatchListOutgoingTypedLinksResponse  = BatchListOutgoingTypedLinksResponse { "NextToken": Nothing, "TypedLinkSpecifiers": Nothing }
 
 -- | Constructs BatchListOutgoingTypedLinksResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListOutgoingTypedLinksResponse' :: ( { "TypedLinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"TypedLinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> BatchListOutgoingTypedLinksResponse
-newBatchListOutgoingTypedLinksResponse'  customize = (BatchListOutgoingTypedLinksResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "TypedLinkSpecifiers": (NullOrUndefined Nothing) }
+newBatchListOutgoingTypedLinksResponse' :: ( { "TypedLinkSpecifiers" :: Maybe (TypedLinkSpecifierList) , "NextToken" :: Maybe (NextToken) } -> {"TypedLinkSpecifiers" :: Maybe (TypedLinkSpecifierList) , "NextToken" :: Maybe (NextToken) } ) -> BatchListOutgoingTypedLinksResponse
+newBatchListOutgoingTypedLinksResponse'  customize = (BatchListOutgoingTypedLinksResponse <<< customize) { "NextToken": Nothing, "TypedLinkSpecifiers": Nothing }
 
 
 
 -- | <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached inside a <a>BatchRead</a> operation. For more information, see <a>ListPolicyAttachments</a> and <a>BatchReadRequest$Operations</a>.</p>
 newtype BatchListPolicyAttachments = BatchListPolicyAttachments 
   { "PolicyReference" :: (ObjectReference)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
   }
 derive instance newtypeBatchListPolicyAttachments :: Newtype BatchListPolicyAttachments _
 derive instance repGenericBatchListPolicyAttachments :: Generic BatchListPolicyAttachments _
@@ -1296,19 +1295,19 @@ instance encodeBatchListPolicyAttachments :: Encode BatchListPolicyAttachments w
 
 -- | Constructs BatchListPolicyAttachments from required parameters
 newBatchListPolicyAttachments :: ObjectReference -> BatchListPolicyAttachments
-newBatchListPolicyAttachments _PolicyReference = BatchListPolicyAttachments { "PolicyReference": _PolicyReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListPolicyAttachments _PolicyReference = BatchListPolicyAttachments { "PolicyReference": _PolicyReference, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs BatchListPolicyAttachments's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListPolicyAttachments' :: ObjectReference -> ( { "PolicyReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } -> {"PolicyReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } ) -> BatchListPolicyAttachments
-newBatchListPolicyAttachments' _PolicyReference customize = (BatchListPolicyAttachments <<< customize) { "PolicyReference": _PolicyReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchListPolicyAttachments' :: ObjectReference -> ( { "PolicyReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } -> {"PolicyReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } ) -> BatchListPolicyAttachments
+newBatchListPolicyAttachments' _PolicyReference customize = (BatchListPolicyAttachments <<< customize) { "PolicyReference": _PolicyReference, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a <a>ListPolicyAttachments</a> response operation.</p>
 newtype BatchListPolicyAttachmentsResponse = BatchListPolicyAttachmentsResponse 
-  { "ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "ObjectIdentifiers" :: Maybe (ObjectIdentifierList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeBatchListPolicyAttachmentsResponse :: Newtype BatchListPolicyAttachmentsResponse _
 derive instance repGenericBatchListPolicyAttachmentsResponse :: Generic BatchListPolicyAttachmentsResponse _
@@ -1318,20 +1317,20 @@ instance encodeBatchListPolicyAttachmentsResponse :: Encode BatchListPolicyAttac
 
 -- | Constructs BatchListPolicyAttachmentsResponse from required parameters
 newBatchListPolicyAttachmentsResponse :: BatchListPolicyAttachmentsResponse
-newBatchListPolicyAttachmentsResponse  = BatchListPolicyAttachmentsResponse { "NextToken": (NullOrUndefined Nothing), "ObjectIdentifiers": (NullOrUndefined Nothing) }
+newBatchListPolicyAttachmentsResponse  = BatchListPolicyAttachmentsResponse { "NextToken": Nothing, "ObjectIdentifiers": Nothing }
 
 -- | Constructs BatchListPolicyAttachmentsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchListPolicyAttachmentsResponse' :: ( { "ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> BatchListPolicyAttachmentsResponse
-newBatchListPolicyAttachmentsResponse'  customize = (BatchListPolicyAttachmentsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "ObjectIdentifiers": (NullOrUndefined Nothing) }
+newBatchListPolicyAttachmentsResponse' :: ( { "ObjectIdentifiers" :: Maybe (ObjectIdentifierList) , "NextToken" :: Maybe (NextToken) } -> {"ObjectIdentifiers" :: Maybe (ObjectIdentifierList) , "NextToken" :: Maybe (NextToken) } ) -> BatchListPolicyAttachmentsResponse
+newBatchListPolicyAttachmentsResponse'  customize = (BatchListPolicyAttachmentsResponse <<< customize) { "NextToken": Nothing, "ObjectIdentifiers": Nothing }
 
 
 
 -- | <p>Lists all policies from the root of the Directory to the object specified inside a <a>BatchRead</a> operation. For more information, see <a>LookupPolicy</a> and <a>BatchReadRequest$Operations</a>.</p>
 newtype BatchLookupPolicy = BatchLookupPolicy 
   { "ObjectReference" :: (ObjectReference)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
   }
 derive instance newtypeBatchLookupPolicy :: Newtype BatchLookupPolicy _
 derive instance repGenericBatchLookupPolicy :: Generic BatchLookupPolicy _
@@ -1341,19 +1340,19 @@ instance encodeBatchLookupPolicy :: Encode BatchLookupPolicy where encode = gene
 
 -- | Constructs BatchLookupPolicy from required parameters
 newBatchLookupPolicy :: ObjectReference -> BatchLookupPolicy
-newBatchLookupPolicy _ObjectReference = BatchLookupPolicy { "ObjectReference": _ObjectReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchLookupPolicy _ObjectReference = BatchLookupPolicy { "ObjectReference": _ObjectReference, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs BatchLookupPolicy's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchLookupPolicy' :: ObjectReference -> ( { "ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } -> {"ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } ) -> BatchLookupPolicy
-newBatchLookupPolicy' _ObjectReference customize = (BatchLookupPolicy <<< customize) { "ObjectReference": _ObjectReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newBatchLookupPolicy' :: ObjectReference -> ( { "ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } -> {"ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } ) -> BatchLookupPolicy
+newBatchLookupPolicy' _ObjectReference customize = (BatchLookupPolicy <<< customize) { "ObjectReference": _ObjectReference, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | <p>Represents the output of a <a>LookupPolicy</a> response operation.</p>
 newtype BatchLookupPolicyResponse = BatchLookupPolicyResponse 
-  { "PolicyToPathList" :: NullOrUndefined (PolicyToPathList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "PolicyToPathList" :: Maybe (PolicyToPathList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeBatchLookupPolicyResponse :: Newtype BatchLookupPolicyResponse _
 derive instance repGenericBatchLookupPolicyResponse :: Generic BatchLookupPolicyResponse _
@@ -1363,12 +1362,12 @@ instance encodeBatchLookupPolicyResponse :: Encode BatchLookupPolicyResponse whe
 
 -- | Constructs BatchLookupPolicyResponse from required parameters
 newBatchLookupPolicyResponse :: BatchLookupPolicyResponse
-newBatchLookupPolicyResponse  = BatchLookupPolicyResponse { "NextToken": (NullOrUndefined Nothing), "PolicyToPathList": (NullOrUndefined Nothing) }
+newBatchLookupPolicyResponse  = BatchLookupPolicyResponse { "NextToken": Nothing, "PolicyToPathList": Nothing }
 
 -- | Constructs BatchLookupPolicyResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchLookupPolicyResponse' :: ( { "PolicyToPathList" :: NullOrUndefined (PolicyToPathList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"PolicyToPathList" :: NullOrUndefined (PolicyToPathList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> BatchLookupPolicyResponse
-newBatchLookupPolicyResponse'  customize = (BatchLookupPolicyResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "PolicyToPathList": (NullOrUndefined Nothing) }
+newBatchLookupPolicyResponse' :: ( { "PolicyToPathList" :: Maybe (PolicyToPathList) , "NextToken" :: Maybe (NextToken) } -> {"PolicyToPathList" :: Maybe (PolicyToPathList) , "NextToken" :: Maybe (NextToken) } ) -> BatchLookupPolicyResponse
+newBatchLookupPolicyResponse'  customize = (BatchLookupPolicyResponse <<< customize) { "NextToken": Nothing, "PolicyToPathList": Nothing }
 
 
 
@@ -1383,8 +1382,8 @@ instance encodeBatchOperationIndex :: Encode BatchOperationIndex where encode = 
 
 -- | <p>The batch read exception structure, which contains the exception type and message.</p>
 newtype BatchReadException = BatchReadException 
-  { "Type" :: NullOrUndefined (BatchReadExceptionType)
-  , "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Type" :: Maybe (BatchReadExceptionType)
+  , "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeBatchReadException :: Newtype BatchReadException _
 derive instance repGenericBatchReadException :: Generic BatchReadException _
@@ -1394,12 +1393,12 @@ instance encodeBatchReadException :: Encode BatchReadException where encode = ge
 
 -- | Constructs BatchReadException from required parameters
 newBatchReadException :: BatchReadException
-newBatchReadException  = BatchReadException { "Message": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newBatchReadException  = BatchReadException { "Message": Nothing, "Type": Nothing }
 
 -- | Constructs BatchReadException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchReadException' :: ( { "Type" :: NullOrUndefined (BatchReadExceptionType) , "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Type" :: NullOrUndefined (BatchReadExceptionType) , "Message" :: NullOrUndefined (ExceptionMessage) } ) -> BatchReadException
-newBatchReadException'  customize = (BatchReadException <<< customize) { "Message": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newBatchReadException' :: ( { "Type" :: Maybe (BatchReadExceptionType) , "Message" :: Maybe (ExceptionMessage) } -> {"Type" :: Maybe (BatchReadExceptionType) , "Message" :: Maybe (ExceptionMessage) } ) -> BatchReadException
+newBatchReadException'  customize = (BatchReadException <<< customize) { "Message": Nothing, "Type": Nothing }
 
 
 
@@ -1414,17 +1413,17 @@ instance encodeBatchReadExceptionType :: Encode BatchReadExceptionType where enc
 
 -- | <p>Represents the output of a <code>BatchRead</code> operation.</p>
 newtype BatchReadOperation = BatchReadOperation 
-  { "ListObjectAttributes" :: NullOrUndefined (BatchListObjectAttributes)
-  , "ListObjectChildren" :: NullOrUndefined (BatchListObjectChildren)
-  , "ListAttachedIndices" :: NullOrUndefined (BatchListAttachedIndices)
-  , "ListObjectParentPaths" :: NullOrUndefined (BatchListObjectParentPaths)
-  , "GetObjectInformation" :: NullOrUndefined (BatchGetObjectInformation)
-  , "ListObjectPolicies" :: NullOrUndefined (BatchListObjectPolicies)
-  , "ListPolicyAttachments" :: NullOrUndefined (BatchListPolicyAttachments)
-  , "LookupPolicy" :: NullOrUndefined (BatchLookupPolicy)
-  , "ListIndex" :: NullOrUndefined (BatchListIndex)
-  , "ListOutgoingTypedLinks" :: NullOrUndefined (BatchListOutgoingTypedLinks)
-  , "ListIncomingTypedLinks" :: NullOrUndefined (BatchListIncomingTypedLinks)
+  { "ListObjectAttributes" :: Maybe (BatchListObjectAttributes)
+  , "ListObjectChildren" :: Maybe (BatchListObjectChildren)
+  , "ListAttachedIndices" :: Maybe (BatchListAttachedIndices)
+  , "ListObjectParentPaths" :: Maybe (BatchListObjectParentPaths)
+  , "GetObjectInformation" :: Maybe (BatchGetObjectInformation)
+  , "ListObjectPolicies" :: Maybe (BatchListObjectPolicies)
+  , "ListPolicyAttachments" :: Maybe (BatchListPolicyAttachments)
+  , "LookupPolicy" :: Maybe (BatchLookupPolicy)
+  , "ListIndex" :: Maybe (BatchListIndex)
+  , "ListOutgoingTypedLinks" :: Maybe (BatchListOutgoingTypedLinks)
+  , "ListIncomingTypedLinks" :: Maybe (BatchListIncomingTypedLinks)
   }
 derive instance newtypeBatchReadOperation :: Newtype BatchReadOperation _
 derive instance repGenericBatchReadOperation :: Generic BatchReadOperation _
@@ -1434,12 +1433,12 @@ instance encodeBatchReadOperation :: Encode BatchReadOperation where encode = ge
 
 -- | Constructs BatchReadOperation from required parameters
 newBatchReadOperation :: BatchReadOperation
-newBatchReadOperation  = BatchReadOperation { "GetObjectInformation": (NullOrUndefined Nothing), "ListAttachedIndices": (NullOrUndefined Nothing), "ListIncomingTypedLinks": (NullOrUndefined Nothing), "ListIndex": (NullOrUndefined Nothing), "ListObjectAttributes": (NullOrUndefined Nothing), "ListObjectChildren": (NullOrUndefined Nothing), "ListObjectParentPaths": (NullOrUndefined Nothing), "ListObjectPolicies": (NullOrUndefined Nothing), "ListOutgoingTypedLinks": (NullOrUndefined Nothing), "ListPolicyAttachments": (NullOrUndefined Nothing), "LookupPolicy": (NullOrUndefined Nothing) }
+newBatchReadOperation  = BatchReadOperation { "GetObjectInformation": Nothing, "ListAttachedIndices": Nothing, "ListIncomingTypedLinks": Nothing, "ListIndex": Nothing, "ListObjectAttributes": Nothing, "ListObjectChildren": Nothing, "ListObjectParentPaths": Nothing, "ListObjectPolicies": Nothing, "ListOutgoingTypedLinks": Nothing, "ListPolicyAttachments": Nothing, "LookupPolicy": Nothing }
 
 -- | Constructs BatchReadOperation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchReadOperation' :: ( { "ListObjectAttributes" :: NullOrUndefined (BatchListObjectAttributes) , "ListObjectChildren" :: NullOrUndefined (BatchListObjectChildren) , "ListAttachedIndices" :: NullOrUndefined (BatchListAttachedIndices) , "ListObjectParentPaths" :: NullOrUndefined (BatchListObjectParentPaths) , "GetObjectInformation" :: NullOrUndefined (BatchGetObjectInformation) , "ListObjectPolicies" :: NullOrUndefined (BatchListObjectPolicies) , "ListPolicyAttachments" :: NullOrUndefined (BatchListPolicyAttachments) , "LookupPolicy" :: NullOrUndefined (BatchLookupPolicy) , "ListIndex" :: NullOrUndefined (BatchListIndex) , "ListOutgoingTypedLinks" :: NullOrUndefined (BatchListOutgoingTypedLinks) , "ListIncomingTypedLinks" :: NullOrUndefined (BatchListIncomingTypedLinks) } -> {"ListObjectAttributes" :: NullOrUndefined (BatchListObjectAttributes) , "ListObjectChildren" :: NullOrUndefined (BatchListObjectChildren) , "ListAttachedIndices" :: NullOrUndefined (BatchListAttachedIndices) , "ListObjectParentPaths" :: NullOrUndefined (BatchListObjectParentPaths) , "GetObjectInformation" :: NullOrUndefined (BatchGetObjectInformation) , "ListObjectPolicies" :: NullOrUndefined (BatchListObjectPolicies) , "ListPolicyAttachments" :: NullOrUndefined (BatchListPolicyAttachments) , "LookupPolicy" :: NullOrUndefined (BatchLookupPolicy) , "ListIndex" :: NullOrUndefined (BatchListIndex) , "ListOutgoingTypedLinks" :: NullOrUndefined (BatchListOutgoingTypedLinks) , "ListIncomingTypedLinks" :: NullOrUndefined (BatchListIncomingTypedLinks) } ) -> BatchReadOperation
-newBatchReadOperation'  customize = (BatchReadOperation <<< customize) { "GetObjectInformation": (NullOrUndefined Nothing), "ListAttachedIndices": (NullOrUndefined Nothing), "ListIncomingTypedLinks": (NullOrUndefined Nothing), "ListIndex": (NullOrUndefined Nothing), "ListObjectAttributes": (NullOrUndefined Nothing), "ListObjectChildren": (NullOrUndefined Nothing), "ListObjectParentPaths": (NullOrUndefined Nothing), "ListObjectPolicies": (NullOrUndefined Nothing), "ListOutgoingTypedLinks": (NullOrUndefined Nothing), "ListPolicyAttachments": (NullOrUndefined Nothing), "LookupPolicy": (NullOrUndefined Nothing) }
+newBatchReadOperation' :: ( { "ListObjectAttributes" :: Maybe (BatchListObjectAttributes) , "ListObjectChildren" :: Maybe (BatchListObjectChildren) , "ListAttachedIndices" :: Maybe (BatchListAttachedIndices) , "ListObjectParentPaths" :: Maybe (BatchListObjectParentPaths) , "GetObjectInformation" :: Maybe (BatchGetObjectInformation) , "ListObjectPolicies" :: Maybe (BatchListObjectPolicies) , "ListPolicyAttachments" :: Maybe (BatchListPolicyAttachments) , "LookupPolicy" :: Maybe (BatchLookupPolicy) , "ListIndex" :: Maybe (BatchListIndex) , "ListOutgoingTypedLinks" :: Maybe (BatchListOutgoingTypedLinks) , "ListIncomingTypedLinks" :: Maybe (BatchListIncomingTypedLinks) } -> {"ListObjectAttributes" :: Maybe (BatchListObjectAttributes) , "ListObjectChildren" :: Maybe (BatchListObjectChildren) , "ListAttachedIndices" :: Maybe (BatchListAttachedIndices) , "ListObjectParentPaths" :: Maybe (BatchListObjectParentPaths) , "GetObjectInformation" :: Maybe (BatchGetObjectInformation) , "ListObjectPolicies" :: Maybe (BatchListObjectPolicies) , "ListPolicyAttachments" :: Maybe (BatchListPolicyAttachments) , "LookupPolicy" :: Maybe (BatchLookupPolicy) , "ListIndex" :: Maybe (BatchListIndex) , "ListOutgoingTypedLinks" :: Maybe (BatchListOutgoingTypedLinks) , "ListIncomingTypedLinks" :: Maybe (BatchListIncomingTypedLinks) } ) -> BatchReadOperation
+newBatchReadOperation'  customize = (BatchReadOperation <<< customize) { "GetObjectInformation": Nothing, "ListAttachedIndices": Nothing, "ListIncomingTypedLinks": Nothing, "ListIndex": Nothing, "ListObjectAttributes": Nothing, "ListObjectChildren": Nothing, "ListObjectParentPaths": Nothing, "ListObjectPolicies": Nothing, "ListOutgoingTypedLinks": Nothing, "ListPolicyAttachments": Nothing, "LookupPolicy": Nothing }
 
 
 
@@ -1454,8 +1453,8 @@ instance encodeBatchReadOperationList :: Encode BatchReadOperationList where enc
 
 -- | <p>Represents the output of a <code>BatchRead</code> response operation.</p>
 newtype BatchReadOperationResponse = BatchReadOperationResponse 
-  { "SuccessfulResponse" :: NullOrUndefined (BatchReadSuccessfulResponse)
-  , "ExceptionResponse" :: NullOrUndefined (BatchReadException)
+  { "SuccessfulResponse" :: Maybe (BatchReadSuccessfulResponse)
+  , "ExceptionResponse" :: Maybe (BatchReadException)
   }
 derive instance newtypeBatchReadOperationResponse :: Newtype BatchReadOperationResponse _
 derive instance repGenericBatchReadOperationResponse :: Generic BatchReadOperationResponse _
@@ -1465,12 +1464,12 @@ instance encodeBatchReadOperationResponse :: Encode BatchReadOperationResponse w
 
 -- | Constructs BatchReadOperationResponse from required parameters
 newBatchReadOperationResponse :: BatchReadOperationResponse
-newBatchReadOperationResponse  = BatchReadOperationResponse { "ExceptionResponse": (NullOrUndefined Nothing), "SuccessfulResponse": (NullOrUndefined Nothing) }
+newBatchReadOperationResponse  = BatchReadOperationResponse { "ExceptionResponse": Nothing, "SuccessfulResponse": Nothing }
 
 -- | Constructs BatchReadOperationResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchReadOperationResponse' :: ( { "SuccessfulResponse" :: NullOrUndefined (BatchReadSuccessfulResponse) , "ExceptionResponse" :: NullOrUndefined (BatchReadException) } -> {"SuccessfulResponse" :: NullOrUndefined (BatchReadSuccessfulResponse) , "ExceptionResponse" :: NullOrUndefined (BatchReadException) } ) -> BatchReadOperationResponse
-newBatchReadOperationResponse'  customize = (BatchReadOperationResponse <<< customize) { "ExceptionResponse": (NullOrUndefined Nothing), "SuccessfulResponse": (NullOrUndefined Nothing) }
+newBatchReadOperationResponse' :: ( { "SuccessfulResponse" :: Maybe (BatchReadSuccessfulResponse) , "ExceptionResponse" :: Maybe (BatchReadException) } -> {"SuccessfulResponse" :: Maybe (BatchReadSuccessfulResponse) , "ExceptionResponse" :: Maybe (BatchReadException) } ) -> BatchReadOperationResponse
+newBatchReadOperationResponse'  customize = (BatchReadOperationResponse <<< customize) { "ExceptionResponse": Nothing, "SuccessfulResponse": Nothing }
 
 
 
@@ -1486,7 +1485,7 @@ instance encodeBatchReadOperationResponseList :: Encode BatchReadOperationRespon
 newtype BatchReadRequest = BatchReadRequest 
   { "DirectoryArn" :: (Arn)
   , "Operations" :: (BatchReadOperationList)
-  , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel)
+  , "ConsistencyLevel" :: Maybe (ConsistencyLevel)
   }
 derive instance newtypeBatchReadRequest :: Newtype BatchReadRequest _
 derive instance repGenericBatchReadRequest :: Generic BatchReadRequest _
@@ -1496,17 +1495,17 @@ instance encodeBatchReadRequest :: Encode BatchReadRequest where encode = generi
 
 -- | Constructs BatchReadRequest from required parameters
 newBatchReadRequest :: Arn -> BatchReadOperationList -> BatchReadRequest
-newBatchReadRequest _DirectoryArn _Operations = BatchReadRequest { "DirectoryArn": _DirectoryArn, "Operations": _Operations, "ConsistencyLevel": (NullOrUndefined Nothing) }
+newBatchReadRequest _DirectoryArn _Operations = BatchReadRequest { "DirectoryArn": _DirectoryArn, "Operations": _Operations, "ConsistencyLevel": Nothing }
 
 -- | Constructs BatchReadRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchReadRequest' :: Arn -> BatchReadOperationList -> ( { "DirectoryArn" :: (Arn) , "Operations" :: (BatchReadOperationList) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "Operations" :: (BatchReadOperationList) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } ) -> BatchReadRequest
-newBatchReadRequest' _DirectoryArn _Operations customize = (BatchReadRequest <<< customize) { "DirectoryArn": _DirectoryArn, "Operations": _Operations, "ConsistencyLevel": (NullOrUndefined Nothing) }
+newBatchReadRequest' :: Arn -> BatchReadOperationList -> ( { "DirectoryArn" :: (Arn) , "Operations" :: (BatchReadOperationList) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "Operations" :: (BatchReadOperationList) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } ) -> BatchReadRequest
+newBatchReadRequest' _DirectoryArn _Operations customize = (BatchReadRequest <<< customize) { "DirectoryArn": _DirectoryArn, "Operations": _Operations, "ConsistencyLevel": Nothing }
 
 
 
 newtype BatchReadResponse = BatchReadResponse 
-  { "Responses" :: NullOrUndefined (BatchReadOperationResponseList)
+  { "Responses" :: Maybe (BatchReadOperationResponseList)
   }
 derive instance newtypeBatchReadResponse :: Newtype BatchReadResponse _
 derive instance repGenericBatchReadResponse :: Generic BatchReadResponse _
@@ -1516,28 +1515,28 @@ instance encodeBatchReadResponse :: Encode BatchReadResponse where encode = gene
 
 -- | Constructs BatchReadResponse from required parameters
 newBatchReadResponse :: BatchReadResponse
-newBatchReadResponse  = BatchReadResponse { "Responses": (NullOrUndefined Nothing) }
+newBatchReadResponse  = BatchReadResponse { "Responses": Nothing }
 
 -- | Constructs BatchReadResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchReadResponse' :: ( { "Responses" :: NullOrUndefined (BatchReadOperationResponseList) } -> {"Responses" :: NullOrUndefined (BatchReadOperationResponseList) } ) -> BatchReadResponse
-newBatchReadResponse'  customize = (BatchReadResponse <<< customize) { "Responses": (NullOrUndefined Nothing) }
+newBatchReadResponse' :: ( { "Responses" :: Maybe (BatchReadOperationResponseList) } -> {"Responses" :: Maybe (BatchReadOperationResponseList) } ) -> BatchReadResponse
+newBatchReadResponse'  customize = (BatchReadResponse <<< customize) { "Responses": Nothing }
 
 
 
 -- | <p>Represents the output of a <code>BatchRead</code> success response operation.</p>
 newtype BatchReadSuccessfulResponse = BatchReadSuccessfulResponse 
-  { "ListObjectAttributes" :: NullOrUndefined (BatchListObjectAttributesResponse)
-  , "ListObjectChildren" :: NullOrUndefined (BatchListObjectChildrenResponse)
-  , "GetObjectInformation" :: NullOrUndefined (BatchGetObjectInformationResponse)
-  , "ListAttachedIndices" :: NullOrUndefined (BatchListAttachedIndicesResponse)
-  , "ListObjectParentPaths" :: NullOrUndefined (BatchListObjectParentPathsResponse)
-  , "ListObjectPolicies" :: NullOrUndefined (BatchListObjectPoliciesResponse)
-  , "ListPolicyAttachments" :: NullOrUndefined (BatchListPolicyAttachmentsResponse)
-  , "LookupPolicy" :: NullOrUndefined (BatchLookupPolicyResponse)
-  , "ListIndex" :: NullOrUndefined (BatchListIndexResponse)
-  , "ListOutgoingTypedLinks" :: NullOrUndefined (BatchListOutgoingTypedLinksResponse)
-  , "ListIncomingTypedLinks" :: NullOrUndefined (BatchListIncomingTypedLinksResponse)
+  { "ListObjectAttributes" :: Maybe (BatchListObjectAttributesResponse)
+  , "ListObjectChildren" :: Maybe (BatchListObjectChildrenResponse)
+  , "GetObjectInformation" :: Maybe (BatchGetObjectInformationResponse)
+  , "ListAttachedIndices" :: Maybe (BatchListAttachedIndicesResponse)
+  , "ListObjectParentPaths" :: Maybe (BatchListObjectParentPathsResponse)
+  , "ListObjectPolicies" :: Maybe (BatchListObjectPoliciesResponse)
+  , "ListPolicyAttachments" :: Maybe (BatchListPolicyAttachmentsResponse)
+  , "LookupPolicy" :: Maybe (BatchLookupPolicyResponse)
+  , "ListIndex" :: Maybe (BatchListIndexResponse)
+  , "ListOutgoingTypedLinks" :: Maybe (BatchListOutgoingTypedLinksResponse)
+  , "ListIncomingTypedLinks" :: Maybe (BatchListIncomingTypedLinksResponse)
   }
 derive instance newtypeBatchReadSuccessfulResponse :: Newtype BatchReadSuccessfulResponse _
 derive instance repGenericBatchReadSuccessfulResponse :: Generic BatchReadSuccessfulResponse _
@@ -1547,12 +1546,12 @@ instance encodeBatchReadSuccessfulResponse :: Encode BatchReadSuccessfulResponse
 
 -- | Constructs BatchReadSuccessfulResponse from required parameters
 newBatchReadSuccessfulResponse :: BatchReadSuccessfulResponse
-newBatchReadSuccessfulResponse  = BatchReadSuccessfulResponse { "GetObjectInformation": (NullOrUndefined Nothing), "ListAttachedIndices": (NullOrUndefined Nothing), "ListIncomingTypedLinks": (NullOrUndefined Nothing), "ListIndex": (NullOrUndefined Nothing), "ListObjectAttributes": (NullOrUndefined Nothing), "ListObjectChildren": (NullOrUndefined Nothing), "ListObjectParentPaths": (NullOrUndefined Nothing), "ListObjectPolicies": (NullOrUndefined Nothing), "ListOutgoingTypedLinks": (NullOrUndefined Nothing), "ListPolicyAttachments": (NullOrUndefined Nothing), "LookupPolicy": (NullOrUndefined Nothing) }
+newBatchReadSuccessfulResponse  = BatchReadSuccessfulResponse { "GetObjectInformation": Nothing, "ListAttachedIndices": Nothing, "ListIncomingTypedLinks": Nothing, "ListIndex": Nothing, "ListObjectAttributes": Nothing, "ListObjectChildren": Nothing, "ListObjectParentPaths": Nothing, "ListObjectPolicies": Nothing, "ListOutgoingTypedLinks": Nothing, "ListPolicyAttachments": Nothing, "LookupPolicy": Nothing }
 
 -- | Constructs BatchReadSuccessfulResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchReadSuccessfulResponse' :: ( { "ListObjectAttributes" :: NullOrUndefined (BatchListObjectAttributesResponse) , "ListObjectChildren" :: NullOrUndefined (BatchListObjectChildrenResponse) , "GetObjectInformation" :: NullOrUndefined (BatchGetObjectInformationResponse) , "ListAttachedIndices" :: NullOrUndefined (BatchListAttachedIndicesResponse) , "ListObjectParentPaths" :: NullOrUndefined (BatchListObjectParentPathsResponse) , "ListObjectPolicies" :: NullOrUndefined (BatchListObjectPoliciesResponse) , "ListPolicyAttachments" :: NullOrUndefined (BatchListPolicyAttachmentsResponse) , "LookupPolicy" :: NullOrUndefined (BatchLookupPolicyResponse) , "ListIndex" :: NullOrUndefined (BatchListIndexResponse) , "ListOutgoingTypedLinks" :: NullOrUndefined (BatchListOutgoingTypedLinksResponse) , "ListIncomingTypedLinks" :: NullOrUndefined (BatchListIncomingTypedLinksResponse) } -> {"ListObjectAttributes" :: NullOrUndefined (BatchListObjectAttributesResponse) , "ListObjectChildren" :: NullOrUndefined (BatchListObjectChildrenResponse) , "GetObjectInformation" :: NullOrUndefined (BatchGetObjectInformationResponse) , "ListAttachedIndices" :: NullOrUndefined (BatchListAttachedIndicesResponse) , "ListObjectParentPaths" :: NullOrUndefined (BatchListObjectParentPathsResponse) , "ListObjectPolicies" :: NullOrUndefined (BatchListObjectPoliciesResponse) , "ListPolicyAttachments" :: NullOrUndefined (BatchListPolicyAttachmentsResponse) , "LookupPolicy" :: NullOrUndefined (BatchLookupPolicyResponse) , "ListIndex" :: NullOrUndefined (BatchListIndexResponse) , "ListOutgoingTypedLinks" :: NullOrUndefined (BatchListOutgoingTypedLinksResponse) , "ListIncomingTypedLinks" :: NullOrUndefined (BatchListIncomingTypedLinksResponse) } ) -> BatchReadSuccessfulResponse
-newBatchReadSuccessfulResponse'  customize = (BatchReadSuccessfulResponse <<< customize) { "GetObjectInformation": (NullOrUndefined Nothing), "ListAttachedIndices": (NullOrUndefined Nothing), "ListIncomingTypedLinks": (NullOrUndefined Nothing), "ListIndex": (NullOrUndefined Nothing), "ListObjectAttributes": (NullOrUndefined Nothing), "ListObjectChildren": (NullOrUndefined Nothing), "ListObjectParentPaths": (NullOrUndefined Nothing), "ListObjectPolicies": (NullOrUndefined Nothing), "ListOutgoingTypedLinks": (NullOrUndefined Nothing), "ListPolicyAttachments": (NullOrUndefined Nothing), "LookupPolicy": (NullOrUndefined Nothing) }
+newBatchReadSuccessfulResponse' :: ( { "ListObjectAttributes" :: Maybe (BatchListObjectAttributesResponse) , "ListObjectChildren" :: Maybe (BatchListObjectChildrenResponse) , "GetObjectInformation" :: Maybe (BatchGetObjectInformationResponse) , "ListAttachedIndices" :: Maybe (BatchListAttachedIndicesResponse) , "ListObjectParentPaths" :: Maybe (BatchListObjectParentPathsResponse) , "ListObjectPolicies" :: Maybe (BatchListObjectPoliciesResponse) , "ListPolicyAttachments" :: Maybe (BatchListPolicyAttachmentsResponse) , "LookupPolicy" :: Maybe (BatchLookupPolicyResponse) , "ListIndex" :: Maybe (BatchListIndexResponse) , "ListOutgoingTypedLinks" :: Maybe (BatchListOutgoingTypedLinksResponse) , "ListIncomingTypedLinks" :: Maybe (BatchListIncomingTypedLinksResponse) } -> {"ListObjectAttributes" :: Maybe (BatchListObjectAttributesResponse) , "ListObjectChildren" :: Maybe (BatchListObjectChildrenResponse) , "GetObjectInformation" :: Maybe (BatchGetObjectInformationResponse) , "ListAttachedIndices" :: Maybe (BatchListAttachedIndicesResponse) , "ListObjectParentPaths" :: Maybe (BatchListObjectParentPathsResponse) , "ListObjectPolicies" :: Maybe (BatchListObjectPoliciesResponse) , "ListPolicyAttachments" :: Maybe (BatchListPolicyAttachmentsResponse) , "LookupPolicy" :: Maybe (BatchLookupPolicyResponse) , "ListIndex" :: Maybe (BatchListIndexResponse) , "ListOutgoingTypedLinks" :: Maybe (BatchListOutgoingTypedLinksResponse) , "ListIncomingTypedLinks" :: Maybe (BatchListIncomingTypedLinksResponse) } ) -> BatchReadSuccessfulResponse
+newBatchReadSuccessfulResponse'  customize = (BatchReadSuccessfulResponse <<< customize) { "GetObjectInformation": Nothing, "ListAttachedIndices": Nothing, "ListIncomingTypedLinks": Nothing, "ListIndex": Nothing, "ListObjectAttributes": Nothing, "ListObjectChildren": Nothing, "ListObjectParentPaths": Nothing, "ListObjectPolicies": Nothing, "ListOutgoingTypedLinks": Nothing, "ListPolicyAttachments": Nothing, "LookupPolicy": Nothing }
 
 
 
@@ -1621,7 +1620,7 @@ newBatchUpdateObjectAttributes' _AttributeUpdates _ObjectReference customize = (
 
 -- | <p>Represents the output of a <code>BatchUpdate</code> response operation.</p>
 newtype BatchUpdateObjectAttributesResponse = BatchUpdateObjectAttributesResponse 
-  { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
+  { "ObjectIdentifier" :: Maybe (ObjectIdentifier)
   }
 derive instance newtypeBatchUpdateObjectAttributesResponse :: Newtype BatchUpdateObjectAttributesResponse _
 derive instance repGenericBatchUpdateObjectAttributesResponse :: Generic BatchUpdateObjectAttributesResponse _
@@ -1631,20 +1630,20 @@ instance encodeBatchUpdateObjectAttributesResponse :: Encode BatchUpdateObjectAt
 
 -- | Constructs BatchUpdateObjectAttributesResponse from required parameters
 newBatchUpdateObjectAttributesResponse :: BatchUpdateObjectAttributesResponse
-newBatchUpdateObjectAttributesResponse  = BatchUpdateObjectAttributesResponse { "ObjectIdentifier": (NullOrUndefined Nothing) }
+newBatchUpdateObjectAttributesResponse  = BatchUpdateObjectAttributesResponse { "ObjectIdentifier": Nothing }
 
 -- | Constructs BatchUpdateObjectAttributesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchUpdateObjectAttributesResponse' :: ( { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> {"ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } ) -> BatchUpdateObjectAttributesResponse
-newBatchUpdateObjectAttributesResponse'  customize = (BatchUpdateObjectAttributesResponse <<< customize) { "ObjectIdentifier": (NullOrUndefined Nothing) }
+newBatchUpdateObjectAttributesResponse' :: ( { "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> {"ObjectIdentifier" :: Maybe (ObjectIdentifier) } ) -> BatchUpdateObjectAttributesResponse
+newBatchUpdateObjectAttributesResponse'  customize = (BatchUpdateObjectAttributesResponse <<< customize) { "ObjectIdentifier": Nothing }
 
 
 
 -- | <p>A <code>BatchWrite</code> exception has occurred.</p>
 newtype BatchWriteException = BatchWriteException 
-  { "Index" :: NullOrUndefined (BatchOperationIndex)
-  , "Type" :: NullOrUndefined (BatchWriteExceptionType)
-  , "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Index" :: Maybe (BatchOperationIndex)
+  , "Type" :: Maybe (BatchWriteExceptionType)
+  , "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeBatchWriteException :: Newtype BatchWriteException _
 derive instance repGenericBatchWriteException :: Generic BatchWriteException _
@@ -1654,12 +1653,12 @@ instance encodeBatchWriteException :: Encode BatchWriteException where encode = 
 
 -- | Constructs BatchWriteException from required parameters
 newBatchWriteException :: BatchWriteException
-newBatchWriteException  = BatchWriteException { "Index": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newBatchWriteException  = BatchWriteException { "Index": Nothing, "Message": Nothing, "Type": Nothing }
 
 -- | Constructs BatchWriteException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchWriteException' :: ( { "Index" :: NullOrUndefined (BatchOperationIndex) , "Type" :: NullOrUndefined (BatchWriteExceptionType) , "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Index" :: NullOrUndefined (BatchOperationIndex) , "Type" :: NullOrUndefined (BatchWriteExceptionType) , "Message" :: NullOrUndefined (ExceptionMessage) } ) -> BatchWriteException
-newBatchWriteException'  customize = (BatchWriteException <<< customize) { "Index": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newBatchWriteException' :: ( { "Index" :: Maybe (BatchOperationIndex) , "Type" :: Maybe (BatchWriteExceptionType) , "Message" :: Maybe (ExceptionMessage) } -> {"Index" :: Maybe (BatchOperationIndex) , "Type" :: Maybe (BatchWriteExceptionType) , "Message" :: Maybe (ExceptionMessage) } ) -> BatchWriteException
+newBatchWriteException'  customize = (BatchWriteException <<< customize) { "Index": Nothing, "Message": Nothing, "Type": Nothing }
 
 
 
@@ -1674,20 +1673,20 @@ instance encodeBatchWriteExceptionType :: Encode BatchWriteExceptionType where e
 
 -- | <p>Represents the output of a <code>BatchWrite</code> operation. </p>
 newtype BatchWriteOperation = BatchWriteOperation 
-  { "CreateObject" :: NullOrUndefined (BatchCreateObject)
-  , "AttachObject" :: NullOrUndefined (BatchAttachObject)
-  , "DetachObject" :: NullOrUndefined (BatchDetachObject)
-  , "UpdateObjectAttributes" :: NullOrUndefined (BatchUpdateObjectAttributes)
-  , "DeleteObject" :: NullOrUndefined (BatchDeleteObject)
-  , "AddFacetToObject" :: NullOrUndefined (BatchAddFacetToObject)
-  , "RemoveFacetFromObject" :: NullOrUndefined (BatchRemoveFacetFromObject)
-  , "AttachPolicy" :: NullOrUndefined (BatchAttachPolicy)
-  , "DetachPolicy" :: NullOrUndefined (BatchDetachPolicy)
-  , "CreateIndex" :: NullOrUndefined (BatchCreateIndex)
-  , "AttachToIndex" :: NullOrUndefined (BatchAttachToIndex)
-  , "DetachFromIndex" :: NullOrUndefined (BatchDetachFromIndex)
-  , "AttachTypedLink" :: NullOrUndefined (BatchAttachTypedLink)
-  , "DetachTypedLink" :: NullOrUndefined (BatchDetachTypedLink)
+  { "CreateObject" :: Maybe (BatchCreateObject)
+  , "AttachObject" :: Maybe (BatchAttachObject)
+  , "DetachObject" :: Maybe (BatchDetachObject)
+  , "UpdateObjectAttributes" :: Maybe (BatchUpdateObjectAttributes)
+  , "DeleteObject" :: Maybe (BatchDeleteObject)
+  , "AddFacetToObject" :: Maybe (BatchAddFacetToObject)
+  , "RemoveFacetFromObject" :: Maybe (BatchRemoveFacetFromObject)
+  , "AttachPolicy" :: Maybe (BatchAttachPolicy)
+  , "DetachPolicy" :: Maybe (BatchDetachPolicy)
+  , "CreateIndex" :: Maybe (BatchCreateIndex)
+  , "AttachToIndex" :: Maybe (BatchAttachToIndex)
+  , "DetachFromIndex" :: Maybe (BatchDetachFromIndex)
+  , "AttachTypedLink" :: Maybe (BatchAttachTypedLink)
+  , "DetachTypedLink" :: Maybe (BatchDetachTypedLink)
   }
 derive instance newtypeBatchWriteOperation :: Newtype BatchWriteOperation _
 derive instance repGenericBatchWriteOperation :: Generic BatchWriteOperation _
@@ -1697,12 +1696,12 @@ instance encodeBatchWriteOperation :: Encode BatchWriteOperation where encode = 
 
 -- | Constructs BatchWriteOperation from required parameters
 newBatchWriteOperation :: BatchWriteOperation
-newBatchWriteOperation  = BatchWriteOperation { "AddFacetToObject": (NullOrUndefined Nothing), "AttachObject": (NullOrUndefined Nothing), "AttachPolicy": (NullOrUndefined Nothing), "AttachToIndex": (NullOrUndefined Nothing), "AttachTypedLink": (NullOrUndefined Nothing), "CreateIndex": (NullOrUndefined Nothing), "CreateObject": (NullOrUndefined Nothing), "DeleteObject": (NullOrUndefined Nothing), "DetachFromIndex": (NullOrUndefined Nothing), "DetachObject": (NullOrUndefined Nothing), "DetachPolicy": (NullOrUndefined Nothing), "DetachTypedLink": (NullOrUndefined Nothing), "RemoveFacetFromObject": (NullOrUndefined Nothing), "UpdateObjectAttributes": (NullOrUndefined Nothing) }
+newBatchWriteOperation  = BatchWriteOperation { "AddFacetToObject": Nothing, "AttachObject": Nothing, "AttachPolicy": Nothing, "AttachToIndex": Nothing, "AttachTypedLink": Nothing, "CreateIndex": Nothing, "CreateObject": Nothing, "DeleteObject": Nothing, "DetachFromIndex": Nothing, "DetachObject": Nothing, "DetachPolicy": Nothing, "DetachTypedLink": Nothing, "RemoveFacetFromObject": Nothing, "UpdateObjectAttributes": Nothing }
 
 -- | Constructs BatchWriteOperation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchWriteOperation' :: ( { "CreateObject" :: NullOrUndefined (BatchCreateObject) , "AttachObject" :: NullOrUndefined (BatchAttachObject) , "DetachObject" :: NullOrUndefined (BatchDetachObject) , "UpdateObjectAttributes" :: NullOrUndefined (BatchUpdateObjectAttributes) , "DeleteObject" :: NullOrUndefined (BatchDeleteObject) , "AddFacetToObject" :: NullOrUndefined (BatchAddFacetToObject) , "RemoveFacetFromObject" :: NullOrUndefined (BatchRemoveFacetFromObject) , "AttachPolicy" :: NullOrUndefined (BatchAttachPolicy) , "DetachPolicy" :: NullOrUndefined (BatchDetachPolicy) , "CreateIndex" :: NullOrUndefined (BatchCreateIndex) , "AttachToIndex" :: NullOrUndefined (BatchAttachToIndex) , "DetachFromIndex" :: NullOrUndefined (BatchDetachFromIndex) , "AttachTypedLink" :: NullOrUndefined (BatchAttachTypedLink) , "DetachTypedLink" :: NullOrUndefined (BatchDetachTypedLink) } -> {"CreateObject" :: NullOrUndefined (BatchCreateObject) , "AttachObject" :: NullOrUndefined (BatchAttachObject) , "DetachObject" :: NullOrUndefined (BatchDetachObject) , "UpdateObjectAttributes" :: NullOrUndefined (BatchUpdateObjectAttributes) , "DeleteObject" :: NullOrUndefined (BatchDeleteObject) , "AddFacetToObject" :: NullOrUndefined (BatchAddFacetToObject) , "RemoveFacetFromObject" :: NullOrUndefined (BatchRemoveFacetFromObject) , "AttachPolicy" :: NullOrUndefined (BatchAttachPolicy) , "DetachPolicy" :: NullOrUndefined (BatchDetachPolicy) , "CreateIndex" :: NullOrUndefined (BatchCreateIndex) , "AttachToIndex" :: NullOrUndefined (BatchAttachToIndex) , "DetachFromIndex" :: NullOrUndefined (BatchDetachFromIndex) , "AttachTypedLink" :: NullOrUndefined (BatchAttachTypedLink) , "DetachTypedLink" :: NullOrUndefined (BatchDetachTypedLink) } ) -> BatchWriteOperation
-newBatchWriteOperation'  customize = (BatchWriteOperation <<< customize) { "AddFacetToObject": (NullOrUndefined Nothing), "AttachObject": (NullOrUndefined Nothing), "AttachPolicy": (NullOrUndefined Nothing), "AttachToIndex": (NullOrUndefined Nothing), "AttachTypedLink": (NullOrUndefined Nothing), "CreateIndex": (NullOrUndefined Nothing), "CreateObject": (NullOrUndefined Nothing), "DeleteObject": (NullOrUndefined Nothing), "DetachFromIndex": (NullOrUndefined Nothing), "DetachObject": (NullOrUndefined Nothing), "DetachPolicy": (NullOrUndefined Nothing), "DetachTypedLink": (NullOrUndefined Nothing), "RemoveFacetFromObject": (NullOrUndefined Nothing), "UpdateObjectAttributes": (NullOrUndefined Nothing) }
+newBatchWriteOperation' :: ( { "CreateObject" :: Maybe (BatchCreateObject) , "AttachObject" :: Maybe (BatchAttachObject) , "DetachObject" :: Maybe (BatchDetachObject) , "UpdateObjectAttributes" :: Maybe (BatchUpdateObjectAttributes) , "DeleteObject" :: Maybe (BatchDeleteObject) , "AddFacetToObject" :: Maybe (BatchAddFacetToObject) , "RemoveFacetFromObject" :: Maybe (BatchRemoveFacetFromObject) , "AttachPolicy" :: Maybe (BatchAttachPolicy) , "DetachPolicy" :: Maybe (BatchDetachPolicy) , "CreateIndex" :: Maybe (BatchCreateIndex) , "AttachToIndex" :: Maybe (BatchAttachToIndex) , "DetachFromIndex" :: Maybe (BatchDetachFromIndex) , "AttachTypedLink" :: Maybe (BatchAttachTypedLink) , "DetachTypedLink" :: Maybe (BatchDetachTypedLink) } -> {"CreateObject" :: Maybe (BatchCreateObject) , "AttachObject" :: Maybe (BatchAttachObject) , "DetachObject" :: Maybe (BatchDetachObject) , "UpdateObjectAttributes" :: Maybe (BatchUpdateObjectAttributes) , "DeleteObject" :: Maybe (BatchDeleteObject) , "AddFacetToObject" :: Maybe (BatchAddFacetToObject) , "RemoveFacetFromObject" :: Maybe (BatchRemoveFacetFromObject) , "AttachPolicy" :: Maybe (BatchAttachPolicy) , "DetachPolicy" :: Maybe (BatchDetachPolicy) , "CreateIndex" :: Maybe (BatchCreateIndex) , "AttachToIndex" :: Maybe (BatchAttachToIndex) , "DetachFromIndex" :: Maybe (BatchDetachFromIndex) , "AttachTypedLink" :: Maybe (BatchAttachTypedLink) , "DetachTypedLink" :: Maybe (BatchDetachTypedLink) } ) -> BatchWriteOperation
+newBatchWriteOperation'  customize = (BatchWriteOperation <<< customize) { "AddFacetToObject": Nothing, "AttachObject": Nothing, "AttachPolicy": Nothing, "AttachToIndex": Nothing, "AttachTypedLink": Nothing, "CreateIndex": Nothing, "CreateObject": Nothing, "DeleteObject": Nothing, "DetachFromIndex": Nothing, "DetachObject": Nothing, "DetachPolicy": Nothing, "DetachTypedLink": Nothing, "RemoveFacetFromObject": Nothing, "UpdateObjectAttributes": Nothing }
 
 
 
@@ -1717,20 +1716,20 @@ instance encodeBatchWriteOperationList :: Encode BatchWriteOperationList where e
 
 -- | <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
 newtype BatchWriteOperationResponse = BatchWriteOperationResponse 
-  { "CreateObject" :: NullOrUndefined (BatchCreateObjectResponse)
-  , "AttachObject" :: NullOrUndefined (BatchAttachObjectResponse)
-  , "DetachObject" :: NullOrUndefined (BatchDetachObjectResponse)
-  , "UpdateObjectAttributes" :: NullOrUndefined (BatchUpdateObjectAttributesResponse)
-  , "DeleteObject" :: NullOrUndefined (BatchDeleteObjectResponse)
-  , "AddFacetToObject" :: NullOrUndefined (BatchAddFacetToObjectResponse)
-  , "RemoveFacetFromObject" :: NullOrUndefined (BatchRemoveFacetFromObjectResponse)
-  , "AttachPolicy" :: NullOrUndefined (BatchAttachPolicyResponse)
-  , "DetachPolicy" :: NullOrUndefined (BatchDetachPolicyResponse)
-  , "CreateIndex" :: NullOrUndefined (BatchCreateIndexResponse)
-  , "AttachToIndex" :: NullOrUndefined (BatchAttachToIndexResponse)
-  , "DetachFromIndex" :: NullOrUndefined (BatchDetachFromIndexResponse)
-  , "AttachTypedLink" :: NullOrUndefined (BatchAttachTypedLinkResponse)
-  , "DetachTypedLink" :: NullOrUndefined (BatchDetachTypedLinkResponse)
+  { "CreateObject" :: Maybe (BatchCreateObjectResponse)
+  , "AttachObject" :: Maybe (BatchAttachObjectResponse)
+  , "DetachObject" :: Maybe (BatchDetachObjectResponse)
+  , "UpdateObjectAttributes" :: Maybe (BatchUpdateObjectAttributesResponse)
+  , "DeleteObject" :: Maybe (BatchDeleteObjectResponse)
+  , "AddFacetToObject" :: Maybe (BatchAddFacetToObjectResponse)
+  , "RemoveFacetFromObject" :: Maybe (BatchRemoveFacetFromObjectResponse)
+  , "AttachPolicy" :: Maybe (BatchAttachPolicyResponse)
+  , "DetachPolicy" :: Maybe (BatchDetachPolicyResponse)
+  , "CreateIndex" :: Maybe (BatchCreateIndexResponse)
+  , "AttachToIndex" :: Maybe (BatchAttachToIndexResponse)
+  , "DetachFromIndex" :: Maybe (BatchDetachFromIndexResponse)
+  , "AttachTypedLink" :: Maybe (BatchAttachTypedLinkResponse)
+  , "DetachTypedLink" :: Maybe (BatchDetachTypedLinkResponse)
   }
 derive instance newtypeBatchWriteOperationResponse :: Newtype BatchWriteOperationResponse _
 derive instance repGenericBatchWriteOperationResponse :: Generic BatchWriteOperationResponse _
@@ -1740,12 +1739,12 @@ instance encodeBatchWriteOperationResponse :: Encode BatchWriteOperationResponse
 
 -- | Constructs BatchWriteOperationResponse from required parameters
 newBatchWriteOperationResponse :: BatchWriteOperationResponse
-newBatchWriteOperationResponse  = BatchWriteOperationResponse { "AddFacetToObject": (NullOrUndefined Nothing), "AttachObject": (NullOrUndefined Nothing), "AttachPolicy": (NullOrUndefined Nothing), "AttachToIndex": (NullOrUndefined Nothing), "AttachTypedLink": (NullOrUndefined Nothing), "CreateIndex": (NullOrUndefined Nothing), "CreateObject": (NullOrUndefined Nothing), "DeleteObject": (NullOrUndefined Nothing), "DetachFromIndex": (NullOrUndefined Nothing), "DetachObject": (NullOrUndefined Nothing), "DetachPolicy": (NullOrUndefined Nothing), "DetachTypedLink": (NullOrUndefined Nothing), "RemoveFacetFromObject": (NullOrUndefined Nothing), "UpdateObjectAttributes": (NullOrUndefined Nothing) }
+newBatchWriteOperationResponse  = BatchWriteOperationResponse { "AddFacetToObject": Nothing, "AttachObject": Nothing, "AttachPolicy": Nothing, "AttachToIndex": Nothing, "AttachTypedLink": Nothing, "CreateIndex": Nothing, "CreateObject": Nothing, "DeleteObject": Nothing, "DetachFromIndex": Nothing, "DetachObject": Nothing, "DetachPolicy": Nothing, "DetachTypedLink": Nothing, "RemoveFacetFromObject": Nothing, "UpdateObjectAttributes": Nothing }
 
 -- | Constructs BatchWriteOperationResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchWriteOperationResponse' :: ( { "CreateObject" :: NullOrUndefined (BatchCreateObjectResponse) , "AttachObject" :: NullOrUndefined (BatchAttachObjectResponse) , "DetachObject" :: NullOrUndefined (BatchDetachObjectResponse) , "UpdateObjectAttributes" :: NullOrUndefined (BatchUpdateObjectAttributesResponse) , "DeleteObject" :: NullOrUndefined (BatchDeleteObjectResponse) , "AddFacetToObject" :: NullOrUndefined (BatchAddFacetToObjectResponse) , "RemoveFacetFromObject" :: NullOrUndefined (BatchRemoveFacetFromObjectResponse) , "AttachPolicy" :: NullOrUndefined (BatchAttachPolicyResponse) , "DetachPolicy" :: NullOrUndefined (BatchDetachPolicyResponse) , "CreateIndex" :: NullOrUndefined (BatchCreateIndexResponse) , "AttachToIndex" :: NullOrUndefined (BatchAttachToIndexResponse) , "DetachFromIndex" :: NullOrUndefined (BatchDetachFromIndexResponse) , "AttachTypedLink" :: NullOrUndefined (BatchAttachTypedLinkResponse) , "DetachTypedLink" :: NullOrUndefined (BatchDetachTypedLinkResponse) } -> {"CreateObject" :: NullOrUndefined (BatchCreateObjectResponse) , "AttachObject" :: NullOrUndefined (BatchAttachObjectResponse) , "DetachObject" :: NullOrUndefined (BatchDetachObjectResponse) , "UpdateObjectAttributes" :: NullOrUndefined (BatchUpdateObjectAttributesResponse) , "DeleteObject" :: NullOrUndefined (BatchDeleteObjectResponse) , "AddFacetToObject" :: NullOrUndefined (BatchAddFacetToObjectResponse) , "RemoveFacetFromObject" :: NullOrUndefined (BatchRemoveFacetFromObjectResponse) , "AttachPolicy" :: NullOrUndefined (BatchAttachPolicyResponse) , "DetachPolicy" :: NullOrUndefined (BatchDetachPolicyResponse) , "CreateIndex" :: NullOrUndefined (BatchCreateIndexResponse) , "AttachToIndex" :: NullOrUndefined (BatchAttachToIndexResponse) , "DetachFromIndex" :: NullOrUndefined (BatchDetachFromIndexResponse) , "AttachTypedLink" :: NullOrUndefined (BatchAttachTypedLinkResponse) , "DetachTypedLink" :: NullOrUndefined (BatchDetachTypedLinkResponse) } ) -> BatchWriteOperationResponse
-newBatchWriteOperationResponse'  customize = (BatchWriteOperationResponse <<< customize) { "AddFacetToObject": (NullOrUndefined Nothing), "AttachObject": (NullOrUndefined Nothing), "AttachPolicy": (NullOrUndefined Nothing), "AttachToIndex": (NullOrUndefined Nothing), "AttachTypedLink": (NullOrUndefined Nothing), "CreateIndex": (NullOrUndefined Nothing), "CreateObject": (NullOrUndefined Nothing), "DeleteObject": (NullOrUndefined Nothing), "DetachFromIndex": (NullOrUndefined Nothing), "DetachObject": (NullOrUndefined Nothing), "DetachPolicy": (NullOrUndefined Nothing), "DetachTypedLink": (NullOrUndefined Nothing), "RemoveFacetFromObject": (NullOrUndefined Nothing), "UpdateObjectAttributes": (NullOrUndefined Nothing) }
+newBatchWriteOperationResponse' :: ( { "CreateObject" :: Maybe (BatchCreateObjectResponse) , "AttachObject" :: Maybe (BatchAttachObjectResponse) , "DetachObject" :: Maybe (BatchDetachObjectResponse) , "UpdateObjectAttributes" :: Maybe (BatchUpdateObjectAttributesResponse) , "DeleteObject" :: Maybe (BatchDeleteObjectResponse) , "AddFacetToObject" :: Maybe (BatchAddFacetToObjectResponse) , "RemoveFacetFromObject" :: Maybe (BatchRemoveFacetFromObjectResponse) , "AttachPolicy" :: Maybe (BatchAttachPolicyResponse) , "DetachPolicy" :: Maybe (BatchDetachPolicyResponse) , "CreateIndex" :: Maybe (BatchCreateIndexResponse) , "AttachToIndex" :: Maybe (BatchAttachToIndexResponse) , "DetachFromIndex" :: Maybe (BatchDetachFromIndexResponse) , "AttachTypedLink" :: Maybe (BatchAttachTypedLinkResponse) , "DetachTypedLink" :: Maybe (BatchDetachTypedLinkResponse) } -> {"CreateObject" :: Maybe (BatchCreateObjectResponse) , "AttachObject" :: Maybe (BatchAttachObjectResponse) , "DetachObject" :: Maybe (BatchDetachObjectResponse) , "UpdateObjectAttributes" :: Maybe (BatchUpdateObjectAttributesResponse) , "DeleteObject" :: Maybe (BatchDeleteObjectResponse) , "AddFacetToObject" :: Maybe (BatchAddFacetToObjectResponse) , "RemoveFacetFromObject" :: Maybe (BatchRemoveFacetFromObjectResponse) , "AttachPolicy" :: Maybe (BatchAttachPolicyResponse) , "DetachPolicy" :: Maybe (BatchDetachPolicyResponse) , "CreateIndex" :: Maybe (BatchCreateIndexResponse) , "AttachToIndex" :: Maybe (BatchAttachToIndexResponse) , "DetachFromIndex" :: Maybe (BatchDetachFromIndexResponse) , "AttachTypedLink" :: Maybe (BatchAttachTypedLinkResponse) , "DetachTypedLink" :: Maybe (BatchDetachTypedLinkResponse) } ) -> BatchWriteOperationResponse
+newBatchWriteOperationResponse'  customize = (BatchWriteOperationResponse <<< customize) { "AddFacetToObject": Nothing, "AttachObject": Nothing, "AttachPolicy": Nothing, "AttachToIndex": Nothing, "AttachTypedLink": Nothing, "CreateIndex": Nothing, "CreateObject": Nothing, "DeleteObject": Nothing, "DetachFromIndex": Nothing, "DetachObject": Nothing, "DetachPolicy": Nothing, "DetachTypedLink": Nothing, "RemoveFacetFromObject": Nothing, "UpdateObjectAttributes": Nothing }
 
 
 
@@ -1780,7 +1779,7 @@ newBatchWriteRequest' _DirectoryArn _Operations customize = (BatchWriteRequest <
 
 
 newtype BatchWriteResponse = BatchWriteResponse 
-  { "Responses" :: NullOrUndefined (BatchWriteOperationResponseList)
+  { "Responses" :: Maybe (BatchWriteOperationResponseList)
   }
 derive instance newtypeBatchWriteResponse :: Newtype BatchWriteResponse _
 derive instance repGenericBatchWriteResponse :: Generic BatchWriteResponse _
@@ -1790,12 +1789,12 @@ instance encodeBatchWriteResponse :: Encode BatchWriteResponse where encode = ge
 
 -- | Constructs BatchWriteResponse from required parameters
 newBatchWriteResponse :: BatchWriteResponse
-newBatchWriteResponse  = BatchWriteResponse { "Responses": (NullOrUndefined Nothing) }
+newBatchWriteResponse  = BatchWriteResponse { "Responses": Nothing }
 
 -- | Constructs BatchWriteResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchWriteResponse' :: ( { "Responses" :: NullOrUndefined (BatchWriteOperationResponseList) } -> {"Responses" :: NullOrUndefined (BatchWriteOperationResponseList) } ) -> BatchWriteResponse
-newBatchWriteResponse'  customize = (BatchWriteResponse <<< customize) { "Responses": (NullOrUndefined Nothing) }
+newBatchWriteResponse' :: ( { "Responses" :: Maybe (BatchWriteOperationResponseList) } -> {"Responses" :: Maybe (BatchWriteOperationResponseList) } ) -> BatchWriteResponse
+newBatchWriteResponse'  customize = (BatchWriteResponse <<< customize) { "Responses": Nothing }
 
 
 
@@ -1828,7 +1827,7 @@ instance encodeBooleanAttributeValue :: Encode BooleanAttributeValue where encod
 
 -- | <p>Cannot list the parents of a <a>Directory</a> root.</p>
 newtype CannotListParentOfRootException = CannotListParentOfRootException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeCannotListParentOfRootException :: Newtype CannotListParentOfRootException _
 derive instance repGenericCannotListParentOfRootException :: Generic CannotListParentOfRootException _
@@ -1838,12 +1837,12 @@ instance encodeCannotListParentOfRootException :: Encode CannotListParentOfRootE
 
 -- | Constructs CannotListParentOfRootException from required parameters
 newCannotListParentOfRootException :: CannotListParentOfRootException
-newCannotListParentOfRootException  = CannotListParentOfRootException { "Message": (NullOrUndefined Nothing) }
+newCannotListParentOfRootException  = CannotListParentOfRootException { "Message": Nothing }
 
 -- | Constructs CannotListParentOfRootException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCannotListParentOfRootException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> CannotListParentOfRootException
-newCannotListParentOfRootException'  customize = (CannotListParentOfRootException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newCannotListParentOfRootException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> CannotListParentOfRootException
+newCannotListParentOfRootException'  customize = (CannotListParentOfRootException <<< customize) { "Message": Nothing }
 
 
 
@@ -1903,7 +1902,7 @@ newCreateDirectoryResponse' _AppliedSchemaArn _DirectoryArn _Name _ObjectIdentif
 newtype CreateFacetRequest = CreateFacetRequest 
   { "SchemaArn" :: (Arn)
   , "Name" :: (FacetName)
-  , "Attributes" :: NullOrUndefined (FacetAttributeList)
+  , "Attributes" :: Maybe (FacetAttributeList)
   , "ObjectType" :: (ObjectType)
   }
 derive instance newtypeCreateFacetRequest :: Newtype CreateFacetRequest _
@@ -1914,12 +1913,12 @@ instance encodeCreateFacetRequest :: Encode CreateFacetRequest where encode = ge
 
 -- | Constructs CreateFacetRequest from required parameters
 newCreateFacetRequest :: FacetName -> ObjectType -> Arn -> CreateFacetRequest
-newCreateFacetRequest _Name _ObjectType _SchemaArn = CreateFacetRequest { "Name": _Name, "ObjectType": _ObjectType, "SchemaArn": _SchemaArn, "Attributes": (NullOrUndefined Nothing) }
+newCreateFacetRequest _Name _ObjectType _SchemaArn = CreateFacetRequest { "Name": _Name, "ObjectType": _ObjectType, "SchemaArn": _SchemaArn, "Attributes": Nothing }
 
 -- | Constructs CreateFacetRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateFacetRequest' :: FacetName -> ObjectType -> Arn -> ( { "SchemaArn" :: (Arn) , "Name" :: (FacetName) , "Attributes" :: NullOrUndefined (FacetAttributeList) , "ObjectType" :: (ObjectType) } -> {"SchemaArn" :: (Arn) , "Name" :: (FacetName) , "Attributes" :: NullOrUndefined (FacetAttributeList) , "ObjectType" :: (ObjectType) } ) -> CreateFacetRequest
-newCreateFacetRequest' _Name _ObjectType _SchemaArn customize = (CreateFacetRequest <<< customize) { "Name": _Name, "ObjectType": _ObjectType, "SchemaArn": _SchemaArn, "Attributes": (NullOrUndefined Nothing) }
+newCreateFacetRequest' :: FacetName -> ObjectType -> Arn -> ( { "SchemaArn" :: (Arn) , "Name" :: (FacetName) , "Attributes" :: Maybe (FacetAttributeList) , "ObjectType" :: (ObjectType) } -> {"SchemaArn" :: (Arn) , "Name" :: (FacetName) , "Attributes" :: Maybe (FacetAttributeList) , "ObjectType" :: (ObjectType) } ) -> CreateFacetRequest
+newCreateFacetRequest' _Name _ObjectType _SchemaArn customize = (CreateFacetRequest <<< customize) { "Name": _Name, "ObjectType": _ObjectType, "SchemaArn": _SchemaArn, "Attributes": Nothing }
 
 
 
@@ -1936,8 +1935,8 @@ newtype CreateIndexRequest = CreateIndexRequest
   { "DirectoryArn" :: (Arn)
   , "OrderedIndexedAttributeList" :: (AttributeKeyList)
   , "IsUnique" :: (Bool)
-  , "ParentReference" :: NullOrUndefined (ObjectReference)
-  , "LinkName" :: NullOrUndefined (LinkName)
+  , "ParentReference" :: Maybe (ObjectReference)
+  , "LinkName" :: Maybe (LinkName)
   }
 derive instance newtypeCreateIndexRequest :: Newtype CreateIndexRequest _
 derive instance repGenericCreateIndexRequest :: Generic CreateIndexRequest _
@@ -1947,17 +1946,17 @@ instance encodeCreateIndexRequest :: Encode CreateIndexRequest where encode = ge
 
 -- | Constructs CreateIndexRequest from required parameters
 newCreateIndexRequest :: Arn -> Bool -> AttributeKeyList -> CreateIndexRequest
-newCreateIndexRequest _DirectoryArn _IsUnique _OrderedIndexedAttributeList = CreateIndexRequest { "DirectoryArn": _DirectoryArn, "IsUnique": _IsUnique, "OrderedIndexedAttributeList": _OrderedIndexedAttributeList, "LinkName": (NullOrUndefined Nothing), "ParentReference": (NullOrUndefined Nothing) }
+newCreateIndexRequest _DirectoryArn _IsUnique _OrderedIndexedAttributeList = CreateIndexRequest { "DirectoryArn": _DirectoryArn, "IsUnique": _IsUnique, "OrderedIndexedAttributeList": _OrderedIndexedAttributeList, "LinkName": Nothing, "ParentReference": Nothing }
 
 -- | Constructs CreateIndexRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateIndexRequest' :: Arn -> Bool -> AttributeKeyList -> ( { "DirectoryArn" :: (Arn) , "OrderedIndexedAttributeList" :: (AttributeKeyList) , "IsUnique" :: (Bool) , "ParentReference" :: NullOrUndefined (ObjectReference) , "LinkName" :: NullOrUndefined (LinkName) } -> {"DirectoryArn" :: (Arn) , "OrderedIndexedAttributeList" :: (AttributeKeyList) , "IsUnique" :: (Bool) , "ParentReference" :: NullOrUndefined (ObjectReference) , "LinkName" :: NullOrUndefined (LinkName) } ) -> CreateIndexRequest
-newCreateIndexRequest' _DirectoryArn _IsUnique _OrderedIndexedAttributeList customize = (CreateIndexRequest <<< customize) { "DirectoryArn": _DirectoryArn, "IsUnique": _IsUnique, "OrderedIndexedAttributeList": _OrderedIndexedAttributeList, "LinkName": (NullOrUndefined Nothing), "ParentReference": (NullOrUndefined Nothing) }
+newCreateIndexRequest' :: Arn -> Bool -> AttributeKeyList -> ( { "DirectoryArn" :: (Arn) , "OrderedIndexedAttributeList" :: (AttributeKeyList) , "IsUnique" :: (Bool) , "ParentReference" :: Maybe (ObjectReference) , "LinkName" :: Maybe (LinkName) } -> {"DirectoryArn" :: (Arn) , "OrderedIndexedAttributeList" :: (AttributeKeyList) , "IsUnique" :: (Bool) , "ParentReference" :: Maybe (ObjectReference) , "LinkName" :: Maybe (LinkName) } ) -> CreateIndexRequest
+newCreateIndexRequest' _DirectoryArn _IsUnique _OrderedIndexedAttributeList customize = (CreateIndexRequest <<< customize) { "DirectoryArn": _DirectoryArn, "IsUnique": _IsUnique, "OrderedIndexedAttributeList": _OrderedIndexedAttributeList, "LinkName": Nothing, "ParentReference": Nothing }
 
 
 
 newtype CreateIndexResponse = CreateIndexResponse 
-  { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
+  { "ObjectIdentifier" :: Maybe (ObjectIdentifier)
   }
 derive instance newtypeCreateIndexResponse :: Newtype CreateIndexResponse _
 derive instance repGenericCreateIndexResponse :: Generic CreateIndexResponse _
@@ -1967,21 +1966,21 @@ instance encodeCreateIndexResponse :: Encode CreateIndexResponse where encode = 
 
 -- | Constructs CreateIndexResponse from required parameters
 newCreateIndexResponse :: CreateIndexResponse
-newCreateIndexResponse  = CreateIndexResponse { "ObjectIdentifier": (NullOrUndefined Nothing) }
+newCreateIndexResponse  = CreateIndexResponse { "ObjectIdentifier": Nothing }
 
 -- | Constructs CreateIndexResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateIndexResponse' :: ( { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> {"ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } ) -> CreateIndexResponse
-newCreateIndexResponse'  customize = (CreateIndexResponse <<< customize) { "ObjectIdentifier": (NullOrUndefined Nothing) }
+newCreateIndexResponse' :: ( { "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> {"ObjectIdentifier" :: Maybe (ObjectIdentifier) } ) -> CreateIndexResponse
+newCreateIndexResponse'  customize = (CreateIndexResponse <<< customize) { "ObjectIdentifier": Nothing }
 
 
 
 newtype CreateObjectRequest = CreateObjectRequest 
   { "DirectoryArn" :: (Arn)
   , "SchemaFacets" :: (SchemaFacetList)
-  , "ObjectAttributeList" :: NullOrUndefined (AttributeKeyAndValueList)
-  , "ParentReference" :: NullOrUndefined (ObjectReference)
-  , "LinkName" :: NullOrUndefined (LinkName)
+  , "ObjectAttributeList" :: Maybe (AttributeKeyAndValueList)
+  , "ParentReference" :: Maybe (ObjectReference)
+  , "LinkName" :: Maybe (LinkName)
   }
 derive instance newtypeCreateObjectRequest :: Newtype CreateObjectRequest _
 derive instance repGenericCreateObjectRequest :: Generic CreateObjectRequest _
@@ -1991,17 +1990,17 @@ instance encodeCreateObjectRequest :: Encode CreateObjectRequest where encode = 
 
 -- | Constructs CreateObjectRequest from required parameters
 newCreateObjectRequest :: Arn -> SchemaFacetList -> CreateObjectRequest
-newCreateObjectRequest _DirectoryArn _SchemaFacets = CreateObjectRequest { "DirectoryArn": _DirectoryArn, "SchemaFacets": _SchemaFacets, "LinkName": (NullOrUndefined Nothing), "ObjectAttributeList": (NullOrUndefined Nothing), "ParentReference": (NullOrUndefined Nothing) }
+newCreateObjectRequest _DirectoryArn _SchemaFacets = CreateObjectRequest { "DirectoryArn": _DirectoryArn, "SchemaFacets": _SchemaFacets, "LinkName": Nothing, "ObjectAttributeList": Nothing, "ParentReference": Nothing }
 
 -- | Constructs CreateObjectRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateObjectRequest' :: Arn -> SchemaFacetList -> ( { "DirectoryArn" :: (Arn) , "SchemaFacets" :: (SchemaFacetList) , "ObjectAttributeList" :: NullOrUndefined (AttributeKeyAndValueList) , "ParentReference" :: NullOrUndefined (ObjectReference) , "LinkName" :: NullOrUndefined (LinkName) } -> {"DirectoryArn" :: (Arn) , "SchemaFacets" :: (SchemaFacetList) , "ObjectAttributeList" :: NullOrUndefined (AttributeKeyAndValueList) , "ParentReference" :: NullOrUndefined (ObjectReference) , "LinkName" :: NullOrUndefined (LinkName) } ) -> CreateObjectRequest
-newCreateObjectRequest' _DirectoryArn _SchemaFacets customize = (CreateObjectRequest <<< customize) { "DirectoryArn": _DirectoryArn, "SchemaFacets": _SchemaFacets, "LinkName": (NullOrUndefined Nothing), "ObjectAttributeList": (NullOrUndefined Nothing), "ParentReference": (NullOrUndefined Nothing) }
+newCreateObjectRequest' :: Arn -> SchemaFacetList -> ( { "DirectoryArn" :: (Arn) , "SchemaFacets" :: (SchemaFacetList) , "ObjectAttributeList" :: Maybe (AttributeKeyAndValueList) , "ParentReference" :: Maybe (ObjectReference) , "LinkName" :: Maybe (LinkName) } -> {"DirectoryArn" :: (Arn) , "SchemaFacets" :: (SchemaFacetList) , "ObjectAttributeList" :: Maybe (AttributeKeyAndValueList) , "ParentReference" :: Maybe (ObjectReference) , "LinkName" :: Maybe (LinkName) } ) -> CreateObjectRequest
+newCreateObjectRequest' _DirectoryArn _SchemaFacets customize = (CreateObjectRequest <<< customize) { "DirectoryArn": _DirectoryArn, "SchemaFacets": _SchemaFacets, "LinkName": Nothing, "ObjectAttributeList": Nothing, "ParentReference": Nothing }
 
 
 
 newtype CreateObjectResponse = CreateObjectResponse 
-  { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
+  { "ObjectIdentifier" :: Maybe (ObjectIdentifier)
   }
 derive instance newtypeCreateObjectResponse :: Newtype CreateObjectResponse _
 derive instance repGenericCreateObjectResponse :: Generic CreateObjectResponse _
@@ -2011,12 +2010,12 @@ instance encodeCreateObjectResponse :: Encode CreateObjectResponse where encode 
 
 -- | Constructs CreateObjectResponse from required parameters
 newCreateObjectResponse :: CreateObjectResponse
-newCreateObjectResponse  = CreateObjectResponse { "ObjectIdentifier": (NullOrUndefined Nothing) }
+newCreateObjectResponse  = CreateObjectResponse { "ObjectIdentifier": Nothing }
 
 -- | Constructs CreateObjectResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateObjectResponse' :: ( { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> {"ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } ) -> CreateObjectResponse
-newCreateObjectResponse'  customize = (CreateObjectResponse <<< customize) { "ObjectIdentifier": (NullOrUndefined Nothing) }
+newCreateObjectResponse' :: ( { "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> {"ObjectIdentifier" :: Maybe (ObjectIdentifier) } ) -> CreateObjectResponse
+newCreateObjectResponse'  customize = (CreateObjectResponse <<< customize) { "ObjectIdentifier": Nothing }
 
 
 
@@ -2041,7 +2040,7 @@ newCreateSchemaRequest' _Name customize = (CreateSchemaRequest <<< customize) { 
 
 
 newtype CreateSchemaResponse = CreateSchemaResponse 
-  { "SchemaArn" :: NullOrUndefined (Arn)
+  { "SchemaArn" :: Maybe (Arn)
   }
 derive instance newtypeCreateSchemaResponse :: Newtype CreateSchemaResponse _
 derive instance repGenericCreateSchemaResponse :: Generic CreateSchemaResponse _
@@ -2051,12 +2050,12 @@ instance encodeCreateSchemaResponse :: Encode CreateSchemaResponse where encode 
 
 -- | Constructs CreateSchemaResponse from required parameters
 newCreateSchemaResponse :: CreateSchemaResponse
-newCreateSchemaResponse  = CreateSchemaResponse { "SchemaArn": (NullOrUndefined Nothing) }
+newCreateSchemaResponse  = CreateSchemaResponse { "SchemaArn": Nothing }
 
 -- | Constructs CreateSchemaResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateSchemaResponse' :: ( { "SchemaArn" :: NullOrUndefined (Arn) } -> {"SchemaArn" :: NullOrUndefined (Arn) } ) -> CreateSchemaResponse
-newCreateSchemaResponse'  customize = (CreateSchemaResponse <<< customize) { "SchemaArn": (NullOrUndefined Nothing) }
+newCreateSchemaResponse' :: ( { "SchemaArn" :: Maybe (Arn) } -> {"SchemaArn" :: Maybe (Arn) } ) -> CreateSchemaResponse
+newCreateSchemaResponse'  customize = (CreateSchemaResponse <<< customize) { "SchemaArn": Nothing }
 
 
 
@@ -2229,7 +2228,7 @@ newDeleteSchemaRequest' _SchemaArn customize = (DeleteSchemaRequest <<< customiz
 
 
 newtype DeleteSchemaResponse = DeleteSchemaResponse 
-  { "SchemaArn" :: NullOrUndefined (Arn)
+  { "SchemaArn" :: Maybe (Arn)
   }
 derive instance newtypeDeleteSchemaResponse :: Newtype DeleteSchemaResponse _
 derive instance repGenericDeleteSchemaResponse :: Generic DeleteSchemaResponse _
@@ -2239,12 +2238,12 @@ instance encodeDeleteSchemaResponse :: Encode DeleteSchemaResponse where encode 
 
 -- | Constructs DeleteSchemaResponse from required parameters
 newDeleteSchemaResponse :: DeleteSchemaResponse
-newDeleteSchemaResponse  = DeleteSchemaResponse { "SchemaArn": (NullOrUndefined Nothing) }
+newDeleteSchemaResponse  = DeleteSchemaResponse { "SchemaArn": Nothing }
 
 -- | Constructs DeleteSchemaResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteSchemaResponse' :: ( { "SchemaArn" :: NullOrUndefined (Arn) } -> {"SchemaArn" :: NullOrUndefined (Arn) } ) -> DeleteSchemaResponse
-newDeleteSchemaResponse'  customize = (DeleteSchemaResponse <<< customize) { "SchemaArn": (NullOrUndefined Nothing) }
+newDeleteSchemaResponse' :: ( { "SchemaArn" :: Maybe (Arn) } -> {"SchemaArn" :: Maybe (Arn) } ) -> DeleteSchemaResponse
+newDeleteSchemaResponse'  customize = (DeleteSchemaResponse <<< customize) { "SchemaArn": Nothing }
 
 
 
@@ -2301,7 +2300,7 @@ newDetachFromIndexRequest' _DirectoryArn _IndexReference _TargetReference custom
 
 
 newtype DetachFromIndexResponse = DetachFromIndexResponse 
-  { "DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
+  { "DetachedObjectIdentifier" :: Maybe (ObjectIdentifier)
   }
 derive instance newtypeDetachFromIndexResponse :: Newtype DetachFromIndexResponse _
 derive instance repGenericDetachFromIndexResponse :: Generic DetachFromIndexResponse _
@@ -2311,12 +2310,12 @@ instance encodeDetachFromIndexResponse :: Encode DetachFromIndexResponse where e
 
 -- | Constructs DetachFromIndexResponse from required parameters
 newDetachFromIndexResponse :: DetachFromIndexResponse
-newDetachFromIndexResponse  = DetachFromIndexResponse { "DetachedObjectIdentifier": (NullOrUndefined Nothing) }
+newDetachFromIndexResponse  = DetachFromIndexResponse { "DetachedObjectIdentifier": Nothing }
 
 -- | Constructs DetachFromIndexResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDetachFromIndexResponse' :: ( { "DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> {"DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } ) -> DetachFromIndexResponse
-newDetachFromIndexResponse'  customize = (DetachFromIndexResponse <<< customize) { "DetachedObjectIdentifier": (NullOrUndefined Nothing) }
+newDetachFromIndexResponse' :: ( { "DetachedObjectIdentifier" :: Maybe (ObjectIdentifier) } -> {"DetachedObjectIdentifier" :: Maybe (ObjectIdentifier) } ) -> DetachFromIndexResponse
+newDetachFromIndexResponse'  customize = (DetachFromIndexResponse <<< customize) { "DetachedObjectIdentifier": Nothing }
 
 
 
@@ -2343,7 +2342,7 @@ newDetachObjectRequest' _DirectoryArn _LinkName _ParentReference customize = (De
 
 
 newtype DetachObjectResponse = DetachObjectResponse 
-  { "DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
+  { "DetachedObjectIdentifier" :: Maybe (ObjectIdentifier)
   }
 derive instance newtypeDetachObjectResponse :: Newtype DetachObjectResponse _
 derive instance repGenericDetachObjectResponse :: Generic DetachObjectResponse _
@@ -2353,12 +2352,12 @@ instance encodeDetachObjectResponse :: Encode DetachObjectResponse where encode 
 
 -- | Constructs DetachObjectResponse from required parameters
 newDetachObjectResponse :: DetachObjectResponse
-newDetachObjectResponse  = DetachObjectResponse { "DetachedObjectIdentifier": (NullOrUndefined Nothing) }
+newDetachObjectResponse  = DetachObjectResponse { "DetachedObjectIdentifier": Nothing }
 
 -- | Constructs DetachObjectResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDetachObjectResponse' :: ( { "DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> {"DetachedObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } ) -> DetachObjectResponse
-newDetachObjectResponse'  customize = (DetachObjectResponse <<< customize) { "DetachedObjectIdentifier": (NullOrUndefined Nothing) }
+newDetachObjectResponse' :: ( { "DetachedObjectIdentifier" :: Maybe (ObjectIdentifier) } -> {"DetachedObjectIdentifier" :: Maybe (ObjectIdentifier) } ) -> DetachObjectResponse
+newDetachObjectResponse'  customize = (DetachObjectResponse <<< customize) { "DetachedObjectIdentifier": Nothing }
 
 
 
@@ -2416,10 +2415,10 @@ newDetachTypedLinkRequest' _DirectoryArn _TypedLinkSpecifier customize = (Detach
 
 -- | <p>Directory structure that includes the directory name and directory ARN.</p>
 newtype Directory = Directory 
-  { "Name" :: NullOrUndefined (DirectoryName)
-  , "DirectoryArn" :: NullOrUndefined (DirectoryArn)
-  , "State" :: NullOrUndefined (DirectoryState)
-  , "CreationDateTime" :: NullOrUndefined (Date)
+  { "Name" :: Maybe (DirectoryName)
+  , "DirectoryArn" :: Maybe (DirectoryArn)
+  , "State" :: Maybe (DirectoryState)
+  , "CreationDateTime" :: Maybe (Date)
   }
 derive instance newtypeDirectory :: Newtype Directory _
 derive instance repGenericDirectory :: Generic Directory _
@@ -2429,18 +2428,18 @@ instance encodeDirectory :: Encode Directory where encode = genericEncode option
 
 -- | Constructs Directory from required parameters
 newDirectory :: Directory
-newDirectory  = Directory { "CreationDateTime": (NullOrUndefined Nothing), "DirectoryArn": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newDirectory  = Directory { "CreationDateTime": Nothing, "DirectoryArn": Nothing, "Name": Nothing, "State": Nothing }
 
 -- | Constructs Directory's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDirectory' :: ( { "Name" :: NullOrUndefined (DirectoryName) , "DirectoryArn" :: NullOrUndefined (DirectoryArn) , "State" :: NullOrUndefined (DirectoryState) , "CreationDateTime" :: NullOrUndefined (Date) } -> {"Name" :: NullOrUndefined (DirectoryName) , "DirectoryArn" :: NullOrUndefined (DirectoryArn) , "State" :: NullOrUndefined (DirectoryState) , "CreationDateTime" :: NullOrUndefined (Date) } ) -> Directory
-newDirectory'  customize = (Directory <<< customize) { "CreationDateTime": (NullOrUndefined Nothing), "DirectoryArn": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newDirectory' :: ( { "Name" :: Maybe (DirectoryName) , "DirectoryArn" :: Maybe (DirectoryArn) , "State" :: Maybe (DirectoryState) , "CreationDateTime" :: Maybe (Date) } -> {"Name" :: Maybe (DirectoryName) , "DirectoryArn" :: Maybe (DirectoryArn) , "State" :: Maybe (DirectoryState) , "CreationDateTime" :: Maybe (Date) } ) -> Directory
+newDirectory'  customize = (Directory <<< customize) { "CreationDateTime": Nothing, "DirectoryArn": Nothing, "Name": Nothing, "State": Nothing }
 
 
 
 -- | <p>Indicates that a <a>Directory</a> could not be created due to a naming conflict. Choose a different name and try again.</p>
 newtype DirectoryAlreadyExistsException = DirectoryAlreadyExistsException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeDirectoryAlreadyExistsException :: Newtype DirectoryAlreadyExistsException _
 derive instance repGenericDirectoryAlreadyExistsException :: Generic DirectoryAlreadyExistsException _
@@ -2450,12 +2449,12 @@ instance encodeDirectoryAlreadyExistsException :: Encode DirectoryAlreadyExistsE
 
 -- | Constructs DirectoryAlreadyExistsException from required parameters
 newDirectoryAlreadyExistsException :: DirectoryAlreadyExistsException
-newDirectoryAlreadyExistsException  = DirectoryAlreadyExistsException { "Message": (NullOrUndefined Nothing) }
+newDirectoryAlreadyExistsException  = DirectoryAlreadyExistsException { "Message": Nothing }
 
 -- | Constructs DirectoryAlreadyExistsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDirectoryAlreadyExistsException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> DirectoryAlreadyExistsException
-newDirectoryAlreadyExistsException'  customize = (DirectoryAlreadyExistsException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newDirectoryAlreadyExistsException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> DirectoryAlreadyExistsException
+newDirectoryAlreadyExistsException'  customize = (DirectoryAlreadyExistsException <<< customize) { "Message": Nothing }
 
 
 
@@ -2470,7 +2469,7 @@ instance encodeDirectoryArn :: Encode DirectoryArn where encode = genericEncode 
 
 -- | <p>A directory that has been deleted and to which access has been attempted. Note: The requested resource will eventually cease to exist.</p>
 newtype DirectoryDeletedException = DirectoryDeletedException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeDirectoryDeletedException :: Newtype DirectoryDeletedException _
 derive instance repGenericDirectoryDeletedException :: Generic DirectoryDeletedException _
@@ -2480,12 +2479,12 @@ instance encodeDirectoryDeletedException :: Encode DirectoryDeletedException whe
 
 -- | Constructs DirectoryDeletedException from required parameters
 newDirectoryDeletedException :: DirectoryDeletedException
-newDirectoryDeletedException  = DirectoryDeletedException { "Message": (NullOrUndefined Nothing) }
+newDirectoryDeletedException  = DirectoryDeletedException { "Message": Nothing }
 
 -- | Constructs DirectoryDeletedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDirectoryDeletedException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> DirectoryDeletedException
-newDirectoryDeletedException'  customize = (DirectoryDeletedException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newDirectoryDeletedException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> DirectoryDeletedException
+newDirectoryDeletedException'  customize = (DirectoryDeletedException <<< customize) { "Message": Nothing }
 
 
 
@@ -2509,7 +2508,7 @@ instance encodeDirectoryName :: Encode DirectoryName where encode = genericEncod
 
 -- | <p>An operation can only operate on a disabled directory.</p>
 newtype DirectoryNotDisabledException = DirectoryNotDisabledException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeDirectoryNotDisabledException :: Newtype DirectoryNotDisabledException _
 derive instance repGenericDirectoryNotDisabledException :: Generic DirectoryNotDisabledException _
@@ -2519,18 +2518,18 @@ instance encodeDirectoryNotDisabledException :: Encode DirectoryNotDisabledExcep
 
 -- | Constructs DirectoryNotDisabledException from required parameters
 newDirectoryNotDisabledException :: DirectoryNotDisabledException
-newDirectoryNotDisabledException  = DirectoryNotDisabledException { "Message": (NullOrUndefined Nothing) }
+newDirectoryNotDisabledException  = DirectoryNotDisabledException { "Message": Nothing }
 
 -- | Constructs DirectoryNotDisabledException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDirectoryNotDisabledException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> DirectoryNotDisabledException
-newDirectoryNotDisabledException'  customize = (DirectoryNotDisabledException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newDirectoryNotDisabledException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> DirectoryNotDisabledException
+newDirectoryNotDisabledException'  customize = (DirectoryNotDisabledException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>An operation can only operate on a directory that is not enabled.</p>
 newtype DirectoryNotEnabledException = DirectoryNotEnabledException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeDirectoryNotEnabledException :: Newtype DirectoryNotEnabledException _
 derive instance repGenericDirectoryNotEnabledException :: Generic DirectoryNotEnabledException _
@@ -2540,12 +2539,12 @@ instance encodeDirectoryNotEnabledException :: Encode DirectoryNotEnabledExcepti
 
 -- | Constructs DirectoryNotEnabledException from required parameters
 newDirectoryNotEnabledException :: DirectoryNotEnabledException
-newDirectoryNotEnabledException  = DirectoryNotEnabledException { "Message": (NullOrUndefined Nothing) }
+newDirectoryNotEnabledException  = DirectoryNotEnabledException { "Message": Nothing }
 
 -- | Constructs DirectoryNotEnabledException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDirectoryNotEnabledException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> DirectoryNotEnabledException
-newDirectoryNotEnabledException'  customize = (DirectoryNotEnabledException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newDirectoryNotEnabledException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> DirectoryNotEnabledException
+newDirectoryNotEnabledException'  customize = (DirectoryNotEnabledException <<< customize) { "Message": Nothing }
 
 
 
@@ -2649,8 +2648,8 @@ instance encodeExceptionMessage :: Encode ExceptionMessage where encode = generi
 
 -- | <p>A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <a>Rule</a>s, and <code>ObjectTypes</code>.</p>
 newtype Facet = Facet 
-  { "Name" :: NullOrUndefined (FacetName)
-  , "ObjectType" :: NullOrUndefined (ObjectType)
+  { "Name" :: Maybe (FacetName)
+  , "ObjectType" :: Maybe (ObjectType)
   }
 derive instance newtypeFacet :: Newtype Facet _
 derive instance repGenericFacet :: Generic Facet _
@@ -2660,18 +2659,18 @@ instance encodeFacet :: Encode Facet where encode = genericEncode options
 
 -- | Constructs Facet from required parameters
 newFacet :: Facet
-newFacet  = Facet { "Name": (NullOrUndefined Nothing), "ObjectType": (NullOrUndefined Nothing) }
+newFacet  = Facet { "Name": Nothing, "ObjectType": Nothing }
 
 -- | Constructs Facet's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFacet' :: ( { "Name" :: NullOrUndefined (FacetName) , "ObjectType" :: NullOrUndefined (ObjectType) } -> {"Name" :: NullOrUndefined (FacetName) , "ObjectType" :: NullOrUndefined (ObjectType) } ) -> Facet
-newFacet'  customize = (Facet <<< customize) { "Name": (NullOrUndefined Nothing), "ObjectType": (NullOrUndefined Nothing) }
+newFacet' :: ( { "Name" :: Maybe (FacetName) , "ObjectType" :: Maybe (ObjectType) } -> {"Name" :: Maybe (FacetName) , "ObjectType" :: Maybe (ObjectType) } ) -> Facet
+newFacet'  customize = (Facet <<< customize) { "Name": Nothing, "ObjectType": Nothing }
 
 
 
 -- | <p>A facet with the same name already exists.</p>
 newtype FacetAlreadyExistsException = FacetAlreadyExistsException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeFacetAlreadyExistsException :: Newtype FacetAlreadyExistsException _
 derive instance repGenericFacetAlreadyExistsException :: Generic FacetAlreadyExistsException _
@@ -2681,21 +2680,21 @@ instance encodeFacetAlreadyExistsException :: Encode FacetAlreadyExistsException
 
 -- | Constructs FacetAlreadyExistsException from required parameters
 newFacetAlreadyExistsException :: FacetAlreadyExistsException
-newFacetAlreadyExistsException  = FacetAlreadyExistsException { "Message": (NullOrUndefined Nothing) }
+newFacetAlreadyExistsException  = FacetAlreadyExistsException { "Message": Nothing }
 
 -- | Constructs FacetAlreadyExistsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFacetAlreadyExistsException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> FacetAlreadyExistsException
-newFacetAlreadyExistsException'  customize = (FacetAlreadyExistsException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newFacetAlreadyExistsException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> FacetAlreadyExistsException
+newFacetAlreadyExistsException'  customize = (FacetAlreadyExistsException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>An attribute that is associated with the <a>Facet</a>.</p>
 newtype FacetAttribute = FacetAttribute 
   { "Name" :: (AttributeName)
-  , "AttributeDefinition" :: NullOrUndefined (FacetAttributeDefinition)
-  , "AttributeReference" :: NullOrUndefined (FacetAttributeReference)
-  , "RequiredBehavior" :: NullOrUndefined (RequiredAttributeBehavior)
+  , "AttributeDefinition" :: Maybe (FacetAttributeDefinition)
+  , "AttributeReference" :: Maybe (FacetAttributeReference)
+  , "RequiredBehavior" :: Maybe (RequiredAttributeBehavior)
   }
 derive instance newtypeFacetAttribute :: Newtype FacetAttribute _
 derive instance repGenericFacetAttribute :: Generic FacetAttribute _
@@ -2705,21 +2704,21 @@ instance encodeFacetAttribute :: Encode FacetAttribute where encode = genericEnc
 
 -- | Constructs FacetAttribute from required parameters
 newFacetAttribute :: AttributeName -> FacetAttribute
-newFacetAttribute _Name = FacetAttribute { "Name": _Name, "AttributeDefinition": (NullOrUndefined Nothing), "AttributeReference": (NullOrUndefined Nothing), "RequiredBehavior": (NullOrUndefined Nothing) }
+newFacetAttribute _Name = FacetAttribute { "Name": _Name, "AttributeDefinition": Nothing, "AttributeReference": Nothing, "RequiredBehavior": Nothing }
 
 -- | Constructs FacetAttribute's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFacetAttribute' :: AttributeName -> ( { "Name" :: (AttributeName) , "AttributeDefinition" :: NullOrUndefined (FacetAttributeDefinition) , "AttributeReference" :: NullOrUndefined (FacetAttributeReference) , "RequiredBehavior" :: NullOrUndefined (RequiredAttributeBehavior) } -> {"Name" :: (AttributeName) , "AttributeDefinition" :: NullOrUndefined (FacetAttributeDefinition) , "AttributeReference" :: NullOrUndefined (FacetAttributeReference) , "RequiredBehavior" :: NullOrUndefined (RequiredAttributeBehavior) } ) -> FacetAttribute
-newFacetAttribute' _Name customize = (FacetAttribute <<< customize) { "Name": _Name, "AttributeDefinition": (NullOrUndefined Nothing), "AttributeReference": (NullOrUndefined Nothing), "RequiredBehavior": (NullOrUndefined Nothing) }
+newFacetAttribute' :: AttributeName -> ( { "Name" :: (AttributeName) , "AttributeDefinition" :: Maybe (FacetAttributeDefinition) , "AttributeReference" :: Maybe (FacetAttributeReference) , "RequiredBehavior" :: Maybe (RequiredAttributeBehavior) } -> {"Name" :: (AttributeName) , "AttributeDefinition" :: Maybe (FacetAttributeDefinition) , "AttributeReference" :: Maybe (FacetAttributeReference) , "RequiredBehavior" :: Maybe (RequiredAttributeBehavior) } ) -> FacetAttribute
+newFacetAttribute' _Name customize = (FacetAttribute <<< customize) { "Name": _Name, "AttributeDefinition": Nothing, "AttributeReference": Nothing, "RequiredBehavior": Nothing }
 
 
 
 -- | <p>A facet attribute definition. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute References</a> for more information.</p>
 newtype FacetAttributeDefinition = FacetAttributeDefinition 
   { "Type" :: (FacetAttributeType)
-  , "DefaultValue" :: NullOrUndefined (TypedAttributeValue)
-  , "IsImmutable" :: NullOrUndefined (Bool)
-  , "Rules" :: NullOrUndefined (RuleMap)
+  , "DefaultValue" :: Maybe (TypedAttributeValue)
+  , "IsImmutable" :: Maybe (Bool)
+  , "Rules" :: Maybe (RuleMap)
   }
 derive instance newtypeFacetAttributeDefinition :: Newtype FacetAttributeDefinition _
 derive instance repGenericFacetAttributeDefinition :: Generic FacetAttributeDefinition _
@@ -2729,12 +2728,12 @@ instance encodeFacetAttributeDefinition :: Encode FacetAttributeDefinition where
 
 -- | Constructs FacetAttributeDefinition from required parameters
 newFacetAttributeDefinition :: FacetAttributeType -> FacetAttributeDefinition
-newFacetAttributeDefinition _Type = FacetAttributeDefinition { "Type": _Type, "DefaultValue": (NullOrUndefined Nothing), "IsImmutable": (NullOrUndefined Nothing), "Rules": (NullOrUndefined Nothing) }
+newFacetAttributeDefinition _Type = FacetAttributeDefinition { "Type": _Type, "DefaultValue": Nothing, "IsImmutable": Nothing, "Rules": Nothing }
 
 -- | Constructs FacetAttributeDefinition's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFacetAttributeDefinition' :: FacetAttributeType -> ( { "Type" :: (FacetAttributeType) , "DefaultValue" :: NullOrUndefined (TypedAttributeValue) , "IsImmutable" :: NullOrUndefined (Bool) , "Rules" :: NullOrUndefined (RuleMap) } -> {"Type" :: (FacetAttributeType) , "DefaultValue" :: NullOrUndefined (TypedAttributeValue) , "IsImmutable" :: NullOrUndefined (Bool) , "Rules" :: NullOrUndefined (RuleMap) } ) -> FacetAttributeDefinition
-newFacetAttributeDefinition' _Type customize = (FacetAttributeDefinition <<< customize) { "Type": _Type, "DefaultValue": (NullOrUndefined Nothing), "IsImmutable": (NullOrUndefined Nothing), "Rules": (NullOrUndefined Nothing) }
+newFacetAttributeDefinition' :: FacetAttributeType -> ( { "Type" :: (FacetAttributeType) , "DefaultValue" :: Maybe (TypedAttributeValue) , "IsImmutable" :: Maybe (Bool) , "Rules" :: Maybe (RuleMap) } -> {"Type" :: (FacetAttributeType) , "DefaultValue" :: Maybe (TypedAttributeValue) , "IsImmutable" :: Maybe (Bool) , "Rules" :: Maybe (RuleMap) } ) -> FacetAttributeDefinition
+newFacetAttributeDefinition' _Type customize = (FacetAttributeDefinition <<< customize) { "Type": _Type, "DefaultValue": Nothing, "IsImmutable": Nothing, "Rules": Nothing }
 
 
 
@@ -2780,8 +2779,8 @@ instance encodeFacetAttributeType :: Encode FacetAttributeType where encode = ge
 
 -- | <p>A structure that contains information used to update an attribute.</p>
 newtype FacetAttributeUpdate = FacetAttributeUpdate 
-  { "Attribute" :: NullOrUndefined (FacetAttribute)
-  , "Action" :: NullOrUndefined (UpdateActionType)
+  { "Attribute" :: Maybe (FacetAttribute)
+  , "Action" :: Maybe (UpdateActionType)
   }
 derive instance newtypeFacetAttributeUpdate :: Newtype FacetAttributeUpdate _
 derive instance repGenericFacetAttributeUpdate :: Generic FacetAttributeUpdate _
@@ -2791,12 +2790,12 @@ instance encodeFacetAttributeUpdate :: Encode FacetAttributeUpdate where encode 
 
 -- | Constructs FacetAttributeUpdate from required parameters
 newFacetAttributeUpdate :: FacetAttributeUpdate
-newFacetAttributeUpdate  = FacetAttributeUpdate { "Action": (NullOrUndefined Nothing), "Attribute": (NullOrUndefined Nothing) }
+newFacetAttributeUpdate  = FacetAttributeUpdate { "Action": Nothing, "Attribute": Nothing }
 
 -- | Constructs FacetAttributeUpdate's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFacetAttributeUpdate' :: ( { "Attribute" :: NullOrUndefined (FacetAttribute) , "Action" :: NullOrUndefined (UpdateActionType) } -> {"Attribute" :: NullOrUndefined (FacetAttribute) , "Action" :: NullOrUndefined (UpdateActionType) } ) -> FacetAttributeUpdate
-newFacetAttributeUpdate'  customize = (FacetAttributeUpdate <<< customize) { "Action": (NullOrUndefined Nothing), "Attribute": (NullOrUndefined Nothing) }
+newFacetAttributeUpdate' :: ( { "Attribute" :: Maybe (FacetAttribute) , "Action" :: Maybe (UpdateActionType) } -> {"Attribute" :: Maybe (FacetAttribute) , "Action" :: Maybe (UpdateActionType) } ) -> FacetAttributeUpdate
+newFacetAttributeUpdate'  customize = (FacetAttributeUpdate <<< customize) { "Action": Nothing, "Attribute": Nothing }
 
 
 
@@ -2811,7 +2810,7 @@ instance encodeFacetAttributeUpdateList :: Encode FacetAttributeUpdateList where
 
 -- | <p>Occurs when deleting a facet that contains an attribute that is a target to an attribute reference in a different facet.</p>
 newtype FacetInUseException = FacetInUseException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeFacetInUseException :: Newtype FacetInUseException _
 derive instance repGenericFacetInUseException :: Generic FacetInUseException _
@@ -2821,12 +2820,12 @@ instance encodeFacetInUseException :: Encode FacetInUseException where encode = 
 
 -- | Constructs FacetInUseException from required parameters
 newFacetInUseException :: FacetInUseException
-newFacetInUseException  = FacetInUseException { "Message": (NullOrUndefined Nothing) }
+newFacetInUseException  = FacetInUseException { "Message": Nothing }
 
 -- | Constructs FacetInUseException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFacetInUseException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> FacetInUseException
-newFacetInUseException'  customize = (FacetInUseException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newFacetInUseException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> FacetInUseException
+newFacetInUseException'  customize = (FacetInUseException <<< customize) { "Message": Nothing }
 
 
 
@@ -2850,7 +2849,7 @@ instance encodeFacetNameList :: Encode FacetNameList where encode = genericEncod
 
 -- | <p>The specified <a>Facet</a> could not be found.</p>
 newtype FacetNotFoundException = FacetNotFoundException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeFacetNotFoundException :: Newtype FacetNotFoundException _
 derive instance repGenericFacetNotFoundException :: Generic FacetNotFoundException _
@@ -2860,18 +2859,18 @@ instance encodeFacetNotFoundException :: Encode FacetNotFoundException where enc
 
 -- | Constructs FacetNotFoundException from required parameters
 newFacetNotFoundException :: FacetNotFoundException
-newFacetNotFoundException  = FacetNotFoundException { "Message": (NullOrUndefined Nothing) }
+newFacetNotFoundException  = FacetNotFoundException { "Message": Nothing }
 
 -- | Constructs FacetNotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFacetNotFoundException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> FacetNotFoundException
-newFacetNotFoundException'  customize = (FacetNotFoundException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newFacetNotFoundException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> FacetNotFoundException
+newFacetNotFoundException'  customize = (FacetNotFoundException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.</p>
 newtype FacetValidationException = FacetValidationException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeFacetValidationException :: Newtype FacetValidationException _
 derive instance repGenericFacetValidationException :: Generic FacetValidationException _
@@ -2881,12 +2880,12 @@ instance encodeFacetValidationException :: Encode FacetValidationException where
 
 -- | Constructs FacetValidationException from required parameters
 newFacetValidationException :: FacetValidationException
-newFacetValidationException  = FacetValidationException { "Message": (NullOrUndefined Nothing) }
+newFacetValidationException  = FacetValidationException { "Message": Nothing }
 
 -- | Constructs FacetValidationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFacetValidationException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> FacetValidationException
-newFacetValidationException'  customize = (FacetValidationException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newFacetValidationException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> FacetValidationException
+newFacetValidationException'  customize = (FacetValidationException <<< customize) { "Message": Nothing }
 
 
 
@@ -2911,7 +2910,7 @@ newGetAppliedSchemaVersionRequest' _SchemaArn customize = (GetAppliedSchemaVersi
 
 
 newtype GetAppliedSchemaVersionResponse = GetAppliedSchemaVersionResponse 
-  { "AppliedSchemaArn" :: NullOrUndefined (Arn)
+  { "AppliedSchemaArn" :: Maybe (Arn)
   }
 derive instance newtypeGetAppliedSchemaVersionResponse :: Newtype GetAppliedSchemaVersionResponse _
 derive instance repGenericGetAppliedSchemaVersionResponse :: Generic GetAppliedSchemaVersionResponse _
@@ -2921,12 +2920,12 @@ instance encodeGetAppliedSchemaVersionResponse :: Encode GetAppliedSchemaVersion
 
 -- | Constructs GetAppliedSchemaVersionResponse from required parameters
 newGetAppliedSchemaVersionResponse :: GetAppliedSchemaVersionResponse
-newGetAppliedSchemaVersionResponse  = GetAppliedSchemaVersionResponse { "AppliedSchemaArn": (NullOrUndefined Nothing) }
+newGetAppliedSchemaVersionResponse  = GetAppliedSchemaVersionResponse { "AppliedSchemaArn": Nothing }
 
 -- | Constructs GetAppliedSchemaVersionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetAppliedSchemaVersionResponse' :: ( { "AppliedSchemaArn" :: NullOrUndefined (Arn) } -> {"AppliedSchemaArn" :: NullOrUndefined (Arn) } ) -> GetAppliedSchemaVersionResponse
-newGetAppliedSchemaVersionResponse'  customize = (GetAppliedSchemaVersionResponse <<< customize) { "AppliedSchemaArn": (NullOrUndefined Nothing) }
+newGetAppliedSchemaVersionResponse' :: ( { "AppliedSchemaArn" :: Maybe (Arn) } -> {"AppliedSchemaArn" :: Maybe (Arn) } ) -> GetAppliedSchemaVersionResponse
+newGetAppliedSchemaVersionResponse'  customize = (GetAppliedSchemaVersionResponse <<< customize) { "AppliedSchemaArn": Nothing }
 
 
 
@@ -2992,7 +2991,7 @@ newGetFacetRequest' _Name _SchemaArn customize = (GetFacetRequest <<< customize)
 
 
 newtype GetFacetResponse = GetFacetResponse 
-  { "Facet" :: NullOrUndefined (Facet)
+  { "Facet" :: Maybe (Facet)
   }
 derive instance newtypeGetFacetResponse :: Newtype GetFacetResponse _
 derive instance repGenericGetFacetResponse :: Generic GetFacetResponse _
@@ -3002,19 +3001,19 @@ instance encodeGetFacetResponse :: Encode GetFacetResponse where encode = generi
 
 -- | Constructs GetFacetResponse from required parameters
 newGetFacetResponse :: GetFacetResponse
-newGetFacetResponse  = GetFacetResponse { "Facet": (NullOrUndefined Nothing) }
+newGetFacetResponse  = GetFacetResponse { "Facet": Nothing }
 
 -- | Constructs GetFacetResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetFacetResponse' :: ( { "Facet" :: NullOrUndefined (Facet) } -> {"Facet" :: NullOrUndefined (Facet) } ) -> GetFacetResponse
-newGetFacetResponse'  customize = (GetFacetResponse <<< customize) { "Facet": (NullOrUndefined Nothing) }
+newGetFacetResponse' :: ( { "Facet" :: Maybe (Facet) } -> {"Facet" :: Maybe (Facet) } ) -> GetFacetResponse
+newGetFacetResponse'  customize = (GetFacetResponse <<< customize) { "Facet": Nothing }
 
 
 
 newtype GetObjectInformationRequest = GetObjectInformationRequest 
   { "DirectoryArn" :: (Arn)
   , "ObjectReference" :: (ObjectReference)
-  , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel)
+  , "ConsistencyLevel" :: Maybe (ConsistencyLevel)
   }
 derive instance newtypeGetObjectInformationRequest :: Newtype GetObjectInformationRequest _
 derive instance repGenericGetObjectInformationRequest :: Generic GetObjectInformationRequest _
@@ -3024,18 +3023,18 @@ instance encodeGetObjectInformationRequest :: Encode GetObjectInformationRequest
 
 -- | Constructs GetObjectInformationRequest from required parameters
 newGetObjectInformationRequest :: Arn -> ObjectReference -> GetObjectInformationRequest
-newGetObjectInformationRequest _DirectoryArn _ObjectReference = GetObjectInformationRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": (NullOrUndefined Nothing) }
+newGetObjectInformationRequest _DirectoryArn _ObjectReference = GetObjectInformationRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": Nothing }
 
 -- | Constructs GetObjectInformationRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetObjectInformationRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } ) -> GetObjectInformationRequest
-newGetObjectInformationRequest' _DirectoryArn _ObjectReference customize = (GetObjectInformationRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": (NullOrUndefined Nothing) }
+newGetObjectInformationRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } ) -> GetObjectInformationRequest
+newGetObjectInformationRequest' _DirectoryArn _ObjectReference customize = (GetObjectInformationRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": Nothing }
 
 
 
 newtype GetObjectInformationResponse = GetObjectInformationResponse 
-  { "SchemaFacets" :: NullOrUndefined (SchemaFacetList)
-  , "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
+  { "SchemaFacets" :: Maybe (SchemaFacetList)
+  , "ObjectIdentifier" :: Maybe (ObjectIdentifier)
   }
 derive instance newtypeGetObjectInformationResponse :: Newtype GetObjectInformationResponse _
 derive instance repGenericGetObjectInformationResponse :: Generic GetObjectInformationResponse _
@@ -3045,12 +3044,12 @@ instance encodeGetObjectInformationResponse :: Encode GetObjectInformationRespon
 
 -- | Constructs GetObjectInformationResponse from required parameters
 newGetObjectInformationResponse :: GetObjectInformationResponse
-newGetObjectInformationResponse  = GetObjectInformationResponse { "ObjectIdentifier": (NullOrUndefined Nothing), "SchemaFacets": (NullOrUndefined Nothing) }
+newGetObjectInformationResponse  = GetObjectInformationResponse { "ObjectIdentifier": Nothing, "SchemaFacets": Nothing }
 
 -- | Constructs GetObjectInformationResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetObjectInformationResponse' :: ( { "SchemaFacets" :: NullOrUndefined (SchemaFacetList) , "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> {"SchemaFacets" :: NullOrUndefined (SchemaFacetList) , "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } ) -> GetObjectInformationResponse
-newGetObjectInformationResponse'  customize = (GetObjectInformationResponse <<< customize) { "ObjectIdentifier": (NullOrUndefined Nothing), "SchemaFacets": (NullOrUndefined Nothing) }
+newGetObjectInformationResponse' :: ( { "SchemaFacets" :: Maybe (SchemaFacetList) , "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> {"SchemaFacets" :: Maybe (SchemaFacetList) , "ObjectIdentifier" :: Maybe (ObjectIdentifier) } ) -> GetObjectInformationResponse
+newGetObjectInformationResponse'  customize = (GetObjectInformationResponse <<< customize) { "ObjectIdentifier": Nothing, "SchemaFacets": Nothing }
 
 
 
@@ -3075,8 +3074,8 @@ newGetSchemaAsJsonRequest' _SchemaArn customize = (GetSchemaAsJsonRequest <<< cu
 
 
 newtype GetSchemaAsJsonResponse = GetSchemaAsJsonResponse 
-  { "Name" :: NullOrUndefined (SchemaName)
-  , "Document" :: NullOrUndefined (SchemaJsonDocument)
+  { "Name" :: Maybe (SchemaName)
+  , "Document" :: Maybe (SchemaJsonDocument)
   }
 derive instance newtypeGetSchemaAsJsonResponse :: Newtype GetSchemaAsJsonResponse _
 derive instance repGenericGetSchemaAsJsonResponse :: Generic GetSchemaAsJsonResponse _
@@ -3086,12 +3085,12 @@ instance encodeGetSchemaAsJsonResponse :: Encode GetSchemaAsJsonResponse where e
 
 -- | Constructs GetSchemaAsJsonResponse from required parameters
 newGetSchemaAsJsonResponse :: GetSchemaAsJsonResponse
-newGetSchemaAsJsonResponse  = GetSchemaAsJsonResponse { "Document": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newGetSchemaAsJsonResponse  = GetSchemaAsJsonResponse { "Document": Nothing, "Name": Nothing }
 
 -- | Constructs GetSchemaAsJsonResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetSchemaAsJsonResponse' :: ( { "Name" :: NullOrUndefined (SchemaName) , "Document" :: NullOrUndefined (SchemaJsonDocument) } -> {"Name" :: NullOrUndefined (SchemaName) , "Document" :: NullOrUndefined (SchemaJsonDocument) } ) -> GetSchemaAsJsonResponse
-newGetSchemaAsJsonResponse'  customize = (GetSchemaAsJsonResponse <<< customize) { "Document": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newGetSchemaAsJsonResponse' :: ( { "Name" :: Maybe (SchemaName) , "Document" :: Maybe (SchemaJsonDocument) } -> {"Name" :: Maybe (SchemaName) , "Document" :: Maybe (SchemaJsonDocument) } ) -> GetSchemaAsJsonResponse
+newGetSchemaAsJsonResponse'  customize = (GetSchemaAsJsonResponse <<< customize) { "Document": Nothing, "Name": Nothing }
 
 
 
@@ -3117,7 +3116,7 @@ newGetTypedLinkFacetInformationRequest' _Name _SchemaArn customize = (GetTypedLi
 
 
 newtype GetTypedLinkFacetInformationResponse = GetTypedLinkFacetInformationResponse 
-  { "IdentityAttributeOrder" :: NullOrUndefined (AttributeNameList)
+  { "IdentityAttributeOrder" :: Maybe (AttributeNameList)
   }
 derive instance newtypeGetTypedLinkFacetInformationResponse :: Newtype GetTypedLinkFacetInformationResponse _
 derive instance repGenericGetTypedLinkFacetInformationResponse :: Generic GetTypedLinkFacetInformationResponse _
@@ -3127,18 +3126,18 @@ instance encodeGetTypedLinkFacetInformationResponse :: Encode GetTypedLinkFacetI
 
 -- | Constructs GetTypedLinkFacetInformationResponse from required parameters
 newGetTypedLinkFacetInformationResponse :: GetTypedLinkFacetInformationResponse
-newGetTypedLinkFacetInformationResponse  = GetTypedLinkFacetInformationResponse { "IdentityAttributeOrder": (NullOrUndefined Nothing) }
+newGetTypedLinkFacetInformationResponse  = GetTypedLinkFacetInformationResponse { "IdentityAttributeOrder": Nothing }
 
 -- | Constructs GetTypedLinkFacetInformationResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetTypedLinkFacetInformationResponse' :: ( { "IdentityAttributeOrder" :: NullOrUndefined (AttributeNameList) } -> {"IdentityAttributeOrder" :: NullOrUndefined (AttributeNameList) } ) -> GetTypedLinkFacetInformationResponse
-newGetTypedLinkFacetInformationResponse'  customize = (GetTypedLinkFacetInformationResponse <<< customize) { "IdentityAttributeOrder": (NullOrUndefined Nothing) }
+newGetTypedLinkFacetInformationResponse' :: ( { "IdentityAttributeOrder" :: Maybe (AttributeNameList) } -> {"IdentityAttributeOrder" :: Maybe (AttributeNameList) } ) -> GetTypedLinkFacetInformationResponse
+newGetTypedLinkFacetInformationResponse'  customize = (GetTypedLinkFacetInformationResponse <<< customize) { "IdentityAttributeOrder": Nothing }
 
 
 
 -- | <p>Indicates a failure occurred while performing a check for backward compatibility between the specified schema and the schema that is currently applied to the directory.</p>
 newtype IncompatibleSchemaException = IncompatibleSchemaException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeIncompatibleSchemaException :: Newtype IncompatibleSchemaException _
 derive instance repGenericIncompatibleSchemaException :: Generic IncompatibleSchemaException _
@@ -3148,19 +3147,19 @@ instance encodeIncompatibleSchemaException :: Encode IncompatibleSchemaException
 
 -- | Constructs IncompatibleSchemaException from required parameters
 newIncompatibleSchemaException :: IncompatibleSchemaException
-newIncompatibleSchemaException  = IncompatibleSchemaException { "Message": (NullOrUndefined Nothing) }
+newIncompatibleSchemaException  = IncompatibleSchemaException { "Message": Nothing }
 
 -- | Constructs IncompatibleSchemaException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newIncompatibleSchemaException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> IncompatibleSchemaException
-newIncompatibleSchemaException'  customize = (IncompatibleSchemaException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newIncompatibleSchemaException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> IncompatibleSchemaException
+newIncompatibleSchemaException'  customize = (IncompatibleSchemaException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Represents an index and an attached object.</p>
 newtype IndexAttachment = IndexAttachment 
-  { "IndexedAttributes" :: NullOrUndefined (AttributeKeyAndValueList)
-  , "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
+  { "IndexedAttributes" :: Maybe (AttributeKeyAndValueList)
+  , "ObjectIdentifier" :: Maybe (ObjectIdentifier)
   }
 derive instance newtypeIndexAttachment :: Newtype IndexAttachment _
 derive instance repGenericIndexAttachment :: Generic IndexAttachment _
@@ -3170,12 +3169,12 @@ instance encodeIndexAttachment :: Encode IndexAttachment where encode = genericE
 
 -- | Constructs IndexAttachment from required parameters
 newIndexAttachment :: IndexAttachment
-newIndexAttachment  = IndexAttachment { "IndexedAttributes": (NullOrUndefined Nothing), "ObjectIdentifier": (NullOrUndefined Nothing) }
+newIndexAttachment  = IndexAttachment { "IndexedAttributes": Nothing, "ObjectIdentifier": Nothing }
 
 -- | Constructs IndexAttachment's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newIndexAttachment' :: ( { "IndexedAttributes" :: NullOrUndefined (AttributeKeyAndValueList) , "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> {"IndexedAttributes" :: NullOrUndefined (AttributeKeyAndValueList) , "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } ) -> IndexAttachment
-newIndexAttachment'  customize = (IndexAttachment <<< customize) { "IndexedAttributes": (NullOrUndefined Nothing), "ObjectIdentifier": (NullOrUndefined Nothing) }
+newIndexAttachment' :: ( { "IndexedAttributes" :: Maybe (AttributeKeyAndValueList) , "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> {"IndexedAttributes" :: Maybe (AttributeKeyAndValueList) , "ObjectIdentifier" :: Maybe (ObjectIdentifier) } ) -> IndexAttachment
+newIndexAttachment'  customize = (IndexAttachment <<< customize) { "IndexedAttributes": Nothing, "ObjectIdentifier": Nothing }
 
 
 
@@ -3190,7 +3189,7 @@ instance encodeIndexAttachmentList :: Encode IndexAttachmentList where encode = 
 
 -- | <p>An object has been attempted to be attached to an object that does not have the appropriate attribute value.</p>
 newtype IndexedAttributeMissingException = IndexedAttributeMissingException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeIndexedAttributeMissingException :: Newtype IndexedAttributeMissingException _
 derive instance repGenericIndexedAttributeMissingException :: Generic IndexedAttributeMissingException _
@@ -3200,18 +3199,18 @@ instance encodeIndexedAttributeMissingException :: Encode IndexedAttributeMissin
 
 -- | Constructs IndexedAttributeMissingException from required parameters
 newIndexedAttributeMissingException :: IndexedAttributeMissingException
-newIndexedAttributeMissingException  = IndexedAttributeMissingException { "Message": (NullOrUndefined Nothing) }
+newIndexedAttributeMissingException  = IndexedAttributeMissingException { "Message": Nothing }
 
 -- | Constructs IndexedAttributeMissingException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newIndexedAttributeMissingException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> IndexedAttributeMissingException
-newIndexedAttributeMissingException'  customize = (IndexedAttributeMissingException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newIndexedAttributeMissingException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> IndexedAttributeMissingException
+newIndexedAttributeMissingException'  customize = (IndexedAttributeMissingException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in which case you can retry your request until it succeeds. Otherwise, go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any operational issues with the service.</p>
 newtype InternalServiceException = InternalServiceException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeInternalServiceException :: Newtype InternalServiceException _
 derive instance repGenericInternalServiceException :: Generic InternalServiceException _
@@ -3221,18 +3220,18 @@ instance encodeInternalServiceException :: Encode InternalServiceException where
 
 -- | Constructs InternalServiceException from required parameters
 newInternalServiceException :: InternalServiceException
-newInternalServiceException  = InternalServiceException { "Message": (NullOrUndefined Nothing) }
+newInternalServiceException  = InternalServiceException { "Message": Nothing }
 
 -- | Constructs InternalServiceException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalServiceException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> InternalServiceException
-newInternalServiceException'  customize = (InternalServiceException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInternalServiceException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> InternalServiceException
+newInternalServiceException'  customize = (InternalServiceException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Indicates that the provided ARN value is not valid.</p>
 newtype InvalidArnException = InvalidArnException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeInvalidArnException :: Newtype InvalidArnException _
 derive instance repGenericInvalidArnException :: Generic InvalidArnException _
@@ -3242,18 +3241,18 @@ instance encodeInvalidArnException :: Encode InvalidArnException where encode = 
 
 -- | Constructs InvalidArnException from required parameters
 newInvalidArnException :: InvalidArnException
-newInvalidArnException  = InvalidArnException { "Message": (NullOrUndefined Nothing) }
+newInvalidArnException  = InvalidArnException { "Message": Nothing }
 
 -- | Constructs InvalidArnException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidArnException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> InvalidArnException
-newInvalidArnException'  customize = (InvalidArnException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidArnException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> InvalidArnException
+newInvalidArnException'  customize = (InvalidArnException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Indicates that an attempt to attach an object with the same link name or to apply a schema with the same name has occurred. Rename the link or the schema and then try again.</p>
 newtype InvalidAttachmentException = InvalidAttachmentException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeInvalidAttachmentException :: Newtype InvalidAttachmentException _
 derive instance repGenericInvalidAttachmentException :: Generic InvalidAttachmentException _
@@ -3263,18 +3262,18 @@ instance encodeInvalidAttachmentException :: Encode InvalidAttachmentException w
 
 -- | Constructs InvalidAttachmentException from required parameters
 newInvalidAttachmentException :: InvalidAttachmentException
-newInvalidAttachmentException  = InvalidAttachmentException { "Message": (NullOrUndefined Nothing) }
+newInvalidAttachmentException  = InvalidAttachmentException { "Message": Nothing }
 
 -- | Constructs InvalidAttachmentException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidAttachmentException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> InvalidAttachmentException
-newInvalidAttachmentException'  customize = (InvalidAttachmentException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidAttachmentException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> InvalidAttachmentException
+newInvalidAttachmentException'  customize = (InvalidAttachmentException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>An attempt to modify a <a>Facet</a> resulted in an invalid schema exception.</p>
 newtype InvalidFacetUpdateException = InvalidFacetUpdateException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeInvalidFacetUpdateException :: Newtype InvalidFacetUpdateException _
 derive instance repGenericInvalidFacetUpdateException :: Generic InvalidFacetUpdateException _
@@ -3284,18 +3283,18 @@ instance encodeInvalidFacetUpdateException :: Encode InvalidFacetUpdateException
 
 -- | Constructs InvalidFacetUpdateException from required parameters
 newInvalidFacetUpdateException :: InvalidFacetUpdateException
-newInvalidFacetUpdateException  = InvalidFacetUpdateException { "Message": (NullOrUndefined Nothing) }
+newInvalidFacetUpdateException  = InvalidFacetUpdateException { "Message": Nothing }
 
 -- | Constructs InvalidFacetUpdateException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidFacetUpdateException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> InvalidFacetUpdateException
-newInvalidFacetUpdateException'  customize = (InvalidFacetUpdateException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidFacetUpdateException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> InvalidFacetUpdateException
+newInvalidFacetUpdateException'  customize = (InvalidFacetUpdateException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Indicates that the <code>NextToken</code> value is not valid.</p>
 newtype InvalidNextTokenException = InvalidNextTokenException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeInvalidNextTokenException :: Newtype InvalidNextTokenException _
 derive instance repGenericInvalidNextTokenException :: Generic InvalidNextTokenException _
@@ -3305,18 +3304,18 @@ instance encodeInvalidNextTokenException :: Encode InvalidNextTokenException whe
 
 -- | Constructs InvalidNextTokenException from required parameters
 newInvalidNextTokenException :: InvalidNextTokenException
-newInvalidNextTokenException  = InvalidNextTokenException { "Message": (NullOrUndefined Nothing) }
+newInvalidNextTokenException  = InvalidNextTokenException { "Message": Nothing }
 
 -- | Constructs InvalidNextTokenException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidNextTokenException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> InvalidNextTokenException
-newInvalidNextTokenException'  customize = (InvalidNextTokenException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidNextTokenException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> InvalidNextTokenException
+newInvalidNextTokenException'  customize = (InvalidNextTokenException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Occurs when any of the rule parameter keys or values are invalid.</p>
 newtype InvalidRuleException = InvalidRuleException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeInvalidRuleException :: Newtype InvalidRuleException _
 derive instance repGenericInvalidRuleException :: Generic InvalidRuleException _
@@ -3326,18 +3325,18 @@ instance encodeInvalidRuleException :: Encode InvalidRuleException where encode 
 
 -- | Constructs InvalidRuleException from required parameters
 newInvalidRuleException :: InvalidRuleException
-newInvalidRuleException  = InvalidRuleException { "Message": (NullOrUndefined Nothing) }
+newInvalidRuleException  = InvalidRuleException { "Message": Nothing }
 
 -- | Constructs InvalidRuleException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidRuleException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> InvalidRuleException
-newInvalidRuleException'  customize = (InvalidRuleException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidRuleException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> InvalidRuleException
+newInvalidRuleException'  customize = (InvalidRuleException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Indicates that the provided <code>SchemaDoc</code> value is not valid.</p>
 newtype InvalidSchemaDocException = InvalidSchemaDocException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeInvalidSchemaDocException :: Newtype InvalidSchemaDocException _
 derive instance repGenericInvalidSchemaDocException :: Generic InvalidSchemaDocException _
@@ -3347,18 +3346,18 @@ instance encodeInvalidSchemaDocException :: Encode InvalidSchemaDocException whe
 
 -- | Constructs InvalidSchemaDocException from required parameters
 newInvalidSchemaDocException :: InvalidSchemaDocException
-newInvalidSchemaDocException  = InvalidSchemaDocException { "Message": (NullOrUndefined Nothing) }
+newInvalidSchemaDocException  = InvalidSchemaDocException { "Message": Nothing }
 
 -- | Constructs InvalidSchemaDocException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidSchemaDocException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> InvalidSchemaDocException
-newInvalidSchemaDocException'  customize = (InvalidSchemaDocException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidSchemaDocException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> InvalidSchemaDocException
+newInvalidSchemaDocException'  customize = (InvalidSchemaDocException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Can occur for multiple reasons such as when you tag a resource that doesn’t exist or if you specify a higher number of tags for a resource than the allowed limit. Allowed limit is 50 tags per resource.</p>
 newtype InvalidTaggingRequestException = InvalidTaggingRequestException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeInvalidTaggingRequestException :: Newtype InvalidTaggingRequestException _
 derive instance repGenericInvalidTaggingRequestException :: Generic InvalidTaggingRequestException _
@@ -3368,18 +3367,18 @@ instance encodeInvalidTaggingRequestException :: Encode InvalidTaggingRequestExc
 
 -- | Constructs InvalidTaggingRequestException from required parameters
 newInvalidTaggingRequestException :: InvalidTaggingRequestException
-newInvalidTaggingRequestException  = InvalidTaggingRequestException { "Message": (NullOrUndefined Nothing) }
+newInvalidTaggingRequestException  = InvalidTaggingRequestException { "Message": Nothing }
 
 -- | Constructs InvalidTaggingRequestException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidTaggingRequestException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> InvalidTaggingRequestException
-newInvalidTaggingRequestException'  customize = (InvalidTaggingRequestException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidTaggingRequestException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> InvalidTaggingRequestException
+newInvalidTaggingRequestException'  customize = (InvalidTaggingRequestException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Indicates that limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more information.</p>
 newtype LimitExceededException = LimitExceededException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeLimitExceededException :: Newtype LimitExceededException _
 derive instance repGenericLimitExceededException :: Generic LimitExceededException _
@@ -3389,12 +3388,12 @@ instance encodeLimitExceededException :: Encode LimitExceededException where enc
 
 -- | Constructs LimitExceededException from required parameters
 newLimitExceededException :: LimitExceededException
-newLimitExceededException  = LimitExceededException { "Message": (NullOrUndefined Nothing) }
+newLimitExceededException  = LimitExceededException { "Message": Nothing }
 
 -- | Constructs LimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLimitExceededException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> LimitExceededException
-newLimitExceededException'  customize = (LimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newLimitExceededException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> LimitExceededException
+newLimitExceededException'  customize = (LimitExceededException <<< customize) { "Message": Nothing }
 
 
 
@@ -3409,7 +3408,7 @@ instance encodeLinkName :: Encode LinkName where encode = genericEncode options
 
 -- | <p>Indicates that a link could not be created due to a naming conflict. Choose a different name and then try again.</p>
 newtype LinkNameAlreadyInUseException = LinkNameAlreadyInUseException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeLinkNameAlreadyInUseException :: Newtype LinkNameAlreadyInUseException _
 derive instance repGenericLinkNameAlreadyInUseException :: Generic LinkNameAlreadyInUseException _
@@ -3419,12 +3418,12 @@ instance encodeLinkNameAlreadyInUseException :: Encode LinkNameAlreadyInUseExcep
 
 -- | Constructs LinkNameAlreadyInUseException from required parameters
 newLinkNameAlreadyInUseException :: LinkNameAlreadyInUseException
-newLinkNameAlreadyInUseException  = LinkNameAlreadyInUseException { "Message": (NullOrUndefined Nothing) }
+newLinkNameAlreadyInUseException  = LinkNameAlreadyInUseException { "Message": Nothing }
 
 -- | Constructs LinkNameAlreadyInUseException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLinkNameAlreadyInUseException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> LinkNameAlreadyInUseException
-newLinkNameAlreadyInUseException'  customize = (LinkNameAlreadyInUseException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newLinkNameAlreadyInUseException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> LinkNameAlreadyInUseException
+newLinkNameAlreadyInUseException'  customize = (LinkNameAlreadyInUseException <<< customize) { "Message": Nothing }
 
 
 
@@ -3439,9 +3438,9 @@ instance encodeLinkNameToObjectIdentifierMap :: Encode LinkNameToObjectIdentifie
 
 newtype ListAppliedSchemaArnsRequest = ListAppliedSchemaArnsRequest 
   { "DirectoryArn" :: (Arn)
-  , "SchemaArn" :: NullOrUndefined (Arn)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
+  , "SchemaArn" :: Maybe (Arn)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
   }
 derive instance newtypeListAppliedSchemaArnsRequest :: Newtype ListAppliedSchemaArnsRequest _
 derive instance repGenericListAppliedSchemaArnsRequest :: Generic ListAppliedSchemaArnsRequest _
@@ -3451,18 +3450,18 @@ instance encodeListAppliedSchemaArnsRequest :: Encode ListAppliedSchemaArnsReque
 
 -- | Constructs ListAppliedSchemaArnsRequest from required parameters
 newListAppliedSchemaArnsRequest :: Arn -> ListAppliedSchemaArnsRequest
-newListAppliedSchemaArnsRequest _DirectoryArn = ListAppliedSchemaArnsRequest { "DirectoryArn": _DirectoryArn, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "SchemaArn": (NullOrUndefined Nothing) }
+newListAppliedSchemaArnsRequest _DirectoryArn = ListAppliedSchemaArnsRequest { "DirectoryArn": _DirectoryArn, "MaxResults": Nothing, "NextToken": Nothing, "SchemaArn": Nothing }
 
 -- | Constructs ListAppliedSchemaArnsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListAppliedSchemaArnsRequest' :: Arn -> ( { "DirectoryArn" :: (Arn) , "SchemaArn" :: NullOrUndefined (Arn) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } -> {"DirectoryArn" :: (Arn) , "SchemaArn" :: NullOrUndefined (Arn) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } ) -> ListAppliedSchemaArnsRequest
-newListAppliedSchemaArnsRequest' _DirectoryArn customize = (ListAppliedSchemaArnsRequest <<< customize) { "DirectoryArn": _DirectoryArn, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "SchemaArn": (NullOrUndefined Nothing) }
+newListAppliedSchemaArnsRequest' :: Arn -> ( { "DirectoryArn" :: (Arn) , "SchemaArn" :: Maybe (Arn) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } -> {"DirectoryArn" :: (Arn) , "SchemaArn" :: Maybe (Arn) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } ) -> ListAppliedSchemaArnsRequest
+newListAppliedSchemaArnsRequest' _DirectoryArn customize = (ListAppliedSchemaArnsRequest <<< customize) { "DirectoryArn": _DirectoryArn, "MaxResults": Nothing, "NextToken": Nothing, "SchemaArn": Nothing }
 
 
 
 newtype ListAppliedSchemaArnsResponse = ListAppliedSchemaArnsResponse 
-  { "SchemaArns" :: NullOrUndefined (Arns)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "SchemaArns" :: Maybe (Arns)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListAppliedSchemaArnsResponse :: Newtype ListAppliedSchemaArnsResponse _
 derive instance repGenericListAppliedSchemaArnsResponse :: Generic ListAppliedSchemaArnsResponse _
@@ -3472,21 +3471,21 @@ instance encodeListAppliedSchemaArnsResponse :: Encode ListAppliedSchemaArnsResp
 
 -- | Constructs ListAppliedSchemaArnsResponse from required parameters
 newListAppliedSchemaArnsResponse :: ListAppliedSchemaArnsResponse
-newListAppliedSchemaArnsResponse  = ListAppliedSchemaArnsResponse { "NextToken": (NullOrUndefined Nothing), "SchemaArns": (NullOrUndefined Nothing) }
+newListAppliedSchemaArnsResponse  = ListAppliedSchemaArnsResponse { "NextToken": Nothing, "SchemaArns": Nothing }
 
 -- | Constructs ListAppliedSchemaArnsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListAppliedSchemaArnsResponse' :: ( { "SchemaArns" :: NullOrUndefined (Arns) , "NextToken" :: NullOrUndefined (NextToken) } -> {"SchemaArns" :: NullOrUndefined (Arns) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListAppliedSchemaArnsResponse
-newListAppliedSchemaArnsResponse'  customize = (ListAppliedSchemaArnsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "SchemaArns": (NullOrUndefined Nothing) }
+newListAppliedSchemaArnsResponse' :: ( { "SchemaArns" :: Maybe (Arns) , "NextToken" :: Maybe (NextToken) } -> {"SchemaArns" :: Maybe (Arns) , "NextToken" :: Maybe (NextToken) } ) -> ListAppliedSchemaArnsResponse
+newListAppliedSchemaArnsResponse'  customize = (ListAppliedSchemaArnsResponse <<< customize) { "NextToken": Nothing, "SchemaArns": Nothing }
 
 
 
 newtype ListAttachedIndicesRequest = ListAttachedIndicesRequest 
   { "DirectoryArn" :: (Arn)
   , "TargetReference" :: (ObjectReference)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
-  , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
+  , "ConsistencyLevel" :: Maybe (ConsistencyLevel)
   }
 derive instance newtypeListAttachedIndicesRequest :: Newtype ListAttachedIndicesRequest _
 derive instance repGenericListAttachedIndicesRequest :: Generic ListAttachedIndicesRequest _
@@ -3496,18 +3495,18 @@ instance encodeListAttachedIndicesRequest :: Encode ListAttachedIndicesRequest w
 
 -- | Constructs ListAttachedIndicesRequest from required parameters
 newListAttachedIndicesRequest :: Arn -> ObjectReference -> ListAttachedIndicesRequest
-newListAttachedIndicesRequest _DirectoryArn _TargetReference = ListAttachedIndicesRequest { "DirectoryArn": _DirectoryArn, "TargetReference": _TargetReference, "ConsistencyLevel": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAttachedIndicesRequest _DirectoryArn _TargetReference = ListAttachedIndicesRequest { "DirectoryArn": _DirectoryArn, "TargetReference": _TargetReference, "ConsistencyLevel": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListAttachedIndicesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListAttachedIndicesRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "TargetReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "TargetReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } ) -> ListAttachedIndicesRequest
-newListAttachedIndicesRequest' _DirectoryArn _TargetReference customize = (ListAttachedIndicesRequest <<< customize) { "DirectoryArn": _DirectoryArn, "TargetReference": _TargetReference, "ConsistencyLevel": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAttachedIndicesRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "TargetReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "TargetReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } ) -> ListAttachedIndicesRequest
+newListAttachedIndicesRequest' _DirectoryArn _TargetReference customize = (ListAttachedIndicesRequest <<< customize) { "DirectoryArn": _DirectoryArn, "TargetReference": _TargetReference, "ConsistencyLevel": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListAttachedIndicesResponse = ListAttachedIndicesResponse 
-  { "IndexAttachments" :: NullOrUndefined (IndexAttachmentList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "IndexAttachments" :: Maybe (IndexAttachmentList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListAttachedIndicesResponse :: Newtype ListAttachedIndicesResponse _
 derive instance repGenericListAttachedIndicesResponse :: Generic ListAttachedIndicesResponse _
@@ -3517,18 +3516,18 @@ instance encodeListAttachedIndicesResponse :: Encode ListAttachedIndicesResponse
 
 -- | Constructs ListAttachedIndicesResponse from required parameters
 newListAttachedIndicesResponse :: ListAttachedIndicesResponse
-newListAttachedIndicesResponse  = ListAttachedIndicesResponse { "IndexAttachments": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAttachedIndicesResponse  = ListAttachedIndicesResponse { "IndexAttachments": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListAttachedIndicesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListAttachedIndicesResponse' :: ( { "IndexAttachments" :: NullOrUndefined (IndexAttachmentList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"IndexAttachments" :: NullOrUndefined (IndexAttachmentList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListAttachedIndicesResponse
-newListAttachedIndicesResponse'  customize = (ListAttachedIndicesResponse <<< customize) { "IndexAttachments": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListAttachedIndicesResponse' :: ( { "IndexAttachments" :: Maybe (IndexAttachmentList) , "NextToken" :: Maybe (NextToken) } -> {"IndexAttachments" :: Maybe (IndexAttachmentList) , "NextToken" :: Maybe (NextToken) } ) -> ListAttachedIndicesResponse
+newListAttachedIndicesResponse'  customize = (ListAttachedIndicesResponse <<< customize) { "IndexAttachments": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListDevelopmentSchemaArnsRequest = ListDevelopmentSchemaArnsRequest 
-  { "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
+  { "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
   }
 derive instance newtypeListDevelopmentSchemaArnsRequest :: Newtype ListDevelopmentSchemaArnsRequest _
 derive instance repGenericListDevelopmentSchemaArnsRequest :: Generic ListDevelopmentSchemaArnsRequest _
@@ -3538,18 +3537,18 @@ instance encodeListDevelopmentSchemaArnsRequest :: Encode ListDevelopmentSchemaA
 
 -- | Constructs ListDevelopmentSchemaArnsRequest from required parameters
 newListDevelopmentSchemaArnsRequest :: ListDevelopmentSchemaArnsRequest
-newListDevelopmentSchemaArnsRequest  = ListDevelopmentSchemaArnsRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDevelopmentSchemaArnsRequest  = ListDevelopmentSchemaArnsRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListDevelopmentSchemaArnsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDevelopmentSchemaArnsRequest' :: ( { "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } -> {"NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } ) -> ListDevelopmentSchemaArnsRequest
-newListDevelopmentSchemaArnsRequest'  customize = (ListDevelopmentSchemaArnsRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListDevelopmentSchemaArnsRequest' :: ( { "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } -> {"NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } ) -> ListDevelopmentSchemaArnsRequest
+newListDevelopmentSchemaArnsRequest'  customize = (ListDevelopmentSchemaArnsRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListDevelopmentSchemaArnsResponse = ListDevelopmentSchemaArnsResponse 
-  { "SchemaArns" :: NullOrUndefined (Arns)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "SchemaArns" :: Maybe (Arns)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListDevelopmentSchemaArnsResponse :: Newtype ListDevelopmentSchemaArnsResponse _
 derive instance repGenericListDevelopmentSchemaArnsResponse :: Generic ListDevelopmentSchemaArnsResponse _
@@ -3559,19 +3558,19 @@ instance encodeListDevelopmentSchemaArnsResponse :: Encode ListDevelopmentSchema
 
 -- | Constructs ListDevelopmentSchemaArnsResponse from required parameters
 newListDevelopmentSchemaArnsResponse :: ListDevelopmentSchemaArnsResponse
-newListDevelopmentSchemaArnsResponse  = ListDevelopmentSchemaArnsResponse { "NextToken": (NullOrUndefined Nothing), "SchemaArns": (NullOrUndefined Nothing) }
+newListDevelopmentSchemaArnsResponse  = ListDevelopmentSchemaArnsResponse { "NextToken": Nothing, "SchemaArns": Nothing }
 
 -- | Constructs ListDevelopmentSchemaArnsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDevelopmentSchemaArnsResponse' :: ( { "SchemaArns" :: NullOrUndefined (Arns) , "NextToken" :: NullOrUndefined (NextToken) } -> {"SchemaArns" :: NullOrUndefined (Arns) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListDevelopmentSchemaArnsResponse
-newListDevelopmentSchemaArnsResponse'  customize = (ListDevelopmentSchemaArnsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "SchemaArns": (NullOrUndefined Nothing) }
+newListDevelopmentSchemaArnsResponse' :: ( { "SchemaArns" :: Maybe (Arns) , "NextToken" :: Maybe (NextToken) } -> {"SchemaArns" :: Maybe (Arns) , "NextToken" :: Maybe (NextToken) } ) -> ListDevelopmentSchemaArnsResponse
+newListDevelopmentSchemaArnsResponse'  customize = (ListDevelopmentSchemaArnsResponse <<< customize) { "NextToken": Nothing, "SchemaArns": Nothing }
 
 
 
 newtype ListDirectoriesRequest = ListDirectoriesRequest 
-  { "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
-  , "state" :: NullOrUndefined (DirectoryState)
+  { "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
+  , "state" :: Maybe (DirectoryState)
   }
 derive instance newtypeListDirectoriesRequest :: Newtype ListDirectoriesRequest _
 derive instance repGenericListDirectoriesRequest :: Generic ListDirectoriesRequest _
@@ -3581,18 +3580,18 @@ instance encodeListDirectoriesRequest :: Encode ListDirectoriesRequest where enc
 
 -- | Constructs ListDirectoriesRequest from required parameters
 newListDirectoriesRequest :: ListDirectoriesRequest
-newListDirectoriesRequest  = ListDirectoriesRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "state": (NullOrUndefined Nothing) }
+newListDirectoriesRequest  = ListDirectoriesRequest { "MaxResults": Nothing, "NextToken": Nothing, "state": Nothing }
 
 -- | Constructs ListDirectoriesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDirectoriesRequest' :: ( { "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "state" :: NullOrUndefined (DirectoryState) } -> {"NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "state" :: NullOrUndefined (DirectoryState) } ) -> ListDirectoriesRequest
-newListDirectoriesRequest'  customize = (ListDirectoriesRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "state": (NullOrUndefined Nothing) }
+newListDirectoriesRequest' :: ( { "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "state" :: Maybe (DirectoryState) } -> {"NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "state" :: Maybe (DirectoryState) } ) -> ListDirectoriesRequest
+newListDirectoriesRequest'  customize = (ListDirectoriesRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing, "state": Nothing }
 
 
 
 newtype ListDirectoriesResponse = ListDirectoriesResponse 
   { "Directories" :: (DirectoryList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListDirectoriesResponse :: Newtype ListDirectoriesResponse _
 derive instance repGenericListDirectoriesResponse :: Generic ListDirectoriesResponse _
@@ -3602,20 +3601,20 @@ instance encodeListDirectoriesResponse :: Encode ListDirectoriesResponse where e
 
 -- | Constructs ListDirectoriesResponse from required parameters
 newListDirectoriesResponse :: DirectoryList -> ListDirectoriesResponse
-newListDirectoriesResponse _Directories = ListDirectoriesResponse { "Directories": _Directories, "NextToken": (NullOrUndefined Nothing) }
+newListDirectoriesResponse _Directories = ListDirectoriesResponse { "Directories": _Directories, "NextToken": Nothing }
 
 -- | Constructs ListDirectoriesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListDirectoriesResponse' :: DirectoryList -> ( { "Directories" :: (DirectoryList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Directories" :: (DirectoryList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListDirectoriesResponse
-newListDirectoriesResponse' _Directories customize = (ListDirectoriesResponse <<< customize) { "Directories": _Directories, "NextToken": (NullOrUndefined Nothing) }
+newListDirectoriesResponse' :: DirectoryList -> ( { "Directories" :: (DirectoryList) , "NextToken" :: Maybe (NextToken) } -> {"Directories" :: (DirectoryList) , "NextToken" :: Maybe (NextToken) } ) -> ListDirectoriesResponse
+newListDirectoriesResponse' _Directories customize = (ListDirectoriesResponse <<< customize) { "Directories": _Directories, "NextToken": Nothing }
 
 
 
 newtype ListFacetAttributesRequest = ListFacetAttributesRequest 
   { "SchemaArn" :: (Arn)
   , "Name" :: (FacetName)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
   }
 derive instance newtypeListFacetAttributesRequest :: Newtype ListFacetAttributesRequest _
 derive instance repGenericListFacetAttributesRequest :: Generic ListFacetAttributesRequest _
@@ -3625,18 +3624,18 @@ instance encodeListFacetAttributesRequest :: Encode ListFacetAttributesRequest w
 
 -- | Constructs ListFacetAttributesRequest from required parameters
 newListFacetAttributesRequest :: FacetName -> Arn -> ListFacetAttributesRequest
-newListFacetAttributesRequest _Name _SchemaArn = ListFacetAttributesRequest { "Name": _Name, "SchemaArn": _SchemaArn, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListFacetAttributesRequest _Name _SchemaArn = ListFacetAttributesRequest { "Name": _Name, "SchemaArn": _SchemaArn, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListFacetAttributesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListFacetAttributesRequest' :: FacetName -> Arn -> ( { "SchemaArn" :: (Arn) , "Name" :: (FacetName) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } -> {"SchemaArn" :: (Arn) , "Name" :: (FacetName) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } ) -> ListFacetAttributesRequest
-newListFacetAttributesRequest' _Name _SchemaArn customize = (ListFacetAttributesRequest <<< customize) { "Name": _Name, "SchemaArn": _SchemaArn, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListFacetAttributesRequest' :: FacetName -> Arn -> ( { "SchemaArn" :: (Arn) , "Name" :: (FacetName) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } -> {"SchemaArn" :: (Arn) , "Name" :: (FacetName) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } ) -> ListFacetAttributesRequest
+newListFacetAttributesRequest' _Name _SchemaArn customize = (ListFacetAttributesRequest <<< customize) { "Name": _Name, "SchemaArn": _SchemaArn, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListFacetAttributesResponse = ListFacetAttributesResponse 
-  { "Attributes" :: NullOrUndefined (FacetAttributeList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Attributes" :: Maybe (FacetAttributeList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListFacetAttributesResponse :: Newtype ListFacetAttributesResponse _
 derive instance repGenericListFacetAttributesResponse :: Generic ListFacetAttributesResponse _
@@ -3646,19 +3645,19 @@ instance encodeListFacetAttributesResponse :: Encode ListFacetAttributesResponse
 
 -- | Constructs ListFacetAttributesResponse from required parameters
 newListFacetAttributesResponse :: ListFacetAttributesResponse
-newListFacetAttributesResponse  = ListFacetAttributesResponse { "Attributes": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListFacetAttributesResponse  = ListFacetAttributesResponse { "Attributes": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListFacetAttributesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListFacetAttributesResponse' :: ( { "Attributes" :: NullOrUndefined (FacetAttributeList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Attributes" :: NullOrUndefined (FacetAttributeList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListFacetAttributesResponse
-newListFacetAttributesResponse'  customize = (ListFacetAttributesResponse <<< customize) { "Attributes": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListFacetAttributesResponse' :: ( { "Attributes" :: Maybe (FacetAttributeList) , "NextToken" :: Maybe (NextToken) } -> {"Attributes" :: Maybe (FacetAttributeList) , "NextToken" :: Maybe (NextToken) } ) -> ListFacetAttributesResponse
+newListFacetAttributesResponse'  customize = (ListFacetAttributesResponse <<< customize) { "Attributes": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListFacetNamesRequest = ListFacetNamesRequest 
   { "SchemaArn" :: (Arn)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
   }
 derive instance newtypeListFacetNamesRequest :: Newtype ListFacetNamesRequest _
 derive instance repGenericListFacetNamesRequest :: Generic ListFacetNamesRequest _
@@ -3668,18 +3667,18 @@ instance encodeListFacetNamesRequest :: Encode ListFacetNamesRequest where encod
 
 -- | Constructs ListFacetNamesRequest from required parameters
 newListFacetNamesRequest :: Arn -> ListFacetNamesRequest
-newListFacetNamesRequest _SchemaArn = ListFacetNamesRequest { "SchemaArn": _SchemaArn, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListFacetNamesRequest _SchemaArn = ListFacetNamesRequest { "SchemaArn": _SchemaArn, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListFacetNamesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListFacetNamesRequest' :: Arn -> ( { "SchemaArn" :: (Arn) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } -> {"SchemaArn" :: (Arn) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } ) -> ListFacetNamesRequest
-newListFacetNamesRequest' _SchemaArn customize = (ListFacetNamesRequest <<< customize) { "SchemaArn": _SchemaArn, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListFacetNamesRequest' :: Arn -> ( { "SchemaArn" :: (Arn) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } -> {"SchemaArn" :: (Arn) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } ) -> ListFacetNamesRequest
+newListFacetNamesRequest' _SchemaArn customize = (ListFacetNamesRequest <<< customize) { "SchemaArn": _SchemaArn, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListFacetNamesResponse = ListFacetNamesResponse 
-  { "FacetNames" :: NullOrUndefined (FacetNameList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "FacetNames" :: Maybe (FacetNameList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListFacetNamesResponse :: Newtype ListFacetNamesResponse _
 derive instance repGenericListFacetNamesResponse :: Generic ListFacetNamesResponse _
@@ -3689,23 +3688,23 @@ instance encodeListFacetNamesResponse :: Encode ListFacetNamesResponse where enc
 
 -- | Constructs ListFacetNamesResponse from required parameters
 newListFacetNamesResponse :: ListFacetNamesResponse
-newListFacetNamesResponse  = ListFacetNamesResponse { "FacetNames": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListFacetNamesResponse  = ListFacetNamesResponse { "FacetNames": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListFacetNamesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListFacetNamesResponse' :: ( { "FacetNames" :: NullOrUndefined (FacetNameList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"FacetNames" :: NullOrUndefined (FacetNameList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListFacetNamesResponse
-newListFacetNamesResponse'  customize = (ListFacetNamesResponse <<< customize) { "FacetNames": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListFacetNamesResponse' :: ( { "FacetNames" :: Maybe (FacetNameList) , "NextToken" :: Maybe (NextToken) } -> {"FacetNames" :: Maybe (FacetNameList) , "NextToken" :: Maybe (NextToken) } ) -> ListFacetNamesResponse
+newListFacetNamesResponse'  customize = (ListFacetNamesResponse <<< customize) { "FacetNames": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListIncomingTypedLinksRequest = ListIncomingTypedLinksRequest 
   { "DirectoryArn" :: (Arn)
   , "ObjectReference" :: (ObjectReference)
-  , "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList)
-  , "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
-  , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel)
+  , "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList)
+  , "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
+  , "ConsistencyLevel" :: Maybe (ConsistencyLevel)
   }
 derive instance newtypeListIncomingTypedLinksRequest :: Newtype ListIncomingTypedLinksRequest _
 derive instance repGenericListIncomingTypedLinksRequest :: Generic ListIncomingTypedLinksRequest _
@@ -3715,18 +3714,18 @@ instance encodeListIncomingTypedLinksRequest :: Encode ListIncomingTypedLinksReq
 
 -- | Constructs ListIncomingTypedLinksRequest from required parameters
 newListIncomingTypedLinksRequest :: Arn -> ObjectReference -> ListIncomingTypedLinksRequest
-newListIncomingTypedLinksRequest _DirectoryArn _ObjectReference = ListIncomingTypedLinksRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": (NullOrUndefined Nothing), "FilterAttributeRanges": (NullOrUndefined Nothing), "FilterTypedLink": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListIncomingTypedLinksRequest _DirectoryArn _ObjectReference = ListIncomingTypedLinksRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": Nothing, "FilterAttributeRanges": Nothing, "FilterTypedLink": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListIncomingTypedLinksRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListIncomingTypedLinksRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList) , "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList) , "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } ) -> ListIncomingTypedLinksRequest
-newListIncomingTypedLinksRequest' _DirectoryArn _ObjectReference customize = (ListIncomingTypedLinksRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": (NullOrUndefined Nothing), "FilterAttributeRanges": (NullOrUndefined Nothing), "FilterTypedLink": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListIncomingTypedLinksRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList) , "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList) , "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } ) -> ListIncomingTypedLinksRequest
+newListIncomingTypedLinksRequest' _DirectoryArn _ObjectReference customize = (ListIncomingTypedLinksRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": Nothing, "FilterAttributeRanges": Nothing, "FilterTypedLink": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListIncomingTypedLinksResponse = ListIncomingTypedLinksResponse 
-  { "LinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "LinkSpecifiers" :: Maybe (TypedLinkSpecifierList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListIncomingTypedLinksResponse :: Newtype ListIncomingTypedLinksResponse _
 derive instance repGenericListIncomingTypedLinksResponse :: Generic ListIncomingTypedLinksResponse _
@@ -3736,22 +3735,22 @@ instance encodeListIncomingTypedLinksResponse :: Encode ListIncomingTypedLinksRe
 
 -- | Constructs ListIncomingTypedLinksResponse from required parameters
 newListIncomingTypedLinksResponse :: ListIncomingTypedLinksResponse
-newListIncomingTypedLinksResponse  = ListIncomingTypedLinksResponse { "LinkSpecifiers": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListIncomingTypedLinksResponse  = ListIncomingTypedLinksResponse { "LinkSpecifiers": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListIncomingTypedLinksResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListIncomingTypedLinksResponse' :: ( { "LinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"LinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListIncomingTypedLinksResponse
-newListIncomingTypedLinksResponse'  customize = (ListIncomingTypedLinksResponse <<< customize) { "LinkSpecifiers": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListIncomingTypedLinksResponse' :: ( { "LinkSpecifiers" :: Maybe (TypedLinkSpecifierList) , "NextToken" :: Maybe (NextToken) } -> {"LinkSpecifiers" :: Maybe (TypedLinkSpecifierList) , "NextToken" :: Maybe (NextToken) } ) -> ListIncomingTypedLinksResponse
+newListIncomingTypedLinksResponse'  customize = (ListIncomingTypedLinksResponse <<< customize) { "LinkSpecifiers": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListIndexRequest = ListIndexRequest 
   { "DirectoryArn" :: (Arn)
-  , "RangesOnIndexedValues" :: NullOrUndefined (ObjectAttributeRangeList)
+  , "RangesOnIndexedValues" :: Maybe (ObjectAttributeRangeList)
   , "IndexReference" :: (ObjectReference)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel)
+  , "MaxResults" :: Maybe (NumberResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "ConsistencyLevel" :: Maybe (ConsistencyLevel)
   }
 derive instance newtypeListIndexRequest :: Newtype ListIndexRequest _
 derive instance repGenericListIndexRequest :: Generic ListIndexRequest _
@@ -3761,18 +3760,18 @@ instance encodeListIndexRequest :: Encode ListIndexRequest where encode = generi
 
 -- | Constructs ListIndexRequest from required parameters
 newListIndexRequest :: Arn -> ObjectReference -> ListIndexRequest
-newListIndexRequest _DirectoryArn _IndexReference = ListIndexRequest { "DirectoryArn": _DirectoryArn, "IndexReference": _IndexReference, "ConsistencyLevel": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "RangesOnIndexedValues": (NullOrUndefined Nothing) }
+newListIndexRequest _DirectoryArn _IndexReference = ListIndexRequest { "DirectoryArn": _DirectoryArn, "IndexReference": _IndexReference, "ConsistencyLevel": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "RangesOnIndexedValues": Nothing }
 
 -- | Constructs ListIndexRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListIndexRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "RangesOnIndexedValues" :: NullOrUndefined (ObjectAttributeRangeList) , "IndexReference" :: (ObjectReference) , "MaxResults" :: NullOrUndefined (NumberResults) , "NextToken" :: NullOrUndefined (NextToken) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "RangesOnIndexedValues" :: NullOrUndefined (ObjectAttributeRangeList) , "IndexReference" :: (ObjectReference) , "MaxResults" :: NullOrUndefined (NumberResults) , "NextToken" :: NullOrUndefined (NextToken) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } ) -> ListIndexRequest
-newListIndexRequest' _DirectoryArn _IndexReference customize = (ListIndexRequest <<< customize) { "DirectoryArn": _DirectoryArn, "IndexReference": _IndexReference, "ConsistencyLevel": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "RangesOnIndexedValues": (NullOrUndefined Nothing) }
+newListIndexRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "RangesOnIndexedValues" :: Maybe (ObjectAttributeRangeList) , "IndexReference" :: (ObjectReference) , "MaxResults" :: Maybe (NumberResults) , "NextToken" :: Maybe (NextToken) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "RangesOnIndexedValues" :: Maybe (ObjectAttributeRangeList) , "IndexReference" :: (ObjectReference) , "MaxResults" :: Maybe (NumberResults) , "NextToken" :: Maybe (NextToken) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } ) -> ListIndexRequest
+newListIndexRequest' _DirectoryArn _IndexReference customize = (ListIndexRequest <<< customize) { "DirectoryArn": _DirectoryArn, "IndexReference": _IndexReference, "ConsistencyLevel": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "RangesOnIndexedValues": Nothing }
 
 
 
 newtype ListIndexResponse = ListIndexResponse 
-  { "IndexAttachments" :: NullOrUndefined (IndexAttachmentList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "IndexAttachments" :: Maybe (IndexAttachmentList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListIndexResponse :: Newtype ListIndexResponse _
 derive instance repGenericListIndexResponse :: Generic ListIndexResponse _
@@ -3782,22 +3781,22 @@ instance encodeListIndexResponse :: Encode ListIndexResponse where encode = gene
 
 -- | Constructs ListIndexResponse from required parameters
 newListIndexResponse :: ListIndexResponse
-newListIndexResponse  = ListIndexResponse { "IndexAttachments": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListIndexResponse  = ListIndexResponse { "IndexAttachments": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListIndexResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListIndexResponse' :: ( { "IndexAttachments" :: NullOrUndefined (IndexAttachmentList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"IndexAttachments" :: NullOrUndefined (IndexAttachmentList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListIndexResponse
-newListIndexResponse'  customize = (ListIndexResponse <<< customize) { "IndexAttachments": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListIndexResponse' :: ( { "IndexAttachments" :: Maybe (IndexAttachmentList) , "NextToken" :: Maybe (NextToken) } -> {"IndexAttachments" :: Maybe (IndexAttachmentList) , "NextToken" :: Maybe (NextToken) } ) -> ListIndexResponse
+newListIndexResponse'  customize = (ListIndexResponse <<< customize) { "IndexAttachments": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListObjectAttributesRequest = ListObjectAttributesRequest 
   { "DirectoryArn" :: (Arn)
   , "ObjectReference" :: (ObjectReference)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
-  , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel)
-  , "FacetFilter" :: NullOrUndefined (SchemaFacet)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
+  , "ConsistencyLevel" :: Maybe (ConsistencyLevel)
+  , "FacetFilter" :: Maybe (SchemaFacet)
   }
 derive instance newtypeListObjectAttributesRequest :: Newtype ListObjectAttributesRequest _
 derive instance repGenericListObjectAttributesRequest :: Generic ListObjectAttributesRequest _
@@ -3807,18 +3806,18 @@ instance encodeListObjectAttributesRequest :: Encode ListObjectAttributesRequest
 
 -- | Constructs ListObjectAttributesRequest from required parameters
 newListObjectAttributesRequest :: Arn -> ObjectReference -> ListObjectAttributesRequest
-newListObjectAttributesRequest _DirectoryArn _ObjectReference = ListObjectAttributesRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": (NullOrUndefined Nothing), "FacetFilter": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListObjectAttributesRequest _DirectoryArn _ObjectReference = ListObjectAttributesRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": Nothing, "FacetFilter": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListObjectAttributesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListObjectAttributesRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) , "FacetFilter" :: NullOrUndefined (SchemaFacet) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) , "FacetFilter" :: NullOrUndefined (SchemaFacet) } ) -> ListObjectAttributesRequest
-newListObjectAttributesRequest' _DirectoryArn _ObjectReference customize = (ListObjectAttributesRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": (NullOrUndefined Nothing), "FacetFilter": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListObjectAttributesRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) , "FacetFilter" :: Maybe (SchemaFacet) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) , "FacetFilter" :: Maybe (SchemaFacet) } ) -> ListObjectAttributesRequest
+newListObjectAttributesRequest' _DirectoryArn _ObjectReference customize = (ListObjectAttributesRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": Nothing, "FacetFilter": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListObjectAttributesResponse = ListObjectAttributesResponse 
-  { "Attributes" :: NullOrUndefined (AttributeKeyAndValueList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Attributes" :: Maybe (AttributeKeyAndValueList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListObjectAttributesResponse :: Newtype ListObjectAttributesResponse _
 derive instance repGenericListObjectAttributesResponse :: Generic ListObjectAttributesResponse _
@@ -3828,21 +3827,21 @@ instance encodeListObjectAttributesResponse :: Encode ListObjectAttributesRespon
 
 -- | Constructs ListObjectAttributesResponse from required parameters
 newListObjectAttributesResponse :: ListObjectAttributesResponse
-newListObjectAttributesResponse  = ListObjectAttributesResponse { "Attributes": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListObjectAttributesResponse  = ListObjectAttributesResponse { "Attributes": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListObjectAttributesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListObjectAttributesResponse' :: ( { "Attributes" :: NullOrUndefined (AttributeKeyAndValueList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Attributes" :: NullOrUndefined (AttributeKeyAndValueList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListObjectAttributesResponse
-newListObjectAttributesResponse'  customize = (ListObjectAttributesResponse <<< customize) { "Attributes": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListObjectAttributesResponse' :: ( { "Attributes" :: Maybe (AttributeKeyAndValueList) , "NextToken" :: Maybe (NextToken) } -> {"Attributes" :: Maybe (AttributeKeyAndValueList) , "NextToken" :: Maybe (NextToken) } ) -> ListObjectAttributesResponse
+newListObjectAttributesResponse'  customize = (ListObjectAttributesResponse <<< customize) { "Attributes": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListObjectChildrenRequest = ListObjectChildrenRequest 
   { "DirectoryArn" :: (Arn)
   , "ObjectReference" :: (ObjectReference)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
-  , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
+  , "ConsistencyLevel" :: Maybe (ConsistencyLevel)
   }
 derive instance newtypeListObjectChildrenRequest :: Newtype ListObjectChildrenRequest _
 derive instance repGenericListObjectChildrenRequest :: Generic ListObjectChildrenRequest _
@@ -3852,18 +3851,18 @@ instance encodeListObjectChildrenRequest :: Encode ListObjectChildrenRequest whe
 
 -- | Constructs ListObjectChildrenRequest from required parameters
 newListObjectChildrenRequest :: Arn -> ObjectReference -> ListObjectChildrenRequest
-newListObjectChildrenRequest _DirectoryArn _ObjectReference = ListObjectChildrenRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListObjectChildrenRequest _DirectoryArn _ObjectReference = ListObjectChildrenRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListObjectChildrenRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListObjectChildrenRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } ) -> ListObjectChildrenRequest
-newListObjectChildrenRequest' _DirectoryArn _ObjectReference customize = (ListObjectChildrenRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListObjectChildrenRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } ) -> ListObjectChildrenRequest
+newListObjectChildrenRequest' _DirectoryArn _ObjectReference customize = (ListObjectChildrenRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListObjectChildrenResponse = ListObjectChildrenResponse 
-  { "Children" :: NullOrUndefined (LinkNameToObjectIdentifierMap)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Children" :: Maybe (LinkNameToObjectIdentifierMap)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListObjectChildrenResponse :: Newtype ListObjectChildrenResponse _
 derive instance repGenericListObjectChildrenResponse :: Generic ListObjectChildrenResponse _
@@ -3873,20 +3872,20 @@ instance encodeListObjectChildrenResponse :: Encode ListObjectChildrenResponse w
 
 -- | Constructs ListObjectChildrenResponse from required parameters
 newListObjectChildrenResponse :: ListObjectChildrenResponse
-newListObjectChildrenResponse  = ListObjectChildrenResponse { "Children": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListObjectChildrenResponse  = ListObjectChildrenResponse { "Children": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListObjectChildrenResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListObjectChildrenResponse' :: ( { "Children" :: NullOrUndefined (LinkNameToObjectIdentifierMap) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Children" :: NullOrUndefined (LinkNameToObjectIdentifierMap) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListObjectChildrenResponse
-newListObjectChildrenResponse'  customize = (ListObjectChildrenResponse <<< customize) { "Children": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListObjectChildrenResponse' :: ( { "Children" :: Maybe (LinkNameToObjectIdentifierMap) , "NextToken" :: Maybe (NextToken) } -> {"Children" :: Maybe (LinkNameToObjectIdentifierMap) , "NextToken" :: Maybe (NextToken) } ) -> ListObjectChildrenResponse
+newListObjectChildrenResponse'  customize = (ListObjectChildrenResponse <<< customize) { "Children": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListObjectParentPathsRequest = ListObjectParentPathsRequest 
   { "DirectoryArn" :: (Arn)
   , "ObjectReference" :: (ObjectReference)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
   }
 derive instance newtypeListObjectParentPathsRequest :: Newtype ListObjectParentPathsRequest _
 derive instance repGenericListObjectParentPathsRequest :: Generic ListObjectParentPathsRequest _
@@ -3896,18 +3895,18 @@ instance encodeListObjectParentPathsRequest :: Encode ListObjectParentPathsReque
 
 -- | Constructs ListObjectParentPathsRequest from required parameters
 newListObjectParentPathsRequest :: Arn -> ObjectReference -> ListObjectParentPathsRequest
-newListObjectParentPathsRequest _DirectoryArn _ObjectReference = ListObjectParentPathsRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListObjectParentPathsRequest _DirectoryArn _ObjectReference = ListObjectParentPathsRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListObjectParentPathsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListObjectParentPathsRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } ) -> ListObjectParentPathsRequest
-newListObjectParentPathsRequest' _DirectoryArn _ObjectReference customize = (ListObjectParentPathsRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListObjectParentPathsRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } ) -> ListObjectParentPathsRequest
+newListObjectParentPathsRequest' _DirectoryArn _ObjectReference customize = (ListObjectParentPathsRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListObjectParentPathsResponse = ListObjectParentPathsResponse 
-  { "PathToObjectIdentifiersList" :: NullOrUndefined (PathToObjectIdentifiersList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "PathToObjectIdentifiersList" :: Maybe (PathToObjectIdentifiersList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListObjectParentPathsResponse :: Newtype ListObjectParentPathsResponse _
 derive instance repGenericListObjectParentPathsResponse :: Generic ListObjectParentPathsResponse _
@@ -3917,21 +3916,21 @@ instance encodeListObjectParentPathsResponse :: Encode ListObjectParentPathsResp
 
 -- | Constructs ListObjectParentPathsResponse from required parameters
 newListObjectParentPathsResponse :: ListObjectParentPathsResponse
-newListObjectParentPathsResponse  = ListObjectParentPathsResponse { "NextToken": (NullOrUndefined Nothing), "PathToObjectIdentifiersList": (NullOrUndefined Nothing) }
+newListObjectParentPathsResponse  = ListObjectParentPathsResponse { "NextToken": Nothing, "PathToObjectIdentifiersList": Nothing }
 
 -- | Constructs ListObjectParentPathsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListObjectParentPathsResponse' :: ( { "PathToObjectIdentifiersList" :: NullOrUndefined (PathToObjectIdentifiersList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"PathToObjectIdentifiersList" :: NullOrUndefined (PathToObjectIdentifiersList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListObjectParentPathsResponse
-newListObjectParentPathsResponse'  customize = (ListObjectParentPathsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "PathToObjectIdentifiersList": (NullOrUndefined Nothing) }
+newListObjectParentPathsResponse' :: ( { "PathToObjectIdentifiersList" :: Maybe (PathToObjectIdentifiersList) , "NextToken" :: Maybe (NextToken) } -> {"PathToObjectIdentifiersList" :: Maybe (PathToObjectIdentifiersList) , "NextToken" :: Maybe (NextToken) } ) -> ListObjectParentPathsResponse
+newListObjectParentPathsResponse'  customize = (ListObjectParentPathsResponse <<< customize) { "NextToken": Nothing, "PathToObjectIdentifiersList": Nothing }
 
 
 
 newtype ListObjectParentsRequest = ListObjectParentsRequest 
   { "DirectoryArn" :: (Arn)
   , "ObjectReference" :: (ObjectReference)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
-  , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
+  , "ConsistencyLevel" :: Maybe (ConsistencyLevel)
   }
 derive instance newtypeListObjectParentsRequest :: Newtype ListObjectParentsRequest _
 derive instance repGenericListObjectParentsRequest :: Generic ListObjectParentsRequest _
@@ -3941,18 +3940,18 @@ instance encodeListObjectParentsRequest :: Encode ListObjectParentsRequest where
 
 -- | Constructs ListObjectParentsRequest from required parameters
 newListObjectParentsRequest :: Arn -> ObjectReference -> ListObjectParentsRequest
-newListObjectParentsRequest _DirectoryArn _ObjectReference = ListObjectParentsRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListObjectParentsRequest _DirectoryArn _ObjectReference = ListObjectParentsRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListObjectParentsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListObjectParentsRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } ) -> ListObjectParentsRequest
-newListObjectParentsRequest' _DirectoryArn _ObjectReference customize = (ListObjectParentsRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListObjectParentsRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } ) -> ListObjectParentsRequest
+newListObjectParentsRequest' _DirectoryArn _ObjectReference customize = (ListObjectParentsRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListObjectParentsResponse = ListObjectParentsResponse 
-  { "Parents" :: NullOrUndefined (ObjectIdentifierToLinkNameMap)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Parents" :: Maybe (ObjectIdentifierToLinkNameMap)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListObjectParentsResponse :: Newtype ListObjectParentsResponse _
 derive instance repGenericListObjectParentsResponse :: Generic ListObjectParentsResponse _
@@ -3962,21 +3961,21 @@ instance encodeListObjectParentsResponse :: Encode ListObjectParentsResponse whe
 
 -- | Constructs ListObjectParentsResponse from required parameters
 newListObjectParentsResponse :: ListObjectParentsResponse
-newListObjectParentsResponse  = ListObjectParentsResponse { "NextToken": (NullOrUndefined Nothing), "Parents": (NullOrUndefined Nothing) }
+newListObjectParentsResponse  = ListObjectParentsResponse { "NextToken": Nothing, "Parents": Nothing }
 
 -- | Constructs ListObjectParentsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListObjectParentsResponse' :: ( { "Parents" :: NullOrUndefined (ObjectIdentifierToLinkNameMap) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Parents" :: NullOrUndefined (ObjectIdentifierToLinkNameMap) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListObjectParentsResponse
-newListObjectParentsResponse'  customize = (ListObjectParentsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "Parents": (NullOrUndefined Nothing) }
+newListObjectParentsResponse' :: ( { "Parents" :: Maybe (ObjectIdentifierToLinkNameMap) , "NextToken" :: Maybe (NextToken) } -> {"Parents" :: Maybe (ObjectIdentifierToLinkNameMap) , "NextToken" :: Maybe (NextToken) } ) -> ListObjectParentsResponse
+newListObjectParentsResponse'  customize = (ListObjectParentsResponse <<< customize) { "NextToken": Nothing, "Parents": Nothing }
 
 
 
 newtype ListObjectPoliciesRequest = ListObjectPoliciesRequest 
   { "DirectoryArn" :: (Arn)
   , "ObjectReference" :: (ObjectReference)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
-  , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
+  , "ConsistencyLevel" :: Maybe (ConsistencyLevel)
   }
 derive instance newtypeListObjectPoliciesRequest :: Newtype ListObjectPoliciesRequest _
 derive instance repGenericListObjectPoliciesRequest :: Generic ListObjectPoliciesRequest _
@@ -3986,18 +3985,18 @@ instance encodeListObjectPoliciesRequest :: Encode ListObjectPoliciesRequest whe
 
 -- | Constructs ListObjectPoliciesRequest from required parameters
 newListObjectPoliciesRequest :: Arn -> ObjectReference -> ListObjectPoliciesRequest
-newListObjectPoliciesRequest _DirectoryArn _ObjectReference = ListObjectPoliciesRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListObjectPoliciesRequest _DirectoryArn _ObjectReference = ListObjectPoliciesRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListObjectPoliciesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListObjectPoliciesRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } ) -> ListObjectPoliciesRequest
-newListObjectPoliciesRequest' _DirectoryArn _ObjectReference customize = (ListObjectPoliciesRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListObjectPoliciesRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } ) -> ListObjectPoliciesRequest
+newListObjectPoliciesRequest' _DirectoryArn _ObjectReference customize = (ListObjectPoliciesRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListObjectPoliciesResponse = ListObjectPoliciesResponse 
-  { "AttachedPolicyIds" :: NullOrUndefined (ObjectIdentifierList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "AttachedPolicyIds" :: Maybe (ObjectIdentifierList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListObjectPoliciesResponse :: Newtype ListObjectPoliciesResponse _
 derive instance repGenericListObjectPoliciesResponse :: Generic ListObjectPoliciesResponse _
@@ -4007,23 +4006,23 @@ instance encodeListObjectPoliciesResponse :: Encode ListObjectPoliciesResponse w
 
 -- | Constructs ListObjectPoliciesResponse from required parameters
 newListObjectPoliciesResponse :: ListObjectPoliciesResponse
-newListObjectPoliciesResponse  = ListObjectPoliciesResponse { "AttachedPolicyIds": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListObjectPoliciesResponse  = ListObjectPoliciesResponse { "AttachedPolicyIds": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListObjectPoliciesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListObjectPoliciesResponse' :: ( { "AttachedPolicyIds" :: NullOrUndefined (ObjectIdentifierList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"AttachedPolicyIds" :: NullOrUndefined (ObjectIdentifierList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListObjectPoliciesResponse
-newListObjectPoliciesResponse'  customize = (ListObjectPoliciesResponse <<< customize) { "AttachedPolicyIds": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListObjectPoliciesResponse' :: ( { "AttachedPolicyIds" :: Maybe (ObjectIdentifierList) , "NextToken" :: Maybe (NextToken) } -> {"AttachedPolicyIds" :: Maybe (ObjectIdentifierList) , "NextToken" :: Maybe (NextToken) } ) -> ListObjectPoliciesResponse
+newListObjectPoliciesResponse'  customize = (ListObjectPoliciesResponse <<< customize) { "AttachedPolicyIds": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListOutgoingTypedLinksRequest = ListOutgoingTypedLinksRequest 
   { "DirectoryArn" :: (Arn)
   , "ObjectReference" :: (ObjectReference)
-  , "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList)
-  , "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
-  , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel)
+  , "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList)
+  , "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
+  , "ConsistencyLevel" :: Maybe (ConsistencyLevel)
   }
 derive instance newtypeListOutgoingTypedLinksRequest :: Newtype ListOutgoingTypedLinksRequest _
 derive instance repGenericListOutgoingTypedLinksRequest :: Generic ListOutgoingTypedLinksRequest _
@@ -4033,18 +4032,18 @@ instance encodeListOutgoingTypedLinksRequest :: Encode ListOutgoingTypedLinksReq
 
 -- | Constructs ListOutgoingTypedLinksRequest from required parameters
 newListOutgoingTypedLinksRequest :: Arn -> ObjectReference -> ListOutgoingTypedLinksRequest
-newListOutgoingTypedLinksRequest _DirectoryArn _ObjectReference = ListOutgoingTypedLinksRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": (NullOrUndefined Nothing), "FilterAttributeRanges": (NullOrUndefined Nothing), "FilterTypedLink": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListOutgoingTypedLinksRequest _DirectoryArn _ObjectReference = ListOutgoingTypedLinksRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": Nothing, "FilterAttributeRanges": Nothing, "FilterTypedLink": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListOutgoingTypedLinksRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListOutgoingTypedLinksRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList) , "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "FilterAttributeRanges" :: NullOrUndefined (TypedLinkAttributeRangeList) , "FilterTypedLink" :: NullOrUndefined (TypedLinkSchemaAndFacetName) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } ) -> ListOutgoingTypedLinksRequest
-newListOutgoingTypedLinksRequest' _DirectoryArn _ObjectReference customize = (ListOutgoingTypedLinksRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": (NullOrUndefined Nothing), "FilterAttributeRanges": (NullOrUndefined Nothing), "FilterTypedLink": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListOutgoingTypedLinksRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList) , "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "FilterAttributeRanges" :: Maybe (TypedLinkAttributeRangeList) , "FilterTypedLink" :: Maybe (TypedLinkSchemaAndFacetName) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } ) -> ListOutgoingTypedLinksRequest
+newListOutgoingTypedLinksRequest' _DirectoryArn _ObjectReference customize = (ListOutgoingTypedLinksRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "ConsistencyLevel": Nothing, "FilterAttributeRanges": Nothing, "FilterTypedLink": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListOutgoingTypedLinksResponse = ListOutgoingTypedLinksResponse 
-  { "TypedLinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "TypedLinkSpecifiers" :: Maybe (TypedLinkSpecifierList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListOutgoingTypedLinksResponse :: Newtype ListOutgoingTypedLinksResponse _
 derive instance repGenericListOutgoingTypedLinksResponse :: Generic ListOutgoingTypedLinksResponse _
@@ -4054,21 +4053,21 @@ instance encodeListOutgoingTypedLinksResponse :: Encode ListOutgoingTypedLinksRe
 
 -- | Constructs ListOutgoingTypedLinksResponse from required parameters
 newListOutgoingTypedLinksResponse :: ListOutgoingTypedLinksResponse
-newListOutgoingTypedLinksResponse  = ListOutgoingTypedLinksResponse { "NextToken": (NullOrUndefined Nothing), "TypedLinkSpecifiers": (NullOrUndefined Nothing) }
+newListOutgoingTypedLinksResponse  = ListOutgoingTypedLinksResponse { "NextToken": Nothing, "TypedLinkSpecifiers": Nothing }
 
 -- | Constructs ListOutgoingTypedLinksResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListOutgoingTypedLinksResponse' :: ( { "TypedLinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"TypedLinkSpecifiers" :: NullOrUndefined (TypedLinkSpecifierList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListOutgoingTypedLinksResponse
-newListOutgoingTypedLinksResponse'  customize = (ListOutgoingTypedLinksResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "TypedLinkSpecifiers": (NullOrUndefined Nothing) }
+newListOutgoingTypedLinksResponse' :: ( { "TypedLinkSpecifiers" :: Maybe (TypedLinkSpecifierList) , "NextToken" :: Maybe (NextToken) } -> {"TypedLinkSpecifiers" :: Maybe (TypedLinkSpecifierList) , "NextToken" :: Maybe (NextToken) } ) -> ListOutgoingTypedLinksResponse
+newListOutgoingTypedLinksResponse'  customize = (ListOutgoingTypedLinksResponse <<< customize) { "NextToken": Nothing, "TypedLinkSpecifiers": Nothing }
 
 
 
 newtype ListPolicyAttachmentsRequest = ListPolicyAttachmentsRequest 
   { "DirectoryArn" :: (Arn)
   , "PolicyReference" :: (ObjectReference)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
-  , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
+  , "ConsistencyLevel" :: Maybe (ConsistencyLevel)
   }
 derive instance newtypeListPolicyAttachmentsRequest :: Newtype ListPolicyAttachmentsRequest _
 derive instance repGenericListPolicyAttachmentsRequest :: Generic ListPolicyAttachmentsRequest _
@@ -4078,18 +4077,18 @@ instance encodeListPolicyAttachmentsRequest :: Encode ListPolicyAttachmentsReque
 
 -- | Constructs ListPolicyAttachmentsRequest from required parameters
 newListPolicyAttachmentsRequest :: Arn -> ObjectReference -> ListPolicyAttachmentsRequest
-newListPolicyAttachmentsRequest _DirectoryArn _PolicyReference = ListPolicyAttachmentsRequest { "DirectoryArn": _DirectoryArn, "PolicyReference": _PolicyReference, "ConsistencyLevel": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListPolicyAttachmentsRequest _DirectoryArn _PolicyReference = ListPolicyAttachmentsRequest { "DirectoryArn": _DirectoryArn, "PolicyReference": _PolicyReference, "ConsistencyLevel": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListPolicyAttachmentsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListPolicyAttachmentsRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "PolicyReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "PolicyReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) , "ConsistencyLevel" :: NullOrUndefined (ConsistencyLevel) } ) -> ListPolicyAttachmentsRequest
-newListPolicyAttachmentsRequest' _DirectoryArn _PolicyReference customize = (ListPolicyAttachmentsRequest <<< customize) { "DirectoryArn": _DirectoryArn, "PolicyReference": _PolicyReference, "ConsistencyLevel": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListPolicyAttachmentsRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "PolicyReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } -> {"DirectoryArn" :: (Arn) , "PolicyReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) , "ConsistencyLevel" :: Maybe (ConsistencyLevel) } ) -> ListPolicyAttachmentsRequest
+newListPolicyAttachmentsRequest' _DirectoryArn _PolicyReference customize = (ListPolicyAttachmentsRequest <<< customize) { "DirectoryArn": _DirectoryArn, "PolicyReference": _PolicyReference, "ConsistencyLevel": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListPolicyAttachmentsResponse = ListPolicyAttachmentsResponse 
-  { "ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "ObjectIdentifiers" :: Maybe (ObjectIdentifierList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListPolicyAttachmentsResponse :: Newtype ListPolicyAttachmentsResponse _
 derive instance repGenericListPolicyAttachmentsResponse :: Generic ListPolicyAttachmentsResponse _
@@ -4099,19 +4098,19 @@ instance encodeListPolicyAttachmentsResponse :: Encode ListPolicyAttachmentsResp
 
 -- | Constructs ListPolicyAttachmentsResponse from required parameters
 newListPolicyAttachmentsResponse :: ListPolicyAttachmentsResponse
-newListPolicyAttachmentsResponse  = ListPolicyAttachmentsResponse { "NextToken": (NullOrUndefined Nothing), "ObjectIdentifiers": (NullOrUndefined Nothing) }
+newListPolicyAttachmentsResponse  = ListPolicyAttachmentsResponse { "NextToken": Nothing, "ObjectIdentifiers": Nothing }
 
 -- | Constructs ListPolicyAttachmentsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListPolicyAttachmentsResponse' :: ( { "ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListPolicyAttachmentsResponse
-newListPolicyAttachmentsResponse'  customize = (ListPolicyAttachmentsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "ObjectIdentifiers": (NullOrUndefined Nothing) }
+newListPolicyAttachmentsResponse' :: ( { "ObjectIdentifiers" :: Maybe (ObjectIdentifierList) , "NextToken" :: Maybe (NextToken) } -> {"ObjectIdentifiers" :: Maybe (ObjectIdentifierList) , "NextToken" :: Maybe (NextToken) } ) -> ListPolicyAttachmentsResponse
+newListPolicyAttachmentsResponse'  customize = (ListPolicyAttachmentsResponse <<< customize) { "NextToken": Nothing, "ObjectIdentifiers": Nothing }
 
 
 
 newtype ListPublishedSchemaArnsRequest = ListPublishedSchemaArnsRequest 
-  { "SchemaArn" :: NullOrUndefined (Arn)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
+  { "SchemaArn" :: Maybe (Arn)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
   }
 derive instance newtypeListPublishedSchemaArnsRequest :: Newtype ListPublishedSchemaArnsRequest _
 derive instance repGenericListPublishedSchemaArnsRequest :: Generic ListPublishedSchemaArnsRequest _
@@ -4121,18 +4120,18 @@ instance encodeListPublishedSchemaArnsRequest :: Encode ListPublishedSchemaArnsR
 
 -- | Constructs ListPublishedSchemaArnsRequest from required parameters
 newListPublishedSchemaArnsRequest :: ListPublishedSchemaArnsRequest
-newListPublishedSchemaArnsRequest  = ListPublishedSchemaArnsRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "SchemaArn": (NullOrUndefined Nothing) }
+newListPublishedSchemaArnsRequest  = ListPublishedSchemaArnsRequest { "MaxResults": Nothing, "NextToken": Nothing, "SchemaArn": Nothing }
 
 -- | Constructs ListPublishedSchemaArnsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListPublishedSchemaArnsRequest' :: ( { "SchemaArn" :: NullOrUndefined (Arn) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } -> {"SchemaArn" :: NullOrUndefined (Arn) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } ) -> ListPublishedSchemaArnsRequest
-newListPublishedSchemaArnsRequest'  customize = (ListPublishedSchemaArnsRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "SchemaArn": (NullOrUndefined Nothing) }
+newListPublishedSchemaArnsRequest' :: ( { "SchemaArn" :: Maybe (Arn) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } -> {"SchemaArn" :: Maybe (Arn) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } ) -> ListPublishedSchemaArnsRequest
+newListPublishedSchemaArnsRequest'  customize = (ListPublishedSchemaArnsRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing, "SchemaArn": Nothing }
 
 
 
 newtype ListPublishedSchemaArnsResponse = ListPublishedSchemaArnsResponse 
-  { "SchemaArns" :: NullOrUndefined (Arns)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "SchemaArns" :: Maybe (Arns)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListPublishedSchemaArnsResponse :: Newtype ListPublishedSchemaArnsResponse _
 derive instance repGenericListPublishedSchemaArnsResponse :: Generic ListPublishedSchemaArnsResponse _
@@ -4142,19 +4141,19 @@ instance encodeListPublishedSchemaArnsResponse :: Encode ListPublishedSchemaArns
 
 -- | Constructs ListPublishedSchemaArnsResponse from required parameters
 newListPublishedSchemaArnsResponse :: ListPublishedSchemaArnsResponse
-newListPublishedSchemaArnsResponse  = ListPublishedSchemaArnsResponse { "NextToken": (NullOrUndefined Nothing), "SchemaArns": (NullOrUndefined Nothing) }
+newListPublishedSchemaArnsResponse  = ListPublishedSchemaArnsResponse { "NextToken": Nothing, "SchemaArns": Nothing }
 
 -- | Constructs ListPublishedSchemaArnsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListPublishedSchemaArnsResponse' :: ( { "SchemaArns" :: NullOrUndefined (Arns) , "NextToken" :: NullOrUndefined (NextToken) } -> {"SchemaArns" :: NullOrUndefined (Arns) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListPublishedSchemaArnsResponse
-newListPublishedSchemaArnsResponse'  customize = (ListPublishedSchemaArnsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "SchemaArns": (NullOrUndefined Nothing) }
+newListPublishedSchemaArnsResponse' :: ( { "SchemaArns" :: Maybe (Arns) , "NextToken" :: Maybe (NextToken) } -> {"SchemaArns" :: Maybe (Arns) , "NextToken" :: Maybe (NextToken) } ) -> ListPublishedSchemaArnsResponse
+newListPublishedSchemaArnsResponse'  customize = (ListPublishedSchemaArnsResponse <<< customize) { "NextToken": Nothing, "SchemaArns": Nothing }
 
 
 
 newtype ListTagsForResourceRequest = ListTagsForResourceRequest 
   { "ResourceArn" :: (Arn)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (TagsNumberResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (TagsNumberResults)
   }
 derive instance newtypeListTagsForResourceRequest :: Newtype ListTagsForResourceRequest _
 derive instance repGenericListTagsForResourceRequest :: Generic ListTagsForResourceRequest _
@@ -4164,18 +4163,18 @@ instance encodeListTagsForResourceRequest :: Encode ListTagsForResourceRequest w
 
 -- | Constructs ListTagsForResourceRequest from required parameters
 newListTagsForResourceRequest :: Arn -> ListTagsForResourceRequest
-newListTagsForResourceRequest _ResourceArn = ListTagsForResourceRequest { "ResourceArn": _ResourceArn, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListTagsForResourceRequest _ResourceArn = ListTagsForResourceRequest { "ResourceArn": _ResourceArn, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListTagsForResourceRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTagsForResourceRequest' :: Arn -> ( { "ResourceArn" :: (Arn) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (TagsNumberResults) } -> {"ResourceArn" :: (Arn) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (TagsNumberResults) } ) -> ListTagsForResourceRequest
-newListTagsForResourceRequest' _ResourceArn customize = (ListTagsForResourceRequest <<< customize) { "ResourceArn": _ResourceArn, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListTagsForResourceRequest' :: Arn -> ( { "ResourceArn" :: (Arn) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (TagsNumberResults) } -> {"ResourceArn" :: (Arn) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (TagsNumberResults) } ) -> ListTagsForResourceRequest
+newListTagsForResourceRequest' _ResourceArn customize = (ListTagsForResourceRequest <<< customize) { "ResourceArn": _ResourceArn, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListTagsForResourceResponse = ListTagsForResourceResponse 
-  { "Tags" :: NullOrUndefined (TagList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Tags" :: Maybe (TagList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListTagsForResourceResponse :: Newtype ListTagsForResourceResponse _
 derive instance repGenericListTagsForResourceResponse :: Generic ListTagsForResourceResponse _
@@ -4185,20 +4184,20 @@ instance encodeListTagsForResourceResponse :: Encode ListTagsForResourceResponse
 
 -- | Constructs ListTagsForResourceResponse from required parameters
 newListTagsForResourceResponse :: ListTagsForResourceResponse
-newListTagsForResourceResponse  = ListTagsForResourceResponse { "NextToken": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newListTagsForResourceResponse  = ListTagsForResourceResponse { "NextToken": Nothing, "Tags": Nothing }
 
 -- | Constructs ListTagsForResourceResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTagsForResourceResponse' :: ( { "Tags" :: NullOrUndefined (TagList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Tags" :: NullOrUndefined (TagList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListTagsForResourceResponse
-newListTagsForResourceResponse'  customize = (ListTagsForResourceResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newListTagsForResourceResponse' :: ( { "Tags" :: Maybe (TagList) , "NextToken" :: Maybe (NextToken) } -> {"Tags" :: Maybe (TagList) , "NextToken" :: Maybe (NextToken) } ) -> ListTagsForResourceResponse
+newListTagsForResourceResponse'  customize = (ListTagsForResourceResponse <<< customize) { "NextToken": Nothing, "Tags": Nothing }
 
 
 
 newtype ListTypedLinkFacetAttributesRequest = ListTypedLinkFacetAttributesRequest 
   { "SchemaArn" :: (Arn)
   , "Name" :: (TypedLinkName)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
   }
 derive instance newtypeListTypedLinkFacetAttributesRequest :: Newtype ListTypedLinkFacetAttributesRequest _
 derive instance repGenericListTypedLinkFacetAttributesRequest :: Generic ListTypedLinkFacetAttributesRequest _
@@ -4208,18 +4207,18 @@ instance encodeListTypedLinkFacetAttributesRequest :: Encode ListTypedLinkFacetA
 
 -- | Constructs ListTypedLinkFacetAttributesRequest from required parameters
 newListTypedLinkFacetAttributesRequest :: TypedLinkName -> Arn -> ListTypedLinkFacetAttributesRequest
-newListTypedLinkFacetAttributesRequest _Name _SchemaArn = ListTypedLinkFacetAttributesRequest { "Name": _Name, "SchemaArn": _SchemaArn, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListTypedLinkFacetAttributesRequest _Name _SchemaArn = ListTypedLinkFacetAttributesRequest { "Name": _Name, "SchemaArn": _SchemaArn, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListTypedLinkFacetAttributesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTypedLinkFacetAttributesRequest' :: TypedLinkName -> Arn -> ( { "SchemaArn" :: (Arn) , "Name" :: (TypedLinkName) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } -> {"SchemaArn" :: (Arn) , "Name" :: (TypedLinkName) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } ) -> ListTypedLinkFacetAttributesRequest
-newListTypedLinkFacetAttributesRequest' _Name _SchemaArn customize = (ListTypedLinkFacetAttributesRequest <<< customize) { "Name": _Name, "SchemaArn": _SchemaArn, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListTypedLinkFacetAttributesRequest' :: TypedLinkName -> Arn -> ( { "SchemaArn" :: (Arn) , "Name" :: (TypedLinkName) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } -> {"SchemaArn" :: (Arn) , "Name" :: (TypedLinkName) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } ) -> ListTypedLinkFacetAttributesRequest
+newListTypedLinkFacetAttributesRequest' _Name _SchemaArn customize = (ListTypedLinkFacetAttributesRequest <<< customize) { "Name": _Name, "SchemaArn": _SchemaArn, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListTypedLinkFacetAttributesResponse = ListTypedLinkFacetAttributesResponse 
-  { "Attributes" :: NullOrUndefined (TypedLinkAttributeDefinitionList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "Attributes" :: Maybe (TypedLinkAttributeDefinitionList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListTypedLinkFacetAttributesResponse :: Newtype ListTypedLinkFacetAttributesResponse _
 derive instance repGenericListTypedLinkFacetAttributesResponse :: Generic ListTypedLinkFacetAttributesResponse _
@@ -4229,19 +4228,19 @@ instance encodeListTypedLinkFacetAttributesResponse :: Encode ListTypedLinkFacet
 
 -- | Constructs ListTypedLinkFacetAttributesResponse from required parameters
 newListTypedLinkFacetAttributesResponse :: ListTypedLinkFacetAttributesResponse
-newListTypedLinkFacetAttributesResponse  = ListTypedLinkFacetAttributesResponse { "Attributes": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListTypedLinkFacetAttributesResponse  = ListTypedLinkFacetAttributesResponse { "Attributes": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListTypedLinkFacetAttributesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTypedLinkFacetAttributesResponse' :: ( { "Attributes" :: NullOrUndefined (TypedLinkAttributeDefinitionList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"Attributes" :: NullOrUndefined (TypedLinkAttributeDefinitionList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListTypedLinkFacetAttributesResponse
-newListTypedLinkFacetAttributesResponse'  customize = (ListTypedLinkFacetAttributesResponse <<< customize) { "Attributes": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListTypedLinkFacetAttributesResponse' :: ( { "Attributes" :: Maybe (TypedLinkAttributeDefinitionList) , "NextToken" :: Maybe (NextToken) } -> {"Attributes" :: Maybe (TypedLinkAttributeDefinitionList) , "NextToken" :: Maybe (NextToken) } ) -> ListTypedLinkFacetAttributesResponse
+newListTypedLinkFacetAttributesResponse'  customize = (ListTypedLinkFacetAttributesResponse <<< customize) { "Attributes": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListTypedLinkFacetNamesRequest = ListTypedLinkFacetNamesRequest 
   { "SchemaArn" :: (Arn)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
   }
 derive instance newtypeListTypedLinkFacetNamesRequest :: Newtype ListTypedLinkFacetNamesRequest _
 derive instance repGenericListTypedLinkFacetNamesRequest :: Generic ListTypedLinkFacetNamesRequest _
@@ -4251,18 +4250,18 @@ instance encodeListTypedLinkFacetNamesRequest :: Encode ListTypedLinkFacetNamesR
 
 -- | Constructs ListTypedLinkFacetNamesRequest from required parameters
 newListTypedLinkFacetNamesRequest :: Arn -> ListTypedLinkFacetNamesRequest
-newListTypedLinkFacetNamesRequest _SchemaArn = ListTypedLinkFacetNamesRequest { "SchemaArn": _SchemaArn, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListTypedLinkFacetNamesRequest _SchemaArn = ListTypedLinkFacetNamesRequest { "SchemaArn": _SchemaArn, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListTypedLinkFacetNamesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTypedLinkFacetNamesRequest' :: Arn -> ( { "SchemaArn" :: (Arn) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } -> {"SchemaArn" :: (Arn) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } ) -> ListTypedLinkFacetNamesRequest
-newListTypedLinkFacetNamesRequest' _SchemaArn customize = (ListTypedLinkFacetNamesRequest <<< customize) { "SchemaArn": _SchemaArn, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListTypedLinkFacetNamesRequest' :: Arn -> ( { "SchemaArn" :: (Arn) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } -> {"SchemaArn" :: (Arn) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } ) -> ListTypedLinkFacetNamesRequest
+newListTypedLinkFacetNamesRequest' _SchemaArn customize = (ListTypedLinkFacetNamesRequest <<< customize) { "SchemaArn": _SchemaArn, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListTypedLinkFacetNamesResponse = ListTypedLinkFacetNamesResponse 
-  { "FacetNames" :: NullOrUndefined (TypedLinkNameList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "FacetNames" :: Maybe (TypedLinkNameList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListTypedLinkFacetNamesResponse :: Newtype ListTypedLinkFacetNamesResponse _
 derive instance repGenericListTypedLinkFacetNamesResponse :: Generic ListTypedLinkFacetNamesResponse _
@@ -4272,20 +4271,20 @@ instance encodeListTypedLinkFacetNamesResponse :: Encode ListTypedLinkFacetNames
 
 -- | Constructs ListTypedLinkFacetNamesResponse from required parameters
 newListTypedLinkFacetNamesResponse :: ListTypedLinkFacetNamesResponse
-newListTypedLinkFacetNamesResponse  = ListTypedLinkFacetNamesResponse { "FacetNames": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListTypedLinkFacetNamesResponse  = ListTypedLinkFacetNamesResponse { "FacetNames": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListTypedLinkFacetNamesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTypedLinkFacetNamesResponse' :: ( { "FacetNames" :: NullOrUndefined (TypedLinkNameList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"FacetNames" :: NullOrUndefined (TypedLinkNameList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> ListTypedLinkFacetNamesResponse
-newListTypedLinkFacetNamesResponse'  customize = (ListTypedLinkFacetNamesResponse <<< customize) { "FacetNames": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListTypedLinkFacetNamesResponse' :: ( { "FacetNames" :: Maybe (TypedLinkNameList) , "NextToken" :: Maybe (NextToken) } -> {"FacetNames" :: Maybe (TypedLinkNameList) , "NextToken" :: Maybe (NextToken) } ) -> ListTypedLinkFacetNamesResponse
+newListTypedLinkFacetNamesResponse'  customize = (ListTypedLinkFacetNamesResponse <<< customize) { "FacetNames": Nothing, "NextToken": Nothing }
 
 
 
 newtype LookupPolicyRequest = LookupPolicyRequest 
   { "DirectoryArn" :: (Arn)
   , "ObjectReference" :: (ObjectReference)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxResults" :: NullOrUndefined (NumberResults)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxResults" :: Maybe (NumberResults)
   }
 derive instance newtypeLookupPolicyRequest :: Newtype LookupPolicyRequest _
 derive instance repGenericLookupPolicyRequest :: Generic LookupPolicyRequest _
@@ -4295,18 +4294,18 @@ instance encodeLookupPolicyRequest :: Encode LookupPolicyRequest where encode = 
 
 -- | Constructs LookupPolicyRequest from required parameters
 newLookupPolicyRequest :: Arn -> ObjectReference -> LookupPolicyRequest
-newLookupPolicyRequest _DirectoryArn _ObjectReference = LookupPolicyRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newLookupPolicyRequest _DirectoryArn _ObjectReference = LookupPolicyRequest { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs LookupPolicyRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLookupPolicyRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: NullOrUndefined (NextToken) , "MaxResults" :: NullOrUndefined (NumberResults) } ) -> LookupPolicyRequest
-newLookupPolicyRequest' _DirectoryArn _ObjectReference customize = (LookupPolicyRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newLookupPolicyRequest' :: Arn -> ObjectReference -> ( { "DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } -> {"DirectoryArn" :: (Arn) , "ObjectReference" :: (ObjectReference) , "NextToken" :: Maybe (NextToken) , "MaxResults" :: Maybe (NumberResults) } ) -> LookupPolicyRequest
+newLookupPolicyRequest' _DirectoryArn _ObjectReference customize = (LookupPolicyRequest <<< customize) { "DirectoryArn": _DirectoryArn, "ObjectReference": _ObjectReference, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype LookupPolicyResponse = LookupPolicyResponse 
-  { "PolicyToPathList" :: NullOrUndefined (PolicyToPathList)
-  , "NextToken" :: NullOrUndefined (NextToken)
+  { "PolicyToPathList" :: Maybe (PolicyToPathList)
+  , "NextToken" :: Maybe (NextToken)
   }
 derive instance newtypeLookupPolicyResponse :: Newtype LookupPolicyResponse _
 derive instance repGenericLookupPolicyResponse :: Generic LookupPolicyResponse _
@@ -4316,12 +4315,12 @@ instance encodeLookupPolicyResponse :: Encode LookupPolicyResponse where encode 
 
 -- | Constructs LookupPolicyResponse from required parameters
 newLookupPolicyResponse :: LookupPolicyResponse
-newLookupPolicyResponse  = LookupPolicyResponse { "NextToken": (NullOrUndefined Nothing), "PolicyToPathList": (NullOrUndefined Nothing) }
+newLookupPolicyResponse  = LookupPolicyResponse { "NextToken": Nothing, "PolicyToPathList": Nothing }
 
 -- | Constructs LookupPolicyResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLookupPolicyResponse' :: ( { "PolicyToPathList" :: NullOrUndefined (PolicyToPathList) , "NextToken" :: NullOrUndefined (NextToken) } -> {"PolicyToPathList" :: NullOrUndefined (PolicyToPathList) , "NextToken" :: NullOrUndefined (NextToken) } ) -> LookupPolicyResponse
-newLookupPolicyResponse'  customize = (LookupPolicyResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "PolicyToPathList": (NullOrUndefined Nothing) }
+newLookupPolicyResponse' :: ( { "PolicyToPathList" :: Maybe (PolicyToPathList) , "NextToken" :: Maybe (NextToken) } -> {"PolicyToPathList" :: Maybe (PolicyToPathList) , "NextToken" :: Maybe (NextToken) } ) -> LookupPolicyResponse
+newLookupPolicyResponse'  customize = (LookupPolicyResponse <<< customize) { "NextToken": Nothing, "PolicyToPathList": Nothing }
 
 
 
@@ -4336,7 +4335,7 @@ instance encodeNextToken :: Encode NextToken where encode = genericEncode option
 
 -- | <p>Indicates that the requested operation can only operate on index objects.</p>
 newtype NotIndexException = NotIndexException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeNotIndexException :: Newtype NotIndexException _
 derive instance repGenericNotIndexException :: Generic NotIndexException _
@@ -4346,18 +4345,18 @@ instance encodeNotIndexException :: Encode NotIndexException where encode = gene
 
 -- | Constructs NotIndexException from required parameters
 newNotIndexException :: NotIndexException
-newNotIndexException  = NotIndexException { "Message": (NullOrUndefined Nothing) }
+newNotIndexException  = NotIndexException { "Message": Nothing }
 
 -- | Constructs NotIndexException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotIndexException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> NotIndexException
-newNotIndexException'  customize = (NotIndexException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newNotIndexException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> NotIndexException
+newNotIndexException'  customize = (NotIndexException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Occurs when any invalid operations are performed on an object that is not a node, such as calling <code>ListObjectChildren</code> for a leaf node object.</p>
 newtype NotNodeException = NotNodeException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeNotNodeException :: Newtype NotNodeException _
 derive instance repGenericNotNodeException :: Generic NotNodeException _
@@ -4367,18 +4366,18 @@ instance encodeNotNodeException :: Encode NotNodeException where encode = generi
 
 -- | Constructs NotNodeException from required parameters
 newNotNodeException :: NotNodeException
-newNotNodeException  = NotNodeException { "Message": (NullOrUndefined Nothing) }
+newNotNodeException  = NotNodeException { "Message": Nothing }
 
 -- | Constructs NotNodeException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotNodeException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> NotNodeException
-newNotNodeException'  customize = (NotNodeException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newNotNodeException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> NotNodeException
+newNotNodeException'  customize = (NotNodeException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Indicates that the requested operation can only operate on policy objects.</p>
 newtype NotPolicyException = NotPolicyException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeNotPolicyException :: Newtype NotPolicyException _
 derive instance repGenericNotPolicyException :: Generic NotPolicyException _
@@ -4388,12 +4387,12 @@ instance encodeNotPolicyException :: Encode NotPolicyException where encode = ge
 
 -- | Constructs NotPolicyException from required parameters
 newNotPolicyException :: NotPolicyException
-newNotPolicyException  = NotPolicyException { "Message": (NullOrUndefined Nothing) }
+newNotPolicyException  = NotPolicyException { "Message": Nothing }
 
 -- | Constructs NotPolicyException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotPolicyException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> NotPolicyException
-newNotPolicyException'  customize = (NotPolicyException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newNotPolicyException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> NotPolicyException
+newNotPolicyException'  customize = (NotPolicyException <<< customize) { "Message": Nothing }
 
 
 
@@ -4417,7 +4416,7 @@ instance encodeNumberResults :: Encode NumberResults where encode = genericEncod
 
 -- | <p>Indicates that the object is not attached to the index.</p>
 newtype ObjectAlreadyDetachedException = ObjectAlreadyDetachedException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeObjectAlreadyDetachedException :: Newtype ObjectAlreadyDetachedException _
 derive instance repGenericObjectAlreadyDetachedException :: Generic ObjectAlreadyDetachedException _
@@ -4427,19 +4426,19 @@ instance encodeObjectAlreadyDetachedException :: Encode ObjectAlreadyDetachedExc
 
 -- | Constructs ObjectAlreadyDetachedException from required parameters
 newObjectAlreadyDetachedException :: ObjectAlreadyDetachedException
-newObjectAlreadyDetachedException  = ObjectAlreadyDetachedException { "Message": (NullOrUndefined Nothing) }
+newObjectAlreadyDetachedException  = ObjectAlreadyDetachedException { "Message": Nothing }
 
 -- | Constructs ObjectAlreadyDetachedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newObjectAlreadyDetachedException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> ObjectAlreadyDetachedException
-newObjectAlreadyDetachedException'  customize = (ObjectAlreadyDetachedException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newObjectAlreadyDetachedException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> ObjectAlreadyDetachedException
+newObjectAlreadyDetachedException'  customize = (ObjectAlreadyDetachedException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The action to take on the object attribute.</p>
 newtype ObjectAttributeAction = ObjectAttributeAction 
-  { "ObjectAttributeActionType" :: NullOrUndefined (UpdateActionType)
-  , "ObjectAttributeUpdateValue" :: NullOrUndefined (TypedAttributeValue)
+  { "ObjectAttributeActionType" :: Maybe (UpdateActionType)
+  , "ObjectAttributeUpdateValue" :: Maybe (TypedAttributeValue)
   }
 derive instance newtypeObjectAttributeAction :: Newtype ObjectAttributeAction _
 derive instance repGenericObjectAttributeAction :: Generic ObjectAttributeAction _
@@ -4449,19 +4448,19 @@ instance encodeObjectAttributeAction :: Encode ObjectAttributeAction where encod
 
 -- | Constructs ObjectAttributeAction from required parameters
 newObjectAttributeAction :: ObjectAttributeAction
-newObjectAttributeAction  = ObjectAttributeAction { "ObjectAttributeActionType": (NullOrUndefined Nothing), "ObjectAttributeUpdateValue": (NullOrUndefined Nothing) }
+newObjectAttributeAction  = ObjectAttributeAction { "ObjectAttributeActionType": Nothing, "ObjectAttributeUpdateValue": Nothing }
 
 -- | Constructs ObjectAttributeAction's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newObjectAttributeAction' :: ( { "ObjectAttributeActionType" :: NullOrUndefined (UpdateActionType) , "ObjectAttributeUpdateValue" :: NullOrUndefined (TypedAttributeValue) } -> {"ObjectAttributeActionType" :: NullOrUndefined (UpdateActionType) , "ObjectAttributeUpdateValue" :: NullOrUndefined (TypedAttributeValue) } ) -> ObjectAttributeAction
-newObjectAttributeAction'  customize = (ObjectAttributeAction <<< customize) { "ObjectAttributeActionType": (NullOrUndefined Nothing), "ObjectAttributeUpdateValue": (NullOrUndefined Nothing) }
+newObjectAttributeAction' :: ( { "ObjectAttributeActionType" :: Maybe (UpdateActionType) , "ObjectAttributeUpdateValue" :: Maybe (TypedAttributeValue) } -> {"ObjectAttributeActionType" :: Maybe (UpdateActionType) , "ObjectAttributeUpdateValue" :: Maybe (TypedAttributeValue) } ) -> ObjectAttributeAction
+newObjectAttributeAction'  customize = (ObjectAttributeAction <<< customize) { "ObjectAttributeActionType": Nothing, "ObjectAttributeUpdateValue": Nothing }
 
 
 
 -- | <p>A range of attributes.</p>
 newtype ObjectAttributeRange = ObjectAttributeRange 
-  { "AttributeKey" :: NullOrUndefined (AttributeKey)
-  , "Range" :: NullOrUndefined (TypedAttributeValueRange)
+  { "AttributeKey" :: Maybe (AttributeKey)
+  , "Range" :: Maybe (TypedAttributeValueRange)
   }
 derive instance newtypeObjectAttributeRange :: Newtype ObjectAttributeRange _
 derive instance repGenericObjectAttributeRange :: Generic ObjectAttributeRange _
@@ -4471,12 +4470,12 @@ instance encodeObjectAttributeRange :: Encode ObjectAttributeRange where encode 
 
 -- | Constructs ObjectAttributeRange from required parameters
 newObjectAttributeRange :: ObjectAttributeRange
-newObjectAttributeRange  = ObjectAttributeRange { "AttributeKey": (NullOrUndefined Nothing), "Range": (NullOrUndefined Nothing) }
+newObjectAttributeRange  = ObjectAttributeRange { "AttributeKey": Nothing, "Range": Nothing }
 
 -- | Constructs ObjectAttributeRange's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newObjectAttributeRange' :: ( { "AttributeKey" :: NullOrUndefined (AttributeKey) , "Range" :: NullOrUndefined (TypedAttributeValueRange) } -> {"AttributeKey" :: NullOrUndefined (AttributeKey) , "Range" :: NullOrUndefined (TypedAttributeValueRange) } ) -> ObjectAttributeRange
-newObjectAttributeRange'  customize = (ObjectAttributeRange <<< customize) { "AttributeKey": (NullOrUndefined Nothing), "Range": (NullOrUndefined Nothing) }
+newObjectAttributeRange' :: ( { "AttributeKey" :: Maybe (AttributeKey) , "Range" :: Maybe (TypedAttributeValueRange) } -> {"AttributeKey" :: Maybe (AttributeKey) , "Range" :: Maybe (TypedAttributeValueRange) } ) -> ObjectAttributeRange
+newObjectAttributeRange'  customize = (ObjectAttributeRange <<< customize) { "AttributeKey": Nothing, "Range": Nothing }
 
 
 
@@ -4491,8 +4490,8 @@ instance encodeObjectAttributeRangeList :: Encode ObjectAttributeRangeList where
 
 -- | <p>Structure that contains attribute update information.</p>
 newtype ObjectAttributeUpdate = ObjectAttributeUpdate 
-  { "ObjectAttributeKey" :: NullOrUndefined (AttributeKey)
-  , "ObjectAttributeAction" :: NullOrUndefined (ObjectAttributeAction)
+  { "ObjectAttributeKey" :: Maybe (AttributeKey)
+  , "ObjectAttributeAction" :: Maybe (ObjectAttributeAction)
   }
 derive instance newtypeObjectAttributeUpdate :: Newtype ObjectAttributeUpdate _
 derive instance repGenericObjectAttributeUpdate :: Generic ObjectAttributeUpdate _
@@ -4502,12 +4501,12 @@ instance encodeObjectAttributeUpdate :: Encode ObjectAttributeUpdate where encod
 
 -- | Constructs ObjectAttributeUpdate from required parameters
 newObjectAttributeUpdate :: ObjectAttributeUpdate
-newObjectAttributeUpdate  = ObjectAttributeUpdate { "ObjectAttributeAction": (NullOrUndefined Nothing), "ObjectAttributeKey": (NullOrUndefined Nothing) }
+newObjectAttributeUpdate  = ObjectAttributeUpdate { "ObjectAttributeAction": Nothing, "ObjectAttributeKey": Nothing }
 
 -- | Constructs ObjectAttributeUpdate's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newObjectAttributeUpdate' :: ( { "ObjectAttributeKey" :: NullOrUndefined (AttributeKey) , "ObjectAttributeAction" :: NullOrUndefined (ObjectAttributeAction) } -> {"ObjectAttributeKey" :: NullOrUndefined (AttributeKey) , "ObjectAttributeAction" :: NullOrUndefined (ObjectAttributeAction) } ) -> ObjectAttributeUpdate
-newObjectAttributeUpdate'  customize = (ObjectAttributeUpdate <<< customize) { "ObjectAttributeAction": (NullOrUndefined Nothing), "ObjectAttributeKey": (NullOrUndefined Nothing) }
+newObjectAttributeUpdate' :: ( { "ObjectAttributeKey" :: Maybe (AttributeKey) , "ObjectAttributeAction" :: Maybe (ObjectAttributeAction) } -> {"ObjectAttributeKey" :: Maybe (AttributeKey) , "ObjectAttributeAction" :: Maybe (ObjectAttributeAction) } ) -> ObjectAttributeUpdate
+newObjectAttributeUpdate'  customize = (ObjectAttributeUpdate <<< customize) { "ObjectAttributeAction": Nothing, "ObjectAttributeKey": Nothing }
 
 
 
@@ -4549,7 +4548,7 @@ instance encodeObjectIdentifierToLinkNameMap :: Encode ObjectIdentifierToLinkNam
 
 -- | <p>Indicates that the requested operation cannot be completed because the object has not been detached from the tree.</p>
 newtype ObjectNotDetachedException = ObjectNotDetachedException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeObjectNotDetachedException :: Newtype ObjectNotDetachedException _
 derive instance repGenericObjectNotDetachedException :: Generic ObjectNotDetachedException _
@@ -4559,18 +4558,18 @@ instance encodeObjectNotDetachedException :: Encode ObjectNotDetachedException w
 
 -- | Constructs ObjectNotDetachedException from required parameters
 newObjectNotDetachedException :: ObjectNotDetachedException
-newObjectNotDetachedException  = ObjectNotDetachedException { "Message": (NullOrUndefined Nothing) }
+newObjectNotDetachedException  = ObjectNotDetachedException { "Message": Nothing }
 
 -- | Constructs ObjectNotDetachedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newObjectNotDetachedException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> ObjectNotDetachedException
-newObjectNotDetachedException'  customize = (ObjectNotDetachedException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newObjectNotDetachedException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> ObjectNotDetachedException
+newObjectNotDetachedException'  customize = (ObjectNotDetachedException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The reference that identifies an object.</p>
 newtype ObjectReference = ObjectReference 
-  { "Selector" :: NullOrUndefined (SelectorObjectReference)
+  { "Selector" :: Maybe (SelectorObjectReference)
   }
 derive instance newtypeObjectReference :: Newtype ObjectReference _
 derive instance repGenericObjectReference :: Generic ObjectReference _
@@ -4580,12 +4579,12 @@ instance encodeObjectReference :: Encode ObjectReference where encode = genericE
 
 -- | Constructs ObjectReference from required parameters
 newObjectReference :: ObjectReference
-newObjectReference  = ObjectReference { "Selector": (NullOrUndefined Nothing) }
+newObjectReference  = ObjectReference { "Selector": Nothing }
 
 -- | Constructs ObjectReference's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newObjectReference' :: ( { "Selector" :: NullOrUndefined (SelectorObjectReference) } -> {"Selector" :: NullOrUndefined (SelectorObjectReference) } ) -> ObjectReference
-newObjectReference'  customize = (ObjectReference <<< customize) { "Selector": (NullOrUndefined Nothing) }
+newObjectReference' :: ( { "Selector" :: Maybe (SelectorObjectReference) } -> {"Selector" :: Maybe (SelectorObjectReference) } ) -> ObjectReference
+newObjectReference'  customize = (ObjectReference <<< customize) { "Selector": Nothing }
 
 
 
@@ -4609,8 +4608,8 @@ instance encodePathString :: Encode PathString where encode = genericEncode opti
 
 -- | <p>Returns the path to the <code>ObjectIdentifiers</code> that is associated with the directory.</p>
 newtype PathToObjectIdentifiers = PathToObjectIdentifiers 
-  { "Path" :: NullOrUndefined (PathString)
-  , "ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList)
+  { "Path" :: Maybe (PathString)
+  , "ObjectIdentifiers" :: Maybe (ObjectIdentifierList)
   }
 derive instance newtypePathToObjectIdentifiers :: Newtype PathToObjectIdentifiers _
 derive instance repGenericPathToObjectIdentifiers :: Generic PathToObjectIdentifiers _
@@ -4620,12 +4619,12 @@ instance encodePathToObjectIdentifiers :: Encode PathToObjectIdentifiers where e
 
 -- | Constructs PathToObjectIdentifiers from required parameters
 newPathToObjectIdentifiers :: PathToObjectIdentifiers
-newPathToObjectIdentifiers  = PathToObjectIdentifiers { "ObjectIdentifiers": (NullOrUndefined Nothing), "Path": (NullOrUndefined Nothing) }
+newPathToObjectIdentifiers  = PathToObjectIdentifiers { "ObjectIdentifiers": Nothing, "Path": Nothing }
 
 -- | Constructs PathToObjectIdentifiers's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPathToObjectIdentifiers' :: ( { "Path" :: NullOrUndefined (PathString) , "ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList) } -> {"Path" :: NullOrUndefined (PathString) , "ObjectIdentifiers" :: NullOrUndefined (ObjectIdentifierList) } ) -> PathToObjectIdentifiers
-newPathToObjectIdentifiers'  customize = (PathToObjectIdentifiers <<< customize) { "ObjectIdentifiers": (NullOrUndefined Nothing), "Path": (NullOrUndefined Nothing) }
+newPathToObjectIdentifiers' :: ( { "Path" :: Maybe (PathString) , "ObjectIdentifiers" :: Maybe (ObjectIdentifierList) } -> {"Path" :: Maybe (PathString) , "ObjectIdentifiers" :: Maybe (ObjectIdentifierList) } ) -> PathToObjectIdentifiers
+newPathToObjectIdentifiers'  customize = (PathToObjectIdentifiers <<< customize) { "ObjectIdentifiers": Nothing, "Path": Nothing }
 
 
 
@@ -4640,9 +4639,9 @@ instance encodePathToObjectIdentifiersList :: Encode PathToObjectIdentifiersList
 
 -- | <p>Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is attached. For more information, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p>
 newtype PolicyAttachment = PolicyAttachment 
-  { "PolicyId" :: NullOrUndefined (ObjectIdentifier)
-  , "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
-  , "PolicyType" :: NullOrUndefined (PolicyType)
+  { "PolicyId" :: Maybe (ObjectIdentifier)
+  , "ObjectIdentifier" :: Maybe (ObjectIdentifier)
+  , "PolicyType" :: Maybe (PolicyType)
   }
 derive instance newtypePolicyAttachment :: Newtype PolicyAttachment _
 derive instance repGenericPolicyAttachment :: Generic PolicyAttachment _
@@ -4652,12 +4651,12 @@ instance encodePolicyAttachment :: Encode PolicyAttachment where encode = generi
 
 -- | Constructs PolicyAttachment from required parameters
 newPolicyAttachment :: PolicyAttachment
-newPolicyAttachment  = PolicyAttachment { "ObjectIdentifier": (NullOrUndefined Nothing), "PolicyId": (NullOrUndefined Nothing), "PolicyType": (NullOrUndefined Nothing) }
+newPolicyAttachment  = PolicyAttachment { "ObjectIdentifier": Nothing, "PolicyId": Nothing, "PolicyType": Nothing }
 
 -- | Constructs PolicyAttachment's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPolicyAttachment' :: ( { "PolicyId" :: NullOrUndefined (ObjectIdentifier) , "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) , "PolicyType" :: NullOrUndefined (PolicyType) } -> {"PolicyId" :: NullOrUndefined (ObjectIdentifier) , "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) , "PolicyType" :: NullOrUndefined (PolicyType) } ) -> PolicyAttachment
-newPolicyAttachment'  customize = (PolicyAttachment <<< customize) { "ObjectIdentifier": (NullOrUndefined Nothing), "PolicyId": (NullOrUndefined Nothing), "PolicyType": (NullOrUndefined Nothing) }
+newPolicyAttachment' :: ( { "PolicyId" :: Maybe (ObjectIdentifier) , "ObjectIdentifier" :: Maybe (ObjectIdentifier) , "PolicyType" :: Maybe (PolicyType) } -> {"PolicyId" :: Maybe (ObjectIdentifier) , "ObjectIdentifier" :: Maybe (ObjectIdentifier) , "PolicyType" :: Maybe (PolicyType) } ) -> PolicyAttachment
+newPolicyAttachment'  customize = (PolicyAttachment <<< customize) { "ObjectIdentifier": Nothing, "PolicyId": Nothing, "PolicyType": Nothing }
 
 
 
@@ -4672,8 +4671,8 @@ instance encodePolicyAttachmentList :: Encode PolicyAttachmentList where encode 
 
 -- | <p>Used when a regular object exists in a <a>Directory</a> and you want to find all of the policies that are associated with that object and the parent to that object.</p>
 newtype PolicyToPath = PolicyToPath 
-  { "Path" :: NullOrUndefined (PathString)
-  , "Policies" :: NullOrUndefined (PolicyAttachmentList)
+  { "Path" :: Maybe (PathString)
+  , "Policies" :: Maybe (PolicyAttachmentList)
   }
 derive instance newtypePolicyToPath :: Newtype PolicyToPath _
 derive instance repGenericPolicyToPath :: Generic PolicyToPath _
@@ -4683,12 +4682,12 @@ instance encodePolicyToPath :: Encode PolicyToPath where encode = genericEncode 
 
 -- | Constructs PolicyToPath from required parameters
 newPolicyToPath :: PolicyToPath
-newPolicyToPath  = PolicyToPath { "Path": (NullOrUndefined Nothing), "Policies": (NullOrUndefined Nothing) }
+newPolicyToPath  = PolicyToPath { "Path": Nothing, "Policies": Nothing }
 
 -- | Constructs PolicyToPath's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPolicyToPath' :: ( { "Path" :: NullOrUndefined (PathString) , "Policies" :: NullOrUndefined (PolicyAttachmentList) } -> {"Path" :: NullOrUndefined (PathString) , "Policies" :: NullOrUndefined (PolicyAttachmentList) } ) -> PolicyToPath
-newPolicyToPath'  customize = (PolicyToPath <<< customize) { "Path": (NullOrUndefined Nothing), "Policies": (NullOrUndefined Nothing) }
+newPolicyToPath' :: ( { "Path" :: Maybe (PathString) , "Policies" :: Maybe (PolicyAttachmentList) } -> {"Path" :: Maybe (PathString) , "Policies" :: Maybe (PolicyAttachmentList) } ) -> PolicyToPath
+newPolicyToPath'  customize = (PolicyToPath <<< customize) { "Path": Nothing, "Policies": Nothing }
 
 
 
@@ -4713,8 +4712,8 @@ instance encodePolicyType :: Encode PolicyType where encode = genericEncode opti
 newtype PublishSchemaRequest = PublishSchemaRequest 
   { "DevelopmentSchemaArn" :: (Arn)
   , "Version" :: (Version)
-  , "MinorVersion" :: NullOrUndefined (Version)
-  , "Name" :: NullOrUndefined (SchemaName)
+  , "MinorVersion" :: Maybe (Version)
+  , "Name" :: Maybe (SchemaName)
   }
 derive instance newtypePublishSchemaRequest :: Newtype PublishSchemaRequest _
 derive instance repGenericPublishSchemaRequest :: Generic PublishSchemaRequest _
@@ -4724,17 +4723,17 @@ instance encodePublishSchemaRequest :: Encode PublishSchemaRequest where encode 
 
 -- | Constructs PublishSchemaRequest from required parameters
 newPublishSchemaRequest :: Arn -> Version -> PublishSchemaRequest
-newPublishSchemaRequest _DevelopmentSchemaArn _Version = PublishSchemaRequest { "DevelopmentSchemaArn": _DevelopmentSchemaArn, "Version": _Version, "MinorVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newPublishSchemaRequest _DevelopmentSchemaArn _Version = PublishSchemaRequest { "DevelopmentSchemaArn": _DevelopmentSchemaArn, "Version": _Version, "MinorVersion": Nothing, "Name": Nothing }
 
 -- | Constructs PublishSchemaRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPublishSchemaRequest' :: Arn -> Version -> ( { "DevelopmentSchemaArn" :: (Arn) , "Version" :: (Version) , "MinorVersion" :: NullOrUndefined (Version) , "Name" :: NullOrUndefined (SchemaName) } -> {"DevelopmentSchemaArn" :: (Arn) , "Version" :: (Version) , "MinorVersion" :: NullOrUndefined (Version) , "Name" :: NullOrUndefined (SchemaName) } ) -> PublishSchemaRequest
-newPublishSchemaRequest' _DevelopmentSchemaArn _Version customize = (PublishSchemaRequest <<< customize) { "DevelopmentSchemaArn": _DevelopmentSchemaArn, "Version": _Version, "MinorVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newPublishSchemaRequest' :: Arn -> Version -> ( { "DevelopmentSchemaArn" :: (Arn) , "Version" :: (Version) , "MinorVersion" :: Maybe (Version) , "Name" :: Maybe (SchemaName) } -> {"DevelopmentSchemaArn" :: (Arn) , "Version" :: (Version) , "MinorVersion" :: Maybe (Version) , "Name" :: Maybe (SchemaName) } ) -> PublishSchemaRequest
+newPublishSchemaRequest' _DevelopmentSchemaArn _Version customize = (PublishSchemaRequest <<< customize) { "DevelopmentSchemaArn": _DevelopmentSchemaArn, "Version": _Version, "MinorVersion": Nothing, "Name": Nothing }
 
 
 
 newtype PublishSchemaResponse = PublishSchemaResponse 
-  { "PublishedSchemaArn" :: NullOrUndefined (Arn)
+  { "PublishedSchemaArn" :: Maybe (Arn)
   }
 derive instance newtypePublishSchemaResponse :: Newtype PublishSchemaResponse _
 derive instance repGenericPublishSchemaResponse :: Generic PublishSchemaResponse _
@@ -4744,12 +4743,12 @@ instance encodePublishSchemaResponse :: Encode PublishSchemaResponse where encod
 
 -- | Constructs PublishSchemaResponse from required parameters
 newPublishSchemaResponse :: PublishSchemaResponse
-newPublishSchemaResponse  = PublishSchemaResponse { "PublishedSchemaArn": (NullOrUndefined Nothing) }
+newPublishSchemaResponse  = PublishSchemaResponse { "PublishedSchemaArn": Nothing }
 
 -- | Constructs PublishSchemaResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPublishSchemaResponse' :: ( { "PublishedSchemaArn" :: NullOrUndefined (Arn) } -> {"PublishedSchemaArn" :: NullOrUndefined (Arn) } ) -> PublishSchemaResponse
-newPublishSchemaResponse'  customize = (PublishSchemaResponse <<< customize) { "PublishedSchemaArn": (NullOrUndefined Nothing) }
+newPublishSchemaResponse' :: ( { "PublishedSchemaArn" :: Maybe (Arn) } -> {"PublishedSchemaArn" :: Maybe (Arn) } ) -> PublishSchemaResponse
+newPublishSchemaResponse'  customize = (PublishSchemaResponse <<< customize) { "PublishedSchemaArn": Nothing }
 
 
 
@@ -4775,7 +4774,7 @@ newPutSchemaFromJsonRequest' _Document _SchemaArn customize = (PutSchemaFromJson
 
 
 newtype PutSchemaFromJsonResponse = PutSchemaFromJsonResponse 
-  { "Arn" :: NullOrUndefined (Arn)
+  { "Arn" :: Maybe (Arn)
   }
 derive instance newtypePutSchemaFromJsonResponse :: Newtype PutSchemaFromJsonResponse _
 derive instance repGenericPutSchemaFromJsonResponse :: Generic PutSchemaFromJsonResponse _
@@ -4785,12 +4784,12 @@ instance encodePutSchemaFromJsonResponse :: Encode PutSchemaFromJsonResponse whe
 
 -- | Constructs PutSchemaFromJsonResponse from required parameters
 newPutSchemaFromJsonResponse :: PutSchemaFromJsonResponse
-newPutSchemaFromJsonResponse  = PutSchemaFromJsonResponse { "Arn": (NullOrUndefined Nothing) }
+newPutSchemaFromJsonResponse  = PutSchemaFromJsonResponse { "Arn": Nothing }
 
 -- | Constructs PutSchemaFromJsonResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutSchemaFromJsonResponse' :: ( { "Arn" :: NullOrUndefined (Arn) } -> {"Arn" :: NullOrUndefined (Arn) } ) -> PutSchemaFromJsonResponse
-newPutSchemaFromJsonResponse'  customize = (PutSchemaFromJsonResponse <<< customize) { "Arn": (NullOrUndefined Nothing) }
+newPutSchemaFromJsonResponse' :: ( { "Arn" :: Maybe (Arn) } -> {"Arn" :: Maybe (Arn) } ) -> PutSchemaFromJsonResponse
+newPutSchemaFromJsonResponse'  customize = (PutSchemaFromJsonResponse <<< customize) { "Arn": Nothing }
 
 
 
@@ -4845,7 +4844,7 @@ instance encodeRequiredAttributeBehavior :: Encode RequiredAttributeBehavior whe
 
 -- | <p>The specified resource could not be found.</p>
 newtype ResourceNotFoundException = ResourceNotFoundException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeResourceNotFoundException :: Newtype ResourceNotFoundException _
 derive instance repGenericResourceNotFoundException :: Generic ResourceNotFoundException _
@@ -4855,18 +4854,18 @@ instance encodeResourceNotFoundException :: Encode ResourceNotFoundException whe
 
 -- | Constructs ResourceNotFoundException from required parameters
 newResourceNotFoundException :: ResourceNotFoundException
-newResourceNotFoundException  = ResourceNotFoundException { "Message": (NullOrUndefined Nothing) }
+newResourceNotFoundException  = ResourceNotFoundException { "Message": Nothing }
 
 -- | Constructs ResourceNotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceNotFoundException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> ResourceNotFoundException
-newResourceNotFoundException'  customize = (ResourceNotFoundException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newResourceNotFoundException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> ResourceNotFoundException
+newResourceNotFoundException'  customize = (ResourceNotFoundException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Occurs when a conflict with a previous successful write is detected. For example, if a write operation occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this exception may result. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
 newtype RetryableConflictException = RetryableConflictException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeRetryableConflictException :: Newtype RetryableConflictException _
 derive instance repGenericRetryableConflictException :: Generic RetryableConflictException _
@@ -4876,19 +4875,19 @@ instance encodeRetryableConflictException :: Encode RetryableConflictException w
 
 -- | Constructs RetryableConflictException from required parameters
 newRetryableConflictException :: RetryableConflictException
-newRetryableConflictException  = RetryableConflictException { "Message": (NullOrUndefined Nothing) }
+newRetryableConflictException  = RetryableConflictException { "Message": Nothing }
 
 -- | Constructs RetryableConflictException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRetryableConflictException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> RetryableConflictException
-newRetryableConflictException'  customize = (RetryableConflictException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newRetryableConflictException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> RetryableConflictException
+newRetryableConflictException'  customize = (RetryableConflictException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Contains an Amazon Resource Name (ARN) and parameters that are associated with the rule.</p>
 newtype Rule = Rule 
-  { "Type" :: NullOrUndefined (RuleType)
-  , "Parameters" :: NullOrUndefined (RuleParameterMap)
+  { "Type" :: Maybe (RuleType)
+  , "Parameters" :: Maybe (RuleParameterMap)
   }
 derive instance newtypeRule :: Newtype Rule _
 derive instance repGenericRule :: Generic Rule _
@@ -4898,12 +4897,12 @@ instance encodeRule :: Encode Rule where encode = genericEncode options
 
 -- | Constructs Rule from required parameters
 newRule :: Rule
-newRule  = Rule { "Parameters": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newRule  = Rule { "Parameters": Nothing, "Type": Nothing }
 
 -- | Constructs Rule's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRule' :: ( { "Type" :: NullOrUndefined (RuleType) , "Parameters" :: NullOrUndefined (RuleParameterMap) } -> {"Type" :: NullOrUndefined (RuleType) , "Parameters" :: NullOrUndefined (RuleParameterMap) } ) -> Rule
-newRule'  customize = (Rule <<< customize) { "Parameters": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newRule' :: ( { "Type" :: Maybe (RuleType) , "Parameters" :: Maybe (RuleParameterMap) } -> {"Type" :: Maybe (RuleType) , "Parameters" :: Maybe (RuleParameterMap) } ) -> Rule
+newRule'  customize = (Rule <<< customize) { "Parameters": Nothing, "Type": Nothing }
 
 
 
@@ -4963,7 +4962,7 @@ instance encodeRuleType :: Encode RuleType where encode = genericEncode options
 
 -- | <p>Indicates that a schema could not be created due to a naming conflict. Please select a different name and then try again.</p>
 newtype SchemaAlreadyExistsException = SchemaAlreadyExistsException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeSchemaAlreadyExistsException :: Newtype SchemaAlreadyExistsException _
 derive instance repGenericSchemaAlreadyExistsException :: Generic SchemaAlreadyExistsException _
@@ -4973,18 +4972,18 @@ instance encodeSchemaAlreadyExistsException :: Encode SchemaAlreadyExistsExcepti
 
 -- | Constructs SchemaAlreadyExistsException from required parameters
 newSchemaAlreadyExistsException :: SchemaAlreadyExistsException
-newSchemaAlreadyExistsException  = SchemaAlreadyExistsException { "Message": (NullOrUndefined Nothing) }
+newSchemaAlreadyExistsException  = SchemaAlreadyExistsException { "Message": Nothing }
 
 -- | Constructs SchemaAlreadyExistsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSchemaAlreadyExistsException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> SchemaAlreadyExistsException
-newSchemaAlreadyExistsException'  customize = (SchemaAlreadyExistsException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newSchemaAlreadyExistsException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> SchemaAlreadyExistsException
+newSchemaAlreadyExistsException'  customize = (SchemaAlreadyExistsException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Indicates that a schema is already published.</p>
 newtype SchemaAlreadyPublishedException = SchemaAlreadyPublishedException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeSchemaAlreadyPublishedException :: Newtype SchemaAlreadyPublishedException _
 derive instance repGenericSchemaAlreadyPublishedException :: Generic SchemaAlreadyPublishedException _
@@ -4994,19 +4993,19 @@ instance encodeSchemaAlreadyPublishedException :: Encode SchemaAlreadyPublishedE
 
 -- | Constructs SchemaAlreadyPublishedException from required parameters
 newSchemaAlreadyPublishedException :: SchemaAlreadyPublishedException
-newSchemaAlreadyPublishedException  = SchemaAlreadyPublishedException { "Message": (NullOrUndefined Nothing) }
+newSchemaAlreadyPublishedException  = SchemaAlreadyPublishedException { "Message": Nothing }
 
 -- | Constructs SchemaAlreadyPublishedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSchemaAlreadyPublishedException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> SchemaAlreadyPublishedException
-newSchemaAlreadyPublishedException'  customize = (SchemaAlreadyPublishedException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newSchemaAlreadyPublishedException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> SchemaAlreadyPublishedException
+newSchemaAlreadyPublishedException'  customize = (SchemaAlreadyPublishedException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>A facet.</p>
 newtype SchemaFacet = SchemaFacet 
-  { "SchemaArn" :: NullOrUndefined (Arn)
-  , "FacetName" :: NullOrUndefined (FacetName)
+  { "SchemaArn" :: Maybe (Arn)
+  , "FacetName" :: Maybe (FacetName)
   }
 derive instance newtypeSchemaFacet :: Newtype SchemaFacet _
 derive instance repGenericSchemaFacet :: Generic SchemaFacet _
@@ -5016,12 +5015,12 @@ instance encodeSchemaFacet :: Encode SchemaFacet where encode = genericEncode op
 
 -- | Constructs SchemaFacet from required parameters
 newSchemaFacet :: SchemaFacet
-newSchemaFacet  = SchemaFacet { "FacetName": (NullOrUndefined Nothing), "SchemaArn": (NullOrUndefined Nothing) }
+newSchemaFacet  = SchemaFacet { "FacetName": Nothing, "SchemaArn": Nothing }
 
 -- | Constructs SchemaFacet's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSchemaFacet' :: ( { "SchemaArn" :: NullOrUndefined (Arn) , "FacetName" :: NullOrUndefined (FacetName) } -> {"SchemaArn" :: NullOrUndefined (Arn) , "FacetName" :: NullOrUndefined (FacetName) } ) -> SchemaFacet
-newSchemaFacet'  customize = (SchemaFacet <<< customize) { "FacetName": (NullOrUndefined Nothing), "SchemaArn": (NullOrUndefined Nothing) }
+newSchemaFacet' :: ( { "SchemaArn" :: Maybe (Arn) , "FacetName" :: Maybe (FacetName) } -> {"SchemaArn" :: Maybe (Arn) , "FacetName" :: Maybe (FacetName) } ) -> SchemaFacet
+newSchemaFacet'  customize = (SchemaFacet <<< customize) { "FacetName": Nothing, "SchemaArn": Nothing }
 
 
 
@@ -5063,7 +5062,7 @@ instance encodeSelectorObjectReference :: Encode SelectorObjectReference where e
 
 -- | <p>The object could not be deleted because links still exist. Remove the links and then try the operation again.</p>
 newtype StillContainsLinksException = StillContainsLinksException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeStillContainsLinksException :: Newtype StillContainsLinksException _
 derive instance repGenericStillContainsLinksException :: Generic StillContainsLinksException _
@@ -5073,12 +5072,12 @@ instance encodeStillContainsLinksException :: Encode StillContainsLinksException
 
 -- | Constructs StillContainsLinksException from required parameters
 newStillContainsLinksException :: StillContainsLinksException
-newStillContainsLinksException  = StillContainsLinksException { "Message": (NullOrUndefined Nothing) }
+newStillContainsLinksException  = StillContainsLinksException { "Message": Nothing }
 
 -- | Constructs StillContainsLinksException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStillContainsLinksException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> StillContainsLinksException
-newStillContainsLinksException'  customize = (StillContainsLinksException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newStillContainsLinksException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> StillContainsLinksException
+newStillContainsLinksException'  customize = (StillContainsLinksException <<< customize) { "Message": Nothing }
 
 
 
@@ -5093,8 +5092,8 @@ instance encodeStringAttributeValue :: Encode StringAttributeValue where encode 
 
 -- | <p>The tag structure that contains a tag key and value.</p>
 newtype Tag = Tag 
-  { "Key" :: NullOrUndefined (TagKey)
-  , "Value" :: NullOrUndefined (TagValue)
+  { "Key" :: Maybe (TagKey)
+  , "Value" :: Maybe (TagValue)
   }
 derive instance newtypeTag :: Newtype Tag _
 derive instance repGenericTag :: Generic Tag _
@@ -5104,12 +5103,12 @@ instance encodeTag :: Encode Tag where encode = genericEncode options
 
 -- | Constructs Tag from required parameters
 newTag :: Tag
-newTag  = Tag { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTag  = Tag { "Key": Nothing, "Value": Nothing }
 
 -- | Constructs Tag's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTag' :: ( { "Key" :: NullOrUndefined (TagKey) , "Value" :: NullOrUndefined (TagValue) } -> {"Key" :: NullOrUndefined (TagKey) , "Value" :: NullOrUndefined (TagValue) } ) -> Tag
-newTag'  customize = (Tag <<< customize) { "Key": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newTag' :: ( { "Key" :: Maybe (TagKey) , "Value" :: Maybe (TagValue) } -> {"Key" :: Maybe (TagKey) , "Value" :: Maybe (TagValue) } ) -> Tag
+newTag'  customize = (Tag <<< customize) { "Key": Nothing, "Value": Nothing }
 
 
 
@@ -5190,11 +5189,11 @@ instance encodeTagsNumberResults :: Encode TagsNumberResults where encode = gene
 
 -- | <p>Represents the data for a typed attribute. You can set one, and only one, of the elements. Each attribute in an item is a name-value pair. Attributes have a single value.</p>
 newtype TypedAttributeValue = TypedAttributeValue 
-  { "StringValue" :: NullOrUndefined (StringAttributeValue)
-  , "BinaryValue" :: NullOrUndefined (BinaryAttributeValue)
-  , "BooleanValue" :: NullOrUndefined (BooleanAttributeValue)
-  , "NumberValue" :: NullOrUndefined (NumberAttributeValue)
-  , "DatetimeValue" :: NullOrUndefined (DatetimeAttributeValue)
+  { "StringValue" :: Maybe (StringAttributeValue)
+  , "BinaryValue" :: Maybe (BinaryAttributeValue)
+  , "BooleanValue" :: Maybe (BooleanAttributeValue)
+  , "NumberValue" :: Maybe (NumberAttributeValue)
+  , "DatetimeValue" :: Maybe (DatetimeAttributeValue)
   }
 derive instance newtypeTypedAttributeValue :: Newtype TypedAttributeValue _
 derive instance repGenericTypedAttributeValue :: Generic TypedAttributeValue _
@@ -5204,21 +5203,21 @@ instance encodeTypedAttributeValue :: Encode TypedAttributeValue where encode = 
 
 -- | Constructs TypedAttributeValue from required parameters
 newTypedAttributeValue :: TypedAttributeValue
-newTypedAttributeValue  = TypedAttributeValue { "BinaryValue": (NullOrUndefined Nothing), "BooleanValue": (NullOrUndefined Nothing), "DatetimeValue": (NullOrUndefined Nothing), "NumberValue": (NullOrUndefined Nothing), "StringValue": (NullOrUndefined Nothing) }
+newTypedAttributeValue  = TypedAttributeValue { "BinaryValue": Nothing, "BooleanValue": Nothing, "DatetimeValue": Nothing, "NumberValue": Nothing, "StringValue": Nothing }
 
 -- | Constructs TypedAttributeValue's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTypedAttributeValue' :: ( { "StringValue" :: NullOrUndefined (StringAttributeValue) , "BinaryValue" :: NullOrUndefined (BinaryAttributeValue) , "BooleanValue" :: NullOrUndefined (BooleanAttributeValue) , "NumberValue" :: NullOrUndefined (NumberAttributeValue) , "DatetimeValue" :: NullOrUndefined (DatetimeAttributeValue) } -> {"StringValue" :: NullOrUndefined (StringAttributeValue) , "BinaryValue" :: NullOrUndefined (BinaryAttributeValue) , "BooleanValue" :: NullOrUndefined (BooleanAttributeValue) , "NumberValue" :: NullOrUndefined (NumberAttributeValue) , "DatetimeValue" :: NullOrUndefined (DatetimeAttributeValue) } ) -> TypedAttributeValue
-newTypedAttributeValue'  customize = (TypedAttributeValue <<< customize) { "BinaryValue": (NullOrUndefined Nothing), "BooleanValue": (NullOrUndefined Nothing), "DatetimeValue": (NullOrUndefined Nothing), "NumberValue": (NullOrUndefined Nothing), "StringValue": (NullOrUndefined Nothing) }
+newTypedAttributeValue' :: ( { "StringValue" :: Maybe (StringAttributeValue) , "BinaryValue" :: Maybe (BinaryAttributeValue) , "BooleanValue" :: Maybe (BooleanAttributeValue) , "NumberValue" :: Maybe (NumberAttributeValue) , "DatetimeValue" :: Maybe (DatetimeAttributeValue) } -> {"StringValue" :: Maybe (StringAttributeValue) , "BinaryValue" :: Maybe (BinaryAttributeValue) , "BooleanValue" :: Maybe (BooleanAttributeValue) , "NumberValue" :: Maybe (NumberAttributeValue) , "DatetimeValue" :: Maybe (DatetimeAttributeValue) } ) -> TypedAttributeValue
+newTypedAttributeValue'  customize = (TypedAttributeValue <<< customize) { "BinaryValue": Nothing, "BooleanValue": Nothing, "DatetimeValue": Nothing, "NumberValue": Nothing, "StringValue": Nothing }
 
 
 
 -- | <p>A range of attribute values.</p>
 newtype TypedAttributeValueRange = TypedAttributeValueRange 
   { "StartMode" :: (RangeMode)
-  , "StartValue" :: NullOrUndefined (TypedAttributeValue)
+  , "StartValue" :: Maybe (TypedAttributeValue)
   , "EndMode" :: (RangeMode)
-  , "EndValue" :: NullOrUndefined (TypedAttributeValue)
+  , "EndValue" :: Maybe (TypedAttributeValue)
   }
 derive instance newtypeTypedAttributeValueRange :: Newtype TypedAttributeValueRange _
 derive instance repGenericTypedAttributeValueRange :: Generic TypedAttributeValueRange _
@@ -5228,12 +5227,12 @@ instance encodeTypedAttributeValueRange :: Encode TypedAttributeValueRange where
 
 -- | Constructs TypedAttributeValueRange from required parameters
 newTypedAttributeValueRange :: RangeMode -> RangeMode -> TypedAttributeValueRange
-newTypedAttributeValueRange _EndMode _StartMode = TypedAttributeValueRange { "EndMode": _EndMode, "StartMode": _StartMode, "EndValue": (NullOrUndefined Nothing), "StartValue": (NullOrUndefined Nothing) }
+newTypedAttributeValueRange _EndMode _StartMode = TypedAttributeValueRange { "EndMode": _EndMode, "StartMode": _StartMode, "EndValue": Nothing, "StartValue": Nothing }
 
 -- | Constructs TypedAttributeValueRange's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTypedAttributeValueRange' :: RangeMode -> RangeMode -> ( { "StartMode" :: (RangeMode) , "StartValue" :: NullOrUndefined (TypedAttributeValue) , "EndMode" :: (RangeMode) , "EndValue" :: NullOrUndefined (TypedAttributeValue) } -> {"StartMode" :: (RangeMode) , "StartValue" :: NullOrUndefined (TypedAttributeValue) , "EndMode" :: (RangeMode) , "EndValue" :: NullOrUndefined (TypedAttributeValue) } ) -> TypedAttributeValueRange
-newTypedAttributeValueRange' _EndMode _StartMode customize = (TypedAttributeValueRange <<< customize) { "EndMode": _EndMode, "StartMode": _StartMode, "EndValue": (NullOrUndefined Nothing), "StartValue": (NullOrUndefined Nothing) }
+newTypedAttributeValueRange' :: RangeMode -> RangeMode -> ( { "StartMode" :: (RangeMode) , "StartValue" :: Maybe (TypedAttributeValue) , "EndMode" :: (RangeMode) , "EndValue" :: Maybe (TypedAttributeValue) } -> {"StartMode" :: (RangeMode) , "StartValue" :: Maybe (TypedAttributeValue) , "EndMode" :: (RangeMode) , "EndValue" :: Maybe (TypedAttributeValue) } ) -> TypedAttributeValueRange
+newTypedAttributeValueRange' _EndMode _StartMode customize = (TypedAttributeValueRange <<< customize) { "EndMode": _EndMode, "StartMode": _StartMode, "EndValue": Nothing, "StartValue": Nothing }
 
 
 
@@ -5241,9 +5240,9 @@ newTypedAttributeValueRange' _EndMode _StartMode customize = (TypedAttributeValu
 newtype TypedLinkAttributeDefinition = TypedLinkAttributeDefinition 
   { "Name" :: (AttributeName)
   , "Type" :: (FacetAttributeType)
-  , "DefaultValue" :: NullOrUndefined (TypedAttributeValue)
-  , "IsImmutable" :: NullOrUndefined (Bool)
-  , "Rules" :: NullOrUndefined (RuleMap)
+  , "DefaultValue" :: Maybe (TypedAttributeValue)
+  , "IsImmutable" :: Maybe (Bool)
+  , "Rules" :: Maybe (RuleMap)
   , "RequiredBehavior" :: (RequiredAttributeBehavior)
   }
 derive instance newtypeTypedLinkAttributeDefinition :: Newtype TypedLinkAttributeDefinition _
@@ -5254,12 +5253,12 @@ instance encodeTypedLinkAttributeDefinition :: Encode TypedLinkAttributeDefiniti
 
 -- | Constructs TypedLinkAttributeDefinition from required parameters
 newTypedLinkAttributeDefinition :: AttributeName -> RequiredAttributeBehavior -> FacetAttributeType -> TypedLinkAttributeDefinition
-newTypedLinkAttributeDefinition _Name _RequiredBehavior _Type = TypedLinkAttributeDefinition { "Name": _Name, "RequiredBehavior": _RequiredBehavior, "Type": _Type, "DefaultValue": (NullOrUndefined Nothing), "IsImmutable": (NullOrUndefined Nothing), "Rules": (NullOrUndefined Nothing) }
+newTypedLinkAttributeDefinition _Name _RequiredBehavior _Type = TypedLinkAttributeDefinition { "Name": _Name, "RequiredBehavior": _RequiredBehavior, "Type": _Type, "DefaultValue": Nothing, "IsImmutable": Nothing, "Rules": Nothing }
 
 -- | Constructs TypedLinkAttributeDefinition's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTypedLinkAttributeDefinition' :: AttributeName -> RequiredAttributeBehavior -> FacetAttributeType -> ( { "Name" :: (AttributeName) , "Type" :: (FacetAttributeType) , "DefaultValue" :: NullOrUndefined (TypedAttributeValue) , "IsImmutable" :: NullOrUndefined (Bool) , "Rules" :: NullOrUndefined (RuleMap) , "RequiredBehavior" :: (RequiredAttributeBehavior) } -> {"Name" :: (AttributeName) , "Type" :: (FacetAttributeType) , "DefaultValue" :: NullOrUndefined (TypedAttributeValue) , "IsImmutable" :: NullOrUndefined (Bool) , "Rules" :: NullOrUndefined (RuleMap) , "RequiredBehavior" :: (RequiredAttributeBehavior) } ) -> TypedLinkAttributeDefinition
-newTypedLinkAttributeDefinition' _Name _RequiredBehavior _Type customize = (TypedLinkAttributeDefinition <<< customize) { "Name": _Name, "RequiredBehavior": _RequiredBehavior, "Type": _Type, "DefaultValue": (NullOrUndefined Nothing), "IsImmutable": (NullOrUndefined Nothing), "Rules": (NullOrUndefined Nothing) }
+newTypedLinkAttributeDefinition' :: AttributeName -> RequiredAttributeBehavior -> FacetAttributeType -> ( { "Name" :: (AttributeName) , "Type" :: (FacetAttributeType) , "DefaultValue" :: Maybe (TypedAttributeValue) , "IsImmutable" :: Maybe (Bool) , "Rules" :: Maybe (RuleMap) , "RequiredBehavior" :: (RequiredAttributeBehavior) } -> {"Name" :: (AttributeName) , "Type" :: (FacetAttributeType) , "DefaultValue" :: Maybe (TypedAttributeValue) , "IsImmutable" :: Maybe (Bool) , "Rules" :: Maybe (RuleMap) , "RequiredBehavior" :: (RequiredAttributeBehavior) } ) -> TypedLinkAttributeDefinition
+newTypedLinkAttributeDefinition' _Name _RequiredBehavior _Type customize = (TypedLinkAttributeDefinition <<< customize) { "Name": _Name, "RequiredBehavior": _RequiredBehavior, "Type": _Type, "DefaultValue": Nothing, "IsImmutable": Nothing, "Rules": Nothing }
 
 
 
@@ -5274,7 +5273,7 @@ instance encodeTypedLinkAttributeDefinitionList :: Encode TypedLinkAttributeDefi
 
 -- | <p>Identifies the range of attributes that are used by a specified filter.</p>
 newtype TypedLinkAttributeRange = TypedLinkAttributeRange 
-  { "AttributeName" :: NullOrUndefined (AttributeName)
+  { "AttributeName" :: Maybe (AttributeName)
   , "Range" :: (TypedAttributeValueRange)
   }
 derive instance newtypeTypedLinkAttributeRange :: Newtype TypedLinkAttributeRange _
@@ -5285,12 +5284,12 @@ instance encodeTypedLinkAttributeRange :: Encode TypedLinkAttributeRange where e
 
 -- | Constructs TypedLinkAttributeRange from required parameters
 newTypedLinkAttributeRange :: TypedAttributeValueRange -> TypedLinkAttributeRange
-newTypedLinkAttributeRange _Range = TypedLinkAttributeRange { "Range": _Range, "AttributeName": (NullOrUndefined Nothing) }
+newTypedLinkAttributeRange _Range = TypedLinkAttributeRange { "Range": _Range, "AttributeName": Nothing }
 
 -- | Constructs TypedLinkAttributeRange's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTypedLinkAttributeRange' :: TypedAttributeValueRange -> ( { "AttributeName" :: NullOrUndefined (AttributeName) , "Range" :: (TypedAttributeValueRange) } -> {"AttributeName" :: NullOrUndefined (AttributeName) , "Range" :: (TypedAttributeValueRange) } ) -> TypedLinkAttributeRange
-newTypedLinkAttributeRange' _Range customize = (TypedLinkAttributeRange <<< customize) { "Range": _Range, "AttributeName": (NullOrUndefined Nothing) }
+newTypedLinkAttributeRange' :: TypedAttributeValueRange -> ( { "AttributeName" :: Maybe (AttributeName) , "Range" :: (TypedAttributeValueRange) } -> {"AttributeName" :: Maybe (AttributeName) , "Range" :: (TypedAttributeValueRange) } ) -> TypedLinkAttributeRange
+newTypedLinkAttributeRange' _Range customize = (TypedLinkAttributeRange <<< customize) { "Range": _Range, "AttributeName": Nothing }
 
 
 
@@ -5432,7 +5431,7 @@ instance encodeTypedLinkSpecifierList :: Encode TypedLinkSpecifierList where enc
 
 -- | <p>Indicates that the requested index type is not supported.</p>
 newtype UnsupportedIndexTypeException = UnsupportedIndexTypeException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeUnsupportedIndexTypeException :: Newtype UnsupportedIndexTypeException _
 derive instance repGenericUnsupportedIndexTypeException :: Generic UnsupportedIndexTypeException _
@@ -5442,12 +5441,12 @@ instance encodeUnsupportedIndexTypeException :: Encode UnsupportedIndexTypeExcep
 
 -- | Constructs UnsupportedIndexTypeException from required parameters
 newUnsupportedIndexTypeException :: UnsupportedIndexTypeException
-newUnsupportedIndexTypeException  = UnsupportedIndexTypeException { "Message": (NullOrUndefined Nothing) }
+newUnsupportedIndexTypeException  = UnsupportedIndexTypeException { "Message": Nothing }
 
 -- | Constructs UnsupportedIndexTypeException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnsupportedIndexTypeException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> UnsupportedIndexTypeException
-newUnsupportedIndexTypeException'  customize = (UnsupportedIndexTypeException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newUnsupportedIndexTypeException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> UnsupportedIndexTypeException
+newUnsupportedIndexTypeException'  customize = (UnsupportedIndexTypeException <<< customize) { "Message": Nothing }
 
 
 
@@ -5493,8 +5492,8 @@ instance encodeUpdateActionType :: Encode UpdateActionType where encode = generi
 newtype UpdateFacetRequest = UpdateFacetRequest 
   { "SchemaArn" :: (Arn)
   , "Name" :: (FacetName)
-  , "AttributeUpdates" :: NullOrUndefined (FacetAttributeUpdateList)
-  , "ObjectType" :: NullOrUndefined (ObjectType)
+  , "AttributeUpdates" :: Maybe (FacetAttributeUpdateList)
+  , "ObjectType" :: Maybe (ObjectType)
   }
 derive instance newtypeUpdateFacetRequest :: Newtype UpdateFacetRequest _
 derive instance repGenericUpdateFacetRequest :: Generic UpdateFacetRequest _
@@ -5504,12 +5503,12 @@ instance encodeUpdateFacetRequest :: Encode UpdateFacetRequest where encode = ge
 
 -- | Constructs UpdateFacetRequest from required parameters
 newUpdateFacetRequest :: FacetName -> Arn -> UpdateFacetRequest
-newUpdateFacetRequest _Name _SchemaArn = UpdateFacetRequest { "Name": _Name, "SchemaArn": _SchemaArn, "AttributeUpdates": (NullOrUndefined Nothing), "ObjectType": (NullOrUndefined Nothing) }
+newUpdateFacetRequest _Name _SchemaArn = UpdateFacetRequest { "Name": _Name, "SchemaArn": _SchemaArn, "AttributeUpdates": Nothing, "ObjectType": Nothing }
 
 -- | Constructs UpdateFacetRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateFacetRequest' :: FacetName -> Arn -> ( { "SchemaArn" :: (Arn) , "Name" :: (FacetName) , "AttributeUpdates" :: NullOrUndefined (FacetAttributeUpdateList) , "ObjectType" :: NullOrUndefined (ObjectType) } -> {"SchemaArn" :: (Arn) , "Name" :: (FacetName) , "AttributeUpdates" :: NullOrUndefined (FacetAttributeUpdateList) , "ObjectType" :: NullOrUndefined (ObjectType) } ) -> UpdateFacetRequest
-newUpdateFacetRequest' _Name _SchemaArn customize = (UpdateFacetRequest <<< customize) { "Name": _Name, "SchemaArn": _SchemaArn, "AttributeUpdates": (NullOrUndefined Nothing), "ObjectType": (NullOrUndefined Nothing) }
+newUpdateFacetRequest' :: FacetName -> Arn -> ( { "SchemaArn" :: (Arn) , "Name" :: (FacetName) , "AttributeUpdates" :: Maybe (FacetAttributeUpdateList) , "ObjectType" :: Maybe (ObjectType) } -> {"SchemaArn" :: (Arn) , "Name" :: (FacetName) , "AttributeUpdates" :: Maybe (FacetAttributeUpdateList) , "ObjectType" :: Maybe (ObjectType) } ) -> UpdateFacetRequest
+newUpdateFacetRequest' _Name _SchemaArn customize = (UpdateFacetRequest <<< customize) { "Name": _Name, "SchemaArn": _SchemaArn, "AttributeUpdates": Nothing, "ObjectType": Nothing }
 
 
 
@@ -5545,7 +5544,7 @@ newUpdateObjectAttributesRequest' _AttributeUpdates _DirectoryArn _ObjectReferen
 
 
 newtype UpdateObjectAttributesResponse = UpdateObjectAttributesResponse 
-  { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier)
+  { "ObjectIdentifier" :: Maybe (ObjectIdentifier)
   }
 derive instance newtypeUpdateObjectAttributesResponse :: Newtype UpdateObjectAttributesResponse _
 derive instance repGenericUpdateObjectAttributesResponse :: Generic UpdateObjectAttributesResponse _
@@ -5555,12 +5554,12 @@ instance encodeUpdateObjectAttributesResponse :: Encode UpdateObjectAttributesRe
 
 -- | Constructs UpdateObjectAttributesResponse from required parameters
 newUpdateObjectAttributesResponse :: UpdateObjectAttributesResponse
-newUpdateObjectAttributesResponse  = UpdateObjectAttributesResponse { "ObjectIdentifier": (NullOrUndefined Nothing) }
+newUpdateObjectAttributesResponse  = UpdateObjectAttributesResponse { "ObjectIdentifier": Nothing }
 
 -- | Constructs UpdateObjectAttributesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateObjectAttributesResponse' :: ( { "ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } -> {"ObjectIdentifier" :: NullOrUndefined (ObjectIdentifier) } ) -> UpdateObjectAttributesResponse
-newUpdateObjectAttributesResponse'  customize = (UpdateObjectAttributesResponse <<< customize) { "ObjectIdentifier": (NullOrUndefined Nothing) }
+newUpdateObjectAttributesResponse' :: ( { "ObjectIdentifier" :: Maybe (ObjectIdentifier) } -> {"ObjectIdentifier" :: Maybe (ObjectIdentifier) } ) -> UpdateObjectAttributesResponse
+newUpdateObjectAttributesResponse'  customize = (UpdateObjectAttributesResponse <<< customize) { "ObjectIdentifier": Nothing }
 
 
 
@@ -5586,7 +5585,7 @@ newUpdateSchemaRequest' _Name _SchemaArn customize = (UpdateSchemaRequest <<< cu
 
 
 newtype UpdateSchemaResponse = UpdateSchemaResponse 
-  { "SchemaArn" :: NullOrUndefined (Arn)
+  { "SchemaArn" :: Maybe (Arn)
   }
 derive instance newtypeUpdateSchemaResponse :: Newtype UpdateSchemaResponse _
 derive instance repGenericUpdateSchemaResponse :: Generic UpdateSchemaResponse _
@@ -5596,12 +5595,12 @@ instance encodeUpdateSchemaResponse :: Encode UpdateSchemaResponse where encode 
 
 -- | Constructs UpdateSchemaResponse from required parameters
 newUpdateSchemaResponse :: UpdateSchemaResponse
-newUpdateSchemaResponse  = UpdateSchemaResponse { "SchemaArn": (NullOrUndefined Nothing) }
+newUpdateSchemaResponse  = UpdateSchemaResponse { "SchemaArn": Nothing }
 
 -- | Constructs UpdateSchemaResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateSchemaResponse' :: ( { "SchemaArn" :: NullOrUndefined (Arn) } -> {"SchemaArn" :: NullOrUndefined (Arn) } ) -> UpdateSchemaResponse
-newUpdateSchemaResponse'  customize = (UpdateSchemaResponse <<< customize) { "SchemaArn": (NullOrUndefined Nothing) }
+newUpdateSchemaResponse' :: ( { "SchemaArn" :: Maybe (Arn) } -> {"SchemaArn" :: Maybe (Arn) } ) -> UpdateSchemaResponse
+newUpdateSchemaResponse'  customize = (UpdateSchemaResponse <<< customize) { "SchemaArn": Nothing }
 
 
 
@@ -5640,7 +5639,7 @@ instance encodeUpdateTypedLinkFacetResponse :: Encode UpdateTypedLinkFacetRespon
 newtype UpgradeAppliedSchemaRequest = UpgradeAppliedSchemaRequest 
   { "PublishedSchemaArn" :: (Arn)
   , "DirectoryArn" :: (Arn)
-  , "DryRun" :: NullOrUndefined (Bool)
+  , "DryRun" :: Maybe (Bool)
   }
 derive instance newtypeUpgradeAppliedSchemaRequest :: Newtype UpgradeAppliedSchemaRequest _
 derive instance repGenericUpgradeAppliedSchemaRequest :: Generic UpgradeAppliedSchemaRequest _
@@ -5650,18 +5649,18 @@ instance encodeUpgradeAppliedSchemaRequest :: Encode UpgradeAppliedSchemaRequest
 
 -- | Constructs UpgradeAppliedSchemaRequest from required parameters
 newUpgradeAppliedSchemaRequest :: Arn -> Arn -> UpgradeAppliedSchemaRequest
-newUpgradeAppliedSchemaRequest _DirectoryArn _PublishedSchemaArn = UpgradeAppliedSchemaRequest { "DirectoryArn": _DirectoryArn, "PublishedSchemaArn": _PublishedSchemaArn, "DryRun": (NullOrUndefined Nothing) }
+newUpgradeAppliedSchemaRequest _DirectoryArn _PublishedSchemaArn = UpgradeAppliedSchemaRequest { "DirectoryArn": _DirectoryArn, "PublishedSchemaArn": _PublishedSchemaArn, "DryRun": Nothing }
 
 -- | Constructs UpgradeAppliedSchemaRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpgradeAppliedSchemaRequest' :: Arn -> Arn -> ( { "PublishedSchemaArn" :: (Arn) , "DirectoryArn" :: (Arn) , "DryRun" :: NullOrUndefined (Bool) } -> {"PublishedSchemaArn" :: (Arn) , "DirectoryArn" :: (Arn) , "DryRun" :: NullOrUndefined (Bool) } ) -> UpgradeAppliedSchemaRequest
-newUpgradeAppliedSchemaRequest' _DirectoryArn _PublishedSchemaArn customize = (UpgradeAppliedSchemaRequest <<< customize) { "DirectoryArn": _DirectoryArn, "PublishedSchemaArn": _PublishedSchemaArn, "DryRun": (NullOrUndefined Nothing) }
+newUpgradeAppliedSchemaRequest' :: Arn -> Arn -> ( { "PublishedSchemaArn" :: (Arn) , "DirectoryArn" :: (Arn) , "DryRun" :: Maybe (Bool) } -> {"PublishedSchemaArn" :: (Arn) , "DirectoryArn" :: (Arn) , "DryRun" :: Maybe (Bool) } ) -> UpgradeAppliedSchemaRequest
+newUpgradeAppliedSchemaRequest' _DirectoryArn _PublishedSchemaArn customize = (UpgradeAppliedSchemaRequest <<< customize) { "DirectoryArn": _DirectoryArn, "PublishedSchemaArn": _PublishedSchemaArn, "DryRun": Nothing }
 
 
 
 newtype UpgradeAppliedSchemaResponse = UpgradeAppliedSchemaResponse 
-  { "UpgradedSchemaArn" :: NullOrUndefined (Arn)
-  , "DirectoryArn" :: NullOrUndefined (Arn)
+  { "UpgradedSchemaArn" :: Maybe (Arn)
+  , "DirectoryArn" :: Maybe (Arn)
   }
 derive instance newtypeUpgradeAppliedSchemaResponse :: Newtype UpgradeAppliedSchemaResponse _
 derive instance repGenericUpgradeAppliedSchemaResponse :: Generic UpgradeAppliedSchemaResponse _
@@ -5671,12 +5670,12 @@ instance encodeUpgradeAppliedSchemaResponse :: Encode UpgradeAppliedSchemaRespon
 
 -- | Constructs UpgradeAppliedSchemaResponse from required parameters
 newUpgradeAppliedSchemaResponse :: UpgradeAppliedSchemaResponse
-newUpgradeAppliedSchemaResponse  = UpgradeAppliedSchemaResponse { "DirectoryArn": (NullOrUndefined Nothing), "UpgradedSchemaArn": (NullOrUndefined Nothing) }
+newUpgradeAppliedSchemaResponse  = UpgradeAppliedSchemaResponse { "DirectoryArn": Nothing, "UpgradedSchemaArn": Nothing }
 
 -- | Constructs UpgradeAppliedSchemaResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpgradeAppliedSchemaResponse' :: ( { "UpgradedSchemaArn" :: NullOrUndefined (Arn) , "DirectoryArn" :: NullOrUndefined (Arn) } -> {"UpgradedSchemaArn" :: NullOrUndefined (Arn) , "DirectoryArn" :: NullOrUndefined (Arn) } ) -> UpgradeAppliedSchemaResponse
-newUpgradeAppliedSchemaResponse'  customize = (UpgradeAppliedSchemaResponse <<< customize) { "DirectoryArn": (NullOrUndefined Nothing), "UpgradedSchemaArn": (NullOrUndefined Nothing) }
+newUpgradeAppliedSchemaResponse' :: ( { "UpgradedSchemaArn" :: Maybe (Arn) , "DirectoryArn" :: Maybe (Arn) } -> {"UpgradedSchemaArn" :: Maybe (Arn) , "DirectoryArn" :: Maybe (Arn) } ) -> UpgradeAppliedSchemaResponse
+newUpgradeAppliedSchemaResponse'  customize = (UpgradeAppliedSchemaResponse <<< customize) { "DirectoryArn": Nothing, "UpgradedSchemaArn": Nothing }
 
 
 
@@ -5684,7 +5683,7 @@ newtype UpgradePublishedSchemaRequest = UpgradePublishedSchemaRequest
   { "DevelopmentSchemaArn" :: (Arn)
   , "PublishedSchemaArn" :: (Arn)
   , "MinorVersion" :: (Version)
-  , "DryRun" :: NullOrUndefined (Bool)
+  , "DryRun" :: Maybe (Bool)
   }
 derive instance newtypeUpgradePublishedSchemaRequest :: Newtype UpgradePublishedSchemaRequest _
 derive instance repGenericUpgradePublishedSchemaRequest :: Generic UpgradePublishedSchemaRequest _
@@ -5694,17 +5693,17 @@ instance encodeUpgradePublishedSchemaRequest :: Encode UpgradePublishedSchemaReq
 
 -- | Constructs UpgradePublishedSchemaRequest from required parameters
 newUpgradePublishedSchemaRequest :: Arn -> Version -> Arn -> UpgradePublishedSchemaRequest
-newUpgradePublishedSchemaRequest _DevelopmentSchemaArn _MinorVersion _PublishedSchemaArn = UpgradePublishedSchemaRequest { "DevelopmentSchemaArn": _DevelopmentSchemaArn, "MinorVersion": _MinorVersion, "PublishedSchemaArn": _PublishedSchemaArn, "DryRun": (NullOrUndefined Nothing) }
+newUpgradePublishedSchemaRequest _DevelopmentSchemaArn _MinorVersion _PublishedSchemaArn = UpgradePublishedSchemaRequest { "DevelopmentSchemaArn": _DevelopmentSchemaArn, "MinorVersion": _MinorVersion, "PublishedSchemaArn": _PublishedSchemaArn, "DryRun": Nothing }
 
 -- | Constructs UpgradePublishedSchemaRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpgradePublishedSchemaRequest' :: Arn -> Version -> Arn -> ( { "DevelopmentSchemaArn" :: (Arn) , "PublishedSchemaArn" :: (Arn) , "MinorVersion" :: (Version) , "DryRun" :: NullOrUndefined (Bool) } -> {"DevelopmentSchemaArn" :: (Arn) , "PublishedSchemaArn" :: (Arn) , "MinorVersion" :: (Version) , "DryRun" :: NullOrUndefined (Bool) } ) -> UpgradePublishedSchemaRequest
-newUpgradePublishedSchemaRequest' _DevelopmentSchemaArn _MinorVersion _PublishedSchemaArn customize = (UpgradePublishedSchemaRequest <<< customize) { "DevelopmentSchemaArn": _DevelopmentSchemaArn, "MinorVersion": _MinorVersion, "PublishedSchemaArn": _PublishedSchemaArn, "DryRun": (NullOrUndefined Nothing) }
+newUpgradePublishedSchemaRequest' :: Arn -> Version -> Arn -> ( { "DevelopmentSchemaArn" :: (Arn) , "PublishedSchemaArn" :: (Arn) , "MinorVersion" :: (Version) , "DryRun" :: Maybe (Bool) } -> {"DevelopmentSchemaArn" :: (Arn) , "PublishedSchemaArn" :: (Arn) , "MinorVersion" :: (Version) , "DryRun" :: Maybe (Bool) } ) -> UpgradePublishedSchemaRequest
+newUpgradePublishedSchemaRequest' _DevelopmentSchemaArn _MinorVersion _PublishedSchemaArn customize = (UpgradePublishedSchemaRequest <<< customize) { "DevelopmentSchemaArn": _DevelopmentSchemaArn, "MinorVersion": _MinorVersion, "PublishedSchemaArn": _PublishedSchemaArn, "DryRun": Nothing }
 
 
 
 newtype UpgradePublishedSchemaResponse = UpgradePublishedSchemaResponse 
-  { "UpgradedSchemaArn" :: NullOrUndefined (Arn)
+  { "UpgradedSchemaArn" :: Maybe (Arn)
   }
 derive instance newtypeUpgradePublishedSchemaResponse :: Newtype UpgradePublishedSchemaResponse _
 derive instance repGenericUpgradePublishedSchemaResponse :: Generic UpgradePublishedSchemaResponse _
@@ -5714,18 +5713,18 @@ instance encodeUpgradePublishedSchemaResponse :: Encode UpgradePublishedSchemaRe
 
 -- | Constructs UpgradePublishedSchemaResponse from required parameters
 newUpgradePublishedSchemaResponse :: UpgradePublishedSchemaResponse
-newUpgradePublishedSchemaResponse  = UpgradePublishedSchemaResponse { "UpgradedSchemaArn": (NullOrUndefined Nothing) }
+newUpgradePublishedSchemaResponse  = UpgradePublishedSchemaResponse { "UpgradedSchemaArn": Nothing }
 
 -- | Constructs UpgradePublishedSchemaResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpgradePublishedSchemaResponse' :: ( { "UpgradedSchemaArn" :: NullOrUndefined (Arn) } -> {"UpgradedSchemaArn" :: NullOrUndefined (Arn) } ) -> UpgradePublishedSchemaResponse
-newUpgradePublishedSchemaResponse'  customize = (UpgradePublishedSchemaResponse <<< customize) { "UpgradedSchemaArn": (NullOrUndefined Nothing) }
+newUpgradePublishedSchemaResponse' :: ( { "UpgradedSchemaArn" :: Maybe (Arn) } -> {"UpgradedSchemaArn" :: Maybe (Arn) } ) -> UpgradePublishedSchemaResponse
+newUpgradePublishedSchemaResponse'  customize = (UpgradePublishedSchemaResponse <<< customize) { "UpgradedSchemaArn": Nothing }
 
 
 
 -- | <p>Indicates that your request is malformed in some manner. See the exception message.</p>
 newtype ValidationException = ValidationException 
-  { "Message" :: NullOrUndefined (ExceptionMessage)
+  { "Message" :: Maybe (ExceptionMessage)
   }
 derive instance newtypeValidationException :: Newtype ValidationException _
 derive instance repGenericValidationException :: Generic ValidationException _
@@ -5735,12 +5734,12 @@ instance encodeValidationException :: Encode ValidationException where encode = 
 
 -- | Constructs ValidationException from required parameters
 newValidationException :: ValidationException
-newValidationException  = ValidationException { "Message": (NullOrUndefined Nothing) }
+newValidationException  = ValidationException { "Message": Nothing }
 
 -- | Constructs ValidationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newValidationException' :: ( { "Message" :: NullOrUndefined (ExceptionMessage) } -> {"Message" :: NullOrUndefined (ExceptionMessage) } ) -> ValidationException
-newValidationException'  customize = (ValidationException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newValidationException' :: ( { "Message" :: Maybe (ExceptionMessage) } -> {"Message" :: Maybe (ExceptionMessage) } ) -> ValidationException
+newValidationException'  customize = (ValidationException <<< customize) { "Message": Nothing }
 
 
 
